@@ -16,6 +16,7 @@
 - [ ] Inventariar **todo o catálogo de projetos Nexus** para «Adicionar projeto» (sem filtros por redes/branding); documentar rascunho de perfil Social, validação de branding, ativação e gate de pesquisa. Inventariar contas e permissões reais por plataforma para operações dependentes de canal.
 - [ ] **Provar importação de branding P10-B:** fontes Nexus/website/docs/repos/autorizadas, leitura sem alterações, proveniência e incerteza, consentimento/permissions, correção manual, versionamento, aprovação e gate de pesquisa; sem dados externos assumir acesso.
 - [ ] **Provar deteção P11-B:** comparação periódica com branding oficial, fontes/datas/diffs, deduplicação, revisão humana e nova versão após aprovação. Definir frequência, quotas e notificações em proposta técnica; sem afetar publicação Postiz.
+- [ ] **Provar auditoria de impacto P12-B:** relacionar versões de marca com criativos em vários estados, apresentar alterações propostas sem render, assinalar agendados sem mutar Postiz, registar decisão humana por peça e novos gates para revisões.
 - [ ] Inventariar biblioteca `D:\AI\Biblioteca` e política de licenças/retencão sem alterar os ficheiros.
 - [x] **P3-B adaptada**: só selecionar temas no Motor 1; calendário com ordem/datas/horas/canais **depois da produção** e **antes de aprovação final**; Motor 3 agenda pacote aprovado.
 - [x] **P6-C:** primeiro validar a integração Postiz, só depois decidir Cloud vs self-hosted.
@@ -24,7 +25,8 @@
 - [x] **P9-B:** no máximo três tentativas por ronda (execução inicial + duas autocorreções de QA), paragem antecipada e reporte de falhas remanescentes; não consumir serviços pagos sem aprovação.
 - [x] **P10-B:** branding proposto por importação em leitura de fontes autorizadas do projeto Nexus, com evidência e lacunas por campo, edição manual e **aprovação humana antes de ativar**.
 - [x] **P11-B:** detetar periodicamente alterações nas fontes autorizadas do branding e pedir **aprovação humana antes de atualizar versão oficial**; sem modificar posts no Postiz.
-- [ ] **P12:** definir impacto de novo branding aprovado nos conteúdos em produção/aguardando revisão/aprovados e agendados; não impor regeneração/cancelamento automático sem decisão.
+- [x] **P12-B:** após mudança de branding aprovada, auditar impacto nos criativos em produção/por aprovar/aprovados e agendados; propor revisões localizadas para decisão humana; no Postiz só alerta e revisão manual.
+- [ ] **P13:** decidir organização editorial por projeto: só conteúdo contínuo, campanhas opcionais com objetivos próprios ou campanhas obrigatórias.
 - [ ] Limites técnicos concretos de tempo/CPU e testes de QA disponíveis por formato (o teto de 3 tentativas já está decidido).
 - [ ] **Prova técnica Postiz** (não iniciada): verificar se existe opção gratuita/experimental válida; testar API, contas/redes/formatos, agendamento, sincronização, recibos, erros e edição no Postiz com reflexo no calendário Nexus, sem publicar nem pagar sem aprovação.
 - [ ] **Escolher Postiz Cloud vs self-hosted após relatório de evidências:** limites, uptime 24/7, custos reais, manutenção, backups e capacidade por plataforma; decisão requer aprovação.
