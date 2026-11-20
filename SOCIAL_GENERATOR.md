@@ -14,7 +14,8 @@ Construir um sistema de criação, distribuição e aprendizagem de conteúdo pa
   1. **Intelligence / Pesquisa**: estudar tendências, concorrência, formatos e publicações com bom desempenho; recomendar oportunidades por projeto.
   2. **Production / Produção**: transformar um tema aprovado em guião, recursos, composição, variantes, prévias e pacote exportável.
   3. **Distribution + Analytics + Learning**: preparar distribuição, medir resultados e retroalimentar a pesquisa. A primeira versão admite publicação e métricas manuais.
-- Pesquisa **diária leve** e relatório **semanal aprofundado** são cadências decididas; fontes: YouTube, Instagram, Google/Trends, Reddit, TikTok, X, LinkedIn e fontes oficiais. Concorrência híbrida (referências manuais e descoberta), score adaptativo por projeto. Reutilizar scheduler Nexus quando provado; inicialmente manual.
+- Pesquisa **diária leve** e relatório **semanal aprofundado** são cadências decididas; fontes: YouTube, Instagram, Google/Trends, Reddit, TikTok, X, LinkedIn e fontes oficiais. Concorrência híbrida (referências manuais e descoberta), score adaptativo por projeto. Reutilizar scheduler Nexus quando provado; inicialmente manual. **Entrevista P2-C:** pesquisa de todos os projetos Social **configurados, ativos e com branding completo**, com profundidade maior para campanhas e tendências relevantes; **projeto configurado mas inativo não é pesquisado**.
+- **Temas e planeamento editorial:** cada lote de recomendações oferece **no mínimo cinco temas** distintos com evidência; permite escolher **vários** e recebe proposta justificada de ordem de agendamento. Um tema só pode ser reutilizado como recomendação vigente até **7 dias desde a última validação**, passando depois a reavaliação na pesquisa semanal profunda. Ver [CICLO_TEMAS.md](docs/CICLO_TEMAS.md).
 - **Aprovação humana do tema antes do guião/produção** e **nova aprovação da peça/pacote específico antes de publicar**. A aprovação de uma ferramenta no Nexus não substitui nenhuma destas.
 - **Qualidade publicável desde o primeiro piloto**, com revisão factual, editorial, técnica, visual, de acessibilidade e de direitos; Remotion-first e IA generativa só quando acrescentar valor; Higgsfield requer aprovação específica.
 - Dados de cada projeto isolados; padrões globais podem ser reutilizados quando forem abstrações gerais, nunca como mistura de resultados de marcas.
@@ -62,8 +63,8 @@ O fluxo de negócio segue **Workspace → Projeto → Campanha → Ideia/Oportun
 ## 6. Fluxo editorial
 
 1. **Adicionar** a partir do catálogo completo de projetos Nexus (incluindo projetos sem socials) e configurar um perfil Social em rascunho. Para **pesquisar**, selecionar apenas um perfil Social **ativo e com branding/configuração completos**, objetivo e conta/canal relevante; consultar marca e histórico.
-2. Motor 1 investiga fontes e apresenta **fichas económicas de oportunidade** (tema, fonte/data, potencial, público, hook, formato, duração sugerida, risco e esforço), **sem produzir guiões caros antes da aprovação**.
-3. Humano aprova ou recusa o tema/versão; recusa não produz.
+2. Motor 1 investiga fontes e apresenta **lotes de pelo menos cinco fichas de oportunidade fundamentadas** (tema, fonte/data, potencial, público, hook, formato, duração sugerida, risco e esforço), **sem produzir guiões caros antes da aprovação**. Se faltarem temas credíveis, assinala lote incompleto. Recomendações com sete dias entram em reavaliação semanal antes de serem reutilizadas.
+3. Humano pode **selecionar vários temas**; o motor propõe e explica uma **ordem de agendamento editável**, sem publicar. O humano aprova ou recusa o tema/versão individualmente; recusa não produz.
 4. Motor 2 pesquisa em profundidade, verifica afirmações, escreve guião/storyboard, compõe recursos, gera prévias/contact sheet, verifica qualidade, fornece ficheiros editáveis e MP4 quando apropriado.
 5. Humano aprova a versão exata do pacote por plataforma/conta; mudança material invalida a autorização.
 6. Motor 3 exporta/prepara; só publica com autorização e canal elegível. Guardar recibos e tratar estado de envio incerto sem repetição cega.
