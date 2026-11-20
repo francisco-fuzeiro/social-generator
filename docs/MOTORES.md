@@ -74,6 +74,14 @@ Ferramentas:
 - **Voz/TTS**: adaptador (voz humana ou fornecedor legalmente autorizado), sem promessa de ElevenLabs ou custo recorrente. Timing/legendas carecem de prova.
 - **Marcas**: usar bibliotecas próprias e assets autorizados; nenhuma marca/voz deve passar para outro projeto por engano.
 
+### Revisões inteligentes e localizadas (DECIDIDO, P7-B)
+
+Durante a revisão pré-publicação, o utilizador pode solicitar alterações pontuais (texto, narração, imagens, animações, ritmo, transições). O Motor 2 deve **preservar as partes já validadas** e alterar/renderizar apenas as partes afetadas, **quando tecnicamente possível**, sem regeneração integral por omissão. Identificar dependências entre cenas/áudio/legendas, justificar quando a mudança tiver de abranger mais partes e manter QA coerente.
+
+Cada revisão gera **nova versão identificável e imutável**, com histórico, comparação e possibilidade de restaurar versões anteriores; preservar ficheiros de projeto/recursos, hashes e proveniência. Versões não aprovadas permanecem no Motor 2, e **só a versão exata aprovada no segundo gate** chega ao Motor 3/Postiz. A revisão de uma peça não bloqueia a fila automática das restantes quando os recursos Nexus o permitam. Custos extra/fornecedores pagos exigem autorização.
+
+A interface exata para marcar o trecho a corrigir e os limites de tentativas **ainda não foram decididos**. Contrato: [REVISOES.md](REVISOES.md).
+
 Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, guião, storyboard, recursos editáveis, prévia, MP4 em formato vídeo ou ficheiros de carrossel quando aplicável, checklist de **QA técnico, editorial, factual, visual e de direitos**, resumo de custos. **Gate final ainda dentro da revisão pré-publicação:** apresentar ao operador a prévia e proposta completa e explicada de agendamento (ordem entre peças, datas/horas, canais e contas), assim como copy, CTA, legendas, alertas e verificações; permitir correções antes de aprovar. Um pacote reprovado pode ser revisto numa nova versão; um pacote alterado tem de ser reaprovado.
 
 ## Motor 3 — Distribution & Scheduling (Postiz)
