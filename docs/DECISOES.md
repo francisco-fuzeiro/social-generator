@@ -64,6 +64,8 @@
 
 | SG-D046 | **Entrevista P9 — opção B:** até **3 tentativas no total por ronda de revisão** do Motor 2, incluindo a primeira aplicação das alterações e no máximo **2 novas correções automáticas** motivadas por falhas de QA detetáveis | Após cada tentativa, executar verificações aplicáveis e parar cedo se aprovar nos critérios, houver bloqueio ou limites de recursos/custos. Se persistirem problemas, entregar **prévia com falhas explícitas** para decisão humana, sem a declarar pronta nem enviar ao Postiz; nunca gastar em ferramentas pagas sem autorização |
 
+| SG-D047 | **Entrevista P10 — opção B:** **importação inteligente do branding por projeto Nexus a partir de fontes autorizadas em modo de leitura, com validação humana obrigatória** | Ao adicionar, o projeto Social fica rascunho; extrair informação disponível de Nexus, website, documentação, assets e repositório somente quando há acesso autorizado. Mostrar origem, incertezas, conflitos e lacunas; operador corrige/aprova versão do brand kit. **Sem aprovação do branding nem ativação Social explícita, não há pesquisa/recomendações**. Importação não cria conta, altera repo nem ativa projeto |
+
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
 A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótese anterior de usar o agendamento do Nexus. **SG-D038 substitui essa hipótese para publicações: o agendamento e disparo ficam no Postiz.** O leitor de dados e gates do Nexus mantêm-se. A auditoria propõe JSON local + JSONL, leitor validado, operações `social.ler` / `social.aprovarTema` / `social.aprovarPublicacao`, autorização imutável e fases F1–F3. São um bom ponto de partida, mas o schema de §3.3 tem IDs/canais fixos e métricas insuficientes para os requisitos confirmados. **Não implementar literalmente esse schema sem alinhar a adenda**.
@@ -97,7 +99,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótes
 
 ## E. Ciclo de temas e agenda
 
-Ciclo de temas: [CICLO_TEMAS.md](CICLO_TEMAS.md). Distribuição, Postiz e calendário Nexus: [POSTIZ.md](POSTIZ.md). **Revisões locais do Motor 2:** [REVISOES.md](REVISOES.md), decisões SG-D044/SG-D045 (feedback por timestamp com notas gerais). **SG-D041/042 definem calendário só de leitura no Nexus e quatro motores lógicos; prevalecem sobre a proposta antiga de três motores.** **SG-D035/036 prevalecem sobre qualquer menção anterior a propor calendário logo após a seleção dos temas.** Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
+Ciclo de temas: [CICLO_TEMAS.md](CICLO_TEMAS.md). **Importação/validação de branding:** [BRANDING.md](BRANDING.md), SG-D047. Distribuição, Postiz e calendário Nexus: [POSTIZ.md](POSTIZ.md). **Revisões locais do Motor 2:** [REVISOES.md](REVISOES.md), decisões SG-D044/SG-D045 (feedback por timestamp com notas gerais). **SG-D041/042 definem calendário só de leitura no Nexus e quatro motores lógicos; prevalecem sobre a proposta antiga de três motores.** **SG-D035/036 prevalecem sobre qualquer menção anterior a propor calendário logo após a seleção dos temas.** Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
 
 ## F. Regra de conflitos
 
