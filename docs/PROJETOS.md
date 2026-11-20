@@ -6,7 +6,7 @@
 
 A fonte de verdade dos projetos é o **Nexus**. A interface Social mostra apenas os projetos que cumprem cumulativamente:
 1. **Existem no catálogo de projetos do Nexus** (ID canónico estável).
-2. **Têm pelo menos uma conta/canal social configurado no Nexus** para o projeto, ou uma ligação Social explicitamente registada pelo Nexus como tal.
+2. **Têm pelo menos uma conta social configurada no Nexus**, identificando plataforma e conta (handle/URL ou identificador associado). **Não é obrigatório OAuth/API autenticada** para se tornar elegível; uma indicação genérica «utiliza sociais» sem conta identificável não chega.
 3. Não estão arquivados, inacessíveis ou inelegíveis pelas políticas do Nexus.
 
 A lista de elegíveis é **o catálogo filtrado do Nexus**, não uma lista livre em código. A ação de interface é **Ativar Social num projeto Nexus elegível**, e nunca «Criar um projeto novo». A ativação é opcional: muitos projetos do Nexus nunca aparecerão no Social ativo. Um projeto com socials não fica ativado automaticamente.
@@ -23,7 +23,7 @@ Campos: `nexusProjectId`, `socialEnabled`, `perfilVersao`, marca/nomes, descriç
 - Alteração de contas/brand kit tem de invalidar pacotes/aprovações dependentes da versão antiga.
 - Aprendizagem e observações de cada projeto isoladas, com uso transversal apenas de padrões abstratos autorizados.
 - Repositórios Vefi, UtopIA e outros permanecem só leitura por omissão.
-- Canais pretendidos ≠ contas ligadas; o perfil deve identificar `planeado / configurado / validado / indisponivel` por rede.
+- Canais pretendidos ≠ contas ligadas. Distinguir explicitamente `planeado` (intenção), `configurado` (conta/handle/URL registados no Nexus), `autenticado` (API OAuth e permissões válidas), `validado` (capacidade efetivamente testada) e `indisponivel` (sem acesso/capacidade). Uma conta apenas configurada habilita pesquisa/produção/publicação manual e observações manuais após opt-in, **não** recolha/upload API.
 
 ## 3. Perfis e canais da entrevista
 
@@ -55,7 +55,8 @@ Exemplo de extensão futura, não membro automático do Social. Só poderá ser 
 ## 4. Testes contratuais
 
 - Projeto inexistente no Nexus: não aparece e não pode ser criado pelo Social.
-- Projeto Nexus sem socials: não aparece como elegível.
+- Projeto Nexus sem conta social identificável configurada: não aparece como elegível; marcar apenas «usa redes sociais» é insuficiente.
+- Projeto Nexus com conta social configurada mas sem API autenticada: é elegível para opt-in; suporta pesquisa/produção e publicação/métricas manuais, não ações API.
 - Projeto Nexus com socials mas `socialEnabled=false`: elegível para ativar, mas não aparece nas listas de produção.
 - Projeto Nexus elegível/ativado: perfil e canais são recuperados sem alteração ao código dos motores.
 - Remoção de conta/arquivamento: suspender operações, guardar histórico.
