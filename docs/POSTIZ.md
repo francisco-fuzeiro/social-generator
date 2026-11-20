@@ -88,6 +88,12 @@ Quando for **aprovada uma nova versão de branding**, o Social Generator audita 
 
 Ver [BRANDING.md](BRANDING.md) §4.2 e decisão SG-D049.
 
+## 5.3. Variantes por plataforma P15-B
+
+**Motor 2**, não o Postiz, cria a peça-base e as variantes técnicas/editoriais para canais configurados quando realmente fazem sentido, podendo reutilizar o mesmo render. **Motor 3** só recebe pacotes aprovados individualmente na revisão final por `variantId/version/hash`, projeto, conta, plataforma, copy/CTA e data/hora. Uma aprovação para Instagram **não autoriza automaticamente** TikTok ou LinkedIn. O Postiz agenda/executa unicamente as variantes/pacotes que aceitar e confirmar, conforme capacidades comprovadas. Erros ou restrições de plataforma são explicitados; não publicar variantes ou formatos alternativos por inferência.
+
+O calendário Nexus continua **só de leitura** para os posts entregues ao Postiz e mostra a identificação da variante quando disponível. Ver [VARIANTES.md](VARIANTES.md).
+
 ## 6. Testes de aceitação
 
 1. Com posts confirmados no Postiz, o dashboard Nexus apresenta **agendados** no dia/hora/conta corretos e **publicados** com ligação e data real quando disponíveis.
