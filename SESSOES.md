@@ -1,5 +1,13 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P7-B: revisões localizadas de conteúdos
+
+**TL;DR:** Aprovada P7-B: Motor 2 aplica alterações localizadas, preserva as partes já corretas sempre que possível, explica dependências afetadas e cria novas versões com histórico, comparação e recuperação. A aprovação final é por versão/hash; nenhuma revisão é publicada automaticamente. Criado docs/REVISOES.md. Sem implementação de código ou teste de render.
+
+- **Decisão:** SG-D044 em `docs/DECISOES.md`, contrato funcional `docs/REVISOES.md`.
+- **Pendente:** pergunta 8 sobre forma de dar feedback de revisão no dashboard; estratégia técnica de render/caches e limites por peça.
+
+
 ## 2026-11-20 — Entrevista P6-C: validar Postiz antes de decidir alojamento
 
 **TL;DR:** O utilizador escolheu P6-C: validar primeiro API, canais, formatos, estados, agendamento, sincronização Postiz→Nexus e custos; só depois comparar Cloud/self-hosted e aprovar implantação. Não assumir trial gratuito disponível, nem efetuar pagamentos/instalação de produção. Atualizados contratos/roadmap/TODO; sem execução ou teste real.
