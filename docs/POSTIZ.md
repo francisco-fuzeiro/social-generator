@@ -90,7 +90,7 @@ Ver [BRANDING.md](BRANDING.md) §4.2 e decisão SG-D049.
 
 ## 5.3. Variantes por plataforma P15-B
 
-**Motor 2**, não o Postiz, cria a peça-base e as variantes técnicas/editoriais para canais configurados quando realmente fazem sentido, podendo reutilizar o mesmo render. **Motor 3** só recebe pacotes aprovados individualmente na revisão final por `variantId/version/hash`, projeto, conta, plataforma, copy/CTA e data/hora. Uma aprovação para Instagram **não autoriza automaticamente** TikTok ou LinkedIn. O Postiz agenda/executa unicamente as variantes/pacotes que aceitar e confirmar, conforme capacidades comprovadas. Erros ou restrições de plataforma são explicitados; não publicar variantes ou formatos alternativos por inferência.
+**P16-B:** o Motor 1 recomenda os destinos mais adequados por tema, e **Motor 2**, não o Postiz, cria peça-base e **apenas variantes destinadas inicialmente a plataformas recomendadas e elegíveis** (não todas as redes configuradas), reutilizando render quando possível. Na revisão final o operador pode adicionar/remover destinos; um adicional requer preparação/QA antes do gate. **Motor 3** só recebe pacotes aprovados individualmente na revisão final por `variantId/version/hash`, projeto, conta, plataforma, copy/CTA e data/hora. Uma aprovação para Instagram **não autoriza automaticamente** TikTok ou LinkedIn. O Postiz agenda/executa unicamente as variantes/pacotes que aceitar e confirmar, conforme capacidades comprovadas. Erros ou restrições de plataforma são explicitados; não publicar variantes ou formatos alternativos por inferência.
 
 O calendário Nexus continua **só de leitura** para os posts entregues ao Postiz e mostra a identificação da variante quando disponível. Ver [VARIANTES.md](VARIANTES.md).
 
