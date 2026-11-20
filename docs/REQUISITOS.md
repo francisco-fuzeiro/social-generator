@@ -6,7 +6,7 @@
 
 1. O Social **não cria projetos Nexus**. Em **Adicionar projeto** apresenta **todos os projetos existentes no catálogo Nexus**, mesmo sem redes ou branding. Selecionar cria um perfil Social em rascunho. **Apenas projetos configurados, ativos e com branding completo** entram na pesquisa. Nem todos os projetos Nexus precisam de ser adicionados.
 2. Cada etapa funciona no contexto **do projeto Nexus elegível/ativado e do seu perfil editorial**. Não permitir projetos inventados, contas de outros projetos, identidades de marca cruzadas ou publicação sem permissão.
-3. Os três motores são **Pesquisa diária/semanal**, **Produção** e **Distribuição/Métricas/Aprendizagem**. O Nexus continua responsável pela execução, scheduler, limites e aprovações.
+3. **Quatro motores lógicos aprovados:** **M1 Intelligence**, **M2 Production**, **M3 Distribution & Scheduling (Postiz)** e **M4 Analytics & Learning**. Nexus é dono de UI, aprovações e orquestração de pesquisa/produção; **Postiz agenda e publica independentemente do scheduler Nexus**. Não criar quatro agentes permanentes.
 4. **Aprovação humana do tema** antes de iniciar guião/recursos; **aprovação humana do pacote/conta/canal** antes de qualquer publicação.
 5. **Design visual detalhado do dashboard depois da funcionalidade**. F1 deve apresentar apenas os controlos e estados mínimos necessários para validar dados e fluxos.
 
@@ -59,7 +59,19 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 | R31 | Sincronização segura e identificável | IDs Postiz preservados, reconciliação sem duplicação, última atualização visível, snapshots desatualizados assinalados e erros explícitos |
 | R32 | Isolamento e história | Projetos Social inativos mantêm consulta histórica e agendamentos previamente confirmados. Alterações diretas no Postiz refletem-se após sincronização; não cancelar automaticamente |
 
-**Regras:** calendário do Nexus = **projeção de leitura do Postiz**, não scheduler paralelo. O visual avançado permanece adiado, mas consulta funcional e filtros são requisitos da integração Motor 3. O Postiz pode disponibilizar posts de outras origens; não associar ao projeto Nexus sem mapa de identificação válido. Controlo de edição/reagendamento pelo dashboard Nexus é assunto separado a decidir. Ver [POSTIZ.md](POSTIZ.md).
+**Regras:** calendário do Nexus = **projeção de leitura do Postiz**, não scheduler paralelo. O visual avançado permanece adiado, mas consulta funcional e filtros são requisitos da integração Motor 3. O Postiz pode disponibilizar posts de outras origens; não associar ao projeto Nexus sem mapa de identificação válido. **P5-C decidiu que editar/reagendar/cancelar só se faz no Postiz**, a partir de uma ligação contextual no Nexus quando disponível. O Nexus não executa operações mutáveis do calendário. Ver [POSTIZ.md](POSTIZ.md).
+
+## Motor 4 e calendário somente de leitura — decisões confirmadas
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R33 | Calendário Nexus com edição externa (P5-C) | Consultar agendados/publicados/falhas/pendentes no Nexus; abrir post no Postiz para editar, reagendar ou cancelar. **Nenhuma mutação Postiz iniciada pelo dashboard** |
+| R34 | Quatro motores lógicos separados | M1 pesquisa, M2 produz, M3 Postiz distribui/agende e sincroniza estados, **M4 analisa métricas e aprendizagem**, sem sobreposição de proprietário da publicação |
+| R35 | Motor 4 — métricas independentes | Ingerir dados com fonte, janela e disponibilidade de Postiz/rede/site/app, guardar observações e experiências, atribuição prudente, e devolver sinais ao M1 sem poder agendar/publicar |
+| R36 | Isolamento de falhas | Falha de métricas/experiências M4 não suspende publicação já confirmada no Postiz; falha M3 não apaga análises anteriores. Sem duplicar scheduler Nexus |
+| R37 | Atualização após alteração externa | Reagendamento/cancelamento feito no Postiz aparece no Nexus após sincronização, com hora de atualização; sem falsificar aprovação de conteúdo alterado |
+
+**Quatro motores** não significa quatro daemons, quatro LLMs residentes ou quatro serviços isolados. A fronteira é **lógica e contratual**; o Nexus continua com UI/autorizações e Postiz com execução real de publicação.
 
 ## Canais e formatos contratados
 
