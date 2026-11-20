@@ -9,7 +9,7 @@
 - **Motor 2 — Production**: cria recursos e pacote a partir do tema aprovado.
 - **Motor 3 — Distribution, Analytics & Learning**: exporta/distribui sob autorização, recolhe métricas, avalia experiências e produz sinais para o Motor 1.
 - **Adaptadores**: traduzem chamadas para serviços externos e ferramentas locais; nenhum fornecedor deve definir o modelo de domínio.
-- **Dados**: projeto selecionado tem de ser **projeto Nexus existente com socials configurados e ativação Social explícita**; identidade canónica Nexus em todas as etapas. Nunca inferir projeto pelo cwd nem criar projeto independente no Social.
+- **Dados**: o seletor **Adicionar** mostra todos os projetos Nexus. Para o **Motor 1** executar, o projeto tem de ter sido adicionado ao Social, estar **ativo e com perfil/branding completo** e conta/canal configurado, mesmo sem OAuth; identidade canónica Nexus em todas as etapas. Nunca inferir projeto pelo cwd nem criar projeto independente no Social.
 
 ## Motor 1 — Intelligence
 
@@ -47,7 +47,7 @@ O score é calibrado para o objetivo, público e histórico **do projeto Nexus s
 
 ## Motor 2 — Production
 
-**Pré-condição:** projeto Nexus elegível/ativado, conta/formatos permitidos e oportunidade aprovada para a versão atual.
+**Pré-condição:** projeto Nexus adicionado ao Social, ativo, configuração e branding completos, conta/formatos permitidos e oportunidade aprovada para a versão atual.
 
 **Formatos por perfil da entrevista:** The Hidden Layer — vídeo vertical narrado em inglês, faceless, voz consistente; Vefi e UtopIA — vídeos e carrosséis. Canais desejados: Hidden Layer (Instagram/YouTube/X/TikTok), Vefi (Instagram/TikTok/X/LinkedIn/YouTube), UtopIA (Instagram/LinkedIn/TikTok/X/YouTube). Não confundir intenção editorial com ligação à API de cada conta.
 
