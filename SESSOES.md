@@ -1,5 +1,14 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P14-B: prioridade editorial adaptativa
+
+**TL;DR:** O utilizador escolheu P14-B. Motor 1 deve sugerir uma distribuição de atenção entre campanhas opcionais ativas e conteúdo contínuo, fundamentada em urgência/prazos, tendências/evidências, objetivos, desempenho anterior de M4 e capacidade real de M2/Nexus. Sem quotas fixas. A proposta pode ser ajustada pelo operador **antes de escolher temas**, mas o primeiro gate continua a permitir **apenas seleção de temas**; calendário com datas/horas só na revisão pós-produção (segundo gate). Não autoriza novos gastos, produção ou publicações automáticas.
+
+- **Decisão:** SG-D051, contrato `docs/CAMPANHAS.md` §3.1, `docs/CICLO_TEMAS.md`, `docs/MOTORES.md`, `docs/REQUISITOS.md` e alinhamento Nexus.
+- **Estado:** documentação atualizada no GitHub; sem implementação, testes de produção ou alteração de agenda.
+- **P15:** decidir estratégia de variantes por plataforma a partir da peça-base.
+
+
 ## 2026-11-20 — Entrevista P13-B: conteúdo contínuo e campanhas opcionais
 
 **TL;DR:** O utilizador escolheu P13-B: estratégia editorial contínua em cada projeto Social e campanhas opcionais criadas pelo operador, cada uma com objetivo, público, prazo, mensagem, CTA e KPIs próprios. Motor 1 recomenda temas das campanhas e temas gerais simultaneamente; M2 produz sob os mesmos gates; M3 usa Postiz; M4 mede resultados de campanhas por separado dos objetivos gerais sem atribuição fictícia/duplicada. Não há campanha obrigatória para um conteúdo geral.
