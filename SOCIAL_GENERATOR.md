@@ -33,7 +33,7 @@ Construir um sistema de criação, distribuição e aprendizagem de conteúdo pa
 
 ## 4. Arquitetura e responsabilidades
 
-\`\`\`text
+```text
 Nexus (UI Social, sessões, permissões, gates, limites, supervisão)
   ├─ Motor 1: Research/Intelligence ──> oportunidade aprovada
   ├─ Motor 2: Production ────────────> pacote/preview validado e aprovado
@@ -43,7 +43,7 @@ Nexus (UI Social, sessões, permissões, gates, limites, supervisão)
 Persistência Social contratada (dados e evidências)
 Biblioteca externa de recursos de IA (não versionada no Git)
 Repositórios dos projetos servidos: leitura, salvo autorização distinta
-\`\`\`
+```
 
 O Nexus continua dono da orquestração, lançamento de agentes, controlo de recursos, permissões e interface. O motor social fornece **etapas invocáveis** e ficheiros normalizados, não cria scheduler, servidor ou dashboard paralelo. Adaptadores isolam Remotion, FFmpeg, geração de imagem, TTS, pesquisa, redes e fornecedores futuros.
 
