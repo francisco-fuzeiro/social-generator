@@ -23,6 +23,14 @@ Medir **resultados de negócio e qualidade** por projeto além de métricas de v
 
 Comparações apenas dentro de definições, janelas e denominadores compatíveis. Uma visualização no YouTube não é necessariamente uma visualização no Instagram ou no TikTok.
 
+## 1.1. Campanhas opcionais e conteúdo contínuo — P13-B (DECIDIDO)
+
+Cada projeto Social tem objetivos e estratégia editorial contínua, com **campanhas opcionais** específicas (objetivo, público, janela temporal, mensagem, CTA e **KPIs próprios**). **Uma publicação geral pode ter `campanhaId=null`:** não criar campanha fictícia para forçar vínculo ou medir todo o conteúdo como campanha.
+
+O Motor 4 deve distinguir relatórios de **campanha** (conteúdos associados e KPIs dentro da janela adequada) dos relatórios de **desempenho geral do projeto** (que incluem conteúdo contínuo e podem mostrar a contribuição de campanhas). Estas vistas **não são somáveis sem cuidado**; eventos e conversões não podem ser contados duas vezes. Métricas ausentes/inacessíveis ficam ausentes, nunca estimadas como vendas confirmadas. Rastrear UTMs e IDs apenas onde existirem.
+
+O Motor 1 recebe aprendizagens tanto sobre campanhas como sobre a estratégia contínua, sem interromper a investigação geral pela existência de uma campanha. Prioridades entre ambos **P14 por decidir**. Contrato [CAMPANHAS.md](CAMPANHAS.md).
+
 ## 2. Catálogo mínimo
 
 | Grupo | Métricas / eventos candidatos | Observações |
@@ -50,7 +58,7 @@ Guardar **numerador, denominador, unidade, fórmula e versão da definição**, 
 
 ## 4. Modelo de observação recomendado
 
-Chaves: projetoId, campanhaId, oportunidadeId, pecaId, varianteId, publicacaoId, plataforma, contaId, observadoEm, janelaInicio, janelaFim, publicadoEm, fonte ('manual', 'api', 'analytics', 'estimativa'), definicaoMetricasVersao, medicao/valor/unidade, estadoDisponibilidade, qualidade/confiança, recolhaId e referência de evidência.
+Chaves: projetoId, **campanhaId opcional/nulo para conteúdo contínuo**, oportunidadeId, pecaId, varianteId, publicacaoId, plataforma, contaId, observadoEm, janelaInicio, janelaFim, publicadoEm, fonte ('manual', 'api', 'analytics', 'estimativa'), definicaoMetricasVersao, medicao/valor/unidade, estadoDisponibilidade, qualidade/confiança, recolhaId e referência de evidência.
 
 **Estados:** observado, estimado, indisponível, por-sincronizar, falha-de-recolha, oculto-sem-permissão. Zero só quando explicitamente devolvido como zero. Guardar histórico de snapshots para análises temporais sem apagar o que foi observado.
 
@@ -61,7 +69,7 @@ Chaves: projetoId, campanhaId, oportunidadeId, pecaId, varianteId, publicacaoId,
 Cadeia recomendada:
 
 ```text
-Projeto -> Campanha -> Ideia -> Criativo -> Variante
+Projeto -> **Campanha opcional** -> Ideia -> Criativo -> Variante (sem campanha, Ideia liga diretamente ao Projeto)
        -> Publicação (rede/conta) -> Clique com UTM -> Visita
        -> Evento (registo/lead/wishlist) -> Conversão/receita (se observável)
 ```
