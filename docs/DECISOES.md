@@ -47,9 +47,13 @@
 | SG-D035 | **Entrevista P3 — opção B adaptada:** só **depois de o Motor 2 produzir cada peça** é apresentada uma prévia com proposta de calendário completo (ordem, datas, horas, plataformas) e demais informação relevante | Mostrar a proposta no gate final **antes de publicar**. O operador pode rever/corrigir; só após aprovação do pacote + conta/canal + agendamento o trabalho passa ao **Motor 3**, que agenda via conector autorizado ou prepara agendamento manual quando a API não o permitir |
 | SG-D036 | Separar **escolha de temas**, **revisão final da peça** e **execução do agendamento** | Motor 1 recomenda temas, utilizador escolhe; Motor 2 produz e apresenta prévia + proposta; utilizador aprova a publicação; Motor 3 executa. Nunca marcar «agendado» ou «publicado» sem confirmação comprovada |
 
+| SG-D037 | **Entrevista P4 — opção B:** produção em **fila automática de conteúdos selecionados**, com paralelismo apenas se compatível com os limites/recursos da máquina | O Motor 2 continua a produzir as próximas peças sem esperar pela aprovação final das anteriores. Cada peça fica disponível para revisão independente. Nenhuma segue ao Motor 3 sem gate final |
+| SG-D038 | **Motor 3 usa o Postiz para agendamento e publicação, sem depender do scheduler de publicações do Nexus** | O Postiz recebe apenas pacotes aprovados, mantém a agenda e executa a publicação na hora prevista; Motor 3 integra API/eventos e sincroniza estados/recibos. Nexus continua com dashboard, aprovação e orquestração das fases de pesquisa/produção, mas não executa os disparos da publicação |
+| SG-D039 | **Postiz é a infraestrutura de distribuição; separação de Analytics & Learning como Motor 4 ainda NÃO aprovada** | Não criar quatro agentes permanentes nem infra de agendamento duplicada. Decidir Cloud vs. self-hosted antes de instalar/pagar e validar capacidades por rede, runtime contínuo e custo |
+
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
-A auditoria docs/auditoria-f0.md (20/11/2026) propõe JSON local + JSONL, leitor validado, operações `social.ler` / `social.aprovarTema` / `social.aprovarPublicacao`, autorização imutável e fases F1–F3. São um bom ponto de partida, mas o schema de §3.3 tem IDs/canais fixos e métricas insuficientes para os requisitos confirmados. **Não implementar literalmente esse schema sem alinhar a adenda**.
+A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótese anterior de usar o agendamento do Nexus. **SG-D038 substitui essa hipótese para publicações: o agendamento e disparo ficam no Postiz.** O leitor de dados e gates do Nexus mantêm-se. A auditoria propõe JSON local + JSONL, leitor validado, operações `social.ler` / `social.aprovarTema` / `social.aprovarPublicacao`, autorização imutável e fases F1–F3. São um bom ponto de partida, mas o schema de §3.3 tem IDs/canais fixos e métricas insuficientes para os requisitos confirmados. **Não implementar literalmente esse schema sem alinhar a adenda**.
 
 ## C. Recomendações ainda por aprovar
 
@@ -70,7 +74,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) propõe JSON local + JSONL, leitor
 
 - Primeiro piloto técnico: projeto, tema, plataformas e contas concretas. O MVP de três conteúdos reais está fechado, sujeito à elegibilidade dos respetivos projetos no Nexus.
 - Público e métricas-alvo exatos por projeto; **cadência C**, lotes de ≥5, validade de 7 dias e escolha múltipla decididas. **P3-B adaptada:** apresentar calendário (datas/horas/canais) **após produção e antes da aprovação final**, com execução do agendamento pelo Motor 3. Horários da pesquisa e pesos exatos do scoring continuam pendentes.
-- Fluxo de contas/plataformas e permissões oficiais, sobretudo X/LinkedIn e restrições de publicação por API.
+- **Postiz Cloud ou self-hosted** e capacidades/contas/credenciais por plataforma (incluindo X/LinkedIn/TikTok/YouTube); estado conectado, custo e disponibilidade contínua ainda pendentes. Publicação usa Postiz, não o scheduler Nexus.
 - Qual ferramenta de voz inglesa/PT-PT e respetivos direitos, sincronização de legendas e custos reais.
 - Licença Remotion aplicável à entidade/uso comercial; benchmarks de render e imagem no Nexus.
 - Limite de armazenamento, retenção, backups e catálogo de direitos da biblioteca D:\AI\Biblioteca.
