@@ -58,6 +58,8 @@
 
 | SG-D043 | **Entrevista P6 — opção C:** **validar primeiro a integração com o Postiz**, sem fechar desde já Postiz Cloud vs. self-hosted | Testar, com meios gratuitos/experimentais **apenas se realmente disponíveis**, API, contas, formatos, calendário, agendamento, estados, limites, custos e operação independente do Nexus. Comparar opções e escolher alojamento **antes de ir para produção**, sem contratar/pagar/instalar serviço definitivo por inferência |
 
+| SG-D044 | **Entrevista P7 — opção B:** revisões **inteligentes e localizadas** no Motor 2, preservando os elementos corretos e já validados | Alterar apenas cenas/trechos/recursos necessários quando possível; identificar dependências e justificar mudanças de âmbito. Manter **histórico de versões**, comparação e recuperação da versão anterior, com novo hash e revisão de QA; só a versão final aprovada segue para o Motor 3/Postiz. Não regenerar tudo por omissão nem gastar em APIs sem aprovação |
+
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
 A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótese anterior de usar o agendamento do Nexus. **SG-D038 substitui essa hipótese para publicações: o agendamento e disparo ficam no Postiz.** O leitor de dados e gates do Nexus mantêm-se. A auditoria propõe JSON local + JSONL, leitor validado, operações `social.ler` / `social.aprovarTema` / `social.aprovarPublicacao`, autorização imutável e fases F1–F3. São um bom ponto de partida, mas o schema de §3.3 tem IDs/canais fixos e métricas insuficientes para os requisitos confirmados. **Não implementar literalmente esse schema sem alinhar a adenda**.
@@ -91,7 +93,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótes
 
 ## E. Ciclo de temas e agenda
 
-Ciclo de temas: [CICLO_TEMAS.md](CICLO_TEMAS.md). Distribuição, Postiz e calendário Nexus: [POSTIZ.md](POSTIZ.md). **SG-D041/042 definem calendário só de leitura no Nexus e quatro motores lógicos; prevalecem sobre a proposta antiga de três motores.** **SG-D035/036 prevalecem sobre qualquer menção anterior a propor calendário logo após a seleção dos temas.** Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
+Ciclo de temas: [CICLO_TEMAS.md](CICLO_TEMAS.md). Distribuição, Postiz e calendário Nexus: [POSTIZ.md](POSTIZ.md). **Revisões locais do Motor 2:** [REVISOES.md](REVISOES.md), decisão SG-D044. **SG-D041/042 definem calendário só de leitura no Nexus e quatro motores lógicos; prevalecem sobre a proposta antiga de três motores.** **SG-D035/036 prevalecem sobre qualquer menção anterior a propor calendário logo após a seleção dos temas.** Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
 
 ## F. Regra de conflitos
 
