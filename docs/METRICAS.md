@@ -37,6 +37,10 @@ O Motor 4 mantém a ligação entre **peça-base**, **variante por plataforma**,
 
 Quando a mesma peça-base/ficheiro é reutilizada em várias redes, **continuam a existir publicações e medições distintas**. Não duplicar sessões/conversões, e não apresentar como variante criativa uma diferença que seja apenas o canal/conta. O Motor 4 fornece aprendizagem fundamentada para o Motor 1, não altera a agenda do Postiz. Ver [VARIANTES.md](VARIANTES.md).
 
+## 1.3. Recomendação de redes P16-B (DECIDIDO)
+
+M4 fornece ao M1 **evidências históricas por plataforma, conta e formato** para recomendar os destinos mais adequados a um tema. Cada observação mantém origem, janela, idade do post, denominadores disponíveis e confiança; a ausência de histórico é uma limitação explícita, não um sinal de baixo potencial ou um valor inventado. M1 combina estes sinais com público, formato e tendências, recomendando apenas destinos justificados, sem selecionar todas as redes por omissão. A recomendação **não substitui a decisão humana** na revisão final nem as capacidades de distribuição comprovadas. Continuar a medir variantes/publicações separadamente por plataforma, mesmo quando reutilizam o mesmo render. Contrato [VARIANTES.md](VARIANTES.md).
+
 ## 2. Catálogo mínimo
 
 | Grupo | Métricas / eventos candidatos | Observações |
