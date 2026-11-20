@@ -70,9 +70,20 @@ O utilizador escolheu **B com condição explícita**: **no Motor 1 escolhe some
 
 **Motor 3:** só recebe a peça após aprovação final e tenta **agendar** de acordo com o plano autorizado. API oficial apenas quando possível e autorizada; caso contrário preparar agendamento manual com estado pendente e confirmação humana. Não equiparar `aprovado`, `exportado`, `agendado` ou `publicado`. Alteração de data/hora, conta, texto ou asset invalida o hash/autorização anteriores; preservam-se recibos/idempotência.
 
-A proposta de calendário pode utilizar histórico de audiência e urgência dos temas, mas sem dados suficientes a hora é **estimativa explícita**. O mecanismo de cálculo do calendário é independente do fornecedor de agendamento, e o agendador físico é o Motor 3 sob o controlo do Nexus.
+A proposta de calendário pode utilizar histórico de audiência e urgência dos temas, mas sem dados suficientes a hora é **estimativa explícita**. O mecanismo de sugestão do calendário é independente do fornecedor; **o Postiz é a infraestrutura de agendamento e publicação**. O Motor 3 é o adaptador com Postiz, não utiliza o scheduler Nexus para publicar. O dashboard do Nexus **lê o calendário do Postiz**, conforme [POSTIZ.md](POSTIZ.md).
 
 **Testes:** escolha de 3 temas sem calendário; gate 1 autoriza produção mas não o Motor 3; peça produzida abre prévia+datas/horas/canais; nenhuma publicação/agendamento antes do gate 2; correção de hora/canal exige nova aprovação; conector indisponível gera pendente-manual; agendado só com recibo; publicado só com confirmação própria.
+
+## 2.3. Postiz como fonte da agenda e calendário consultável no Nexus (DECIDIDO)
+
+- **Motor 3 integra com Postiz para agendamento/publicação**; o Postiz executa publicações no horário marcado, independentemente de um agente Nexus estar ativo. Não criar scheduler alternativo no Nexus.
+- **Dashboard Social no Nexus consulta e apresenta a agenda sincronizada com Postiz**, incluindo agendados, já publicados, falhados/incertos, cancelados e pendentes, com datas/horas, projeto, conta, plataforma, prévia, URL publicado e última sincronização quando aplicável.
+- **Postiz é a fonte de verdade operacional** para `agendado` e `publicado`. O Nexus apresenta uma **projeção de leitura/cache** associada ao ID do projeto Nexus e à conta autorizada; dados faltantes, estado de sincronização e erro são visíveis. Histórico de projetos inativos mantém-se consultável.
+- **Contrato proposto**: leitor de posts Postiz por janela/conta/canal, mapeamento de IDs de integração e posts, estados normalizados, `lastSyncedAt`, deduplicação e conciliação de alterações feitas diretamente no Postiz; sem publicar ou cancelar durante consulta.
+- **Integração por validar**: Postiz Cloud ou self-hosted, chaves/autorização, capacidade real por canal e disponibilidade da API na instalação. O design visual detalhado do calendário continua para depois da funcionalidade, mas **a consulta funcional é requisito do Motor 3**.
+- **Editar/reagendar/cancelar pelo Nexus** ainda é decisão separada; não implementar controlos mutáveis por inferência.
+
+Fonte: [POSTIZ.md](POSTIZ.md). Verificar `GET /public/v1/posts` e semântica dos estados na versão Postiz instalada. A auditoria F0 é documento histórico e não governa o disparo de posts.
 
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
