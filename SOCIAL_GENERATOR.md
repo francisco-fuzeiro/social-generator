@@ -9,7 +9,7 @@ Construir um sistema de criação, distribuição e aprendizagem de conteúdo pa
 ## 2. Decisões de produto confirmadas
 
 - O **dashboard Social existe dentro do Nexus**, em PC e móvel; este repositório contém o motor e contratos, não uma segunda aplicação ou um segundo orquestrador.
-- **Multi-projeto ligado exclusivamente ao Nexus**: apenas projetos existentes no Nexus **com redes sociais configuradas** aparecem para ativar o Social. A ativação é opcional; nem todos os projetos Nexus entram. O Social não cria projetos independentes. Primeiros candidatos ao MVP: The Hidden Layer, Vefi e UtopIA, **se elegíveis/ativados**; Car Enterprise só poderá entrar se vier a cumprir as mesmas condições.
+- **Multi-projeto ligado exclusivamente ao Nexus**: **Adicionar projeto mostra todos os projetos Nexus**, incluindo sem redes sociais ou branding. Selecionar adiciona só um **rascunho de perfil Social**, sem criar novo projeto Nexus ou iniciar tarefas. **Pesquisa apenas para perfis Social configurados, ativos e com branding completo** (com conta social identificada para o canal, sem exigir OAuth). Nem todos os projetos Nexus precisam de Social. Candidatos ao MVP: The Hidden Layer, Vefi e UtopIA, se configurados/ativos.
 - **Três motores partilhados**:
   1. **Intelligence / Pesquisa**: estudar tendências, concorrência, formatos e publicações com bom desempenho; recomendar oportunidades por projeto.
   2. **Production / Produção**: transformar um tema aprovado em guião, recursos, composição, variantes, prévias e pacote exportável.
@@ -61,7 +61,7 @@ O fluxo de negócio segue **Workspace → Projeto → Campanha → Ideia/Oportun
 
 ## 6. Fluxo editorial
 
-1. Selecionar **projeto Nexus com socials e Social ativado**, objetivo e canal autorizado; consultar perfil de marca e histórico. Projeto sem redes sociais não é elegível e não é criado pelo Social.
+1. **Adicionar** a partir do catálogo completo de projetos Nexus (incluindo projetos sem socials) e configurar um perfil Social em rascunho. Para **pesquisar**, selecionar apenas um perfil Social **ativo e com branding/configuração completos**, objetivo e conta/canal relevante; consultar marca e histórico.
 2. Motor 1 investiga fontes e apresenta **fichas económicas de oportunidade** (tema, fonte/data, potencial, público, hook, formato, duração sugerida, risco e esforço), **sem produzir guiões caros antes da aprovação**.
 3. Humano aprova ou recusa o tema/versão; recusa não produz.
 4. Motor 2 pesquisa em profundidade, verifica afirmações, escreve guião/storyboard, compõe recursos, gera prévias/contact sheet, verifica qualidade, fornece ficheiros editáveis e MP4 quando apropriado.
@@ -80,7 +80,7 @@ O fluxo de negócio segue **Workspace → Projeto → Campanha → Ideia/Oportun
 
 ## 8. Dashboard e aprendizagem
 
-**Ordem de implementação decidida:** primeiro garantir o separador Social do Nexus funcional (dados reais/indisponíveis, estados, seleção de projetos elegíveis, aprovações, outputs e métricas). **Só depois** definir o desenho visual detalhado, gráficos e navegação avançada. Overview/Intelligence/Studio/Publishing/Analytics/Experiments/Costs são áreas de informação possíveis, não sete páginas a desenhar na F1.
+**Ordem de implementação decidida:** primeiro garantir o separador Social do Nexus funcional (Adicionar = catálogo completo Nexus; configuração e ativação separadas; pesquisa só ativos com branding, estados, aprovações, outputs e métricas). **Só depois** definir o desenho visual detalhado, gráficos e navegação avançada. Overview/Intelligence/Studio/Publishing/Analytics/Experiments/Costs são áreas de informação possíveis, não sete páginas a desenhar na F1.
 
 Medir alcance, retenção (tempo médio, conclusão/curvas quando disponíveis), envolvimento, CTR, links UTM, tráfego, eventos do website/app, conversões e custos sem misturar definições entre plataformas. Registrar características criativas (hook, duração, voz, visual, CTA, variante) para aprender o que funcionou. Comparação honesta entre posts de mesma idade/condição; amostras pequenas e causalidade incerta ficam explícitas. Cada projeto escolhe objetivos/KPIs próprios, não se otimiza universalmente por visualizações.
 
