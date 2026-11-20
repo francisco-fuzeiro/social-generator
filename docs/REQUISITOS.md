@@ -29,7 +29,7 @@ Ferramenta pessoal integrada no Nexus para investigar, criar e avaliar conteúdo
 
 - **Segurança**: contas, tokens e chaves fora de Git e dos snapshots destinados ao dashboard; caminho externo não é servido pelo HTTP sem validação; mínimo privilégio.
 - **Rastreabilidade**: conservar versão, origem e confiança de afirmações, URLs/fontes, revisão factual, direitos e hash de recursos.
-- **Isolamento**: repos Vefi/UtopIA e outros são só de leitura. Um projeto editorial não exige repo próprio; IDs separados de \`project_cwd\`.
+- **Isolamento**: repos Vefi/UtopIA e outros são só de leitura. Um projeto editorial não exige repo próprio; IDs separados de `project_cwd`.
 - **Resiliência**: escrita atómica, idempotência das decisões, recuperação após crash e confirmação antes de repetir ações externas de publicação.
 - **Compatibilidade**: migração versionada (v1→v2 quando incompatível), sem mudar silenciosamente formato e interpretação de métricas.
 - **Acessibilidade editorial**: legendas legíveis e verificadas, enquadramento para cada proporção, som audível, ausência de sobreposições, material com licença.
