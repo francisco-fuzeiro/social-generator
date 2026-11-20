@@ -4,6 +4,8 @@
 
 ## 1. Princípio
 
+**Elegibilidade obrigatória:** todas as métricas/experiências pertencem a um projeto existente no Nexus, com redes sociais e opt-in Social ativo no momento da produção; dados históricos continuam legíveis após desativação ou perda de conta. A identidade é a referência canónica do Nexus.
+
 Medir **resultados de negócio e qualidade** por projeto além de métricas de vaidade. Separar:
 1. métricas publicadas pela rede;
 2. tráfego com origem identificada no site/app;
@@ -71,6 +73,12 @@ Não armazenar dados pessoais brutos no painel social se bastarem contagens agre
 
 O KPI principal (North Star) e metas numéricas finais por projeto **ainda carecem de aprovação**. Uma publicação com muitos views não é automaticamente superior a outra que gera resultados de negócio.
 
+## 7. Aprendizagem e experiências controladas
+
+**DECIDIDO:** Motor 3 deve produzir recomendações sustentadas no histórico do projeto e em experiências controladas. Guardar por variante: tema, hook, primeiros segundos, duração, estrutura, voz, estilo, ritmo, legendas, CTA, formato, canal e horário, custo e fornecedor (quando aplicável). A experiência regista antes de publicar hipótese, variável a testar, população/condições, métrica primária, janela e limite mínimo de observações. Pode terminar `inconclusiva` sem modificar a rubrica. Recomendações para Motor 1 citam publicações, medições, datas e confiança.
+
+**PROPOSTO:** snapshots em 2h/24h/72h/7d/30d; não assumir API em tempo real, sincronização diária ou acesso a curvas de retenção sem prova. O contrato deve distinguir faltas, atrasos e estimativas.
+
 ## 7. Comparação justa
 
 - Por **projeto, plataforma, conta, formato e janela desde a publicação**.
@@ -80,17 +88,16 @@ O KPI principal (North Star) e metas numéricas finais por projeto **ainda carec
 - A/B só quando hipótese e variável primária são registadas antes de observar os resultados; diferenças podem dever-se à distribuição/algoritmo e não à variante.
 - Não assumir causalidade de correlações; recomendações listam publicações e medições que sustentam a hipótese.
 
-## 8. Dashboard no separador Social (layout PROPOSTO)
+## 8. Dashboard — funcional primeiro, visual depois (DECIDIDO)
 
-1. **Overview**: filtro global/projeto, KPIs, objetivos, funil e evolução.
-2. **Intelligence**: tendências, fontes, oportunidades e confiança.
-3. **Content Studio**: produção e gates, variantes, prévias, custos.
-4. **Publishing**: calendário editorial, pacotes e estado real de publicação.
-5. **Analytics**: retenção, alcance, engajamento, conversões, comparações.
-6. **Experiments**: hipóteses, A/B, amostras e aprendizados.
-7. **Costs & Operations**: quotas, latências, falhas e despesas.
+**F1 não prevê design detalhado do dashboard.** O separador Social já existente no Nexus só necessita de uma interface funcional e acessível que:
+- Mostra projetos do Nexus **com socials e ativação Social**; permite consultar/ativar apenas os elegíveis, sem criar projeto independente.
+- Mostra oportunidades, fontes e estados de pesquisa diária e relatório semanal.
+- Permite aprovar tema e pacote final em gates separados com estado persistente.
+- Mostra prévias, publicação real/manual/pendente e dados analíticos apenas quando existem, com origem/recência e ausência explícitas.
+- Permite filtrar por projeto, conta/canal e intervalo para validar resultados e impedir mistura entre marcas.
 
-Filtros por projeto, plataforma, campanha, formato e período. Estado vazio ≠ zero. Em F1, dados de exemplo explicitamente marcados; não declarar live.
+**Depois de os motores e dados reais estarem funcionais**, planear UX, hierarquia de informação, gráficos, layouts, sete áreas de informação propostas (Overview, Intelligence, Studio, Publishing, Analytics, Experiments, Costs), responsividade avançada e acabamento visual. Estas sete áreas não são uma encomenda de sete páginas na F1. Nada de dashboards decorativos com números simulados apresentados como resultados.
 
 ## 9. Dependências para implementar
 
