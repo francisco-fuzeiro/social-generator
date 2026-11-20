@@ -109,6 +109,19 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **P9-B é limite funcional de qualidade, não autorização para gastos nem para ultrapassar os gates humanos.** Contrato em [REVISOES.md](REVISOES.md).
 
+## Branding inteligente, rastreável e aprovado — P10-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R53 | Importação inteligente em modo de leitura | A partir de um projeto Nexus adicionado, examinar **apenas fontes explicitamente autorizadas** (Nexus, site, documentação, repo, assets) e preparar perfil Social proposto, **sem escrever nas fontes** |
+| R54 | Proveniência e incerteza | Cada dado inferido apresenta origem/data/confiança ou é marcado em falta/conflitante; não inventar cores, fontes, funcionalidades ou claims |
+| R55 | Validação humana do branding | Operador revê, edita/completa e **aprova uma versão**; antes disso o perfil não é branding validado/completo |
+| R56 | Ativação independente da importação | Mesmo com branding aprovado, se projeto estiver **inativo**, Motor 1 não pesquisa nem recomenda. Ativar explicitamente com canais configurados; importação não cria contas nem projetos |
+| R57 | Segurança e isolamento | Repo em leitura, permissões por projeto, não misturar assets de outras marcas nem guardar segredos/binários em GitHub; sem acesso, fornecer preenchimento manual |
+| R58 | Versão e gate de marca | Identificar perfil de marca validado e seu histórico; alterações posteriores não substituem silenciosamente assets/pacotes aprovados |
+
+**Contrato funcional:** [BRANDING.md](BRANDING.md). A política de deteção/revalidação de mudanças após aprovação é uma decisão separada (P11).
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
