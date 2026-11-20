@@ -30,8 +30,10 @@
 - [x] **P14-B:** Motor 1 propõe prioridades adaptativas e justificadas entre campanhas e conteúdo contínuo, ajustáveis pelo operador antes de escolher temas; respeita limites M2/Nexus, sem quota fixa e sem calendário inicial.
 - [x] **P15-B:** peça-base com variantes inteligentes por plataforma quando justificadas, reutilizando cenas/assets/renders, QA e versões por variante, prévia e aprovação final por conta/canal. Contrato `docs/VARIANTES.md`.
 - [x] **P16-B:** M1 recomenda plataformas por tema com público/formato/tendências/histórico/elegibilidade; M2 cria só as variantes inicialmente recomendadas, e o operador pode acrescentar/remover destinos na revisão final com QA e segundo gate individual.
-- [ ] **P17:** definir política de proposta de datas/horas de publicação por conta/plataforma no calendário pós-produção (fixa, adaptativa baseada em dados/contexto ou manual).
+- [x] **P17-B:** recomendações adaptativas de dias/horas por rede+conta **só após produção** com histórico M4, público/fuso, formato, campanha e calendário Postiz; sem dados suficientes estimativas explícitas; operador ajusta no segundo gate.
+- [ ] **P18:** decidir **cadência e volume** de conteúdos por projeto/semana (fixa, adaptativa com limites humanos, ou manual), distinta do horário por post.
 - [ ] Limites técnicos concretos de tempo/CPU e testes de QA disponíveis por formato (o teto de 3 tentativas já está decidido).
+- [ ] **Provar horários P17-B:** sugestões por conta/fuso, evidências vs heurísticas, conflito e snapshot desatualizado Postiz, override humano no gate final e envio exclusivo do horário aprovado; testar horário de verão sem novos custos.
 - [ ] **Prova técnica Postiz** (não iniciada): verificar se existe opção gratuita/experimental válida; testar API, contas/redes/formatos, agendamento, sincronização, recibos, erros e edição no Postiz com reflexo no calendário Nexus, sem publicar nem pagar sem aprovação.
 - [ ] **Escolher Postiz Cloud vs self-hosted após relatório de evidências:** limites, uptime 24/7, custos reais, manutenção, backups e capacidade por plataforma; decisão requer aprovação.
 - [x] **P5-C:** calendário e posts consultáveis no Nexus, **editar/reagendar/cancelar no Postiz**; sincronizar alterações.
