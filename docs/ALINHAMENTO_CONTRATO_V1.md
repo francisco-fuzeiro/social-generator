@@ -56,11 +56,23 @@ Estas regras complementam o contrato anterior e estão detalhadas em [CICLO_TEMA
 2. **Estratégia adaptativa C:** pesquisa diária leve para todos esses projetos; investigação adicional onde há campanhas ativas, tendência forte, prioridade explícita ou tema a reavaliar. Relatório semanal para todos os ativos, com profundidade proporcional.
 3. **Lote de recomendações com pelo menos cinco temas** distintos, fundamentados e associados ao projeto. A pesquisa diária pode só atualizar sinais; não precisa de criar lote novo diariamente. Se não houver cinco válidos, mostrar lote incompleto em vez de inventar temas.
 4. **Validade máxima de um tema: sete dias** desde a última validação factual/de relevância. Depois passa a **em-reavaliação**, deixa de ser oferecido como tema vigente e a investigação semanal aprofundada confirma renovação datada (nova janela máxima sete dias), desatualização ou inconclusão. Histórico intacto.
-5. **Seleção múltipla:** escolher mais de um tema da mesma ronda; motor devolve proposta **explicada e editável** de ordem de produção/agendamento por projeto e canal. Propor não significa agendar automaticamente, gerar guiões sem gate, publicar nem autorizar despesas.
+5. **Seleção múltipla:** o utilizador escolhe apenas temas; é o primeiro gate e permite produção. **Proposta explicada e editável do calendário completo somente após produção**, na revisão pré-publicação e antes do segundo gate. Só a aprovação final encaminha o pacote ao Motor 3 para agendar.
 
 **Modelo proposto a integrar no contrato JSON:** `ResearchRun` com escopo de projetos autorizados/ativos e profundidade atribuída; `RecommendationBatch` com `minTemas=5`, IDs distintos, data e estado `completo/incompleto`; `TopicRelevance` com `ultimaValidacaoEm`, `validoAte`, `estadoRelevancia` e recibo de reavaliação; `TopicSelection` com vários `temaIds` e `ScheduleProposal` com ordem, motivos e estado `proposto/aceite`. Os nomes exatos e políticas de migração continuam sujeitos à validação técnica do Nexus.
 
 **Testes indispensáveis:** projeto configurado-inativo não pesquisado; projeto ativo mas branding incompleto bloqueado; pesquisa adaptativa conserva cobertura diária dos ativos; lote de cinco sem duplicados e sinalização quando insuficiente; tema com seis dias reutilizável, após sete dias em reavaliação, renovado apenas após decisão semanal documentada; dois ou mais temas selecionados geram proposta de ordem editável sem publicar. O gate de tema e o gate de publicação mantêm-se separados.
+
+## 2.2. Entrevista P3 — calendário só após produção (DECIDIDO)
+
+O utilizador escolheu **B com condição explícita**: **no Motor 1 escolhe somente os temas**. A seleção múltipla das versões de tema equivale ao primeiro gate humano e autoriza o Motor 2 a produzir, sem aprovação antecipada de datas, horas ou plataformas finais.
+
+**Motor 2:** quando a peça estiver pronta, apresentar em **revisão pré-publicação** a prévia do vídeo/carrossel, copy, legendas, CTA, fontes e licenças, verificações de qualidade, custos, contas e plataformas e **proposta de calendário completo** (ordem entre peças, datas, horas e justificação). Permitir correções e alterações à proposta. O utilizador aprova a versão final exata do pacote e do plano por conta/plataforma; essa decisão é o segundo gate humano.
+
+**Motor 3:** só recebe a peça após aprovação final e tenta **agendar** de acordo com o plano autorizado. API oficial apenas quando possível e autorizada; caso contrário preparar agendamento manual com estado pendente e confirmação humana. Não equiparar `aprovado`, `exportado`, `agendado` ou `publicado`. Alteração de data/hora, conta, texto ou asset invalida o hash/autorização anteriores; preservam-se recibos/idempotência.
+
+A proposta de calendário pode utilizar histórico de audiência e urgência dos temas, mas sem dados suficientes a hora é **estimativa explícita**. O mecanismo de cálculo do calendário é independente do fornecedor de agendamento, e o agendador físico é o Motor 3 sob o controlo do Nexus.
+
+**Testes:** escolha de 3 temas sem calendário; gate 1 autoriza produção mas não o Motor 3; peça produzida abre prévia+datas/horas/canais; nenhuma publicação/agendamento antes do gate 2; correção de hora/canal exige nova aprovação; conector indisponível gera pendente-manual; agendado só com recibo; publicado só com confirmação própria.
 
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
