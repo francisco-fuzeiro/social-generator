@@ -14,6 +14,7 @@
 - [x] **Postiz é o agendador/publicador e Nexus consulta o calendário sincronizado** (agendados, publicados, falhados, pendentes). Contrato em [POSTIZ.md](POSTIZ.md).
 - [x] **P5-C:** calendário Postiz consultável no Nexus; **editar, reagendar ou cancelar só no Postiz**, com sincronização para o Nexus.
 - [x] **Arquitetura de quatro motores lógicos**: M1 Intelligence, M2 Production, M3 Postiz Distribution & Scheduling, M4 Analytics & Learning.
+- [x] **P6-C:** Postiz será validado antes de escolher Cloud vs. self-hosted; nenhum gasto, contratação ou instalação definitiva implícita.
 - [ ] **Revisão técnica do contrato v1 no Nexus** (a adenda funcional já incorpora a entrevista). Alinhar catálogos, integrações e testes antes de F1.1.
 - [ ] Recuperar ficheiros originais SOCIAL_GENERATOR.md (489 linhas) e adenda (284 linhas), se disponíveis, e reconciliar diferenças sem os fazer passar por recuperados.
 - [ ] Verificar segredos antes de novos commits, especialmente enquanto repo público.
@@ -42,7 +43,7 @@ Adicionar validação de acesso à biblioteca externa e isolamento de marca onde
 ## F3 — Distribuição Postiz e Motor 4 de Analytics & Learning
 
 - **F3.1 — M3:** após aprovação final da peça e calendário, Motor 3 envia o pacote/hash ao **Postiz** quando elegível (fallback manual sem falso agendamento). O Postiz mantém e executa agenda, não o Nexus; `agendado` distinto de `publicado`, ambos com confirmação.
-- **F3.2 — M3 calendário Nexus só de leitura:** sincronização de posts do Postiz (agendados, publicados, falhados, pendentes, cancelados), filtros por projeto/conta/rede/período, última atualização e histórico. **Abrir no Postiz para editar/reagendar/cancelar; nunca mutar a agenda no Nexus**. Validar Cloud/self-hosted, quotas e canais.
+- **F3.2 — M3 calendário Nexus só de leitura:** sincronização de posts do Postiz (agendados, publicados, falhados, pendentes, cancelados), filtros por projeto/conta/rede/período, última atualização e histórico. **Abrir no Postiz para editar/reagendar/cancelar; nunca mutar a agenda no Nexus**. **P6-C:** fazer prova técnica com meios gratuitos/experimentais apenas se disponíveis, comparar Cloud/self-hosted, quotas, uptime, custos, manutenção e canais; decidir alojamento com aprovação antes de produção.
 - **F3.3 — M4 Analytics & Learning:** recolher métricas das redes/Postiz e UTMs/eventos de sites/apps quando disponíveis, normalizar com origem/janela/definição, atribuir conversões prudentemente, comparar experiências e devolver aprendizagem com evidência a M1. A falha do M4 não impede posts confirmados no Postiz.
 - Começar por métricas observadas e eventos de conversão disponíveis; enriquecer UTMs/atribuição quando os projetos forneçam instrumentação real.
 
