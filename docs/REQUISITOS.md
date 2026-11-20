@@ -158,7 +158,20 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 | R74 | Medição separada | M4 mostra KPIs por campanha e crescimento geral do projeto, com janelas/atribuição e dados observados sem dupla contagem de conversões |
 | R75 | Gates e distribuição preservados | Conteúdo de campanha segue aprovações normais e o Postiz é o único agendador; campanhas ativas não autorizam despesas ou publicações por si |
 
-**P14 por decidir:** peso, prioridade e partilha da produção entre campanhas ativas e conteúdo contínuo. Contrato [CAMPANHAS.md](CAMPANHAS.md).
+**P14-B decidido:** prioridade adaptativa e justificável, ajustável pelo operador antes de escolher temas, sem percentagens fixas. Pesos e quotas concretos ficam para validação técnica. Contrato [CAMPANHAS.md](CAMPANHAS.md).
+
+## Prioridade adaptativa para campanhas e conteúdo contínuo — P14-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R76 | Proposta adaptativa e explicada | M1 sugere prioridade entre conteúdo contínuo e campanhas ativas com base em **urgência/prazos, tendências comprovadas, objetivos, desempenho anterior (M4) e capacidade real de M2**; apresenta motivos e incertezas |
+| R77 | Sem divisão fixa nem exclusão do fluxo geral | Nenhuma quota/percentagem rígida é obrigatória; uma campanha urgente pode ganhar destaque mas **as recomendações gerais continuam disponíveis** |
+| R78 | Ajuste humano antes da escolha de temas | Operador pode ajustar a prioridade proposta **antes de selecionar temas**; continua a escolher **apenas temas** no primeiro gate, sem calendário, datas ou horas |
+| R79 | Sem autonomia adicional | Proposta/ajuste não aprova temas, não inicia renders não selecionados, não autoriza gastos, não altera conteúdos aprovados nem reprograma publicações no Postiz |
+| R80 | Capacidade e evidência | Proposta respeita recursos Nexus e dados M4 reais; capacidades/ROI desconhecidos ficam declarados como desconhecidos, e risco de deadline é assinalado |
+| R81 | Independência do segundo gate | Datas/horas, canais/contas e ordem de publicação são apresentados **após produção** e aprovados na revisão final, não confundidos com prioridade editorial |
+
+**P14-B não define pesos exatos nem percentagens.** Ver [CAMPANHAS.md](CAMPANHAS.md), [CICLO_TEMAS.md](CICLO_TEMAS.md).
 
 ## Canais e formatos contratados
 
