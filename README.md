@@ -18,10 +18,21 @@ Motor modular para investigar tendências, produzir conteúdo e aprender com res
 - [Auditoria técnica F0](docs/auditoria-f0.md) — inventário de código/evidências históricas do Nexus.
 - [Regras de trabalho](CLAUDE.md) · [TODO](TODO.md) · [Sessões](SESSOES.md).
 
+## Regras aprovadas na entrevista (20/11/2026)
+
+- **O Social não cria projetos:** só mostra para ativação projetos existentes no Nexus **com redes sociais configuradas**; opt-in facultativo. Nem todos os projetos Nexus têm Social.
+- **Motor 1:** pesquisa leve diária e relatório semanal aprofundado, usando fontes YouTube, Instagram, Google/Trends, Reddit, TikTok, X e LinkedIn; concorrência híbrida e scoring por projeto.
+- **Motor 2:** The Hidden Layer — vídeo vertical narrado; Vefi/UtopIA — vídeos e carrosséis. Remotion-first e QA factual/editorial/técnico/visual/direitos, recurso à IA quando acrescenta valor.
+- **Motor 3:** publicação híbrida (APIs oficiais quando elegíveis e aprovadas; alternativa manual), UTMs/eventos/conversões, experiências e aprendizagem por projeto.
+- **MVP:** três conteúdos reais, um por cada The Hidden Layer, Vefi e UtopIA, desde que elegíveis/ativados no Nexus.
+- **Dashboard:** funcionalidade e dados reais antes de qualquer design visual detalhado.
+
+O contrato funcional atualizado é [Alinhamento Nexus v1](docs/ALINHAMENTO_CONTRATO_V1.md); a implementação técnica carece de validação posterior.
+
 ## Onde vive
 
-- **Clone local Windows/Nexus:** \`C:\Claude\Social Generator\`
-- **Biblioteca externa (não versionar):** \`D:\AI\Biblioteca\`
+- **Clone local Windows/Nexus:** `C:\Claude\Social Generator`
+- **Biblioteca externa (não versionar):** `D:\AI\Biblioteca`
 - **Integração:** painel Nexus PC/móvel; modelos e integrações substituíveis.
 
 A existência da pasta externa foi confirmada pelo operador, mas o motor ainda não foi ligado/testado. Não adicionar a biblioteca ao repositório.
@@ -30,17 +41,17 @@ A existência da pasta externa foi confirmada pelo operador, mas o motor ainda n
 
 Toda a pesquisa pode recomendar; não iniciar guião/recursos sem **aprovação do tema**. A peça final precisa de **aprovação da versão exata da publicação**. Nenhuma API paga, chave nova, envio automático ou alteração de outro repositório sem decisão humana.
 
-Este repositório esteve público na sua fase inicial. Não colocar nele \`.env\`, tokens, perfis privados, mídia pessoal ou credenciais. Passar a privado não elimina cópias anteriormente obtidas.
+Este repositório esteve público na sua fase inicial. Não colocar nele `.env`, tokens, perfis privados, mídia pessoal ou credenciais. Passar a privado não elimina cópias anteriormente obtidas.
 
 ## Sincronização no Windows
 
 Depois de alterações feitas no GitHub, atualizar o clone local:
 
-\`\`\`powershell
+```powershell
 git -C "C:\Claude\Social Generator" pull --ff-only
-\`\`\`
+```
 
-Este comando não resolve conflitos com alterações locais; nesse caso rever o estado, não fazer \`reset --hard\` automaticamente. O Git não é sincronização contínua da biblioteca externa.
+Este comando não resolve conflitos com alterações locais; nesse caso rever o estado, não fazer `reset --hard` automaticamente. O Git não é sincronização contínua da biblioteca externa.
 
 ## Nota de proveniência
 
