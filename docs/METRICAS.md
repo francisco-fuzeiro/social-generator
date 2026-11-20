@@ -31,6 +31,12 @@ O Motor 4 deve distinguir relatórios de **campanha** (conteúdos associados e K
 
 O Motor 1 recebe aprendizagens tanto sobre campanhas como sobre a estratégia contínua, sem interromper a investigação geral pela existência de uma campanha. **P14-B é decisão:** o M1 propõe prioridade adaptativa justificada com prazos, tendências, objetivos, dados observados do M4 e capacidade do M2; o utilizador pode ajustar antes da escolha dos temas. **M4 apenas fornece sinais e grau de confiança**, nunca decide sozinho prioridades de produção nem inventa ROI. Pesos exatos não aprovados. Contrato [CAMPANHAS.md](CAMPANHAS.md).
 
+## 1.2. Peça-base e variantes por plataforma — P15-B
+
+O Motor 4 mantém a ligação entre **peça-base**, **variante por plataforma**, publicação/conta e métricas datadas. **Não comparar métricas de redes diferentes como se fossem equivalentes** nem atribuir causalmente o desempenho a uma alteração no hook/capa sem controlo das restantes variáveis. Registar formato, duração, copy/CTA, thumbnail e versão quando conhecidos. Comparações exigem janelas, denominadores e audiência adequados, com confiança e incerteza.
+
+Quando a mesma peça-base/ficheiro é reutilizada em várias redes, **continuam a existir publicações e medições distintas**. Não duplicar sessões/conversões, e não apresentar como variante criativa uma diferença que seja apenas o canal/conta. O Motor 4 fornece aprendizagem fundamentada para o Motor 1, não altera a agenda do Postiz. Ver [VARIANTES.md](VARIANTES.md).
+
 ## 2. Catálogo mínimo
 
 | Grupo | Métricas / eventos candidatos | Observações |
