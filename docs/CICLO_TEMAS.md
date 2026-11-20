@@ -69,6 +69,10 @@ O operador pode **rever, corrigir, reordenar, ajustar contas/canais/datas/horas 
 
 O Motor 1 pode **recomendar formatos, duração e redes com evidência**, mas o primeiro gate continua **apenas seleção de temas**, sem escolher datas, horas, calendário ou aceitar automaticamente contas. O Motor 2 cria uma **peça-base** e variantes inteligentes por plataformas configuradas **quando justificadas**, reutilizando assets/renders quando adequados. **Na revisão final após produção**, apresentar a proposta completa de calendários, prévias/QA e texto de cada variante por conta e plataforma. **Aprovação individual por pacote** antes de M3/Postiz. A quantidade de variantes produzidas por defeito permanece aberta (P16). Ver [VARIANTES.md](VARIANTES.md).
 
+## 5.2. P16-B — recomendação de redes sem seleção antecipada
+
+M1 indica **plataformas de maior potencial para cada tema** com base em audiência, formato, tendências e histórico comparável (M4), incluindo confiança, elegibilidade e limitações por conta. O operador continua a **selecionar apenas temas no primeiro gate**, sem escolher redes finais nem datas/horas. M2 produz peça-base e variantes **só para redes recomendadas e elegíveis** por defeito, nunca para todas as contas automaticamente. Na revisão pós-produção, mostrar a proposta por plataforma/conta e permitir **acrescentar ou remover destinos**; qualquer nova variante tem de ser preparada e sujeita a QA antes de gate 2. **Calendário com dias/horas permanece apenas após produção**. Política exata de sugestão de horários ainda é tema da P17. Ver [VARIANTES.md](VARIANTES.md).
+
 ## 6. Testes de aceitação mínimos
 
 1. O seletor Adicionar mostra um projeto Nexus sem socials; adicioná-lo não inicia pesquisa.
