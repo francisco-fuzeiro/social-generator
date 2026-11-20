@@ -78,6 +78,10 @@ Os estados `proposta`/`aguarda-aprovacao` são locais; `agendado` e `publicado` 
 
 **Cloud vs self-hosted** também é decisão pendente: validar uptime, preço real, limites de contas, autenticação, formatos, condições e capacidade de listar/editar posts para cada canal, **antes de contratar/instalar**. Não colocar API keys e segredos no repositório nem nas respostas do dashboard.
 
+## 5.1. Regra P5-C — editar só no Postiz
+
+O dashboard Nexus apresenta o calendário do Postiz **em modo de leitura**. Pode ter ligação `Abrir no Postiz` para que o utilizador edite/reagende/cancele o post lá. **Não criar formulário de reagendamento, botão de cancelar nem editor de posts no Nexus.** Depois de qualquer ação no Postiz, a sincronização atualiza estado/hora/copy e assinala origem externa quando possível. O fluxo de pré-publicação dentro do Nexus **continua editável antes de aprovar e enviar**; só a agenda já submetida fica sob controlo do Postiz.
+
 ## 6. Testes de aceitação
 
 1. Com posts confirmados no Postiz, o dashboard Nexus apresenta **agendados** no dia/hora/conta corretos e **publicados** com ligação e data real quando disponíveis.
