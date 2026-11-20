@@ -20,7 +20,7 @@ Ao desativar, preservar temas, versões, fontes, decisões, calendários e resul
 
 **Todos os projetos Social ativos e configurados recebem uma pesquisa diária leve.** O motor aloca investigação mais aprofundada aos projetos com campanhas ativas, sinais de tendências fortes, oportunidades relevantes, maior prioridade explícita ou necessidade de reavaliar temas. **Relatório semanal** abrange todos os projetos ativos/configurados, com profundidade proporcional à prioridade e evidências. Não pesquisar projetos Social inativos ou incompletos.
 
-Reutilizar o orquestrador, agendador e guardas de custo/RAM/limites do Nexus; não criar um scheduler paralelo. Execução manual é fallback até existir suporte comprovado. Prioridade/calendário podem mudar sem autorizar gasto, produção ou publicação.
+**Apenas para as execuções de pesquisa**, reutilizar orquestrador, agendador e guardas de custo/RAM/limites do Nexus. **Agendamento e publicação de posts pertencem ao Postiz (Motor 3)**. O dashboard Social do Nexus consulta o calendário Postiz por sincronização; não cria scheduler paralelo de publicações. Execução manual da pesquisa é fallback até existir suporte comprovado. Prioridade/calendário podem mudar sem autorizar gasto, produção ou publicação.
 
 ## 3. Lotes de recomendações — mínimo cinco temas (DECIDIDO)
 
@@ -57,7 +57,7 @@ Cada tema inclui: título/pergunta, ângulo, hook provisório, público/objetivo
 
 O operador pode **rever, corrigir, reordenar, ajustar contas/canais/datas/horas e aprovar** o pacote final específico. Este é o **segundo gate humano** e ocorre **depois da produção, antes de qualquer agendamento/publicação**. Alterar vídeo, legenda, recurso, conta, plataforma ou agendamento altera o pacote/versão e exige autorização válida para a versão final.
 
-**Somente após essa aprovação**, o **Motor 3** recebe pacote/versão/hash + conta/canal + plano aprovado e **executa o agendamento** quando houver integração oficial elegível e validada. Caso contrário, entrega **pacote e instruções de agendamento manual** e deixa estado `pendente-agendamento-manual`; não afirmar que agendou. Confirmação remota ou manual é necessária para estado `agendado`. O estado `publicado` requer prova própria, distinta de agendamento.
+**Somente após essa aprovação**, o **Motor 3** recebe pacote/versão/hash + conta/canal + plano aprovado e **envia o agendamento ao Postiz** quando houver integração elegível e validada. **Postiz executa a publicação** no horário previsto; o Nexus lê estados sincronizados sem disparar publicações. Caso contrário, entrega **pacote e instruções de agendamento manual** e deixa estado `pendente-agendamento-manual`; não afirmar que agendou. Confirmação remota ou manual é necessária para estado `agendado`. O estado `publicado` requer prova própria, distinta de agendamento.
 
 **Não alterar a dupla aprovação humana:** escolha dos temas = gate 1; aprovação da prévia, pacote e calendário final = gate 2. Uma sugestão do motor nunca equivale a um clique de aprovação.
 
