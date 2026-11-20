@@ -1,5 +1,14 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — P5-C e aprovação dos quatro motores
+
+**TL;DR:** Confirmada P5-C: calendário Postiz consultável no dashboard Nexus, mas edição, reagendamento e cancelamento exclusivamente no Postiz. Aprovada a arquitetura de quatro motores lógicos: M1 Intelligence, M2 Production, M3 Postiz Distribution & Scheduling, M4 Analytics & Learning. A separação é lógica, não quatro agentes residentes. Atualizados contratos e backlog; sem implementação executável.
+
+- **Decisões:** SG-D041 (P5-C) e SG-D042 (quatro motores); substituem estado indeciso SG-D039 e arquitetura histórica SG-D003.
+- **Alterações:** `docs/DECISOES.md`, `docs/MOTORES.md`, `docs/METRICAS.md`, `docs/POSTIZ.md`, contrato, requisitos, roadmap, instruções e visão geral.
+- **Pendente:** P6 — Postiz Cloud vs self-hosted; validação de API e modos de operação antes de instalar.
+
+
 ## 2026-11-20 — Motor 3 Postiz e calendário Nexus
 
 **TL;DR:** Confirmada produção em fila (P4-B), Postiz como scheduler/publicador independente do Nexus e calendário Postiz consultável no dashboard Social (agendados, publicados, falhados, pendentes). Criado contrato docs/POSTIZ.md e atualizados requisitos, decisões e roadmap. Sem implementação executável ou integração instaladas.
