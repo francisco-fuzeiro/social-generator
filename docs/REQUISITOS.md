@@ -122,6 +122,18 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **Contrato funcional:** [BRANDING.md](BRANDING.md). A política de deteção/revalidação de mudanças após aprovação é uma decisão separada (P11).
 
+## Atualização supervisionada de branding — P11-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R59 | Deteção periódica de alterações | Verificar periodicamente **fontes autorizadas**, por projeto, comparando com o último branding validado; não assumir mudança definitiva |
+| R60 | Proposta com evidência e comparação | Apresentar campos anteriores e propostos, origem/data, confiança/conflitos; evitar avisos duplicados sobre mesma diferença |
+| R61 | Aprovação humana de nova versão | Operador aceita, rejeita ou corrige. **Só aprovação explícita** cria nova versão oficial; alterações detetadas não substituem perfil validado |
+| R62 | Segurança/limites | Leitura apenas com permissão vigente, sem escrita em repo/website, sem custos não aprovados; falhas da fonte não são tratadas como mudança confirmada |
+| R63 | Isolamento e conteúdos existentes | P11 não inicia pesquisa para projetos Social inativos nem altera automaticamente posts agendados no Postiz, posts publicados ou identidades de outras marcas |
+
+**Horário exato do scan, notificações e política para criativos ainda por publicar não estão fechados**; este último tema passa à P12. Contrato [BRANDING.md](BRANDING.md).
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
