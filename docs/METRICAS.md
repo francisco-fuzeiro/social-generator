@@ -4,7 +4,7 @@
 
 ## 1. Princípio
 
-**Elegibilidade obrigatória:** todas as métricas/experiências pertencem a um projeto existente no Nexus, com redes sociais e opt-in Social ativo no momento da produção; dados históricos continuam legíveis após desativação ou perda de conta. A identidade é a referência canónica do Nexus.
+**Regra de âmbito:** métricas/experiências só pertencem a um projeto Nexus previamente adicionado ao Social e que estava configurado, ativo e com branding completo quando o conteúdo foi produzido; dados históricos continuam legíveis após desativação ou perda de conta. O seletor **Adicionar projeto** mostra todos os projetos Nexus, independentemente dessa configuração. A identidade é a referência canónica do Nexus.
 
 Medir **resultados de negócio e qualidade** por projeto além de métricas de vaidade. Separar:
 1. métricas publicadas pela rede;
@@ -91,7 +91,7 @@ O KPI principal (North Star) e metas numéricas finais por projeto **ainda carec
 ## 8. Dashboard — funcional primeiro, visual depois (DECIDIDO)
 
 **F1 não prevê design detalhado do dashboard.** O separador Social já existente no Nexus só necessita de uma interface funcional e acessível que:
-- Mostra projetos do Nexus **com socials e ativação Social**; permite consultar/ativar apenas os elegíveis, sem criar projeto independente.
+- **Adicionar projeto** lista todos os projetos Nexus; pode configurar perfis Social em rascunho. A lista de pesquisa e relatórios só contém projetos Social configurados, ativos e com branding completo; não cria projeto Nexus independente.
 - Mostra oportunidades, fontes e estados de pesquisa diária e relatório semanal.
 - Permite aprovar tema e pacote final em gates separados com estado persistente.
 - Mostra prévias, publicação real/manual/pendente e dados analíticos apenas quando existem, com origem/recência e ausência explícitas.
