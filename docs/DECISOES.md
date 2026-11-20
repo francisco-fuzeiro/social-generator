@@ -70,6 +70,8 @@
 
 | SG-D049 | **Entrevista P12 — opção B:** **auditar conteúdos potencialmente afetados após aprovação de uma nova versão de branding**, propondo apenas revisões localizadas e deixando a decisão ao operador | Comparar dependências de marca de conteúdos em produção, pendentes de revisão, aprovados ainda não enviados e já agendados. Mostrar alteração, âmbito e possíveis ajustes; o operador escolhe atualizar, manter ou rever. **Não regenerar nem alterar automaticamente conteúdos**, nem modificar/cancelar/reagendar posts já agendados no **Postiz**; nesses casos sinalizar e abrir o Postiz para revisão manual conforme P5-C. Manter versões, QA, custos e gates |
 
+| SG-D050 | **Entrevista P13 — opção B:** **conteúdo editorial contínuo por projeto + campanhas opcionais** com objetivos, público, prazo, mensagem, CTA e KPIs próprios | Uma campanha pertence a um projeto Nexus/Social e é criada quando o operador quiser; conteúdos gerais não precisam de pertencer a campanha. **Motor 1** pesquisa temas para campanhas ativas **sem deixar de recomendar oportunidades gerais**; M2 produz segundo gates; M3/Postiz distribui após aprovação; **Motor 4** mede campanhas separadamente do crescimento global do projeto, com dados observados e atribuição prudente. A divisão de prioridade/recursos entre campanhas e conteúdo geral fica para P14 |
+
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
 A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótese anterior de usar o agendamento do Nexus. **SG-D038 substitui essa hipótese para publicações: o agendamento e disparo ficam no Postiz.** O leitor de dados e gates do Nexus mantêm-se. A auditoria propõe JSON local + JSONL, leitor validado, operações `social.ler` / `social.aprovarTema` / `social.aprovarPublicacao`, autorização imutável e fases F1–F3. São um bom ponto de partida, mas o schema de §3.3 tem IDs/canais fixos e métricas insuficientes para os requisitos confirmados. **Não implementar literalmente esse schema sem alinhar a adenda**.
@@ -84,7 +86,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótes
 | SG-P004 | A/B: hipótese e variável principal pré-registadas; resultado inconclusivo possível | PROPOSTO, alinhado com F0 |
 | SG-P005 | Rubrica de oportunidades com tendência, relevância, conversão, esforço, concorrência, confiança | PROPOSTO; pesos não definidos |
 | SG-P006 | Sete áreas de informação para eventual UI: Overview, Intelligence, Studio, Publishing, Analytics, Experiments, Costs | **ADIADO**: design visual detalhado apenas depois de funcionalidade validada |
-| SG-P007 | Contrato com entidades Campanha/Variante/Evento/Conversão e qualidade de dados | PROPOSTO; desenho em adenda |
+| SG-P007 | **Entidade funcional Campanha opcional aprovada em SG-D050**; detalhes de schema de Campanha/Variante/Evento/Conversão e qualidade de dados | **CONCEITO DECIDIDO**, schema e implementação PROPOSTOS; campaignId pode ser nulo para conteúdo contínuo |
 | SG-P008 | JSON Schema 2020-12, canonicalização RFC 8785 e SHA-256 para hash de pacote | PROPOSTO técnico da adenda |
 | SG-P009 | Notificações Windows e checkpoints por etapa | PROPOSTO; reutilizar Nexus |
 | SG-P010 | Dados reais/estimados/indisponíveis/não sincronizados explícitos | PROPOSTO de qualidade, recomendado |
@@ -103,7 +105,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótes
 
 ## E. Ciclo de temas e agenda
 
-Ciclo de temas: [CICLO_TEMAS.md](CICLO_TEMAS.md). **Importação/deteção/validação e auditoria de impacto de branding:** [BRANDING.md](BRANDING.md), SG-D047/SG-D048/SG-D049. Distribuição, Postiz e calendário Nexus: [POSTIZ.md](POSTIZ.md). **Revisões locais do Motor 2:** [REVISOES.md](REVISOES.md), decisões SG-D044/SG-D045 (feedback por timestamp com notas gerais). **SG-D041/042 definem calendário só de leitura no Nexus e quatro motores lógicos; prevalecem sobre a proposta antiga de três motores.** **SG-D035/036 prevalecem sobre qualquer menção anterior a propor calendário logo após a seleção dos temas.** Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
+Ciclo de temas: [CICLO_TEMAS.md](CICLO_TEMAS.md). **Campanhas opcionais e conteúdo contínuo:** [CAMPANHAS.md](CAMPANHAS.md), SG-D050. **Importação/deteção/validação e auditoria de impacto de branding:** [BRANDING.md](BRANDING.md), SG-D047/SG-D048/SG-D049. Distribuição, Postiz e calendário Nexus: [POSTIZ.md](POSTIZ.md). **Revisões locais do Motor 2:** [REVISOES.md](REVISOES.md), decisões SG-D044/SG-D045 (feedback por timestamp com notas gerais). **SG-D041/042 definem calendário só de leitura no Nexus e quatro motores lógicos; prevalecem sobre a proposta antiga de três motores.** **SG-D035/036 prevalecem sobre qualquer menção anterior a propor calendário logo após a seleção dos temas.** Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
 
 ## F. Regra de conflitos
 
