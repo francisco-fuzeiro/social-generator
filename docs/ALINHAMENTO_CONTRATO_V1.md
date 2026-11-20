@@ -201,6 +201,16 @@ A produção multi-rede segue o modelo **peça-base editável e versionada → v
 
 **Proposta técnica a validar:** `PlatformRecommendation` ligada à versão da oportunidade (`projectId`, `targetPlatform`, `accountEligibility`, `reasons`, `evidenceRefs`, `confidence`) e lista de destinos finais aprovada por pacote. Não criar a seleção de redes como novo gate obrigatório. Os critérios/algoritmos exatos e limiares de recomendação não estão implementados nem aprovados. Contrato: [VARIANTES.md](VARIANTES.md) §1.1. **P17 permanece em aberto** para sugerir dias/horas de publicação na segunda revisão.
 
+## 2.16. P17-B — sugestão adaptativa de dias/horas no segundo gate (DECIDIDO)
+
+Após M2 produzir a peça-base e variantes (P15-B/P16-B), a **revisão final** inclui proposta explicada de **datas/horas, ordem, contas e plataformas**, por cada destino. A escolha inicial do operador no **Motor 1 continua só de temas**, sem calendário. Não antecipar sugestões de hora como obrigação editorial no primeiro gate.
+
+Para cada variante/conta, recomendações usam **dados reais disponíveis do M4** por plataforma/janela (quando comparáveis), **audiência e fuso horário**, tipo/formato de peça, **prazo/urgência de campanha** e **posts já agendados no Postiz**. Distinguir **observação, inferência e fallback**; sem dados suficientes, horário **rotulado como estimativa inicial** sem alegar «melhor horário» factual. Exibir motivos, fonte/confiança, fuso e conflitos/agenda desatualizada. Não criar horários inviáveis para campanhas nem alterar/remover posts agendados automaticamente.
+
+O operador pode **modificar livremente dias/horas/contas/canais/ordem antes do segundo gate**, que aprova cada versão/hash de variante, copy/CTA e agendamento. Só após aprovação Motor 3 envia ao Postiz; no Nexus, calendário Postiz é leitura e **reagendar/editar/cancelar post enviado faz-se exclusivamente no Postiz**. Não confundir proposta editorial com agendamento remoto confirmado.
+
+**Modelo técnico PROPOSTO:** `ScheduleSuggestion` ligada a `variantVersionId`, `accountId`, `platform`, data/hora/fuso, instante UTC, evidência, `confidence`, `basis=observed|heuristic`, data do snapshot Postiz, `conflicts` e edição humana. Adaptadores e pesos dependem de provas API/analytics; **sem autorização para nova ferramenta paga, publicar ou executar scheduler Nexus**. A cadência semanal de publicações é tema da P18. Ver [HORARIOS.md](HORARIOS.md).
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
