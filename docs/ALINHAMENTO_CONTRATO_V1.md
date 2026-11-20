@@ -48,6 +48,20 @@ Projeto incompleto ou inativo: não pesquisar e não consumir recursos, mas cont
 
 **PROPOSTO técnico:** estados Social `rascunho`, `pronto`, `ativo`, `suspenso`/ `arquivado`, com `nexusProjectId` canónico, `socialEnabled`, `brandProfileVersion`, `brandingComplete`, canais configurados e razões de bloqueio. A UI deve separar `nexusProjetosListar` (operação Nexus existente/adaptada) de leitura dos perfis Social ativos. Não duplicar identidade nem inventar endpoints sem auditoria.
 
+## 2.1. Novas decisões de pesquisa e temas (P2 — opção C)
+
+Estas regras complementam o contrato anterior e estão detalhadas em [CICLO_TEMAS.md](CICLO_TEMAS.md):
+
+1. **Execução do Motor 1 somente para perfis Social adicionados, configurados, ativos e com branding completo.** Um projeto pode estar totalmente configurado mas inativo, sem pesquisa ou novas recomendações.
+2. **Estratégia adaptativa C:** pesquisa diária leve para todos esses projetos; investigação adicional onde há campanhas ativas, tendência forte, prioridade explícita ou tema a reavaliar. Relatório semanal para todos os ativos, com profundidade proporcional.
+3. **Lote de recomendações com pelo menos cinco temas** distintos, fundamentados e associados ao projeto. A pesquisa diária pode só atualizar sinais; não precisa de criar lote novo diariamente. Se não houver cinco válidos, mostrar lote incompleto em vez de inventar temas.
+4. **Validade máxima de um tema: sete dias** desde a última validação factual/de relevância. Depois passa a **em-reavaliação**, deixa de ser oferecido como tema vigente e a investigação semanal aprofundada confirma renovação datada (nova janela máxima sete dias), desatualização ou inconclusão. Histórico intacto.
+5. **Seleção múltipla:** escolher mais de um tema da mesma ronda; motor devolve proposta **explicada e editável** de ordem de produção/agendamento por projeto e canal. Propor não significa agendar automaticamente, gerar guiões sem gate, publicar nem autorizar despesas.
+
+**Modelo proposto a integrar no contrato JSON:** `ResearchRun` com escopo de projetos autorizados/ativos e profundidade atribuída; `RecommendationBatch` com `minTemas=5`, IDs distintos, data e estado `completo/incompleto`; `TopicRelevance` com `ultimaValidacaoEm`, `validoAte`, `estadoRelevancia` e recibo de reavaliação; `TopicSelection` com vários `temaIds` e `ScheduleProposal` com ordem, motivos e estado `proposto/aceite`. Os nomes exatos e políticas de migração continuam sujeitos à validação técnica do Nexus.
+
+**Testes indispensáveis:** projeto configurado-inativo não pesquisado; projeto ativo mas branding incompleto bloqueado; pesquisa adaptativa conserva cobertura diária dos ativos; lote de cinco sem duplicados e sinalização quando insuficiente; tema com seis dias reutilizável, após sete dias em reavaliação, renovado apenas após decisão semanal documentada; dois ou mais temas selecionados geram proposta de ordem editável sem publicar. O gate de tema e o gate de publicação mantêm-se separados.
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
@@ -117,7 +131,7 @@ Duas aprovações persistentes e inequívocas: tema antes de guião; publicaçã
 1. **Todos os projetos Nexus** aparecem em «Adicionar», mesmo sem sociais e sem branding; só projetos Nexus reais podem ser adicionados. Adicionar **não** ativa nem inicia pesquisa.
 2. Rascunho Social sem branding/conta ou projeto inativo **não inicia pesquisa**; perfil completo com conta configurada e ativação pode pesquisar mesmo sem OAuth. Perda da última conta suspende operações dependentes sem apagar histórico.
 3. Uma nova marca com sociais no Nexus é ativável sem editar enum de IDs nem escrever no repo alheio.
-4. Pesquisa daily/weekly com fontes/datas e estados; sem fonte válida não produz scores arbitrários.
+4. Pesquisa diária e semanal **só para projetos Social ativos/configurados com branding completo**, adaptativa por prioridade; sem fonte válida não produz scores arbitrários.
 5. Hidden Layer apenas formato narrado vertical; Vefi/UtopIA vídeo+carrossel; adaptação por rede com aprovação.
 6. Tema sem aprovação nunca gera guião/asset; mudança do tema exige versão nova.
 7. Pacote alterado depois de aprovação exige nova autorização por conta/rede/hash.
