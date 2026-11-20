@@ -1,6 +1,14 @@
-# Analytics, atribuição e aprendizagem — contrato funcional
+# Motor 4 — Analytics, atribuição e aprendizagem (contrato funcional)
 
-> Documento de requisitos; não implica que APIs, contas ou dashboards estejam conectados. **Null/indisponível não é zero**. Dados de exemplo têm de ser identificados como exemplo. Fórmulas e cadências abaixo são propostas a confirmar no contrato técnico.
+> **Motor 4 aprovado como motor lógico separado do Motor 3/Postiz**. Documento de requisitos; não implica que APIs, contas ou dashboards estejam conectados. **Null/indisponível não é zero**. Dados de exemplo têm de ser identificados como exemplo. Fórmulas e cadências abaixo são propostas a confirmar no contrato técnico.
+
+## 0. Fronteira entre Motor 3 e Motor 4 (DECIDIDO)
+
+- **M3/Postiz:** agendamento, execução, IDs de posts, recibos, estado operacional, consulta de calendário. É fonte operacional da publicação, não motor de inferência.
+- **M4/Analytics & Learning:** observações e eventos de conversão de fontes autorizadas (Postiz, plataformas sociais, analytics dos sites/apps ou recolha manual), normalização de métricas, armazenamento histórico, custos, experiências e aprendizagem por projeto. Recebe IDs e status de publicação do M3, **não escreve no Postiz nem altera agenda**.
+- **M4 → M1:** sinais e hipóteses fundamentadas por evidência para melhorar prioridades e temas; **não** comando de agendamento/produção/publicação.
+- A indisponibilidade de M4 não bloqueia posts já agendados no Postiz; a indisponibilidade de M3 não apaga dados históricos do M4. M4 não implica quarto agente LLM residente nem scheduler de publicações.
+- **P5-C:** calendário no Nexus de leitura; alterações exclusivamente no Postiz. A análise de uma publicação pode continuar a partir dos dados históricos mesmo que seja cancelada/reagendada no Postiz, distinguindo estados e janelas.
 
 ## 1. Princípio
 
@@ -75,11 +83,11 @@ O KPI principal (North Star) e metas numéricas finais por projeto **ainda carec
 
 ## 7. Aprendizagem e experiências controladas
 
-**DECIDIDO:** Motor 3 deve produzir recomendações sustentadas no histórico do projeto e em experiências controladas. Guardar por variante: tema, hook, primeiros segundos, duração, estrutura, voz, estilo, ritmo, legendas, CTA, formato, canal e horário, custo e fornecedor (quando aplicável). A experiência regista antes de publicar hipótese, variável a testar, população/condições, métrica primária, janela e limite mínimo de observações. Pode terminar `inconclusiva` sem modificar a rubrica. Recomendações para Motor 1 citam publicações, medições, datas e confiança.
+**DECIDIDO:** **Motor 4** deve produzir recomendações sustentadas no histórico do projeto e em experiências controladas. Guardar por variante: tema, hook, primeiros segundos, duração, estrutura, voz, estilo, ritmo, legendas, CTA, formato, canal e horário, custo e fornecedor (quando aplicável). A experiência regista antes de publicar hipótese, variável a testar, população/condições, métrica primária, janela e limite mínimo de observações. Pode terminar `inconclusiva` sem modificar a rubrica. Recomendações para Motor 1 citam publicações, medições, datas e confiança.
 
 **PROPOSTO:** snapshots em 2h/24h/72h/7d/30d; não assumir API em tempo real, sincronização diária ou acesso a curvas de retenção sem prova. O contrato deve distinguir faltas, atrasos e estimativas.
 
-## 7. Comparação justa
+## 8. Comparação justa
 
 - Por **projeto, plataforma, conta, formato e janela desde a publicação**.
 - Orgânico vs. promovido separados; assinalar promoção e custo.
@@ -88,7 +96,7 @@ O KPI principal (North Star) e metas numéricas finais por projeto **ainda carec
 - A/B só quando hipótese e variável primária são registadas antes de observar os resultados; diferenças podem dever-se à distribuição/algoritmo e não à variante.
 - Não assumir causalidade de correlações; recomendações listam publicações e medições que sustentam a hipótese.
 
-## 8. Dashboard — funcional primeiro, visual depois (DECIDIDO)
+## 9. Dashboard — funcional primeiro, visual depois (DECIDIDO)
 
 **F1 não prevê design detalhado do dashboard.** O separador Social já existente no Nexus só necessita de uma interface funcional e acessível que:
 - **Adicionar projeto** lista todos os projetos Nexus; pode configurar perfis Social em rascunho. A lista de pesquisa e relatórios só contém projetos Social configurados, ativos e com branding completo; não cria projeto Nexus independente.
@@ -99,6 +107,6 @@ O KPI principal (North Star) e metas numéricas finais por projeto **ainda carec
 
 **Depois de os motores e dados reais estarem funcionais**, planear UX, hierarquia de informação, gráficos, layouts, sete áreas de informação propostas (Overview, Intelligence, Studio, Publishing, Analytics, Experiments, Costs), responsividade avançada e acabamento visual. Estas sete áreas não são uma encomenda de sete páginas na F1. Nada de dashboards decorativos com números simulados apresentados como resultados.
 
-## 9. Dependências para implementar
+## 10. Dependências para implementar
 
 Inventariar métricas e permissões reais por plataforma; definir eventos das apps/sites; aprovar KPI prioritário e janela; evoluir contrato v1 com histórico sem exceder limites de retrato. Ver ALINHAMENTO_CONTRATO_V1.md e auditoria-f0.md §4.3.
