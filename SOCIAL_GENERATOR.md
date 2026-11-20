@@ -10,10 +10,11 @@ Construir um sistema de criação, distribuição e aprendizagem de conteúdo pa
 
 - O **dashboard Social existe dentro do Nexus**, em PC e móvel; este repositório contém o motor e contratos, não uma segunda aplicação ou um segundo orquestrador.
 - **Multi-projeto ligado exclusivamente ao Nexus**: **Adicionar projeto mostra todos os projetos Nexus**, incluindo sem redes sociais ou branding. Selecionar adiciona só um **rascunho de perfil Social**, sem criar novo projeto Nexus ou iniciar tarefas. **Pesquisa apenas para perfis Social configurados, ativos e com branding completo** (com conta social identificada para o canal, sem exigir OAuth). Nem todos os projetos Nexus precisam de Social. Candidatos ao MVP: The Hidden Layer, Vefi e UtopIA, se configurados/ativos.
-- **Três motores partilhados**:
+- **Quatro motores lógicos partilhados (arquitetura aprovada)**:
   1. **Intelligence / Pesquisa**: estudar tendências, concorrência, formatos e publicações com bom desempenho; recomendar oportunidades por projeto.
   2. **Production / Produção**: transformar um tema aprovado em guião, recursos, composição, variantes, prévias e pacote exportável.
-  3. **Distribution & Scheduling via Postiz + Analytics & Learning**: o **Postiz é o scheduler e publicador**; Nexus apenas consulta o calendário e resultados via adaptador. Métricas e aprendizagem continuam um domínio lógico que pode ser separado no futuro, mas **a criação de um quarto motor não está aprovada**.
+  3. **Distribution & Scheduling (Postiz)**: após gate final, entrega os pacotes aprovados ao Postiz, que agenda/publica; Nexus apenas consulta o calendário e estados sincronizados, sem gerir edições de posts já agendados.
+  4. **Analytics & Learning**: motor lógico separado, que recolhe e normaliza métricas, conversões, custos e experiências, aprendendo por projeto e enviando sinais ao Motor 1. **Não agenda/publica nem cria um quarto agente permanente.**
 - Pesquisa **diária leve** e relatório **semanal aprofundado** são cadências decididas; fontes: YouTube, Instagram, Google/Trends, Reddit, TikTok, X, LinkedIn e fontes oficiais. Concorrência híbrida (referências manuais e descoberta), score adaptativo por projeto. Reutilizar scheduler Nexus quando provado; inicialmente manual. **Entrevista P2-C:** pesquisa de todos os projetos Social **configurados, ativos e com branding completo**, com profundidade maior para campanhas e tendências relevantes; **projeto configurado mas inativo não é pesquisado**.
 - **Temas e planeamento editorial:** cada lote de recomendações oferece **no mínimo cinco temas** distintos com evidência; permite escolher **vários** e **só depois da produção** apresenta proposta justificada de calendário com ordem, datas, horas, canais e contas, junto à prévia da peça. Um tema só pode ser reutilizado como recomendação vigente até **7 dias desde a última validação**, passando depois a reavaliação na pesquisa semanal profunda. Ver [CICLO_TEMAS.md](docs/CICLO_TEMAS.md).
 - **Aprovação humana do tema antes do guião/produção** e **nova aprovação da peça/pacote específico antes de publicar**. A aprovação de uma ferramenta no Nexus não substitui nenhuma destas.
@@ -48,9 +49,10 @@ Estas são **intenções editoriais**, não provas de contas ligadas nem autoriz
 Nexus (UI Social, sessões, permissões, gates, limites, supervisão)
   ├─ Motor 1: Research/Intelligence ──> oportunidade aprovada
   ├─ Motor 2: Production ────────────> pacote/preview validado e aprovado
-  └─ Motor 3: Postiz adapter / scheduling & publishing
-       └─ Postiz: scheduler independente + resultados -> calendário Nexus
-       └─ analytics/aprendizagem de resultados (separação futura pendente)
+  ├─ Motor 3: Postiz adapter / scheduling & publishing
+  │    └─ Postiz: scheduler independente + estados -> calendário Nexus (leitura)
+  └─ Motor 4: Analytics & Learning
+       └─ métricas de redes / Postiz / UTMs / apps + aprendizagem -> Motor 1
        └─ observações e experiências ──> recomendações do Motor 1
 
 Persistência Social contratada (dados e evidências)
@@ -70,7 +72,7 @@ O fluxo de negócio segue **Workspace → Projeto → Campanha → Ideia/Oportun
 4. Motor 2 pesquisa em profundidade, escreve guião/storyboard, compõe recursos, gera prévias, verifica qualidade e fornece ficheiros editáveis e MP4/carrossel. **Depois da produção**, apresenta prévia, legendas, CTA, qualidade, custos e proposta explicada de agendamento (ordem, datas, horas, contas/plataformas) para revisão.
 5. Humano pode pedir alterações ao vídeo/carrossel ou ajustar datas, horas, contas e canais. **Só aprova a versão exata do pacote e calendário** quando estiver satisfeito; mudança material invalida aprovação anterior.
 6. **Só após o segundo gate**, o Motor 3 recebe o pacote aprovado para **agendar através do Postiz** (quando elegível) ou preparar agendamento manual pendente de confirmação. **O Postiz publica no horário agendado independentemente do scheduler Nexus; o dashboard Social do Nexus consulta calendário e histórico do Postiz**, incluindo agendados, publicados, falhados e pendentes. `agendado` e `publicado` são estados distintos, cada um requer prova; nunca repetir envio incerto sem reconciliação.
-7. Recolher métricas datadas e conversões; comparar janelas equivalentes; gerar aprendizagem citável por projeto, usada em novas recomendações.
+7. **Motor 4** recolhe métricas datadas, custos e conversões de fontes disponíveis, compara janelas e experiências e gera aprendizagem citável por projeto para o Motor 1; a falha da análise não bloqueia publicações confirmadas no Postiz.
 
 ## 7. Ferramentas e integração
 
@@ -83,7 +85,7 @@ O fluxo de negócio segue **Workspace → Projeto → Campanha → Ideia/Oportun
 
 ## 8. Dashboard e aprendizagem
 
-O **calendário editorial no Nexus** apresenta agendados, publicados, erros/cancelados e pendentes com filtros e última sincronização; **Postiz é a fonte de verdade** para agendamento e publicação, nunca um scheduler duplicado. Ver [POSTIZ.md](docs/POSTIZ.md).
+O **calendário editorial no Nexus é só de consulta** (opção P5-C); para editar/reagendar/cancelar abre-se o post no Postiz. Apresenta agendados, publicados, erros/cancelados e pendentes com filtros e última sincronização; **Postiz é a fonte de verdade** para agendamento e publicação, nunca um scheduler duplicado. Ver [POSTIZ.md](docs/POSTIZ.md).
 
 **Ordem de implementação decidida:** primeiro garantir o separador Social do Nexus funcional (Adicionar = catálogo completo Nexus; configuração e ativação separadas; pesquisa só ativos com branding, estados, aprovações, outputs e métricas). **Só depois** definir o desenho visual detalhado, gráficos e navegação avançada. Overview/Intelligence/Studio/Publishing/Analytics/Experiments/Costs são áreas de informação possíveis, não sete páginas a desenhar na F1.
 
@@ -102,7 +104,8 @@ Medir alcance, retenção (tempo médio, conclusão/curvas quando disponíveis),
 | docs/BIBLIOTECA.md | Biblioteca de recursos, direitos e caminhos |
 | docs/ALINHAMENTO_CONTRATO_V1.md | Adenda funcional a compatibilizar com F0 antes de alterar schema/código |
 | docs/ROADMAP.md | Fases e gates |
-| docs/POSTIZ.md | Motor 3, Postiz e calendário consultável no dashboard Nexus |
+| docs/POSTIZ.md | Motor 3, Postiz e calendário consultável (edições só no Postiz) |
+| docs/METRICAS.md | Motor 4, métricas, atribuição, experiências e aprendizagem |
 | docs/auditoria-f0.md | Evidência técnica do Nexus em 20/11/2026; **não apagar nem substituir** |
 | CLAUDE.md / TODO.md / SESSOES.md | Regras, trabalho atual e sessões |
 
