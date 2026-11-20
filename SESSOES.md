@@ -1,5 +1,14 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Motor 3 Postiz e calendário Nexus
+
+**TL;DR:** Confirmada produção em fila (P4-B), Postiz como scheduler/publicador independente do Nexus e calendário Postiz consultável no dashboard Social (agendados, publicados, falhados, pendentes). Criado contrato docs/POSTIZ.md e atualizados requisitos, decisões e roadmap. Sem implementação executável ou integração instaladas.
+
+- **Decisões:** SG-D037 a SG-D040 no `docs/DECISOES.md`.
+- **Contrato:** `docs/POSTIZ.md`, com Postiz como fonte operacional de agenda e Nexus como leitura/supervisão.
+- **Pendentes:** Cloud vs self-hosted, capacidades por canal, API, política de edição/reagendamento/cancelamento a partir do Nexus.
+
+
 ## 2026-11-20 — Entrevista P3-B adaptada: calendário após produção
 
 **TL;DR:** O utilizador escolheu B com condição: na pesquisa escolhe apenas temas, sem datas nem calendário. Após o Motor 2 produzir, vê prévia e informação relevante, incluindo proposta completa de ordem, dias, horas, contas/canais. Pode corrigir; só após aprovação final o Motor 3 recebe o pacote e agenda por API autorizada ou deixa preparação manual pendente. Documentação, sem código.
