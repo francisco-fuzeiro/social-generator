@@ -82,6 +82,14 @@ Ferramentas:
 - **Voz/TTS**: adaptador (voz humana ou fornecedor legalmente autorizado), sem promessa de ElevenLabs ou custo recorrente. Timing/legendas carecem de prova.
 - **Marcas**: usar bibliotecas próprias e assets autorizados; nenhuma marca/voz deve passar para outro projeto por engano.
 
+### Peça-base e variantes por plataforma — P15-B (DECIDIDO)
+
+O Motor 2 cria **uma peça-base editável, versionada e reutilizável**, associada a tema aprovado, projeto Nexus, branding e campanha opcional. Para as plataformas configuradas e tecnicamente elegíveis, prepara **adaptações seletivas e justificadas** quando o benefício editorial/técnico o exigir, em vez de criar produções inteiramente independentes ou duplicar renders por sistema. Exemplos: hook, duração, proporção, legendas, thumbnail, título, copy/hashtags e CTA. **Se a base já serve numa rede, reutilizar render e modificar só metadados necessários**.
+
+Cada variante conserva referência à base, manifesto de alterações/recursos reaproveitados, versão/hash, custo, restrições de canal e QA por plataforma. Mudanças de base não alteram silenciosamente variantes já aprovadas; assinalar descendentes afetadas. **Não assumir compatibilidade nem capacidades API sem prova**, mesmo que exista conta configurada.
+
+**Primeiro gate mantém-se apenas escolha de temas.** O Motor 1 pode recomendar formatos e redes com evidência, e o Motor 2 considera canais configurados para preparar variantes. **Depois da produção**, o dashboard apresenta prévias e pacote/calendário por plataforma+conta para aprovação humana **individual** de versão/hash, copy/CTA e horário; destinos acrescentados posteriormente devem ser preparados/validados antes do gate. A decisão sobre **quantas variantes criar por defeito** ficará para P16. Ver [VARIANTES.md](VARIANTES.md).
+
 ### Revisões inteligentes e localizadas (DECIDIDO, P7-B)
 
 Durante a revisão pré-publicação, o utilizador pode solicitar alterações pontuais (texto, narração, imagens, animações, ritmo, transições). O Motor 2 deve **preservar as partes já validadas** e alterar/renderizar apenas as partes afetadas, **quando tecnicamente possível**, sem regeneração integral por omissão. Identificar dependências entre cenas/áudio/legendas, justificar quando a mudança tiver de abranger mais partes e manter QA coerente.
@@ -102,8 +110,8 @@ Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, gu
 
 **Pré-condição de entrada no Motor 3:** o Motor 2 terminou a peça e o utilizador aprovou explicitamente **a versão/hash do pacote final, conta/plataforma, texto e calendário proposto** na revisão pré-publicação. Antes desse ponto, não executar agendamento nem publicação. Motor 3 é o executor do agendamento aprovado; não pede ao utilizador que decida datas na primeira seleção de temas. Em caso de mudança material no pacote ou calendário, o segundo gate tem de ser repetido.
 
-- Adaptar legenda, proporção, duração, thumbnail, CTA, hashtags e dados por rede sem desvirtuar a ideia.
-- Preparar pacote por **conta+plataforma+versão**; apresentar ao humano o que será enviado.
+- **P15-B:** distribuir a partir da peça-base e das **variantes por plataforma** criadas pelo M2 só quando úteis; preservar IDs, versões/hashes, QA e diferenças de texto/CTA. M3 **não gera vídeos novos** nem escolhe variações de forma autónoma. Adapta metadados técnicos quando autorizado e compatível, sem desvirtuar a ideia.
+- Preparar pacote por **conta+plataforma+versão/hash da variante** e respetiva copy/data aprovada; **cada destino tem gate final independente** e só os aprovados seguem para Postiz.
 - **Aprovação final explícita e persistente** antes de enviar/publicar.
 - Na fase inicial, validar o **Postiz** e capacidade real dos canais; se integração não for elegível, preparar agendamento manual com instruções, ficheiros e estado pendente até prova de ação humana. Nunca usar scheduler do Nexus como alternativa para publicação. Integração automática apenas via Postiz e permissões verificadas. Não chamar `agendado` a um pacote somente exportado. Registar confirmação de agendamento e, separadamente, de publicação.
 - Estados separados: rascunho, por aprovar, autorizado, exportado, em envio, publicado, falhou, incerto. Uma falha após envio sem recibo não autoriza retry cego.
