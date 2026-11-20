@@ -97,6 +97,18 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **P8-B é funcionalidade a implementar no dashboard Social do Nexus na fase de revisão, mas não autoriza antecipar o design visual avançado.** Ver [REVISOES.md](REVISOES.md).
 
+## Correções automáticas com limite — P9-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R48 | Máximo três tentativas por ronda de revisão | Uma aplicação inicial do feedback + até duas correções automáticas após falhas QA, **no máximo 3 tentativas no total**; não reiniciar automaticamente o ciclo |
+| R49 | QA e paragem antecipada | Verificar depois de cada tentativa; parar se atingir critérios, bloqueio técnico, quota/tempo ou necessidade de fornecedor pago não aprovado |
+| R50 | Falhas persistentes transparentes | Após insucesso, apresentar melhor rascunho disponível e lista de falhas/inconclusões; não declarar validado nem passar a Postiz automaticamente |
+| R51 | Evidência por tentativa | Guardar versão, índice 1–3, testes executados, falhas e alterações, distinguindo automação validada de revisão editorial/factual humana |
+| R52 | Novo ciclo mediante pedido humano | Uma ronda adicional só começa com pedido explícito do operador, sem loop infinito nem chamadas pagas silenciosas |
+
+**P9-B é limite funcional de qualidade, não autorização para gastos nem para ultrapassar os gates humanos.** Contrato em [REVISOES.md](REVISOES.md).
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
