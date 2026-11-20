@@ -1,6 +1,6 @@
 # Revisões inteligentes do Motor 2 — contrato de produto
 
-> Entrevistas **P7-B e P8-B**, 20/11/2026: **DECIDIDO** rever de forma localizada preservando partes válidas, com histórico e recuperação de versões; **feedback na prévia por momentos do vídeo, incluindo comentários gerais**. Os pormenores técnicos e limites de tentativas continuam propostos, não implementados.
+> Entrevistas **P7-B, P8-B e P9-B**, 20/11/2026: **DECIDIDO** rever de forma localizada, preservar partes válidas, receber comentários por instantes + instruções gerais e fazer **até 3 tentativas de QA/correção por ronda de revisão (incluindo a aplicação inicial)**. Algoritmos e testes técnicos ainda não implementados.
 
 ## Decisão central
 
@@ -33,6 +33,22 @@ A **fila automática de produção P4-B** pode continuar com outras peças, suje
 
 **Não é um editor de vídeo completo:** selecionar objetos na tela, desenhar anotações e editar diretamente keyframes/cenas/timeline não são requisitos aprovados da P8-B.
 
+## Limite de correções automáticas — P9-B (DECIDIDO)
+
+Cada **ronda de revisão solicitada pelo utilizador** pode realizar **no máximo três tentativas de execução/validação no total**:
+
+1. **Tentativa 1:** aplicar as alterações localizadas pedidas e executar as verificações de qualidade pertinentes (QA).
+2. **Tentativa 2, se necessária:** corrigir automaticamente os defeitos verificáveis identificados na primeira tentativa e voltar a testar.
+3. **Tentativa 3, se necessária:** última correção automática e nova verificação; depois **parar** e informar o resultado.
+
+**Parar antes do teto** sempre que os critérios forem cumpridos, houver bloqueio técnico, o limite de recursos/tempo do Nexus for atingido ou forem necessários recursos pagos não autorizados. As três tentativas constituem um **máximo**, não um objetivo nem permissão para gastar.
+
+As verificações automáticas só podem afirmar ter detetado problemas que de facto tenham sido testados: sincronização de legendas/voz quando tecnicamente verificável, erro de render, integridade, formatos, duração, recursos em falta, etc. Qualidade editorial, factual, visual e direitos que não possam ser validados automaticamente **mantêm pendência de revisão humana**. Não inventar sucesso de QA.
+
+Se ainda houver defeitos ao terminar, mostrar ao utilizador a **melhor versão disponível de rascunho**, com **problemas e verificações falhadas/inconclusivas explicitamente identificados**, versões e tentativas realizadas. Um bloqueio de qualidade/segurança não deve ser apresentado como peça pronta para publicar. O operador pode pedir nova ronda, corrigir manualmente ou suspender; **cada nova ronda exige nova ação explícita do operador**. Nenhum retry interminável.
+
+**Histórico e custo:** guardar `attemptIndex` 1–3, resultados QA e causas das correções e hashes/versões de artefactos. As tentativas respeitam quotas, reservas e políticas do Nexus, isolam peças em produção e reutilizam recursos sempre que possível. **Sem chamadas pagas, novas subscrições ou produção integral onerosa sem aprovação prévia**. Este limite de QA não altera os dois gates humanos nem autoriza entrega ao Motor 3/Postiz.
+
 ## Modelo técnico sugerido (PROPOSTO)
 
 - `creativeId` estável por peça; `versionId` e `parentVersionId` por revisão; `contentHash` do pacote.
@@ -64,11 +80,14 @@ A **fila automática de produção P4-B** pode continuar com outras peças, suje
 8. Pausar em 00:12 e 00:38 gera **dois comentários com tempos e texto separados**, mais notas gerais sem tempo; Motor 2 recebe ambos associados ao ID da versão.
 9. Numa nova versão com duração/timing alterado, comentários da versão anterior não mudam de alvo silenciosamente; ficam preservados no histórico.
 10. O operador consegue submeter vários comentários numa única ronda de revisão, sem que cada nota desencadeie automaticamente um render ou despesa.
+11. Numa revisão com legenda dessincronizada, conta-se a aplicação inicial como tentativa 1; no máximo duas correções automáticas adicionais, interrompendo logo após sucesso ou bloqueio.
+12. Após três tentativas sem qualidade suficiente, o estado assinala QA falhado/inconclusivo e apresenta a melhor versão disponível com relatório; **não marca publicável automaticamente nem envia ao Postiz**.
+13. Uma tentativa que precise de fornecedor pago não é iniciada sem autorização; não reinicia contadores para contornar o teto de recursos.
 
 ## Ainda por decidir
 
 - **Fechado em P8-B:** feedback na prévia por timestamp e instruções gerais; **não** editor visual completo. Detalhes do control de edição de notas e feedback para carrosséis continuam por especificar.
-- Número de revisões automáticas/tentativas, limites por peça e política de escalada.
+- **Fechado em P9-B:** até 3 tentativas por ronda (1 aplicação + até 2 correções), com QA e escalada ao operador após falhas. Permanecem por definir os **limites concretos de CPU/tempo/custos por ronda**, os testes automáticos disponíveis por formato e o comportamento de re-render incremental.
 - Estratégias de cache, segmentos e dependências após prova de render e consumo.
 - Retenção/storage e acesso a versões antigas.
 
