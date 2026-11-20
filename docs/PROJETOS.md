@@ -2,18 +2,25 @@
 
 > Atualizado em 20/11/2026 segundo a entrevista. **DECIDIDO:** o Social Generator não cria projetos de raiz. Só utiliza **projetos já existentes no catálogo do Nexus que tenham redes sociais configuradas**. Dos projetos elegíveis, só ficam ativos no Social os que forem explicitamente selecionados/ativados. Perfis listados abaixo são intenção editorial inicial, não prova de contas conectadas.
 
-## 1. Elegibilidade e ciclo de vida — decisão vinculativa
+## 1. Adicionar, configurar e ativar — decisão corrigida da entrevista
 
-A fonte de verdade dos projetos é o **Nexus**. A interface Social mostra apenas os projetos que cumprem cumulativamente:
-1. **Existem no catálogo de projetos do Nexus** (ID canónico estável).
-2. **Têm pelo menos uma conta social configurada no Nexus**, identificando plataforma e conta (handle/URL ou identificador associado). **Não é obrigatório OAuth/API autenticada** para se tornar elegível; uma indicação genérica «utiliza sociais» sem conta identificável não chega.
-3. Não estão arquivados, inacessíveis ou inelegíveis pelas políticas do Nexus.
+**Nexus é a única fonte de projetos.** O botão **Adicionar projeto**, no separador Social do Nexus, apresenta **todos os projetos existentes no catálogo do Nexus** que o utilizador pode consultar, mesmo que não tenham contas sociais ligadas, branding ou perfil Social. Não criar um projeto novo no Nexus a partir do Social.
 
-A lista de elegíveis é **o catálogo filtrado do Nexus**, não uma lista livre em código. A ação de interface é **Ativar Social num projeto Nexus elegível**, e nunca «Criar um projeto novo». A ativação é opcional: muitos projetos do Nexus nunca aparecerão no Social ativo. Um projeto com socials não fica ativado automaticamente.
+A seleção adiciona um **perfil Social em rascunho** associado ao ID canónico Nexus; não significa elegibilidade automática para pesquisa, produção ou publicação. Nem todos os projetos Nexus precisam de ser adicionados ou ativados no Social.
 
-**Regra de contrato:** Nexus project ID = referência canónica; configuração Social acrescenta identidade editorial, canais autorizados, branding e objetivos, ligada ao ID Nexus. Evitar dois IDs independentes sem mapa explícito para dados históricos. IDs de exemplo F0 (`the-hidden-layer`, `vefi`, `utopia`) só servem de fixtures ou mapeamentos legados; não são enumeração definitiva nem prova de existência no Nexus.
+Fluxo decidido:
 
-**Se for retirada a última conta social no Nexus:** impedir novas campanhas/publicações e assinalar suspensão/inelegibilidade; **não apagar** histórico, provas, decisões ou métricas. Se o projeto for desativado no Social, conservar histórico e não executar trabalhos novos. Reativação exige nova verificação de permissões e contas. Sem conta conectada/aprovação, exportação manual é possível apenas dentro das políticas e do perfil autorizado, mas o projeto tem de continuar a cumprir o gate de elegibilidade do Nexus.
+1. **Adicionar projeto:** lista integral dos projetos Nexus disponíveis ao utilizador, independentemente de socials, branding ou ativação Social.
+2. **Configurar Social:** estabelecer perfil editorial/branding adequado (marca, identidade visual, tom, idioma, público e objetivos), plataformas e pelo menos uma conta social identificável/configurada para as operações associadas ao canal. Não é obrigatório OAuth/API autenticada.
+3. **Ativar:** opção explícita do utilizador após validar os requisitos mínimos, sem ativação implícita ao adicionar. Um rascunho incompleto permanece editável, assinalando os campos em falta.
+4. **Pesquisar:** **só projetos adicionados ao Social, ativos e com perfil de branding completo/configurado**. Verificar o estado do perfil e dos canais relevantes antes da execução diária, semanal ou pontual. Em caso de falha, indicar motivo e não consumir recursos.
+5. **Produzir/publicar:** continuar a exigir projeto ativo, marca válida, formatos e contas apropriados, mais os dois gates humanos. API autenticada apenas para capacidades automáticas permitidas.
+
+**Estados propostos tecnicamente:** `nao-adicionado` (só no catálogo Nexus), `rascunho` (adicionado, configuração incompleta/inativo), `pronto` (configuração validada, ainda inativo), `ativo` (pode entrar no Motor 1), `suspenso` (invalidação, desativação ou perda de pré-requisitos), `arquivado` (histórico preservado). Os nomes finais e transições precisam de validação no contrato Nexus. Não eliminar histórico ao desativar.
+
+**Conta configurada vs API:** a decisão P1-B mantém-se: handle/URL/identificador de uma conta configurada é suficiente para operações manuais; OAuth não é requisito para pesquisa ou ativação. É distinto do seletor **Adicionar projeto**, que mostra todos os projetos Nexus mesmo sem qualquer conta social.
+
+**Perda de configuração:** se o branding obrigatório ficar incompleto, um projeto ativo deve ser bloqueado para novas pesquisas até corrigir. Se a conta/plataforma deixar de estar configurada, suspender trabalhos que dependem dela e novas publicações. Preservar histórico, provas, métricas e decisões. A desativação intencional pára novas execuções, sem apagar o projeto do Social.
 
 ## 2. Perfil editorial (extensão da entidade Nexus)
 
@@ -50,18 +57,19 @@ Agência digital portuguesa; vídeos e carrosséis sobre casos e valor para neg�
 
 ### Car Enterprise
 
-Exemplo de extensão futura, não membro automático do Social. Só poderá ser ativado quando existir no Nexus, tiver socials e o operador o ativar. Definir público, redes, recursos e obrigações antes de gerar.
+Exemplo de extensão futura, não membro automático do Social. Se existir no Nexus, aparecerá em «Adicionar projeto» mesmo sem socials. Só entra na pesquisa depois de ser adicionado, configurado com branding e canais relevantes, e ativado. Definir público, redes, recursos e obrigações antes de gerar.
 
 ## 4. Testes contratuais
 
 - Projeto inexistente no Nexus: não aparece e não pode ser criado pelo Social.
-- Projeto Nexus sem conta social identificável configurada: não aparece como elegível; marcar apenas «usa redes sociais» é insuficiente.
-- Projeto Nexus com conta social configurada mas sem API autenticada: é elegível para opt-in; suporta pesquisa/produção e publicação/métricas manuais, não ações API.
-- Projeto Nexus com socials mas `socialEnabled=false`: elegível para ativar, mas não aparece nas listas de produção.
-- Projeto Nexus elegível/ativado: perfil e canais são recuperados sem alteração ao código dos motores.
+- Projeto Nexus sem conta social ou branding: **aparece em «Adicionar projeto»**; ao adicionar, fica rascunho e não é pesquisado.
+- Projeto Nexus com branding completo, conta configurada e opt-in ativo, mas sem API: é pesquisado; produção/publicação e métricas manuais permitidas mediante gates, não ações API.
+- Projeto Nexus adicionado ao Social mas `socialEnabled=false`: continua configurável, mas não é pesquisado nem entra na produção.
+- Projeto Nexus adicionado, com branding incompleto, mesmo ativo por erro: pesquisa bloqueada e motivo explicitado.
+- Projeto Nexus configurado, com branding completo e ativo: perfil e canais recuperados sem alteração ao código dos motores.
 - Remoção de conta/arquivamento: suspender operações, guardar histórico.
 - Tentativa de publicar em conta não associada ao mesmo projeto Nexus: rejeitar.
-- Introduzir um quarto projeto no Nexus com socials: Social permite opt-in sem mudar enums/implementação.
+- Introduzir um quarto projeto no Nexus, mesmo **sem socials**: aparece no seletor «Adicionar» sem alterar enums; pesquisa só começa após completar branding, configuração e ativação.
 - Um projeto com brand kit diferente não pode reutilizar assets restritos de outro sem direitos.
 
 Ver ALINHAMENTO_CONTRATO_V1.md, REQUISITOS.md, BIBLIOTECA.md e METRICAS.md.
