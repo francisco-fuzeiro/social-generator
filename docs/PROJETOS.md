@@ -32,7 +32,13 @@ Contrato de fontes, lacunas, confiança, isolamento, permissões e testes: [BRAN
 
 ## 1.2. Deteção de mudanças e revalidação — P11-B (DECIDIDO)
 
-Após aprovação inicial, verificar **periodicamente fontes autorizadas** e comparar com o perfil de branding validado. Mostrar diferenças, fontes/datas, confiança e conflitos num **pedido de alteração de marca**, sem atualizar automaticamente identidade oficial. O utilizador pode **aceitar, rejeitar ou corrigir**, com histórico de decisão/versão. Não confundir uma mudança no website com alteração definitiva da identidade de marca. A cadência exata e o comportamento de notificação ficam para configuração técnica. A nova versão não altera automaticamente publicações já agendadas no Postiz nem conteúdo já publicado. Política para peças ainda não publicadas é decisão pendente P12. [Contrato BRANDING](BRANDING.md).
+Após aprovação inicial, verificar **periodicamente fontes autorizadas** e comparar com o perfil de branding validado. Mostrar diferenças, fontes/datas, confiança e conflitos num **pedido de alteração de marca**, sem atualizar automaticamente identidade oficial. O utilizador pode **aceitar, rejeitar ou corrigir**, com histórico de decisão/versão. Não confundir uma mudança no website com alteração definitiva da identidade de marca. A cadência exata e o comportamento de notificação ficam para configuração técnica. **P12-B:** a aprovação de nova versão gera **auditoria dos criativos em produção, pendentes de revisão, aprovados ainda não enviados e posts já agendados**. Mostrar diferenças e revisões localizadas propostas para decisão humana; não regenerar por omissão. Publicações agendadas são **sinalizadas para revisão manual no Postiz**, sem mutação/cancelamento pelo Nexus. Publicados e histórico não são alterados. [Contrato BRANDING](BRANDING.md).
+
+## 1.3. Conteúdos afetados pela mudança de marca — P12-B (DECIDIDO)
+
+Quando uma nova versão de branding for aprovada, auditar dependências dos conteúdos desse projeto: **em produção**, **à espera de revisão**, **aprovados mas ainda não entregues ao Postiz** e **já agendados**. O dashboard Nexus apresenta lista com estado, elementos de branding divergentes e proposta de revisão localizada quando relevante. O utilizador **decide por peça** se mantém, corrige ou adia; uma mudança de perfil por si só não refaz conteúdos. Revisões materialmente diferentes originam novas versões e exigem novamente aprovação final.
+
+**Agendamentos existentes no Postiz:** apenas sinalizar alerta e opção de abrir o post no Postiz para intervenção manual; **não** editar, cancelar ou reagendar via Nexus. Não publicar afirmações falsas de sincronização nem afetar projetos/contas de outras marcas. Contrato: [BRANDING.md](BRANDING.md) §4.2.
 
 ## 2. Perfil editorial (extensão da entidade Nexus)
 
