@@ -11,14 +11,14 @@
 - [ ] **Validação do Francisco antes da SG-M001** ou da primeira missão F1.1.
 - [ ] Recuperar e confrontar os dois documentos originais completos do ChatGPT, caso sejam disponibilizados (SOCIAL_GENERATOR.md 489 linhas; adenda 284 linhas).
 - [ ] Definir primeiro projeto/tema do piloto técnico; lembrar que MVP transversal exige três projetos.
-- [ ] Inventariar **contas socials do catálogo Nexus e permissões reais por plataforma**; só esses projetos podem aparecer para ativação Social. Mapear métricas realmente disponíveis por conta.
+- [ ] Inventariar **todo o catálogo de projetos Nexus** para «Adicionar projeto» (sem filtros por redes/branding); documentar rascunho de perfil Social, validação de branding, ativação e gate de pesquisa. Inventariar contas e permissões reais por plataforma para operações dependentes de canal.
 - [ ] Inventariar biblioteca `D:\AI\Biblioteca` e política de licenças/retencão sem alterar os ficheiros.
 - [ ] Definir KPIs numéricos, pesos exatos de scoring e cadência horária (a pesquisa **diária + semanal** já está decidida), com disponibilidades reais das APIs.
 - [ ] Em 23/11/2026 alterar a visibilidade do repo para privado, confirmar e rever exposição de segredos.
 
 ## Próximas missões técnicas (não autorizadas por esta checklist)
 
-- [ ] F1.1 — contrato/leitor/vista Social Nexus mínimos, integrados com projetos do Nexus com socials e opt-in; sem criação independente nem design visual detalhado.
+- [ ] F1.1 — contrato/leitor/vista Social Nexus mínimos; **Adicionar mostra todos os projetos Nexus**, configurar perfil Social em rascunho e pesquisar apenas projetos **ativos, configurados, com branding completo**; sem criação Nexus independente nem design visual detalhado.
 - [ ] F1.2 — decisões editoriais persistentes e idempotentes.
 - [ ] F1.3 — prévias multimédia protegidas.
 - [ ] F2.1–F2.3 — pesquisa diária leve + relatório semanal aprofundado (execução inicialmente manual), provas de render e um piloto publicável; canais e formatos da entrevista.
