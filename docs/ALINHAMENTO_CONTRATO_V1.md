@@ -181,6 +181,16 @@ A fila automática P4-B do Motor 2 pode ordenar trabalho selecionado pela priori
 
 **Contrato técnico PROPOSTO:** `PriorityProposal` ligado a `nexusProjectId`, campanhas e conteúdos gerais, com razões, evidências, estimativa de produção, incerteza, ajustes humanos e versão da proposta. Pesos, quotas exatas, desempates e limites numéricos continuam por validar. Ver [CAMPANHAS.md](CAMPANHAS.md) §3.1.
 
+## 2.14. P15-B — peça-base com variantes inteligentes (DECIDIDO)
+
+A produção multi-rede segue o modelo **peça-base editável e versionada → variantes de plataforma justificadas**. O Motor 2 reutiliza cenas, assets, guiões e renders quando a base já cumpre as condições; modifica seletivamente hook, duração, proporção, legendas, capa/thumbnail, título, copy, hashtags e CTA **se houver justificação editorial, estratégica ou restrição técnica comprovada**. Uma variante **não** exige produção independente por plataforma, nem obriga a alterações cosméticas sem valor.
+
+**Rastreabilidade:** vincular `baseCreativeId`/`baseVersionId` à `variantId`/`variantVersionId` e a ficheiros, manifesto, hash, QA, origem e custos, no contexto de projeto Nexus/campanha opcional. A alteração da peça-base pode invalidar uma variante dependente; não reescrever aprovadas nem posts já agendados. As capacidades reais das contas/Postiz são validadas separadamente da intenção editorial.
+
+**Gates:** a escolha inicial continua **só de temas**; M1 sugere formato/redes, M2 prepara variantes com base nos canais configurados e evidências. **No segundo gate, após produção**, o operador inspeciona prévias e decide por **variante+versão/hash+conta+plataforma+copy/CTA+data/hora**. Apenas pacotes individualmente aprovados seguem ao M3/Postiz; acrescentar uma rede após produção pode exigir preparar outra variante e respetivo QA/segundo gate. Sem datas/horas no gate inicial.
+
+**Proposta técnica de schema:** `CreativeBase`, `PlatformVariant`, `ApprovedDistributionPackage` com IDs/versões e permissões por conta. Nomes e cardinalidades por validar em F1/F2; não criar outro scheduler ou transferir para M3 a geração de vídeos. A **quantidade de variantes criada por defeito ainda é uma decisão aberta P16**. Ver [VARIANTES.md](VARIANTES.md).
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
