@@ -134,6 +134,19 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **Horário exato do scan, notificações e política para criativos ainda por publicar não estão fechados**; este último tema passa à P12. Contrato [BRANDING.md](BRANDING.md).
 
+## Auditoria dos criativos após mudança de branding — P12-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R64 | Auditoria desencadeada por branding aprovado | Após aprovação de **nova versão de marca**, identificar criativos do mesmo projeto potencialmente afetados, com versão anterior/atual e referências a assets |
+| R65 | Cobertura de estados do conteúdo | Verificar **em produção, pendente de aprovação, aprovado não enviado e agendado no Postiz**, sem editar conteúdos automaticamente |
+| R66 | Proposta de revisão localizada | Mostrar elementos divergentes, impacto e correções locais sugeridas; operador **decide individualmente atualizar, manter ou adiar**, respeitando custos e QA |
+| R67 | Gates e histórico de versões | Revisão de conteúdo altera versão/hash e exige **nova aprovação final**; peça aprovada com dependência material afetada é assinalada para decisão antes de envio, sem reutilizar autorização obsoleta |
+| R68 | Postiz só com revisão manual | Para posts agendados, exibir alerta e ligação para o Postiz, **sem editar/cancelar/reagendar nem travar remotamente**; sincronizar depois a ação feita pelo operador |
+| R69 | Sem impacto transversal | Preservar publicações anteriores, histórico e marcas de outros projetos; falhas da auditoria não são tratadas como prova de conformidade |
+
+**P12-B não autoriza regeneração automática nem alteração da agenda do Postiz.** Contrato: [BRANDING.md](BRANDING.md) §4.2.
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
