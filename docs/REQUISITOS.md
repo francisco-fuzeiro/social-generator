@@ -73,6 +73,18 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **Quatro motores** não significa quatro daemons, quatro LLMs residentes ou quatro serviços isolados. A fronteira é **lógica e contratual**; o Nexus continua com UI/autorizações e Postiz com execução real de publicação.
 
+## Revisões localizadas e recuperação de versões — P7-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R38 | Revisão localizada de conteúdo | Ao pedir alteração em cena/narração/animação, Motor 2 preserva partes não afetadas **quando possível**; se a alteração implicar dependências, explica impacto e reconstrói apenas o necessário |
+| R39 | Histórico imutável das versões | Cada revisão alterada tem versão/hash distintos e registo do que foi reutilizado/reconstruído; operador compara e recupera uma versão anterior |
+| R40 | Gate de publicação por versão | A aprovação final não se transfere para pacote editado; Motor 3/Postiz só recebe a versão exata e calendário final aprovados |
+| R41 | Revisão integrada na fila de produção | Rever a peça A não suspende desnecessariamente a produção das peças B/C; garantir isolamento de versões/ficheiros e respeitar quotas |
+| R42 | QA e custo de revisão | Validar elementos afetados e produto final; não regenerar o vídeo integral por omissão, não consumir fornecedor pago sem aprovação |
+
+**P7-B é a decisão funcional; detalhes de UI, orçamento de revisões e técnica de render parcial são posteriores.** Contrato: [REVISOES.md](REVISOES.md).
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
