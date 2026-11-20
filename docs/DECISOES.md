@@ -8,7 +8,7 @@
 |---|---|---|
 | SG-D001 | **Adicionar projeto** lista todos os projetos existentes no Nexus, com configuração Social independente e opcional para cada um | O Social não cria novos projetos Nexus; adicionar cria um perfil Social em preparação, não inicia pesquisa nem publicação |
 | SG-D002 | Dashboard é o separador Social do Nexus (PC/móvel) | Não criar aplicação, sistema de contas ou servidor concorrente |
-| SG-D003 | Três motores: Pesquisa → Produção → Distribuição/Métricas/Aprendizagem | Recomendações específicas por projeto; feedback para pesquisa |
+| SG-D003 | **Histórico (substituído por SG-D042):** proposta original com três motores, Pesquisa → Produção → Distribuição/Métricas/Aprendizagem | As funções foram preservadas, mas Analytics & Learning foi separado em quarto motor após aprovação explícita |
 | SG-D004 | Investigar tendências/publicações bem-sucedidas, fontes e concorrência | Fichas de oportunidades com fontes, datas e justificação |
 | SG-D005 | Ideia/tema aprovado **antes** de produzir guião/recursos | Gate humano separado de produção |
 | SG-D006 | Peça final aprovada **antes** de publicação, por versão/conta/plataforma | Alterações invalidam aprovação anterior |
@@ -49,9 +49,12 @@
 
 | SG-D037 | **Entrevista P4 — opção B:** produção em **fila automática de conteúdos selecionados**, com paralelismo apenas se compatível com os limites/recursos da máquina | O Motor 2 continua a produzir as próximas peças sem esperar pela aprovação final das anteriores. Cada peça fica disponível para revisão independente. Nenhuma segue ao Motor 3 sem gate final |
 | SG-D038 | **Motor 3 usa o Postiz para agendamento e publicação, sem depender do scheduler de publicações do Nexus** | O Postiz recebe apenas pacotes aprovados, mantém a agenda e executa a publicação na hora prevista; Motor 3 integra API/eventos e sincroniza estados/recibos. Nexus continua com dashboard, aprovação e orquestração das fases de pesquisa/produção, mas não executa os disparos da publicação |
-| SG-D039 | **Postiz é a infraestrutura de distribuição; separação de Analytics & Learning como Motor 4 ainda NÃO aprovada** | Não criar quatro agentes permanentes nem infra de agendamento duplicada. Decidir Cloud vs. self-hosted antes de instalar/pagar e validar capacidades por rede, runtime contínuo e custo |
+| SG-D039 | **Histórico, superado por SG-D042:** Postiz como infraestrutura de distribuição; separação de Analytics & Learning ainda aguardava aprovação | A aprovação posterior criou quatro **motores lógicos**, sem quatro agentes permanentes. Cloud/self-hosted permanece por decidir |
 
 | SG-D040 | **Dashboard Nexus consulta o calendário completo do Postiz**, incluindo **agendados, já publicados, falhados, pendentes e cancelados**, com filtros por projeto/rede/conta/período e detalhes dos posts | **Postiz é a fonte de verdade operacional** de agendamento e publicação; Nexus mantém uma vista/snapshot sincronizado e assinala última atualização/erros, sem executar um segundo scheduler nem atribuir posts a projetos por adivinhação. O design visual detalhado mantém-se para depois da funcionalidade |
+
+| SG-D041 | **Entrevista P5 — opção C:** calendário e estados **consultáveis no Nexus**, mas **editar/reagendar/cancelar diretamente no Postiz** | Nexus disponibiliza vista de leitura e ligação para abrir post no Postiz; sincroniza de volta as alterações. Não criar operações mutáveis de calendário no Nexus nesta fase |
+| SG-D042 | **Arquitetura definitiva de quatro motores lógicos:** M1 Intelligence, M2 Production, M3 Distribution & Scheduling (Postiz), M4 Analytics & Learning | **SG-D042 substitui SG-D003 e a indecisão SG-D039.** M4 recolhe/normaliza métricas, atribuição, experiências e aprendizagem e devolve sinais ao M1; M3 fica restrito a distribuição/agendamento/estados operacionais. Sem quatro agentes permanentes, sem scheduler de publicação Nexus |
 
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
@@ -86,7 +89,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótes
 
 ## E. Ciclo de temas e agenda
 
-Ciclo de temas: [CICLO_TEMAS.md](CICLO_TEMAS.md). Distribuição, Postiz e calendário Nexus: [POSTIZ.md](POSTIZ.md). **SG-D035/036 prevalecem sobre qualquer menção anterior a propor calendário logo após a seleção dos temas.** Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
+Ciclo de temas: [CICLO_TEMAS.md](CICLO_TEMAS.md). Distribuição, Postiz e calendário Nexus: [POSTIZ.md](POSTIZ.md). **SG-D041/042 definem calendário só de leitura no Nexus e quatro motores lógicos; prevalecem sobre a proposta antiga de três motores.** **SG-D035/036 prevalecem sobre qualquer menção anterior a propor calendário logo após a seleção dos temas.** Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
 
 ## F. Regra de conflitos
 
