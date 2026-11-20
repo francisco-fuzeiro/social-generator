@@ -1,5 +1,15 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P13-B: conteúdo contínuo e campanhas opcionais
+
+**TL;DR:** O utilizador escolheu P13-B: estratégia editorial contínua em cada projeto Social e campanhas opcionais criadas pelo operador, cada uma com objetivo, público, prazo, mensagem, CTA e KPIs próprios. Motor 1 recomenda temas das campanhas e temas gerais simultaneamente; M2 produz sob os mesmos gates; M3 usa Postiz; M4 mede resultados de campanhas por separado dos objetivos gerais sem atribuição fictícia/duplicada. Não há campanha obrigatória para um conteúdo geral.
+
+- **Decisão:** SG-D050 em `docs/DECISOES.md`; contrato funcional `docs/CAMPANHAS.md`.
+- **Documentos:** `docs/PROJETOS.md`, `docs/MOTORES.md`, `docs/METRICAS.md`, `docs/REQUISITOS.md`, `docs/ALINHAMENTO_CONTRATO_V1.md`, `docs/CICLO_TEMAS.md`, roadmap, TODO e visão.
+- **Estado:** documentação, não código implementado ou campanhas realmente criadas.
+- **P14 pendente:** alocação/prioridade entre conteúdos contínuos e campanhas ativas.
+
+
 ## 2026-11-20 — Entrevista P12-B: auditoria após mudança aprovada de branding
 
 **TL;DR:** O utilizador escolheu P12-B. Após nova versão aprovada do branding, auditar as peças afetadas por projeto em produção, à espera de revisão, aprovadas mas não enviadas e já agendadas. Propor revisões localizadas e deixar o operador decidir por peça. Posts agendados no Postiz apenas sinalizados e abertos para revisão manual, sem alterar/cancelar/reagendar via Nexus. Novas versões revistas exigem gate de publicação. Documentação, não implementação.
