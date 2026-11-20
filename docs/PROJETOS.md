@@ -26,9 +26,13 @@ Fluxo decidido:
 
 **Adicionar projeto** continua a mostrar **todos os projetos Nexus**; escolher um cria apenas um **rascunho Social inativo**. Na configuração, o Social Generator pode **ler fontes autorizadas** ligadas ao projeto (informações Nexus, website oficial, documentação/brand book, repositório em modo de leitura e assets/licenças autorizados), propor um perfil de marca e apresentar a evidência, data, confiança e lacunas de cada campo. Não assumir acesso ao repo ou aos assets pela mera existência no Nexus; não escrever no projeto de origem.
 
-**O utilizador corrige e aprova explicitamente a versão do branding** antes de este ser considerado validado/completo. O operador pode preencher manualmente campos indisponíveis ou recusar importação. A validação de marca **não ativa automaticamente o Social**: um perfil aprovado mas inativo continua sem pesquisa. Para entrar no Motor 1 exigem-se **branding validado + configuração de canais/conta + ativação Social explícita**. Mudanças de marca ficam versionadas e a política de atualização posterior será decidida separadamente.
+**O utilizador corrige e aprova explicitamente a versão do branding** antes de este ser considerado validado/completo. O operador pode preencher manualmente campos indisponíveis ou recusar importação. A validação de marca **não ativa automaticamente o Social**: um perfil aprovado mas inativo continua sem pesquisa. Para entrar no Motor 1 exigem-se **branding validado + configuração de canais/conta + ativação Social explícita**. Mudanças de marca ficam versionadas e, segundo **P11-B**, são **detetadas periodicamente nas fontes autorizadas** e apresentadas para **aceitação, rejeição ou correção**. Apenas a aprovação humana publica uma nova versão oficial; nenhuma publicação Postiz é editada por essa deteção.
 
 Contrato de fontes, lacunas, confiança, isolamento, permissões e testes: [BRANDING.md](BRANDING.md).
+
+## 1.2. Deteção de mudanças e revalidação — P11-B (DECIDIDO)
+
+Após aprovação inicial, verificar **periodicamente fontes autorizadas** e comparar com o perfil de branding validado. Mostrar diferenças, fontes/datas, confiança e conflitos num **pedido de alteração de marca**, sem atualizar automaticamente identidade oficial. O utilizador pode **aceitar, rejeitar ou corrigir**, com histórico de decisão/versão. Não confundir uma mudança no website com alteração definitiva da identidade de marca. A cadência exata e o comportamento de notificação ficam para configuração técnica. A nova versão não altera automaticamente publicações já agendadas no Postiz nem conteúdo já publicado. Política para peças ainda não publicadas é decisão pendente P12. [Contrato BRANDING](BRANDING.md).
 
 ## 2. Perfil editorial (extensão da entidade Nexus)
 
