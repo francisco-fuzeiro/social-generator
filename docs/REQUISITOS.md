@@ -1,59 +1,69 @@
-# Requisitos funcionais e não funcionais
+# Requisitos funcionais e não funcionais — contrato de produto
 
-> Estado: especificação de produto; critérios concretos complementares propostos onde indicado. A arquitetura implementada deve ser validada separadamente.
+> Atualizado em 20/11/2026 para refletir a entrevista. **DECIDIDO** = requisito aceite; **PROPOSTO** = pormenor técnico/a validar; **IMPLEMENTADO** exige prova. O dashboard é o separador Social do Nexus, não uma segunda app. A auditoria F0 permanece histórica; diferenças estão em ALINHAMENTO_CONTRATO_V1.md.
 
-## Objetivo e utilizador
+## Regras essenciais
 
-Ferramenta pessoal integrada no Nexus para investigar, criar e avaliar conteúdo de vários projetos e redes. Não é plataforma SaaS multi-cliente nem substitui o Nexus. O operador escolhe o projeto e pode iniciar uma campanha, aprovar temas, rever prévias, autorizar publicações e consultar resultados.
+1. O Social **não cria projetos**. Apresenta para ativação exclusivamente projetos **já existentes no Nexus e com redes sociais configuradas**. Mesmo esses só entram no Social após opt-in. Nem todos os projetos do Nexus têm de estar ativos no Social.
+2. Cada etapa funciona no contexto **do projeto Nexus elegível/ativado e do seu perfil editorial**. Não permitir projetos inventados, contas de outros projetos, identidades de marca cruzadas ou publicação sem permissão.
+3. Os três motores são **Pesquisa diária/semanal**, **Produção** e **Distribuição/Métricas/Aprendizagem**. O Nexus continua responsável pela execução, scheduler, limites e aprovações.
+4. **Aprovação humana do tema** antes de iniciar guião/recursos; **aprovação humana do pacote/conta/canal** antes de qualquer publicação.
+5. **Design visual detalhado do dashboard depois da funcionalidade**. F1 deve apresentar apenas os controlos e estados mínimos necessários para validar dados e fluxos.
 
-## Requisitos de produto (confirmados)
+## Requisitos verificáveis
 
-| ID | Requisito | Aceitação observável |
+| ID | Obrigação | Critério de aceitação |
 |---|---|---|
-| R01 | Seleção de projeto antes de qualquer etapa | Oportunidade, peça, métricas e contas ficam ligadas ao mesmo ID editorial |
-| R02 | Projetos extensíveis | Adicionar novo perfil/configuração sem editar lógica dos três motores |
-| R03 | Marca e memória por projeto | Assets/voz/idioma/fontes/público não contaminam outra marca |
-| R04 | Motor 1 pesquisa e recomenda | Ficha com fonte+data+relevância por projeto, sem gerar guião automaticamente |
-| R05 | Gate humano de tema | Sem decisão positiva para versão atual não existe produção autorizada |
-| R06 | Motor 2 cria recurso final | Guião, storyboard, recursos, render/previews e pacote editável/exportável; falhas visíveis |
-| R07 | Gate humano de publicação | Autorização por versão exata, plataforma e conta, revogada por alteração relevante |
-| R08 | Motor 3 acompanha distribuição e resultados | Distinguir exportado, enviado, confirmado, falhou e incerto; sem repetição cega |
-| R09 | Analytics por conteúdo e projeto | Métricas com origem/data; não transformar métricas ausentes em zero |
-| R10 | Atribuição e aprendizagem | Ligação de post/variante a tráfego/UTMs/eventos/conversões quando observável |
-| R11 | Reutilizar Nexus | Painel PC/móvel, papéis, limites, pausas, sessões e aprovações compatíveis |
-| R12 | Adaptadores substituíveis | Trocar imagem/render/pesquisa/voz sem mudar contrato persistido e UI |
-| R13 | Custos sob controlo humano | Sem subscrições nem API paga sem autorização; custos por tarefa/projeto |
-| R14 | Biblioteca externa | Usar D:\AI\Biblioteca por configuração, sem subir media privada ao repositório |
+| R01 | Fonte única de projetos: Nexus | Apenas IDs canónicos de projetos existentes no Nexus |
+| R02 | Gate de elegibilidade Social | Projeto Nexus sem socials não aparece para ativação; com socials mas desativado não aparece na produção |
+| R03 | Opt-in/opt-out Social por projeto elegível | Ativar não cria novo projeto Nexus; desativar mantém histórico e interrompe trabalho novo |
+| R04 | Perfis editoriais e canais | Marca, públicos, objetivos, voz, licenças, formatos e contas por Nexus project; canais associados/permitidos |
+| R05 | Pesquisa **diária leve** | Observações com fontes, data, mudança relevante e custo; sem guião antes de gate |
+| R06 | Relatório **semanal aprofundado** | Síntese de tendências, concorrência híbrida, oportunidades, evidências e priorização por projeto |
+| R07 | Fontes acordadas | YouTube, Instagram, Google/Trends, Reddit, TikTok, X e LinkedIn quando acessíveis legal/tecnicamente, mais fontes oficiais |
+| R08 | Scoring adaptativo por projeto | Pontuação/justificação, pesos/versão/confiança; considerar objetivos, tendência, saturação, histórico, viabilidade e custos |
+| R09 | Ficha de oportunidade económica | Hook, ângulo, formato, duração, CTA, fontes, riscos e esforço; sem storyboard completo antes da aprovação |
+| R10 | Gate de tema | Versão não aprovada não inicia guião, imagens ou render; mudança de versão exige reaprovação |
+| R11 | Produção por projeto/formato | Hidden Layer: vídeo vertical narrado; Vefi/UtopIA: vídeo+carrossel; Remotion-first e exportação adaptada por rede |
+| R12 | Pacote editável e QA | Guião, storyboard, recursos, prévia, render quando aplicável, relatório técnico/editorial/factual/visual/direitos e licenças |
+| R13 | Biblioteca externa reutilizável | `D:\AI\Biblioteca` referenciada por IDs e direitos; media e paths privados fora do Git e do browser |
+| R14 | Gate de publicação | Aprovação por versão+hash+plataforma+conta Nexus; alteração relevante invalida autorização |
+| R15 | Distribuição híbrida | API oficial só se possível, autorizada e com termos cumpridos; caso contrário exportação/publicação manual com comprovativo |
+| R16 | Métricas avançadas e atribuição | Retenção, alcance, interação, CTR, UTM, visitas, eventos, conversões e custos, com proveniência, unidade, janela, denominador |
+| R17 | Aprendizagem e experiências | Testes controlados com hipótese/variável, amostra, confiança; sinaliza `inconclusiva` e alimenta Motor 1 com dados citáveis |
+| R18 | Interface Social mínima no Nexus | Seleção de projetos elegíveis, estados de pesquisa/produção, aprovação, resultados, métricas reais/indisponibilidade, sem redesign visual prematuro |
+| R19 | MVP de 3 peças reais | 1 conteúdo real/publicável para cada Hidden Layer, Vefi e UtopIA; fixtures e protótipos não contam |
+| R20 | Metas e controlo de custo | Pretender 5–10 peças/semana, 1–3h supervisão, 3–6h desenvolvimento; alvo extra 0€ e teto 25€/mês **não autorizam gastos** |
+| R21 | Adaptadores de fornecedores | Trocar render, pesquisa, TTS, imagem e rede sem reescrever núcleo nem duplicar ferramentas Nexus |
 
-## Requisitos de segurança e qualidade
+## Canais e formatos contratados
 
-- **Segurança**: contas, tokens e chaves fora de Git e dos snapshots destinados ao dashboard; caminho externo não é servido pelo HTTP sem validação; mínimo privilégio.
-- **Rastreabilidade**: conservar versão, origem e confiança de afirmações, URLs/fontes, revisão factual, direitos e hash de recursos.
-- **Isolamento**: repos Vefi/UtopIA e outros são só de leitura. Um projeto editorial não exige repo próprio; IDs separados de `project_cwd`.
-- **Resiliência**: escrita atómica, idempotência das decisões, recuperação após crash e confirmação antes de repetir ações externas de publicação.
-- **Compatibilidade**: migração versionada (v1→v2 quando incompatível), sem mudar silenciosamente formato e interpretação de métricas.
-- **Acessibilidade editorial**: legendas legíveis e verificadas, enquadramento para cada proporção, som audível, ausência de sobreposições, material com licença.
-- **Honestidade analítica**: amostras, definições e janelas explícitas; sem rankings/promessas de viralidade sem base.
-- **Custos e capacidade**: 5–10 conteúdos/semana e 1–3h de supervisão são objetivos condicionados a provas, não SLO atual.
+| Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
+|---|---|---|
+| The Hidden Layer | Vídeo vertical narrado em inglês, faceless | Instagram, YouTube, X, TikTok |
+| Vefi | Vídeo, carrossel | Instagram, TikTok, X, LinkedIn, YouTube |
+| UtopIA Solutions | Vídeo, carrossel | Instagram, LinkedIn, TikTok, X, YouTube |
 
-## Critérios de qualidade de uma peça (proposta para gate)
+Canais de intenção **não são contas ligadas**. Conectores só operam após verificação de permissões reais. Car Enterprise ou outros projetos só entram se cumprirem critérios Nexus, sociais e opt-in.
 
-1. Tema e narrativa respeitam briefing e identidade do projeto.
-2. Afirmações factuais importantes verificadas com fontes e incerteza assinalada.
-3. Direitos de imagem, voz, música, excertos e fontes registados; sem reutilização indevida.
-4. Contact sheet/animatic e MP4 (quando aplicável) visualizáveis; proporção/duração/resolução validadas; legendas sem cortes.
-5. CTA correto para objetivo e canal; URLs rastreáveis se aplicável.
-6. Pacote exportável e versão imutável; decisão final anterior a qualquer envio.
+## Qualidade, resiliência e segurança
 
-## Fora do âmbito inicial
+- Fonte/dados externos são não confiáveis; distinguir afirmação factual, inferência e hipótese, com revisão humana para publicações factuais.
+- Credenciais, chaves, contas, paths absolutos e ficheiros privados nunca entram no Git/JSON destinado ao browser.
+- Validar recursos por manifestos, hashes, direitos de uso e permissões da marca. IA generativa só onde acrescenta valor; Higgsfield apenas quando expressamente autorizado.
+- Uma chamada de aprovação é **decisão gravada**, não prova de publicação. Na ausência de ID/URL/recibo remoto, usar estado explícito; timeout pós-envio exige reconciliação, nunca repetição cega.
+- Escrita atómica e donos separados (motor vs servidor Nexus); repos de outras marcas só leitura.
+- Novas versões de schema não podem reinterpretar ou apagar histórico, decisões, observações ou provas.
+- Números observados, estimados e não disponíveis são estados distintos; não tratar `null` como zero nem correlação como causalidade.
+- Pesquisa/manual e publicação/manual são modos legítimos até adaptadores oficiais estarem comprovados; não simular resultados.
+- Cumprir condições dos fornecedores e lei aplicável (direitos, RGPD, consentimento) sem presumir acesso irrestrito.
 
-- Novo painel autónomo, novo gestor de utilizadores, novo scheduler genérico, nova infraestrutura cloud obrigatória.
-- Scraping que contorne condições de plataformas ou recolha de dados pessoais não necessários.
-- Publicação irrestrita ou sem revisão humana.
-- Pagar automaticamente fornecedores, ou supor que contas/APIs sociais já estão conectadas.
+## Definição de MVP e sequência
 
-## MVP transversal e validações
+**F1 — funcionalidade do Nexus antes do visual:** leitura real do contrato e UI mínima, gates persistentes, prévias protegidas e projetos elegíveis do Nexus. **F2 — conteúdo:** pesquisa e produção com prova de Remotion/imagem e um piloto técnico publicável. **F3 — publicação/métricas:** pacote aprovado, publicação manual/automática permitida, resultados datados, primeira aprendizagem e comparação honesta.
 
-**Piloto técnico**: um fluxo end-to-end com um projeto, dados/receitas de teste isolados e evidências; prova por fase F1–F3. **MVP de produto**: 1 conteúdo real e publicável de cada The Hidden Layer, Vefi e UtopIA, cada qual com fontes, gates, peça final, publicação/resultado conforme disponibilidade e métricas com origem/data (podem ser manuais). Se alguma conta não for publicada, reportar explicitamente o gate pendente; não declarar a meta cumprida.
+**MVP de produto:** três conteúdos reais/publicáveis, um por cada projeto inicial elegível e ativado no Nexus, com marca, fontes, gates, pacote, custos e estado de publicação/medição. Conteúdo preparado e conteúdo publicado têm estados diferentes; se faltar publicação não inventar métricas.
 
-As métricas detalhadas, perfis e contrato evolutivo estão em METRICAS.md, PROJETOS.md e ALINHAMENTO_CONTRATO_V1.md.
+**Só depois**: estudo de UX/arquitetura da informação visual aprofundado, layouts, gráficos, animações e acabamento final do dashboard Social, apoiado em fluxos e dados que já funcionem.
+
+Ver docs/PROJETOS.md, MOTORES.md, METRICAS.md, BIBLIOTECA.md, ALINHAMENTO_CONTRATO_V1.md e ROADMAP.md.
