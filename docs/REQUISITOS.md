@@ -173,6 +173,20 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **P14-B não define pesos exatos nem percentagens.** Ver [CAMPANHAS.md](CAMPANHAS.md), [CICLO_TEMAS.md](CICLO_TEMAS.md).
 
+## Peça-base e variantes por plataforma — P15-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R82 | Peça-base reutilizável | M2 produz peça-base editável por tema aprovado, com manifesto de cenas/recursos, versão/hash, projeto Nexus, branding e campanha opcional |
+| R83 | Adaptação seletiva por rede | Adaptar hook, duração, proporção, legendas, thumbnail, título, copy/hashtags e CTA **só quando há justificação** editorial/técnica; reutilizar render quando adequado |
+| R84 | Histórico e dependências entre variantes | Cada variante referencia a base/versão e regista alterações, recursos reutilizados, custo e QA; alteração da peça-base identifica variantes afetadas, sem sobrescrever aprovações |
+| R85 | Compatibilidade e direitos reais | Validar restrições/formatos e capacidades por plataforma e conta; não inventar elegibilidade de API, não violar brand kit/licenças, fallback manual explicitado |
+| R86 | Aprovação individual por destino | **Depois da produção**, mostrar prévia/variante + plataforma/conta + copy/CTA + data/hora sugerida; exigir segundo gate por versão/hash e pacote específico antes de M3/Postiz |
+| R87 | Primeiro gate permanece sem calendário | Seleção inicial apenas de temas; formatos/redes podem ser recomendações fundamentadas, mas **datas e horas só são propostas após produção** |
+| R88 | Sem regeneração/duplicação por obrigação | Se a base é adequada para várias redes, reutilizar componentes ou ficheiro; não gerar variantes artificiais nem consumir fornecedor pago sem aprovação |
+
+**P16 por decidir:** quantidade de variantes por defeito no Motor 2. Contrato funcional [VARIANTES.md](VARIANTES.md).
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
