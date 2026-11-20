@@ -1,6 +1,6 @@
 # Projetos editoriais — contrato de integração com Nexus
 
-> Atualizado em 20/11/2026 segundo a entrevista. **DECIDIDO:** o Social Generator não cria projetos de raiz. Só utiliza **projetos já existentes no catálogo do Nexus que tenham redes sociais configuradas**. Dos projetos elegíveis, só ficam ativos no Social os que forem explicitamente selecionados/ativados. Perfis listados abaixo são intenção editorial inicial, não prova de contas conectadas.
+> Atualizado com a correção da entrevista: **Adicionar projeto apresenta todos os projetos do Nexus**; a pesquisa só abrange os adicionados, configurados, ativos e com branding completo. Nenhuma conta OAuth é necessária para operações manuais. Estes perfis são intenção editorial, não prova de contas ligadas.
 
 ## 1. Adicionar, configurar e ativar — decisão corrigida da entrevista
 
