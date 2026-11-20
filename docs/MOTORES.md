@@ -104,6 +104,10 @@ Cada revisão gera **nova versão identificável e imutável**, com histórico, 
 
 Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, guião, storyboard, recursos editáveis, prévia, MP4 em formato vídeo ou ficheiros de carrossel quando aplicável, checklist de **QA técnico, editorial, factual, visual e de direitos**, resumo de custos. **Gate final ainda dentro da revisão pré-publicação:** apresentar ao operador a prévia e proposta completa e explicada de agendamento (ordem entre peças, datas/horas, canais e contas), assim como copy, CTA, legendas, alertas e verificações; permitir correções antes de aprovar. Um pacote reprovado pode ser revisto numa nova versão; um pacote alterado tem de ser reaprovado.
 
+### Horários e calendário propostos — P17-B (DECIDIDO)
+
+**Só depois da produção, no gate final**, propor datas/horas/ordem por conta+plataforma, com justificações e confiança: dados de desempenho do **Motor 4** quando observáveis e comparáveis, público/fuso, tipo de conteúdo, prazo/urgência de campanhas e **agenda confirmada do Postiz**. Sem histórico suficiente, mostrar **estimativas iniciais identificadas**, não «melhor horário» inventado. Mostrar avisos de conflito e dados de calendário potencialmente desatualizados. O operador **edita qualquer horário ou destino antes de aprovar** o pacote, respeitando versão/hash e gates por variante/conta/copy. **Motor 2 não cria scheduler próprio**; só o Motor 3 envia agendamentos finais aprovados ao Postiz. Horários fixos/pesos técnicos não estão decididos. Ver [HORARIOS.md](HORARIOS.md).
+
 ## Motor 3 — Distribution & Scheduling (Postiz)
 
 ### Distribuição
@@ -133,6 +137,8 @@ Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, gu
 **Motor lógico aprovado, independente do mecanismo de publicação:** consome eventos/recibos e IDs comprovados do Motor 3/Postiz, recolhas próprias ou autorizadas de APIs de redes, métricas manuais, UTMs e eventos agregados de sites/apps. Se Postiz estiver indisponível, manter histórico e analisar dados já existentes sem afetar a agenda.
 
 **Entradas:** `PublicationStatusReceipt` (M3), `MetricSnapshot` (fontes de rede/Postiz com data), `ConversionEvent`, `CreativeMetadata`, custos e objetivos do projeto Nexus.
+
+**P17-B:** o Motor 4 fornece **observações reais datadas de desempenho por conta/plataforma/horário**, com janelas, amostras e incerteza, para apoiar sugestões pós-produção; sem dados, sinaliza ausência e não inventa picos de audiência. Não escolhe horários de publicação autonomamente nem altera o calendário Postiz.
 
 **P13-B:** medir **KPIs por campanha** (janela/objetivo) e **desempenho geral do projeto** (incluindo conteúdos sem campanha) em vistas diferenciadas, sem duplicar conversões ou inventar dados/causalidade. A aprendizagem devolve sinais de ambos ao Motor 1.
 
