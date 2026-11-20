@@ -42,7 +42,10 @@
 | SG-D031 | **Entrevista P2 — opção C:** distribuir pesquisa **adaptativamente por prioridade** entre os projetos Social **configurados, ativos e com branding completo** | Todos estes projetos recebem pesquisa diária leve e relatório semanal; projetos com campanhas/tendências fortes/maior prioridade recebem aprofundamento. Projetos inativos, mesmo configurados, **não são pesquisados nem recebem novas recomendações** |
 | SG-D032 | **Reutilizar temas até ao máximo de 7 dias** da última validação; depois passam a **reavaliação** na pesquisa semanal aprofundada | Sem renovação tácita; reavaliação fundamentada decide se o tema continua relevante e pode renovar a validade por mais 7 dias ou arquivar; histórico não se perde |
 | SG-D033 | **Cada lote de recomendações deve apresentar no mínimo 5 temas distintos** e fundamentados por projeto | Não inventar temas para atingir cinco; se faltarem evidências, informar lote incompleto e continuar pesquisa. Pesquisa diária leve não obriga a gerar lote novo todos os dias |
-| SG-D034 | **Seleção múltipla de temas**, seguida de **sugestão de ordem de agendamento** | Utilizador pode escolher mais de um; motor prioriza por atualidade, impacto, capacidade e contexto do calendário, explica a ordem; proposta não publica nem substitui gates humanos |
+| SG-D034 | **Seleção múltipla de temas**, sem calendário na escolha inicial | Utilizador escolhe apenas os temas, em qualquer quantidade; essa seleção constitui o gate humano de tema para as versões escolhidas e autoriza o Motor 2 a produzir, mas não agendar nem publicar |
+
+| SG-D035 | **Entrevista P3 — opção B adaptada:** só **depois de o Motor 2 produzir cada peça** é apresentada uma prévia com proposta de calendário completo (ordem, datas, horas, plataformas) e demais informação relevante | Mostrar a proposta no gate final **antes de publicar**. O operador pode rever/corrigir; só após aprovação do pacote + conta/canal + agendamento o trabalho passa ao **Motor 3**, que agenda via conector autorizado ou prepara agendamento manual quando a API não o permitir |
+| SG-D036 | Separar **escolha de temas**, **revisão final da peça** e **execução do agendamento** | Motor 1 recomenda temas, utilizador escolhe; Motor 2 produz e apresenta prévia + proposta; utilizador aprova a publicação; Motor 3 executa. Nunca marcar «agendado» ou «publicado» sem confirmação comprovada |
 
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
@@ -66,7 +69,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) propõe JSON local + JSONL, leitor
 ## D. Questões pendentes de decisão ou prova
 
 - Primeiro piloto técnico: projeto, tema, plataformas e contas concretas. O MVP de três conteúdos reais está fechado, sujeito à elegibilidade dos respetivos projetos no Nexus.
-- Público e métricas-alvo exatos por projeto; **cadência e estratégia C decididas** (pesquisa diária leve para todos os Social configurados/ativos; relatório semanal com aprofundamento adaptativo), lotes de ≥5, validade de 7 dias e seleção múltipla. Hora de execução, pesos da rubrica e detalhes de agenda continuam pendentes.
+- Público e métricas-alvo exatos por projeto; **cadência C**, lotes de ≥5, validade de 7 dias e escolha múltipla decididas. **P3-B adaptada:** apresentar calendário (datas/horas/canais) **após produção e antes da aprovação final**, com execução do agendamento pelo Motor 3. Horários da pesquisa e pesos exatos do scoring continuam pendentes.
 - Fluxo de contas/plataformas e permissões oficiais, sobretudo X/LinkedIn e restrições de publicação por API.
 - Qual ferramenta de voz inglesa/PT-PT e respetivos direitos, sincronização de legendas e custos reais.
 - Licença Remotion aplicável à entidade/uso comercial; benchmarks de render e imagem no Nexus.
@@ -77,7 +80,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) propõe JSON local + JSONL, leitor
 
 ## E. Ciclo de temas e agenda
 
-Contrato funcional integral: [docs/CICLO_TEMAS.md](CICLO_TEMAS.md). Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
+Contrato funcional integral: [docs/CICLO_TEMAS.md](CICLO_TEMAS.md). **SG-D035/036 prevalecem sobre qualquer menção anterior a propor calendário logo após a seleção dos temas.** Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
 
 ## F. Regra de conflitos
 
