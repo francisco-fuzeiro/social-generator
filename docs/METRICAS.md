@@ -50,13 +50,13 @@ Chaves: projetoId, campanhaId, oportunidadeId, pecaId, varianteId, publicacaoId,
 
 Cadeia recomendada:
 
-\`\`\`text
+```text
 Projeto -> Campanha -> Ideia -> Criativo -> Variante
        -> Publicação (rede/conta) -> Clique com UTM -> Visita
        -> Evento (registo/lead/wishlist) -> Conversão/receita (se observável)
-\`\`\`
+```
 
-Usar \`utm_source\`, \`utm_medium\`, \`utm_campaign\`, \`utm_content\` para distinguir redes e variantes, com IDs estáveis que não exponham dados pessoais. Onde aplicável, GA4 ou analytics próprio da app/site regista eventos de conversão. Links, redirects e canais sem link rastreável geram atribuição **parcial**. Visualizações não equivalem a clientes. Tráfego orgânico sem UTM, dispositivos trocados e conversões posteriores limitam atribuição.
+Usar `utm_source`, `utm_medium`, `utm_campaign`, `utm_content` para distinguir redes e variantes, com IDs estáveis que não exponham dados pessoais. Onde aplicável, GA4 ou analytics próprio da app/site regista eventos de conversão. Links, redirects e canais sem link rastreável geram atribuição **parcial**. Visualizações não equivalem a clientes. Tráfego orgânico sem UTM, dispositivos trocados e conversões posteriores limitam atribuição.
 
 Não armazenar dados pessoais brutos no painel social se bastarem contagens agregadas. Rever consentimento/RGPD e termos dos serviços antes de importar eventos individuais. Receita atribuída é diferente de receita incremental comprovada.
 
