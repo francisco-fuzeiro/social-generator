@@ -82,6 +82,12 @@ Os estados `proposta`/`aguarda-aprovacao` são locais; `agendado` e `publicado` 
 
 O dashboard Nexus apresenta o calendário do Postiz **em modo de leitura**. Pode ter ligação `Abrir no Postiz` para que o utilizador edite/reagende/cancele o post lá. **Não criar formulário de reagendamento, botão de cancelar nem editor de posts no Nexus.** Depois de qualquer ação no Postiz, a sincronização atualiza estado/hora/copy e assinala origem externa quando possível. O fluxo de pré-publicação dentro do Nexus **continua editável antes de aprovar e enviar**; só a agenda já submetida fica sob controlo do Postiz.
 
+## 5.2. Alertas de marca P12-B — sem editar a agenda
+
+Quando for **aprovada uma nova versão de branding**, o Social Generator audita dependências de conteúdos por projeto. Se um post já agendado no Postiz usar materiais potencialmente desatualizados, o **dashboard Nexus pode mostrar alerta de revisão de marca** e ligação para abrir esse post no Postiz. **Não há cancelamento, reagendamento, edição ou bloqueio remoto automático**. Um alerta não altera o estado operacional remoto; a execução continua exclusivamente sob controlo do Postiz até o operador intervir. Depois de editar no Postiz, o Motor 3 sincroniza o estado/recibos reais. Preservar a decisão humana e distinguir alerta de marca de erro de publicação.
+
+Ver [BRANDING.md](BRANDING.md) §4.2 e decisão SG-D049.
+
 ## 6. Testes de aceitação
 
 1. Com posts confirmados no Postiz, o dashboard Nexus apresenta **agendados** no dia/hora/conta corretos e **publicados** com ligação e data real quando disponíveis.
