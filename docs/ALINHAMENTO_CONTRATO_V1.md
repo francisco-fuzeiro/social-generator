@@ -143,6 +143,14 @@ A configuração Social parte sempre de um **projeto Nexus existente**. Depois d
 
 Contrato detalhado e testes: [BRANDING.md](BRANDING.md).
 
+## 2.10. P11-B — deteção periódica, versão nova só com aprovação humana (DECIDIDO)
+
+Após a importação inteligente inicial P10-B, o Social Generator deve **verificar periodicamente fontes de marca previamente autorizadas**, sem escrita nas fontes. Comparar o estado observado com a **versão de branding oficial já aprovada**; gerar **proposta de diferenças** com evidência, origem, data, confiança e conflitos. Não assumir que uma mudança no website significa nova diretriz oficial. O operador pode **aceitar, rejeitar ou corrigir**; **apenas depois da aprovação humana** criar nova versão de `BrandProfile`. Guardar histórico das versões, decisões e proveniência.
+
+**Operação:** o Nexus pode coordenar verificações periódicas e recursos, mas não deve criar projeto Social novo, pesquisar projetos inativos por acidente nem executar gasto. Credenciais só em armazenamento seguro e cada fonte tem scopes próprios. Uma verificação falhada nunca substitui branding confirmado. **Posts já agendados no Postiz não são automaticamente editados, cancelados nem reagendados** e o M3 continua responsável pela distribuição e leitura do calendário.
+
+**Ponto aberto para P12:** regras para conteúdos em produção, aguardando revisão, aprovados ainda não enviados e posts já agendados quando a nova versão de marca é aprovada. Não impor cancelamento ou re-render automático sem decisão explícita. Contrato em [BRANDING.md](BRANDING.md).
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
