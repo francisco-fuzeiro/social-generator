@@ -24,7 +24,7 @@ Ao desativar, preservar temas, versões, fontes, decisões, calendários e resul
 
 ## 2.1. P13-B — conteúdo contínuo e campanhas opcionais
 
-Cada projeto Social elegível mantém um **fluxo contínuo de pesquisa de temas gerais**. Campanhas **opcionais** definidas pelo operador acrescentam objetivos, público, prazos, mensagem e CTA; M1 pesquisa e recomenda ideias específicas para campanhas ativas **além das recomendações gerais**, sem obrigar cada tema a pertencer a uma campanha. A oportunidade identifica campanha quando aplicável, e a seleção humana de temas não exige escolher calendário. A distribuição exata de capacidade, prioridades e peso na lista entre campanhas e conteúdo contínuo **ainda será decidida na P14**. Ver [CAMPANHAS.md](CAMPANHAS.md).
+Cada projeto Social elegível mantém um **fluxo contínuo de pesquisa de temas gerais**. Campanhas **opcionais** definidas pelo operador acrescentam objetivos, público, prazos, mensagem e CTA; M1 pesquisa e recomenda ideias específicas para campanhas ativas **além das recomendações gerais**, sem obrigar cada tema a pertencer a uma campanha. A oportunidade identifica campanha quando aplicável, e a seleção humana de temas não exige escolher calendário. **P14-B decidiu** prioridade adaptativa e explicada entre campanhas e conteúdo contínuo, usando prazos/urgência, tendências fundamentadas, objetivos, resultados históricos (M4) e capacidade real de M2. O operador **pode ajustar a proposta antes de escolher temas**, sem percentagens fixas e mantendo recomendações gerais. **O primeiro gate continua a ser apenas escolha de temas, sem calendário/datas/horas**; o calendário só aparece após produção. Ver [CAMPANHAS.md](CAMPANHAS.md).
 
 ## 3. Lotes de recomendações — mínimo cinco temas (DECIDIDO)
 
