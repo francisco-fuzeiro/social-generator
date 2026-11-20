@@ -19,7 +19,7 @@ Perfil do projeto, público, objetivo, campanhas, orçamento/tempo disponível, 
 
 ### Pesquisa — cadência e fontes decididas
 
-**Operação diária leve:** varrer sinais novos e alterações relevantes com custo limitado, registar fontes e estado; sem guião/storyboard/geração. **Relatório semanal aprofundado:** sintetizar tendências, concorrentes e histórico, explicar alterações e recomendar temas prioritários por projeto. O scheduler é o Nexus quando suportar a periodicidade; execução manual até lá. Relatório semanal não equivale a uma lista sem análise dos resultados diários.
+**Operação diária leve:** **apenas projetos Social configurados, com branding completo e ativos**; varrer sinais novos e alterações com custo limitado e registar fontes, sem guião/storyboard/geração. Um projeto configurado mas inativo nunca é pesquisado. **Estratégia adaptativa C:** todos os ativos/configurados têm pesquisa diária leve; projetos com campanhas, tendências fortes ou alta prioridade recebem investigação adicional. **Relatório semanal aprofundado:** abrange todos os ativos/configurados com profundidade proporcional, sintetiza concorrentes/histórico e **reavalia temas com validade expirada**. O scheduler é o Nexus quando suportar a periodicidade; execução manual até lá. Relatório semanal não equivale a soma sem análise das pesquisas diárias.
 
 Fontes candidatas acordadas: **YouTube, Instagram, Google/Google Trends, Reddit, TikTok, X e LinkedIn**, além de sites e documentação oficiais, quando acessíveis. Distinguir dados oficiais, observação pública, comentário comunitário e inferência. Uma tendência que aparece numa fonte não é automaticamente tendência global. Dados temporais têm período, mercado/região, plataforma e método de recolha.
 
@@ -39,7 +39,13 @@ Investigar:
 
 Ficha económica com: id/versão/projeto/campanha, tema/pergunta, público, proposta de hook, ângulo e diferenciação, fontes+consultadoEm, sinais mensuráveis, formato e duração sugeridos, canal, CTA previsto, estimativa de esforço/custo, riscos editoriais/licenças, pontuação e confiança.
 
-Não produzir guião completo, imagens, música, voz, animação ou render antes de receber **aprovação humana do tema/versão**.
+**Lote de escolha:** cada ronda de recomendações entregue ao utilizador contém **pelo menos cinco temas distintos e fundamentados por projeto**. A pesquisa diária pode atualizar o catálogo sem apresentar um lote novo. Se houver menos de cinco temas credíveis, mostrar `lote-incompleto`, nunca inventar ideias ou evidência. Temas ainda vigentes podem ser reutilizados na semana, mas não duplicados como originais.
+
+**Validade temática:** tema pode ser reutilizado até **7 dias desde a última validação de relevância**. Ao atingir esse limite, passa a `em-reavaliacao` e deixa de ser recomendado para nova seleção/agendamento até à **pesquisa semanal aprofundada**, que decide, com fontes e data, se renova por nova janela máxima de 7 dias, arquiva ou mantém inconclusivo. Preservar histórico e não confundir expiração com retirada de publicações já feitas.
+
+**Seleção múltipla:** utilizador pode escolher vários temas do lote; o motor propõe **ordem de produção/agendamento justificada**, considerando urgência, relevância, formatos/canais, dependências, custos e calendário. A ordem é editável e **não executa publicações**. A aprovação de tema é individual/por versão e continua obrigatória.
+
+Não produzir guião completo, imagens, música, voz, animação ou render antes de receber **aprovação humana do tema/versão**. Contrato completo: [CICLO_TEMAS.md](CICLO_TEMAS.md).
 
 ### Classificação adaptativa por projeto (princípio decidido; pesos propostos)
 
@@ -103,6 +109,7 @@ Cada etapa devolve estados como concluída, bloqueada, indisponível ou erro com
 
 ## Relações
 
+- Contrato de ciclo de temas e prioridades: [CICLO_TEMAS.md](CICLO_TEMAS.md).
 - Contrato técnico histórico: auditoria-f0.md §3 e §6.
 - Mudanças necessárias: ALINHAMENTO_CONTRATO_V1.md.
 - Métricas e experiência: METRICAS.md.
