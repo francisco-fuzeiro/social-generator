@@ -17,7 +17,8 @@
 - [ ] Inventariar biblioteca `D:\AI\Biblioteca` e política de licenças/retencão sem alterar os ficheiros.
 - [x] **P3-B adaptada**: só selecionar temas no Motor 1; calendário com ordem/datas/horas/canais **depois da produção** e **antes de aprovação final**; Motor 3 agenda pacote aprovado.
 - [ ] **Postiz Cloud vs self-hosted**: decidir implantação, limites, contas/plataformas, credenciais, uptime e custos antes de instalar/comprar.
-- [ ] **Próxima decisão de UX funcional:** apenas consultar o calendário no Nexus ou também editar/reagendar/cancelar posts via Postiz?
+- [x] **P5-C:** calendário e posts consultáveis no Nexus, **editar/reagendar/cancelar no Postiz**; sincronizar alterações.
+- [x] **Quatro motores aprovados:** M1 Intelligence, M2 Production, M3 Distribution & Scheduling (Postiz), M4 Analytics & Learning; sem quatro agentes permanentes.
 - [ ] Definir KPIs numéricos, pesos exatos de scoring e horas da pesquisa diária/semanal. A opção C adaptativa e a apresentação de datas/horas **após produção** estão decididas.
 - [ ] Rever no schema estados de validade/reavaliação de temas, lote incompleto e seleção múltipla **sem calendário inicial**; pacote de pré-publicação com calendário+hash e estados `pendente-agendamento-manual`/`agendado`/`publicado` separados.
 - [ ] Em 23/11/2026 alterar a visibilidade do repo para privado, confirmar e rever exposição de segredos.
@@ -28,7 +29,8 @@
 - [ ] F1.2 — decisões editoriais persistentes e idempotentes.
 - [ ] F1.3 — prévias multimédia protegidas.
 - [ ] F2.1–F2.3 — pesquisa diária leve + relatório semanal aprofundado (execução inicialmente manual), provas de render e um piloto publicável; canais e formatos da entrevista.
-- [ ] F3.1–F3.2 — **Motor 3 Postiz**: enviar pacotes aprovados, receber ID/recibo, sincronizar **calendário consultável no Nexus** (agendados/publicados/falhados/pendentes), métricas e aprendizagem; sem scheduler de publicação Nexus.
+- [ ] F3.1–F3.2 — **Motor 3 Postiz**: enviar pacotes aprovados, confirmar IDs/recibos e sincronizar **calendário Nexus só de leitura**; edições no Postiz; nunca usar scheduler de publicação Nexus.
+- [ ] F3.3 — **Motor 4 Analytics & Learning**: recolher métricas, UTMs/eventos/conversões/custos, experiências e aprendizagem, enviando sinais ao M1 sem intervir em publicação.
 - [ ] MVP transversal — **3 peças reais**, The Hidden Layer + Vefi + UtopIA, 1 peça cada, com resultados verificáveis.
 - [ ] **Só depois da funcionalidade validada:** planeamento visual detalhado, UX e dashboard final no Nexus.
 
