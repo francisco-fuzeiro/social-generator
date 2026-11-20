@@ -1,5 +1,13 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P6-C: validar Postiz antes de decidir alojamento
+
+**TL;DR:** O utilizador escolheu P6-C: validar primeiro API, canais, formatos, estados, agendamento, sincronização Postiz→Nexus e custos; só depois comparar Cloud/self-hosted e aprovar implantação. Não assumir trial gratuito disponível, nem efetuar pagamentos/instalação de produção. Atualizados contratos/roadmap/TODO; sem execução ou teste real.
+
+- **Decisão:** SG-D043; `docs/POSTIZ.md` §6.1.
+- **Estado:** documentação fechada, ensaios e alojamento ainda pendentes.
+
+
 ## 2026-11-20 — P5-C e aprovação dos quatro motores
 
 **TL;DR:** Confirmada P5-C: calendário Postiz consultável no dashboard Nexus, mas edição, reagendamento e cancelamento exclusivamente no Postiz. Aprovada a arquitetura de quatro motores lógicos: M1 Intelligence, M2 Production, M3 Postiz Distribution & Scheduling, M4 Analytics & Learning. A separação é lógica, não quatro agentes residentes. Atualizados contratos e backlog; sem implementação executável.
