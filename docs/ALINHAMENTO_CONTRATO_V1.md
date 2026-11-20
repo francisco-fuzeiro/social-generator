@@ -113,7 +113,17 @@ O operador pode pedir alterações a trechos de narração, cenas, animações o
 
 **Histórico de versões obrigatório:** novas versões do criativo e respetivo manifesto/hash, referência à versão anterior, recursos reaproveitados/recriados, causa/âmbito e custo de revisão. O operador pode **comparar versões e regressar a uma anterior** sem apagar outras versões. Um pedido de revisão não aprova publicação, e uma aprovação antiga não autoriza uma versão materialmente diferente. A fila de produção P4-B continua com outras peças sem aguardar a aprovação desta, respeitando recursos do Nexus.
 
-**Proposta de contrato técnico a validar:** `CreativeVersion`, `RevisionRequest`, `AffectedSegments`, `AssetManifest`, `RenderArtifacts`, `QAResult` e links de proveniência. Estratégia de render parcial/caches depende de provas técnicas e não é garantida pelo produto. **Forma de feedback e limites de tentativas continuam abertos.** Detalhes e testes: [REVISOES.md](REVISOES.md).
+**Proposta de contrato técnico a validar:** `CreativeVersion`, `RevisionRequest`, `AffectedSegments`, `AssetManifest`, `RenderArtifacts`, `QAResult` e links de proveniência. Estratégia de render parcial/caches depende de provas técnicas e não é garantida pelo produto. **Forma de feedback P8-B aprovada (timestamps + notas gerais); limites de tentativas continuam abertos.** Detalhes e testes: [REVISOES.md](REVISOES.md).
+
+## 2.7. Entrevista P8-B — feedback de revisão associado a instantes (DECIDIDO)
+
+A experiência funcional de revisão do Motor 2 no dashboard Social do Nexus disponibiliza um reprodutor da prévia com controlo de pausa e **comentários ligados ao tempo exato da versão atual** (por exemplo 00:12 e 00:38). O operador pode acrescentar **múltiplos comentários temporizados** e **instruções gerais sem timestamp** e enviá-los em conjunto para uma revisão inteligente e localizada (P7-B). **Não construir editor de vídeo ou timeline de objetos/keyframes.** O visual detalhado continua reservado à fase F4.
+
+Cada pedido está associado a `creativeId` e **`creativeVersionId`**, com notas por `timeMs` e texto e notas gerais. O sistema regista a versão observada, preserva feedback/histórico e **não reassocia silenciosamente timestamps quando a montagem altera a duração**; as notas antigas continuam ligadas à versão anterior. A granularidade para carrosséis (comentário por slide) pode seguir princípio semelhante, mas é detalhe proposto a confirmar.
+
+**Gates e execução:** enviar feedback não equivale à aprovação final, não inicia Postiz e não obriga a regenerar tudo. Cada ronda produz uma nova versão/QA, sem que cada comentário isolado desencadeie um render ou despesa. Novos campos do contrato só serão implementados após validação técnica e testes de concorrência/versões.
+
+**A decidir na P9:** política de rondas automáticas de QA/correção antes de apresentar uma revisão, com travões de custo/recursos.
 
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
