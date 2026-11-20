@@ -29,7 +29,7 @@ Cada projeto Social tem objetivos e estratégia editorial contínua, com **campa
 
 O Motor 4 deve distinguir relatórios de **campanha** (conteúdos associados e KPIs dentro da janela adequada) dos relatórios de **desempenho geral do projeto** (que incluem conteúdo contínuo e podem mostrar a contribuição de campanhas). Estas vistas **não são somáveis sem cuidado**; eventos e conversões não podem ser contados duas vezes. Métricas ausentes/inacessíveis ficam ausentes, nunca estimadas como vendas confirmadas. Rastrear UTMs e IDs apenas onde existirem.
 
-O Motor 1 recebe aprendizagens tanto sobre campanhas como sobre a estratégia contínua, sem interromper a investigação geral pela existência de uma campanha. Prioridades entre ambos **P14 por decidir**. Contrato [CAMPANHAS.md](CAMPANHAS.md).
+O Motor 1 recebe aprendizagens tanto sobre campanhas como sobre a estratégia contínua, sem interromper a investigação geral pela existência de uma campanha. **P14-B é decisão:** o M1 propõe prioridade adaptativa justificada com prazos, tendências, objetivos, dados observados do M4 e capacidade do M2; o utilizador pode ajustar antes da escolha dos temas. **M4 apenas fornece sinais e grau de confiança**, nunca decide sozinho prioridades de produção nem inventa ROI. Pesos exatos não aprovados. Contrato [CAMPANHAS.md](CAMPANHAS.md).
 
 ## 2. Catálogo mínimo
 
