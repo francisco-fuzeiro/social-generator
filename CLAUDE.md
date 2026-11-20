@@ -14,6 +14,9 @@
 
 ## Regras do repo
 
+- **Postiz é a fonte de verdade do agendamento/publicação.** Motor 3 integra com Postiz; o dashboard Nexus consulta calendário de posts agendados, publicados, falhados e pendentes por sincronização. Não criar scheduler de publicação Nexus. Ver `docs/POSTIZ.md`.
+- A separação de Analytics como quarto motor autónomo ainda **não foi aprovada**.
+
 - Os repositórios dos projetos servidos (Vefi, UtopIA, The Hidden Layer e futuros) são só de leitura por omissão.
 - Orçamento adicional zero preferido; nenhuma API paga, conta ou chave sem decisão do Francisco. Teto de planeamento 25 €/mês não é autorização de compra.
 - O motor escreve o contrato de dados do Nexus com escrita atómica (`.tmp` e renomear); não duplica orquestração, scheduler nem aprovações do Nexus.
