@@ -27,7 +27,8 @@
 - [x] **P11-B:** detetar periodicamente alterações nas fontes autorizadas do branding e pedir **aprovação humana antes de atualizar versão oficial**; sem modificar posts no Postiz.
 - [x] **P12-B:** após mudança de branding aprovada, auditar impacto nos criativos em produção/por aprovar/aprovados e agendados; propor revisões localizadas para decisão humana; no Postiz só alerta e revisão manual.
 - [x] **P13-B:** conteúdo contínuo por projeto com campanhas opcionais, cada uma com objetivo, público, prazo, mensagem, CTA e KPIs próprios; M1 não deixa de recomendar temas gerais e M4 mede separadamente.
-- [ ] **P14:** definir prioridade/alocação de pesquisa e produção entre campanhas ativas e conteúdo contínuo (fixa, adaptativa ou decidida manualmente).
+- [x] **P14-B:** Motor 1 propõe prioridades adaptativas e justificadas entre campanhas e conteúdo contínuo, ajustáveis pelo operador antes de escolher temas; respeita limites M2/Nexus, sem quota fixa e sem calendário inicial.
+- [ ] **P15:** decidir reutilização/adaptação de um conteúdo para múltiplas redes (igual em todas, variantes por plataforma, ou produções independentes).
 - [ ] Limites técnicos concretos de tempo/CPU e testes de QA disponíveis por formato (o teto de 3 tentativas já está decidido).
 - [ ] **Prova técnica Postiz** (não iniciada): verificar se existe opção gratuita/experimental válida; testar API, contas/redes/formatos, agendamento, sincronização, recibos, erros e edição no Postiz com reflexo no calendário Nexus, sem publicar nem pagar sem aprovação.
 - [ ] **Escolher Postiz Cloud vs self-hosted após relatório de evidências:** limites, uptime 24/7, custos reais, manutenção, backups e capacidade por plataforma; decisão requer aprovação.
@@ -39,7 +40,7 @@
 
 ## Próximas missões técnicas (não autorizadas por esta checklist)
 
-- [ ] **Campanhas opcionais P13-B no contrato Nexus:** verificar que os projetos funcionam sem campanha, associar campaignId quando existir, preservar objetivos e KPIs por campanha, sem campanha obrigatória nem percentagens de prioridade inventadas.
+- [ ] **Campanhas opcionais P13-B no contrato Nexus:** verificar que os projetos funcionam sem campanha, associar campaignId quando existir, preservar objetivos e KPIs por campanha, sem campanha obrigatória e com prioridade adaptativa P14-B explicada/editável, **sem percentagens fixas inventadas**.
 - [ ] F1.1 — contrato/leitor/vista Social Nexus mínimos; **Adicionar mostra todos os projetos Nexus**, configurar perfil Social em rascunho e pesquisar apenas projetos **ativos, configurados, com branding completo**; sem criação Nexus independente nem design visual detalhado.
 - [ ] F1.2 — decisões editoriais persistentes e idempotentes.
 - [ ] F1.3 — prévias multimédia protegidas.
