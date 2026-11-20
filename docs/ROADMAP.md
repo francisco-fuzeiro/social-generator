@@ -12,6 +12,8 @@
 - [x] Registar **P2-C**: pesquisa adaptativa só para perfis Social ativos/configurados com branding; reavaliação dos temas após 7 dias; lotes de ≥5 temas e seleção múltipla.
 - [x] Registar **P3-B adaptada**: Motor 1 recebe só escolha de temas; calendário completo só aparece após produção, no gate final de aprovação; Motor 3 agenda apenas pacote aprovado.
 - [x] **Postiz é o agendador/publicador e Nexus consulta o calendário sincronizado** (agendados, publicados, falhados, pendentes). Contrato em [POSTIZ.md](POSTIZ.md).
+- [x] **P5-C:** calendário Postiz consultável no Nexus; **editar, reagendar ou cancelar só no Postiz**, com sincronização para o Nexus.
+- [x] **Arquitetura de quatro motores lógicos**: M1 Intelligence, M2 Production, M3 Postiz Distribution & Scheduling, M4 Analytics & Learning.
 - [ ] **Revisão técnica do contrato v1 no Nexus** (a adenda funcional já incorpora a entrevista). Alinhar catálogos, integrações e testes antes de F1.1.
 - [ ] Recuperar ficheiros originais SOCIAL_GENERATOR.md (489 linhas) e adenda (284 linhas), se disponíveis, e reconciliar diferenças sem os fazer passar por recuperados.
 - [ ] Verificar segredos antes de novos commits, especialmente enquanto repo público.
@@ -37,10 +39,11 @@ Adicionar validação de acesso à biblioteca externa e isolamento de marca onde
 
 **Contrato de seleção e caducidade:** [CICLO_TEMAS.md](CICLO_TEMAS.md). A F2.1 precisa de testar que um projeto configurado mas inativo não gera pesquisa; a aprovação humana de tema e de publicação não é substituída pelo planeamento.
 
-## F3 — Distribuição e medição rastreável
+## F3 — Distribuição Postiz e Motor 4 de Analytics & Learning
 
-- **F3.1:** **após aprovação final da peça e calendário**, Motor 3 recebe pacote/hash e cria agendamento **no Postiz** quando elegível; fallback manual assistido sem falso agendamento. O Postiz mantém e executa agenda, não o Nexus. Confirmação de `agendado` distinta de `publicado`; depois métricas/UTM/eventos/conversões, experiência e aprendizagem.
-- **F3.2:** **leitura/sincronização de calendário Postiz no dashboard Social do Nexus** (agendados, publicados, falhados, pendentes e cancelados), com filtros por projeto/conta/rede/período, proveniência, última atualização e histórico. Validar modos Cloud/self-hosted, autorização, quotas, direitos e capacidades por rede antes de conectar.
+- **F3.1 — M3:** após aprovação final da peça e calendário, Motor 3 envia o pacote/hash ao **Postiz** quando elegível (fallback manual sem falso agendamento). O Postiz mantém e executa agenda, não o Nexus; `agendado` distinto de `publicado`, ambos com confirmação.
+- **F3.2 — M3 calendário Nexus só de leitura:** sincronização de posts do Postiz (agendados, publicados, falhados, pendentes, cancelados), filtros por projeto/conta/rede/período, última atualização e histórico. **Abrir no Postiz para editar/reagendar/cancelar; nunca mutar a agenda no Nexus**. Validar Cloud/self-hosted, quotas e canais.
+- **F3.3 — M4 Analytics & Learning:** recolher métricas das redes/Postiz e UTMs/eventos de sites/apps quando disponíveis, normalizar com origem/janela/definição, atribuir conversões prudentemente, comparar experiências e devolver aprendizagem com evidência a M1. A falha do M4 não impede posts confirmados no Postiz.
 - Começar por métricas observadas e eventos de conversão disponíveis; enriquecer UTMs/atribuição quando os projetos forneçam instrumentação real.
 
 ## MVP de produto — depois de validar as fatias
@@ -49,7 +52,7 @@ Adicionar validação de acesso à biblioteca externa e isolamento de marca onde
 
 Se alguma conta/rede não permitir publicação automatizada, um fluxo manual é aceitável, mas a falta de publicação/observação deve constar expressamente do estado. Não declarar métricas reais sem dados.
 
-O calendário funcional e os estados reais do Postiz pertencem à **F3**, mas a experiência visual detalhada continua reservada à F4. Editar/cancelar/agendar diretamente pelo Nexus precisa de decisão específica; por agora a consulta é requisito confirmado.
+O calendário funcional e os estados reais do Postiz pertencem à **F3**, mas a experiência visual detalhada continua reservada à F4. **P5-C decidiu:** o Nexus só consulta, Postiz é onde se edita/reagenda/cancela; nenhuma edição de posts agendados no Nexus.
 
 ## F4 — Dashboard visual detalhado (só após funcionamento)
 
