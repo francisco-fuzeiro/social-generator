@@ -6,7 +6,7 @@
 
 | ID | Decisão | Consequência |
 |---|---|---|
-| SG-D001 | Multi-projeto **exclusivamente a partir do catálogo do Nexus**, com ativação Social opcional apenas para projetos Nexus com redes sociais configuradas | O Social **não cria projetos independentes**; mostra só projetos elegíveis do Nexus, e apenas os ativados entram na produção |
+| SG-D001 | **Adicionar projeto** lista todos os projetos existentes no Nexus, com configuração Social independente e opcional para cada um | O Social não cria novos projetos Nexus; adicionar cria um perfil Social em preparação, não inicia pesquisa nem publicação |
 | SG-D002 | Dashboard é o separador Social do Nexus (PC/móvel) | Não criar aplicação, sistema de contas ou servidor concorrente |
 | SG-D003 | Três motores: Pesquisa → Produção → Distribuição/Métricas/Aprendizagem | Recomendações específicas por projeto; feedback para pesquisa |
 | SG-D004 | Investigar tendências/publicações bem-sucedidas, fontes e concorrência | Fichas de oportunidades com fontes, datas e justificação |
@@ -24,7 +24,7 @@
 | SG-D016 | Repositórios servidos (Vefi/UtopIA/etc.) são só leitura por omissão | Sem alterações cruzadas não autorizadas |
 | SG-D017 | GitHub inicialmente público até segunda 23/11/2026, depois privado | Não publicar segredos nem assumir retroatividade da privacidade |
 | SG-D018 | The Hidden Layer: mini-documentários faceless em inglês, voz consistente, sem personagens, motion graphics programáticos | Identidade editorial e visual separadas |
-| SG-D019 | **Projetos elegíveis só do Nexus e só com socials**; inclusão no Social é opt-in | Filtro no catálogo do Nexus, não formulário de criação de projeto independente |
+| SG-D019 | Só projetos do Nexus podem ser adicionados ao Social, mas **o seletor mostra todos**, mesmo sem socials | Os requisitos de canais/contas e branding são verificados na configuração/ativação e nunca ocultam projetos no seletor Adicionar |
 | SG-D020 | Pesquisa por YouTube, Instagram, Google/Google Trends, Reddit, TikTok, X e LinkedIn; concorrência híbrida (referências fixadas e descoberta) | Marcar fontes, datas, permissões e confiança; não prometer API disponível sem prova |
 | SG-D021 | Scoring das oportunidades **adaptativo ao projeto**, com custo/viabilidade e evidências; propostas económicas antes do gate | Não gastar em guião, storyboard ou render antes de tema aprovado |
 | SG-D022 | **Formatos**: The Hidden Layer — vídeo vertical narrado; Vefi/UtopIA — vídeos e carrosséis | Perfis por projeto decidem o que se produz; não impor o mesmo template |
@@ -35,7 +35,9 @@
 | SG-D027 | **Design visual detalhado do dashboard só depois da funcionalidade** | F1 tem UI mínima funcional e acessível, não um redesign prematuro |
 | SG-D028 | Biblioteca externa `D:\AI\Biblioteca`, usada com catálogo de licenças e isolamento por projeto | Não versionar os assets no Git; acesso através de configuração autorizada |
 
-| SG-D029 | **Entrevista P1 — opção B:** basta ter pelo menos uma conta social **configurada no Nexus** (plataforma e identificador/handle/URL); **não é exigida autenticação por API** para a elegibilidade Social | Projeto elegível pode fazer pesquisa, produção, exportação/publicação manual e introduzir métricas manuais após opt-in. Recolha/publicação automática por API só após ligação, permissões e gates aplicáveis; nunca tratar conta configurada como API autenticada |
+| SG-D029 | **Entrevista P1 — opção B:** basta configurar uma conta social identificável, sem autenticação por API, para habilitar capacidades manuais do Social | Ter a conta não é requisito para surgir em Adicionar projeto; é requisito de configuração para ativar operações que dependem de um canal. A API continua opcional e só habilita capacidades comprovadas |
+
+| SG-D030 | **Correção da entrevista P2:** ao clicar em **Adicionar projeto**, aparecem **todos os projetos do Nexus**; só os que forem adicionados/configurados no Social, **ativos e com branding completo** entram na pesquisa | Fluxo: catálogo Nexus completo → adicionar perfil Social (rascunho) → configurar branding, objetivos e canais → ativar → pesquisa diária/semanal. Projetos sem preparação completa ficam visíveis para configurar, mas não consomem recursos | 
 
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
@@ -69,5 +71,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) propõe JSON local + JSONL, leitor
 - Preservar a cópia exata do SOCIAL_GENERATOR.md (489 linhas) e da adenda anterior (284 linhas) se forem recuperadas; **esta consolidação não finge ser transcrição desses dois ficheiros**.
 
 ## E. Regra de conflitos
+
+A decisão SG-D030 esclarece e substitui os filtros de listagem implícitos em SG-D001, SG-D019 e na leitura anterior de SG-D029. **Não excluir projetos sem socials do seletor «Adicionar projeto»**.
 
 Em conflito entre este registo e uma proposta F0: **decisão explícita posterior do utilizador prevalece como requisito de produto**, mas alterações ao contrato técnico dependem de uma missão aprovada e de migração/testes. Não apagar provas ou substituir a auditoria histórica. Para mudanças futuras anotar data, decisão anterior, nova opção, razão, responsável e artefactos afetados.
