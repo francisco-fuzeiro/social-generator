@@ -1,5 +1,15 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P16-B: variantes iniciais apenas das redes recomendadas
+
+**TL;DR:** O utilizador escolheu P16-B. Motor 1 recomenda as redes de maior adequação por tema usando público, formato, tendências, resultados anteriores M4 e capacidades/elegibilidade por conta, com evidência, limitações e confiança. Motor 2 produz a peça-base e variantes **apenas dos destinos recomendados e elegíveis**, reutilizando artefactos, sem número fixo. No segundo gate, **depois da produção**, o operador pode acrescentar/remover redes, pedindo variantes adicionais e QA antes da aprovação por versão/hash, conta, plataforma, copy e calendário. O primeiro gate mantém-se **só seleção de temas**, sem datas/horas nem escolha de contas definitiva. Postiz não recebe qualquer variante sem aprovação específica.
+
+- **Decisão:** SG-D053 em `docs/DECISOES.md`; contrato `docs/VARIANTES.md` §1.1.
+- **Documentos:** `docs/MOTORES.md`, `docs/REQUISITOS.md`, `docs/ALINHAMENTO_CONTRATO_V1.md`, `docs/CICLO_TEMAS.md`, `docs/METRICAS.md`, `docs/POSTIZ.md`, roadmap, TODO e visão.
+- **Estado:** documentação apenas; não foram implementadas pesquisas, renders, variantes ou publicações.
+- **P17 pendente:** decidir como sugerir dias/horas de publicação para cada conta/plataforma, depois da produção.
+
+
 ## 2026-11-20 — Entrevista P15-B: peça-base e variantes por plataforma
 
 **TL;DR:** O utilizador escolheu P15-B. O Motor 2 cria uma peça-base reutilizável e adapta seletivamente hook, duração, proporção, legendas, thumbnail, título/copy e CTA para redes diferentes, **apenas quando útil/compatível**, reutilizando assets e renders. A prévia e pacote de cada variante/conta/plataforma são sujeitos a **QA e aprovação final individual após produção**, com calendário completo. A primeira aprovação continua a ser apenas seleção de temas. Motor 3/Postiz recebe apenas pacotes aprovados e Motor 4 mede variantes sem confundir plataformas.
