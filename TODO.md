@@ -14,13 +14,15 @@
 - [ ] Recuperar e confrontar os dois documentos originais completos do ChatGPT, caso sejam disponibilizados (SOCIAL_GENERATOR.md 489 linhas; adenda 284 linhas).
 - [ ] Definir primeiro projeto/tema do piloto técnico; lembrar que MVP transversal exige três projetos.
 - [ ] Inventariar **todo o catálogo de projetos Nexus** para «Adicionar projeto» (sem filtros por redes/branding); documentar rascunho de perfil Social, validação de branding, ativação e gate de pesquisa. Inventariar contas e permissões reais por plataforma para operações dependentes de canal.
+- [ ] **Provar importação de branding P10-B:** fontes Nexus/website/docs/repos/autorizadas, leitura sem alterações, proveniência e incerteza, consentimento/permissions, correção manual, versionamento, aprovação e gate de pesquisa; sem dados externos assumir acesso.
 - [ ] Inventariar biblioteca `D:\AI\Biblioteca` e política de licenças/retencão sem alterar os ficheiros.
 - [x] **P3-B adaptada**: só selecionar temas no Motor 1; calendário com ordem/datas/horas/canais **depois da produção** e **antes de aprovação final**; Motor 3 agenda pacote aprovado.
 - [x] **P6-C:** primeiro validar a integração Postiz, só depois decidir Cloud vs self-hosted.
 - [x] **P7-B:** revisões localizadas com preservação de trechos/recursos corretos, histórico e comparação/recuperação de versões; novo gate final obrigatório para pacote alterado. `docs/REVISOES.md`.
 - [x] **P8-B:** feedback por comentários associados a timestamps do vídeo e por instruções gerais, agrupados por versão; sem editor visual completo.
 - [x] **P9-B:** no máximo três tentativas por ronda (execução inicial + duas autocorreções de QA), paragem antecipada e reporte de falhas remanescentes; não consumir serviços pagos sem aprovação.
-- [ ] **P10:** definir se o branding Social é preenchido manualmente, extraído automaticamente de fontes autorizadas ou híbrido sujeito a revisão humana.
+- [x] **P10-B:** branding proposto por importação em leitura de fontes autorizadas do projeto Nexus, com evidência e lacunas por campo, edição manual e **aprovação humana antes de ativar**.
+- [ ] **P11:** decidir como detetar e revalidar alterações ao website/brand book/repo após aprovação inicial do branding (manual, automático com aprovação, ou automático sem gate).
 - [ ] Limites técnicos concretos de tempo/CPU e testes de QA disponíveis por formato (o teto de 3 tentativas já está decidido).
 - [ ] **Prova técnica Postiz** (não iniciada): verificar se existe opção gratuita/experimental válida; testar API, contas/redes/formatos, agendamento, sincronização, recibos, erros e edição no Postiz com reflexo no calendário Nexus, sem publicar nem pagar sem aprovação.
 - [ ] **Escolher Postiz Cloud vs self-hosted após relatório de evidências:** limites, uptime 24/7, custos reais, manutenção, backups e capacidade por plataforma; decisão requer aprovação.
