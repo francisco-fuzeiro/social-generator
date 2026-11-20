@@ -13,7 +13,7 @@
 
 | # | F0 ou lacuna | Contrato que tem de vigorar |
 |---|---|---|
-| C01 | IDs editoriais fixos com três projetos | **Não existe criação de projeto Social independente**. O catálogo de elegíveis vem exclusivamente do Nexus: apenas projetos Nexus existentes com socials configurados; opt-in explícito para ativar Social |
+| C01 | IDs editoriais fixos com três projetos | **Não existe criação de projeto Social independente**. O catálogo de elegíveis vem exclusivamente do Nexus: apenas projetos Nexus existentes com pelo menos uma **conta social identificada/configurada** (plataforma e handle/URL/ID), **mesmo sem autenticação API**; opt-in explícito para ativar Social |
 | C02 | `projetoId` livre/fixo sem relação | Todas as entidades usam identidade canónica Nexus (ou mapeamento legado explícito), com `nexusProjectId` obrigatório; catálogo e autorização consultados ao Nexus |
 | C03 | Plataformas limitadas a três enums | Modelo de dados extensível; Instagram, YouTube, X, TikTok e LinkedIn conforme os perfis; conectores podem estar indisponíveis e exportação manual ser o único modo |
 | C04 | Pouco detalhe de pesquisa | Pesquisa leve **diária** + **relatório semanal aprofundado**, sem novo scheduler; fontes YouTube, Instagram, Google/Trends, Reddit, TikTok, X, LinkedIn e fontes oficiais |
@@ -41,7 +41,7 @@ ProjetosNexus
   → perfil Social e canais autorizados → pesquisa/produção/publicação
 ```
 
-Projetos do Nexus sem socials **não aparecem no seletor de ativação Social**. Projetos com socials mas não ativados não entram no seletor de produção/relatórios. Não há formulário ou endpoint `criarProjetoSocial`. O Social também não pode criar ligações de contas sociais em nome do Nexus para contornar esta regra.
+Projetos do Nexus sem uma conta social identificável **não aparecem no seletor de ativação Social**. **Entrevista P1, opção B (DECIDIDO): conta configurada no Nexus é suficiente; OAuth/API não é pré-requisito.** Uma simples marcação genérica sem conta identificável não basta. Recolha de métricas e publicação automáticas só podem funcionar depois de autenticação, permissões, condições oficiais e aprovação, enquanto pesquisa, produção, exportação/publicação e métricas manuais podem funcionar antes disso. Projetos com socials mas não ativados não entram no seletor de produção/relatórios. Não há formulário ou endpoint `criarProjetoSocial`. O Social também não pode criar ligações de contas sociais em nome do Nexus para contornar esta regra.
 
 **PROPOSTO técnico:** representar no Nexus `nexusProjectId`, `hasSocials`, `socialEnabled`, `socialProfileVersion`, `eligibleChannels` e `eligibilityReason`; o leitor Social recebe referências validadas pelo Nexus, não caminhos arbitrários do browser. A fonte autoritativa de `hasSocials` é a configuração real de redes do Nexus, não um booleano editável no JSON do motor.
 
@@ -113,7 +113,7 @@ Detalhe em docs/METRICAS.md.
 Duas aprovações persistentes e inequívocas: tema antes de guião; publicação por pacote/hash/conta/plataforma antes de efeito externo. Nexus guarda identidade/autorização. Em publicação API: conferir elegibilidade, consentimento, limites; `em-envio` + timeout sem recibo = `incerta`, não reenvio cego. Não comprar ferramentas, partilhar credenciais ou modificar repos externos por pressuposto.
 
 **Testes obrigatórios antes de F1.1 e no progresso F1–F3:**
-1. Nexus project sem socials não aparece; com socials elegível não fica ativado automaticamente; ID inventado pelo Social rejeitado.
+1. Nexus project sem conta social configurada não aparece; com conta configurada mas **sem API autenticada** é elegível sem ativação automática; ID inventado pelo Social rejeitado.
 2. Remover último social torna projeto indisponível para novo trabalho sem apagar histórico; conta de outro projeto rejeitada.
 3. Uma nova marca com sociais no Nexus é ativável sem editar enum de IDs nem escrever no repo alheio.
 4. Pesquisa daily/weekly com fontes/datas e estados; sem fonte válida não produz scores arbitrários.
