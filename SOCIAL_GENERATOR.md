@@ -9,18 +9,28 @@ Construir um sistema de criação, distribuição e aprendizagem de conteúdo pa
 ## 2. Decisões de produto confirmadas
 
 - O **dashboard Social existe dentro do Nexus**, em PC e móvel; este repositório contém o motor e contratos, não uma segunda aplicação ou um segundo orquestrador.
-- **Multi-projeto nativo e extensível**: selecionar projeto antes de pesquisar, recomendar, produzir ou publicar. Iniciar com The Hidden Layer, Vefi e UtopIA; Car Enterprise é outro caso possível.
+- **Multi-projeto ligado exclusivamente ao Nexus**: apenas projetos existentes no Nexus **com redes sociais configuradas** aparecem para ativar o Social. A ativação é opcional; nem todos os projetos Nexus entram. O Social não cria projetos independentes. Primeiros candidatos ao MVP: The Hidden Layer, Vefi e UtopIA, **se elegíveis/ativados**; Car Enterprise só poderá entrar se vier a cumprir as mesmas condições.
 - **Três motores partilhados**:
   1. **Intelligence / Pesquisa**: estudar tendências, concorrência, formatos e publicações com bom desempenho; recomendar oportunidades por projeto.
   2. **Production / Produção**: transformar um tema aprovado em guião, recursos, composição, variantes, prévias e pacote exportável.
   3. **Distribution + Analytics + Learning**: preparar distribuição, medir resultados e retroalimentar a pesquisa. A primeira versão admite publicação e métricas manuais.
-- Pesquisa leve **diária** e relatório de oportunidades **semanal** como objetivos de funcionamento, não como scheduler já implementado.
+- Pesquisa **diária leve** e relatório **semanal aprofundado** são cadências decididas; fontes: YouTube, Instagram, Google/Trends, Reddit, TikTok, X, LinkedIn e fontes oficiais. Concorrência híbrida (referências manuais e descoberta), score adaptativo por projeto. Reutilizar scheduler Nexus quando provado; inicialmente manual.
 - **Aprovação humana do tema antes do guião/produção** e **nova aprovação da peça/pacote específico antes de publicar**. A aprovação de uma ferramenta no Nexus não substitui nenhuma destas.
-- **Qualidade publicável desde o primeiro piloto**, com revisão factual, editorial, visual, de acessibilidade e de licenças.
+- **Qualidade publicável desde o primeiro piloto**, com revisão factual, editorial, técnica, visual, de acessibilidade e de direitos; Remotion-first e IA generativa só quando acrescentar valor; Higgsfield requer aprovação específica.
 - Dados de cada projeto isolados; padrões globais podem ser reutilizados quando forem abstrações gerais, nunca como mistura de resultados de marcas.
 - O sistema deve justificar recomendações, preservar fontes, decisões, versões, custos, publicações e medições. Um resultado hipotético ou indisponível nunca é apresentado como real.
 
-## 3. Metas e limites acordados
+## 3. Formatos e redes de intenção da entrevista
+
+| Projeto Nexus (apenas se elegível/ativado) | Formato | Plataformas |
+|---|---|---|
+| The Hidden Layer | Vídeo vertical narrado em inglês, faceless e motion graphics | Instagram, YouTube, X, TikTok |
+| Vefi | Vídeo e carrossel | Instagram, TikTok, X, LinkedIn, YouTube |
+| UtopIA Solutions | Vídeo e carrossel | Instagram, LinkedIn, TikTok, X, YouTube |
+
+Estas são **intenções editoriais**, não provas de contas ligadas nem autorização de publicação. Novos projetos só surgem se existirem no Nexus com socials. Ver docs/PROJETOS.md.
+
+## 4. Metas e limites acordados
 
 | Tema | Orientação |
 |---|---|
@@ -31,7 +41,7 @@ Construir um sistema de criação, distribuição e aprendizagem de conteúdo pa
 | MVP transversal | um conteúdo real/publicável para cada projeto inicial (The Hidden Layer, Vefi, UtopIA), com ciclo e métricas rastreáveis |
 | Piloto técnico inicial | pode validar um único projeto/peça antes de repetir nos três; não satisfaz sozinho o MVP transversal |
 
-## 4. Arquitetura e responsabilidades
+## 5. Arquitetura e responsabilidades
 
 ```text
 Nexus (UI Social, sessões, permissões, gates, limites, supervisão)
@@ -49,9 +59,9 @@ O Nexus continua dono da orquestração, lançamento de agentes, controlo de rec
 
 O fluxo de negócio segue **Workspace → Projeto → Campanha → Ideia/Oportunidade → Criativo/Peça → Variante → Publicação → Métricas/Conversões → Experiência/Aprendizagem**, mantendo IDs e rastreabilidade de ponta a ponta.
 
-## 5. Fluxo editorial
+## 6. Fluxo editorial
 
-1. Selecionar projeto e objetivo; consultar perfil de marca e histórico.
+1. Selecionar **projeto Nexus com socials e Social ativado**, objetivo e canal autorizado; consultar perfil de marca e histórico. Projeto sem redes sociais não é elegível e não é criado pelo Social.
 2. Motor 1 investiga fontes e apresenta **fichas económicas de oportunidade** (tema, fonte/data, potencial, público, hook, formato, duração sugerida, risco e esforço), **sem produzir guiões caros antes da aprovação**.
 3. Humano aprova ou recusa o tema/versão; recusa não produz.
 4. Motor 2 pesquisa em profundidade, verifica afirmações, escreve guião/storyboard, compõe recursos, gera prévias/contact sheet, verifica qualidade, fornece ficheiros editáveis e MP4 quando apropriado.
@@ -59,22 +69,22 @@ O fluxo de negócio segue **Workspace → Projeto → Campanha → Ideia/Oportun
 6. Motor 3 exporta/prepara; só publica com autorização e canal elegível. Guardar recibos e tratar estado de envio incerto sem repetição cega.
 7. Recolher métricas datadas e conversões; comparar janelas equivalentes; gerar aprendizagem citável por projeto, usada em novas recomendações.
 
-## 6. Ferramentas e integração
+## 7. Ferramentas e integração
 
 - **Remotion-first** para motion graphics/vídeo programático; FFmpeg para transcodificação/verificações quando comprovado. HyperFrames mantém-se alternativa em avaliação.
 - Imagens: preferir capacidade disponível em sessões Codex/Nexus **se comprovada**; alternativa supervisionada no ChatGPT. Higgsfield apenas mediante autorização e quando acrescentar valor.
 - Voz, música e imagens de terceiros: adaptadores substituíveis, prova de licença e direitos. Não assumir ElevenLabs ou qualquer API paga como obrigatória.
 - Prioridade a integrações oficiais e exportação manual segura; permissões e restrições das redes sociais têm de ser validadas por canal.
-- **Biblioteca local**: D:\AI\Biblioteca, externa ao Git. **Projeto local Nexus**: C:\Claude\Social Generator.
+- **Biblioteca local**: D:\AI\Biblioteca, externa ao Git, com manifestos/licenças e acesso por referências; o perfil Social está ligado ao projeto Nexus. **Projeto local Nexus**: C:\Claude\Social Generator.
 - Ferramentas novas devem entrar como adaptadores com capacidades e custos declarados; não depender estruturalmente de um fornecedor.
 
-## 7. Dashboard e aprendizagem
+## 8. Dashboard e aprendizagem
 
-O separador Social do Nexus inclui visão por projeto e global, Intelligence, Studio, calendário/distribuição, Analytics/Conversões, experiências e custos/saúde do sistema. Esta divisão é **proposta de navegação**, não interface implementada.
+**Ordem de implementação decidida:** primeiro garantir o separador Social do Nexus funcional (dados reais/indisponíveis, estados, seleção de projetos elegíveis, aprovações, outputs e métricas). **Só depois** definir o desenho visual detalhado, gráficos e navegação avançada. Overview/Intelligence/Studio/Publishing/Analytics/Experiments/Costs são áreas de informação possíveis, não sete páginas a desenhar na F1.
 
-Medir alcance, retenção, envolvimento, tráfego, conversões e custos sem misturar definições entre plataformas. Registrar características criativas (hook, duração, voz, visual, CTA, variante) para aprender o que funcionou. Comparação honesta entre posts de mesma idade/condição; amostras pequenas e causalidade incerta ficam explícitas. Cada projeto escolhe objetivos/KPIs próprios, não se otimiza universalmente por visualizações.
+Medir alcance, retenção (tempo médio, conclusão/curvas quando disponíveis), envolvimento, CTR, links UTM, tráfego, eventos do website/app, conversões e custos sem misturar definições entre plataformas. Registrar características criativas (hook, duração, voz, visual, CTA, variante) para aprender o que funcionou. Comparação honesta entre posts de mesma idade/condição; amostras pequenas e causalidade incerta ficam explícitas. Cada projeto escolhe objetivos/KPIs próprios, não se otimiza universalmente por visualizações.
 
-## 8. Estados e documentação canónica
+## 9. Estados e documentação canónica
 
 | Fonte | Autoridade |
 |---|---|
@@ -92,10 +102,10 @@ Medir alcance, retenção, envolvimento, tráfego, conversões e custos sem mist
 
 **Semântica:** DECIDIDO = afirmado/aceite nas conversas; PROPOSTO = desenho para validação; PENDENTE = questão não fechada; IMPLEMENTADO = requer evidência de código/testes. Decisão de produto não significa funcionalidade já implementada.
 
-## 9. Fronteiras de segurança
+## 10. Fronteiras de segurança
 
 Sem publicar credenciais, tokens, dados pessoais, chaves, logs brutos, material privado ou a biblioteca externa no GitHub (atualmente público até 23/11/2026, alteração posterior sob controlo humano). Redes/repositórios servidos não ganham permissão de escrita por associação ao projeto. Respeitar limites do Nexus, política de pausa e recuperação, direitos de terceiros, revisão factual e consentimento da publicação.
 
-## 10. Próximos passos
+## 11. Próximos passos
 
-Primeiro alinhar contrato v1 F0 com multi-projeto/canais, métricas/atribuição, biblioteca e orçamento, sem assumir que a adenda já foi implementada. Depois seguir a sequência incremental F1–F3 detalhada em docs/ROADMAP.md e docs/auditoria-f0.md. 
+A entrevista já ficou formalizada em docs/ALINHAMENTO_CONTRATO_V1.md, docs/PROJETOS.md, docs/MOTORES.md e docs/METRICAS.md. Antes de F1: **validar tecnicamente** o contrato com o Nexus sem abrir criação de projeto livre ou redesign do dashboard; testar elegibilidade de projetos e gateways de fontes/canais. Depois seguir a sequência incremental F1–F3 detalhada em docs/ROADMAP.md e docs/auditoria-f0.md. 
