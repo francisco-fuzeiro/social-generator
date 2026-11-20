@@ -147,6 +147,19 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **P12-B não autoriza regeneração automática nem alteração da agenda do Postiz.** Contrato: [BRANDING.md](BRANDING.md) §4.2.
 
+## Conteúdo contínuo e campanhas opcionais — P13-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R70 | Estratégia editorial contínua por projeto | Projeto Social ativo e elegível recebe recomendações gerais mesmo sem nenhuma campanha ativa |
+| R71 | Campanhas opcionais por projeto Nexus | Operador pode criar campanha com **objetivo, público, prazo, mensagem, CTA e KPIs próprios**; a campanha não cria projeto Nexus nem conta social |
+| R72 | Recomendações gerais e de campanha simultâneas | M1 recomenda temas alinhados com campanhas ativas **sem deixar de pesquisar e recomendar conteúdo geral**, identificando o contexto de cada oportunidade |
+| R73 | Conteúdo sem campanha | Temas, criativos, publicações e métricas de conteúdo contínuo funcionam com `campaignId` ausente/nulo; não obrigar a campanha fictícia |
+| R74 | Medição separada | M4 mostra KPIs por campanha e crescimento geral do projeto, com janelas/atribuição e dados observados sem dupla contagem de conversões |
+| R75 | Gates e distribuição preservados | Conteúdo de campanha segue aprovações normais e o Postiz é o único agendador; campanhas ativas não autorizam despesas ou publicações por si |
+
+**P14 por decidir:** peso, prioridade e partilha da produção entre campanhas ativas e conteúdo contínuo. Contrato [CAMPANHAS.md](CAMPANHAS.md).
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
