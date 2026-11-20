@@ -36,6 +36,19 @@
 | R20 | Metas e controlo de custo | Pretender 5–10 peças/semana, 1–3h supervisão, 3–6h desenvolvimento; alvo extra 0€ e teto 25€/mês **não autorizam gastos** |
 | R21 | Adaptadores de fornecedores | Trocar render, pesquisa, TTS, imagem e rede sem reescrever núcleo nem duplicar ferramentas Nexus |
 
+## Pesquisa adaptativa, recomendações e calendário — decisões vinculativas
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R22 | Apenas projetos ativos recebem investigação | Perfil Social **adicionado/configurado, branding completo e ativo** é pesquisado; perfil completo mas inativo não gera pesquisa nem novas recomendações |
+| R23 | Pesquisa adaptativa (P2-C) | Todos os projetos aptos recebem pesquisa leve diária e relatório semanal; projetos prioritários/campanhas/tendências fortes recebem aprofundamento adicional |
+| R24 | Lote mínimo de cinco temas | Cada lote visível de seleção oferece **≥5 temas distintos e fundamentados**, ou sinaliza explicitamente insuficiência de temas credíveis sem os inventar |
+| R25 | Validade e reutilização | Tema reutilizável por no máximo **7 dias** após última validação; depois estado de reavaliação, com decisão documentada na investigação semanal |
+| R26 | Seleção múltipla | Utilizador pode selecionar 2 ou mais temas, não apenas o primeiro ou de maior score |
+| R27 | Ordem de agendamento proposta | Motor propõe ordem por relevância, urgência, formato/canal, capacidade e evidências, com explicação e possibilidade de alterar; **sem agendamento/publicação autónomos** |
+
+Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicação. A caducidade não apaga posts ou métricas. Contrato completo: [CICLO_TEMAS.md](CICLO_TEMAS.md).
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
