@@ -1,6 +1,6 @@
 # Branding por projeto — importação inteligente e validação humana
 
-> **DECIDIDO na entrevista P10, opção B (20/11/2026):** o Social Generator propõe o perfil de marca por extração **em modo de leitura** a partir de fontes **autorizadas e associadas ao projeto Nexus**; o utilizador revê, corrige e **aprova explicitamente** o perfil antes de poder ativar a pesquisa. Os esquemas e detalhes de interface são propostas técnicas, não implementação.
+> **DECIDIDO nas entrevistas P10-B e P11-B (20/11/2026):** o Social Generator importa e **verifica periodicamente mudanças de branding** de fontes autorizadas em modo de leitura, apresenta propostas com diferenças e **exige aprovação humana** tanto para a primeira versão como para qualquer alteração. Os esquemas, horários e meios técnicos são propostas, não implementação.
 
 ## 1. Princípio funcional
 
@@ -44,7 +44,32 @@ O **conjunto mínimo exato de campos obrigatórios** por tipo de projeto ainda r
 4. Apresentar proposta ao operador, que corrige, acrescenta instruções/restrições e confirma conteúdos e assets.
 5. **Aprovação humana explícita** cria uma versão validada do brand profile. Guardar fontes e alterações sem exportar segredos.
 6. **Ativação Social separada**: o operador decide se fica ativo. Só ativo+configurado+branding válido participa no Motor 1.
-7. Alteração posterior de brand kit cria **nova versão/candidatura à validação**, não reescreve silenciosamente pacotes já aprovados. A política automática de detetar mudanças e quando revalidar ainda será decidida na pergunta seguinte.
+7. **P11-B:** após validar o perfil, monitorizar periodicamente **alterações nas fontes autorizadas**; registar diferenças contra a versão aprovada e **propor atualização**, mas só publicar nova versão oficial após aprovação humana. Rejeitar ou corrigir é possível. A deteção não modifica posts agendados no Postiz nem versões anteriores.
+
+## 4.1. Deteção periódica e aprovação de mudanças — P11-B (DECIDIDO)
+
+O Social Generator deve **reler periodicamente as mesmas fontes de marca que estejam autorizadas** (website, documentação/brand book, design tokens e repositório em leitura, assets aprovados) e **comparar evidências atuais com a última versão validada**. Uma diferença observada não é automaticamente uma nova regra de marca: pode ser uma experiência de UI, campanha temporária, ficheiro desatualizado ou falso positivo.
+
+**Fluxo obrigatório:**
+1. Verificar autorização e acesso por projeto e fonte antes de cada leitura; se houve revogação, não continuar a monitorizar essa fonte.
+2. Comparar sinais relevantes contra o branding aprovado (logótipo, cores, tipografia, tom, proposta de valor, restrições e assets), com data, URL/ficheiro de origem, tipo de alteração e confiança.
+3. Guardar uma **proposta de alteração em revisão**, apresentando os campos antigos e novos, relevância e evidência. Agrupar diferenças relacionadas e evitar notificações repetidas pela mesma alteração.
+4. O utilizador escolhe **aceitar, rejeitar ou corrigir** as mudanças propostas. Até lá, **a versão oficial anterior mantém-se**, assinalando pendências relevantes para supervisão.
+5. **Só a aprovação humana** cria a nova versão oficial do perfil. Guardar histórico, decisões, evidências e identificadores dos conteúdos que dependiam das versões anteriores.
+6. **Nunca alterar silenciosamente criativos já aprovados, publicações no Postiz ou posts publicados.** Pode detetar que existem conteúdos potencialmente afetados e assinalá-los; **o tratamento concreto será decidido na P12**.
+
+**Cadência e estados:** a verificação deve ser periódica, mas **horas, periodicidade numérica e modo de notificação não foram aprovados**. Usar infraestrutura Nexus para coordenação da verificação quando disponível, com limites de leitura/custo. Projetos Social inativos não podem ser incluídos nas pesquisas de tendências por causa desta funcionalidade; a política de scans de branding em perfis inativos será afinada tecnicamente sem impor custo automático.
+
+**Modelo técnico PROPOSTO:** `BrandSourceSnapshot` (sourceRef, observedAt, etag/hash quando acessível, permissionScope), `BrandChangeProposal` (projectId, previousProfileVersion, changes[], evidence, confidence, status=proposed|approved|rejected|corrected, decidedAt, decidedBy), `BrandProfileVersion` e `AffectedContentRefs`. Falta decidir retenção, diffs/caching, frequência, notificações e impacto nas peças ainda por publicar. Não expor ficheiros privados, tokens ou URLs internas no GitHub público.
+
+**Exemplos/testes:**
+- Website muda cor de um botão temporariamente: detetar possível mudança, **não** atualizar automaticamente paleta oficial.
+- Brand book oficial muda logótipo: mostrar versão anterior/nova, origem e data; só após aceitação entra em vigor.
+- Fonte inacessível ou credenciais revogadas: registar problema/ausência de confirmação, sem inventar alteração.
+- Proposta rejeitada: perfil oficial permanece igual, auditoria guarda motivo e evita a mesma notificação repetida.
+- Operador corrige uma proposta: a versão validada corresponde à correção manual, não à inferência original.
+- Post previamente agendado no Postiz permanece intacto, sem reagendar/cancelar/alterar automaticamente.
+- Projeto social configurado mas inativo continua sem pesquisa de temas; deteção de branding não implica ativação.
 
 ## 5. Segurança e contratos técnicos (PROPOSTOS)
 
@@ -66,8 +91,8 @@ O **conjunto mínimo exato de campos obrigatórios** por tipo de projeto ainda r
 7. Importação de Vefi não recebe assets internos da UtopIA; leitura de repositório não altera ficheiros nem publica segredos.
 8. Revisão do branding após aprovação preserva versão original e não modifica peças/publicações anteriores sem gates relevantes.
 
-## 7. Ponto a decidir a seguir (P11)
+## 7. Ponto a decidir a seguir (P12)
 
-Depois do primeiro perfil validado, **como detetar e tratar mudanças no website/brand book/repositório?** Possibilidades: manual, deteção automática com aprovação humana, atualização automática. Não confundir deteção de alterações com autorização para mudar uma marca em produção.
+**P11-B aprovado:** deteção periódica com proposta e aprovação humana. **P12 ainda por decidir:** quando há nova versão de branding aprovada, qual o tratamento de peças em rascunho/em produção/à espera de aprovação e de publicações já agendadas? Não modificar nem cancelar agendamentos Postiz por inferência.
 
 Ver [PROJETOS.md](PROJETOS.md), [DECISOES.md](DECISOES.md), [ALINHAMENTO_CONTRATO_V1.md](ALINHAMENTO_CONTRATO_V1.md), [BIBLIOTECA.md](BIBLIOTECA.md).
