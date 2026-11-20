@@ -41,6 +41,12 @@ Quando a mesma peça-base/ficheiro é reutilizada em várias redes, **continuam 
 
 M4 fornece ao M1 **evidências históricas por plataforma, conta e formato** para recomendar os destinos mais adequados a um tema. Cada observação mantém origem, janela, idade do post, denominadores disponíveis e confiança; a ausência de histórico é uma limitação explícita, não um sinal de baixo potencial ou um valor inventado. M1 combina estes sinais com público, formato e tendências, recomendando apenas destinos justificados, sem selecionar todas as redes por omissão. A recomendação **não substitui a decisão humana** na revisão final nem as capacidades de distribuição comprovadas. Continuar a medir variantes/publicações separadamente por plataforma, mesmo quando reutilizam o mesmo render. Contrato [VARIANTES.md](VARIANTES.md).
 
+## 1.4. Aprendizagem de horários P17-B (DECIDIDO)
+
+Para sugerir **dias e horas por conta/plataforma depois da produção**, o M4 disponibiliza ao serviço de recomendação **horários de publicação efetivos** e resultados disponíveis, com origem, fuso, data/janela, métricas compatíveis, amostra e confiança. Ter publicado num certo horário não demonstra que esse horário **causou** melhor desempenho. Dados escassos/incomparáveis devem ser declarados, permitindo **estimativas heurísticas claramente identificadas** em vez de precisão falsa.
+
+Recomendações devem ainda considerar **audiência/fuso, tipo de conteúdo, campanha e agenda Postiz existente**. O M4 **não** seleciona automaticamente dias/horas finais, não modifica agenda, não publica e não inventa métricas. A sugestão editável entra apenas no segundo gate humano. Ver [HORARIOS.md](HORARIOS.md).
+
 ## 2. Catálogo mínimo
 
 | Grupo | Métricas / eventos candidatos | Observações |
