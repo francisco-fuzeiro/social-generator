@@ -68,8 +68,8 @@ M1 temas com formato/redes sugeridos → utilizador seleciona apenas temas (gate
 11. O operador remove uma plataforma proposta: não existe aprovação nem envio para essa rede, sem alterar agendamentos já confirmados no Postiz.
 12. Sem evidência/histórico de potencial por rede, M1 explicita incerteza e não inventa um score de viralidade; uma conta não autenticada não é apresentada como publicação automática elegível.
 
-## 5. Próxima pergunta — P17
+## 5. Próxima pergunta — P18
 
-**P16-B decidido:** apenas destinos recomendados pelo Motor 1 são preparados inicialmente; o operador pode adicionar/remover plataformas na revisão final. **P17 em aberto:** como devem ser escolhidos os horários/dias sugeridos para cada conta e plataforma, apresentados apenas depois da produção? Por horários fixos, por recomendação dinâmica baseada em dados e contexto, ou definidos manualmente?
+**P17-B decidido:** no segundo gate, depois da produção, sugerir **horários adaptativos por conta/plataforma** com histórico M4, audiência/fuso, formato, urgência de campanha e agenda Postiz, assinalando estimativas sem dados e permitindo edição total pelo operador antes de aprovar. **P18 em aberto:** cadência e volume de publicações por projeto (fixa, adaptativa com limites ou manual). Ver [HORARIOS.md](HORARIOS.md).
 
 Ver [DECISOES.md](DECISOES.md), [MOTORES.md](MOTORES.md), [REQUISITOS.md](REQUISITOS.md), [POSTIZ.md](POSTIZ.md), [REVISOES.md](REVISOES.md) e [METRICAS.md](METRICAS.md).
