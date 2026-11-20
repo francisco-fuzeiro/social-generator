@@ -99,6 +99,14 @@ Fonte: [POSTIZ.md](POSTIZ.md). Verificar `GET /public/v1/posts` e semântica dos
 
 **Contratos propostos:** `ApprovedDistributionPackage -> Motor3/Postiz`; `PublicationStatusReceipt -> NexusCalendarReadModel, Motor4`; `MetricSnapshot/ConversionEvent -> Motor4`; `EvidenceBasedLearning -> Motor1`. Implementação, schema e integração são passos futuros e exigem validação técnica.
 
+## 2.5. Entrevista P6 — validar Postiz antes de escolher alojamento
+
+**DECIDIDO (SG-D043):** seguir opção C: primeiro **provar o Postiz e a integração Motor 3 ↔ Nexus**, depois escolher Cloud ou self-hosted antes da implantação de publicação em produção. Uma eventual oferta de teste gratuito/experimental só pode ser utilizada após verificação de condições atuais; não presumir que existe ou está acessível.
+
+**Gate de evidências:** capacidades e limitações por rede (Instagram, TikTok, YouTube, LinkedIn, X), listagem de posts e contas, criação de rascunho/agendamento em ambiente autorizado, retorno de ID/recibo, estados do calendário, alterações feitas no Postiz e sincronização no Nexus, falhas/idempotência, custos, autonomia de execução 24/7, manutenção, backups, privacidade e segurança. Prova sem publicar conteúdo real involuntariamente e **sem autorizar despesas**.
+
+Cloud vs. self-hosted continua **PENDENTE**. Preparar recomendação sustentada em testes e custo operacional total para aprovação explícita. Contrato de prova em [POSTIZ.md](POSTIZ.md) §6.1.
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
