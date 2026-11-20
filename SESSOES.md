@@ -1,5 +1,13 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P12-B: auditoria após mudança aprovada de branding
+
+**TL;DR:** O utilizador escolheu P12-B. Após nova versão aprovada do branding, auditar as peças afetadas por projeto em produção, à espera de revisão, aprovadas mas não enviadas e já agendadas. Propor revisões localizadas e deixar o operador decidir por peça. Posts agendados no Postiz apenas sinalizados e abertos para revisão manual, sem alterar/cancelar/reagendar via Nexus. Novas versões revistas exigem gate de publicação. Documentação, não implementação.
+
+- **Decisão:** SG-D049 em `docs/DECISOES.md`; contrato [`docs/BRANDING.md`](docs/BRANDING.md) §4.2; validações de requisitos/Nexus/Postiz/roadmap alinhadas.
+- **Pergunta seguinte P13:** organização de conteúdo contínuo e campanhas por projeto.
+
+
 ## 2026-11-20 — Entrevista P11-B: branding atualizado só após aprovação
 
 **TL;DR:** O utilizador escolheu B: verificar periodicamente as fontes autorizadas do projeto (website, brand book, repo só leitura e assets), detetar diferenças e apresentar proposta comparativa. Operador pode aceitar/rejeitar/corrigir; somente após aprovação humana uma nova versão do branding é considerada oficial. Alterações não modificam automaticamente posts já agendados no Postiz. Sem alteração de código nem execução de scans.
