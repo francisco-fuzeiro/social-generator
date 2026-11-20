@@ -49,6 +49,18 @@
 
 Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicação. A **seleção de temas** é o gate 1 e **não inclui calendário**; o gate 2 **após produção** inclui prévia, pacote e calendário, antes de entregar ao Motor 3. A caducidade não apaga posts ou métricas. Contrato completo: [CICLO_TEMAS.md](CICLO_TEMAS.md).
 
+## Postiz como agendador e calendário consultável — decisões vinculativas
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R28 | **Agendamento/publicação através de Postiz** | Depois do segundo gate, Motor 3 envia agendamento aprovado ao Postiz; **Nexus não dispara publicações**. Estado agendado exige recibo real |
+| R29 | **Consultar calendário Postiz no dashboard Nexus** | Mostrar publicações agendadas e já publicadas, com data/hora, plataforma, conta, projeto, preview e ligação quando disponível |
+| R30 | Consultar todos os estados operacionais | Mostrar também falhadas, incertas, canceladas e pendentes (com proveniência distinguida de propostas locais), filtros por projeto/conta/rede/período |
+| R31 | Sincronização segura e identificável | IDs Postiz preservados, reconciliação sem duplicação, última atualização visível, snapshots desatualizados assinalados e erros explícitos |
+| R32 | Isolamento e história | Projetos Social inativos mantêm consulta histórica e agendamentos previamente confirmados. Alterações diretas no Postiz refletem-se após sincronização; não cancelar automaticamente |
+
+**Regras:** calendário do Nexus = **projeção de leitura do Postiz**, não scheduler paralelo. O visual avançado permanece adiado, mas consulta funcional e filtros são requisitos da integração Motor 3. O Postiz pode disponibilizar posts de outras origens; não associar ao projeto Nexus sem mapa de identificação válido. Controlo de edição/reagendamento pelo dashboard Nexus é assunto separado a decidir. Ver [POSTIZ.md](POSTIZ.md).
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
@@ -73,7 +85,7 @@ Canais de intenção **não são contas ligadas**. Conectores só operam após v
 
 ## Definição de MVP e sequência
 
-**F1 — funcionalidade do Nexus antes do visual:** seletor de todos os projetos Nexus, adição como rascunho Social, validação de branding e ativação, leitura real do contrato e UI mínima, gates persistentes, prévias protegidas. **F2 — conteúdo:** pesquisa e produção com prova de Remotion/imagem e um piloto técnico publicável. **F3 — publicação/métricas:** pacote aprovado, publicação manual/automática permitida, resultados datados, primeira aprendizagem e comparação honesta.
+**F1 — funcionalidade do Nexus antes do visual:** seletor de todos os projetos Nexus, adição como rascunho Social, validação de branding e ativação, leitura real do contrato e UI mínima, gates persistentes, prévias protegidas. **F2 — conteúdo:** pesquisa e produção com prova de Remotion/imagem e um piloto técnico publicável. **F3 — Postiz e publicação/métricas:** pacote aprovado é agendado/publicado pelo Postiz, e o Nexus consulta calendário e histórico de posts com estados sincronizados. Resultados datados, primeira aprendizagem e comparação honesta.
 
 **MVP de produto:** três conteúdos reais/publicáveis, um por cada projeto inicial elegível e ativado no Nexus, com marca, fontes, gates, pacote, custos e estado de publicação/medição. Conteúdo preparado e conteúdo publicado têm estados diferentes; se faltar publicação não inventar métricas.
 
