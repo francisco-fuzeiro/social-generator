@@ -60,6 +60,12 @@ Se ainda houver defeitos ao terminar, mostrar ao utilizador a **melhor versão d
 
 **Implementação Remotion-first:** preferir composições por cenas com assets/versionamento e render incremental de artefactos independentes quando seguro; evitar prometer re-render parcial do MP4 final sem medir capacidades e dependências de áudio/vídeo. FFmpeg e caches são detalhes de implementação a provar.
 
+## Variantes de plataforma e revisões — P15-B
+
+**Peça-base + variantes editáveis:** uma correção localizada P7-B pode afetar só a peça-base ou uma das variantes por plataforma. Manter registo de dependências entre cenas/áudio/legendas/assets e versões. Se a base mudar, **identificar variantes potencialmente afetadas** e propor atualização seletiva; não substituir silenciosamente versões já aprovadas ou em Postiz. **QA por variante** e novo segundo gate para cada pacote modificado antes de envio ao Motor 3. Revisão com notas temporizadas P8-B é sempre relativa à versão exata **da peça-base ou variante visualizada**. Limite de até três tentativas P9-B permanece **por ronda de revisão**, não é permissão para criar runs ilimitadas por plataforma.
+
+Ver [VARIANTES.md](VARIANTES.md).
+
 ## Segurança, custos e idempotência
 
 - Revisões não podem implicar uso de fornecedor pago/novas APIs sem aprovação. Se a mudança exigir gastar ou regravar o vídeo todo, sinalizar impacto/custo antes de executar despesas relevantes.
