@@ -1,4 +1,4 @@
-# Os três motores — especificação funcional
+# Os quatro motores — especificação funcional
 
 > Estado: fronteiras e gates DECIDIDOS; entrevista de 20/11/2026 incorporada. Pesos exatos, esquemas de adaptadores e cron técnico PROPOSTOS / por provar. Este ficheiro não autoriza instalar dependências nem executar publicações.
 
@@ -7,7 +7,8 @@
 - **Nexus**: interface Social, sessões e limites de agentes, permissões, aprovações humanas persistentes, pausa, diagnóstico e coordenação.
 - **Motor 1 — Intelligence**: encontra e avalia oportunidades. Não gera o guião antes da aprovação.
 - **Motor 2 — Production**: cria recursos e pacote a partir do tema aprovado.
-- **Motor 3 — Distribution, Analytics & Learning**: exporta/distribui sob autorização, recolhe métricas, avalia experiências e produz sinais para o Motor 1.
+- **Motor 3 — Distribution & Scheduling (Postiz)**: recebe apenas pacotes aprovados, agenda/publica no Postiz e devolve estados operacionais e recibos ao dashboard Nexus e ao Motor 4.
+- **Motor 4 — Analytics & Learning**: recolhe métricas, conversões e custos com proveniência, compara experiências e envia recomendações justificadas ao Motor 1; **não agenda nem publica**.
 - **Adaptadores**: traduzem chamadas para serviços externos e ferramentas locais; nenhum fornecedor deve definir o modelo de domínio.
 - **Dados**: o seletor **Adicionar** mostra todos os projetos Nexus. Para o **Motor 1** executar, o projeto tem de ter sido adicionado ao Social, estar **ativo e com perfil/branding completo** e conta/canal configurado, mesmo sem OAuth; identidade canónica Nexus em todas as etapas. Nunca inferir projeto pelo cwd nem criar projeto independente no Social.
 
@@ -75,7 +76,7 @@ Ferramentas:
 
 Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, guião, storyboard, recursos editáveis, prévia, MP4 em formato vídeo ou ficheiros de carrossel quando aplicável, checklist de **QA técnico, editorial, factual, visual e de direitos**, resumo de custos. **Gate final ainda dentro da revisão pré-publicação:** apresentar ao operador a prévia e proposta completa e explicada de agendamento (ordem entre peças, datas/horas, canais e contas), assim como copy, CTA, legendas, alertas e verificações; permitir correções antes de aprovar. Um pacote reprovado pode ser revisto numa nova versão; um pacote alterado tem de ser reaprovado.
 
-## Motor 3 — Distribution & Scheduling (Postiz) + dados para Analytics & Learning
+## Motor 3 — Distribution & Scheduling (Postiz)
 
 ### Distribuição
 
@@ -93,9 +94,17 @@ Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, gu
 
 - O Postiz é a fonte de verdade para estados e horas de publicações **agendadas/publicadas** através dele.
 - O Motor 3 disponibiliza um leitor/sincronizador de posts e recibos para o dashboard Social do Nexus, incluindo histórico de publicados, posts previstos, falhas e cancelamentos.
-- O calendário Nexus é **somente uma projeção com filtros**, não mecanismo de execução. Mostrar `lastSyncedAt` e erros; na indisponibilidade do Postiz, mostrar último snapshot como desatualizado, não ocultar dados nem indicar êxito.
+- O calendário Nexus é **somente uma projeção com filtros**, não mecanismo de execução nem editor. **Reagendar, editar e cancelar só no Postiz** (P5-C), através de ligação contextual no Nexus quando disponível. Alterações feitas no Postiz regressam pela sincronização. Mostrar `lastSyncedAt` e erros; na indisponibilidade do Postiz, mostrar último snapshot como desatualizado, não ocultar dados nem indicar êxito.
 - Cruzar IDs `nexusProjectId`, `postizIntegrationId`, `postizPostId` sem atribuição adivinhada; posts sem mapeamento podem ser apresentados sem projeto na vista global, quando autorizado.
-- Dados de publicação podem alimentar analytics/aprendizagem sem impor a criação de um quarto motor até decisão posterior.
+- **O Motor 3 disponibiliza recibos e estados operacionais ao Motor 4**, através de contratos versionados; não calcula scores, funis ou conclusões de experiências.
+
+## Motor 4 — Analytics & Learning
+
+**Motor lógico aprovado, independente do mecanismo de publicação:** consome eventos/recibos e IDs comprovados do Motor 3/Postiz, recolhas próprias ou autorizadas de APIs de redes, métricas manuais, UTMs e eventos agregados de sites/apps. Se Postiz estiver indisponível, manter histórico e analisar dados já existentes sem afetar a agenda.
+
+**Entradas:** `PublicationStatusReceipt` (M3), `MetricSnapshot` (fontes de rede/Postiz com data), `ConversionEvent`, `CreativeMetadata`, custos e objetivos do projeto Nexus.
+
+**Saídas:** medições normalizadas/históricas, resultados comparativos, hipóteses e experiências com confiança, e `EvidenceBasedLearning` para M1. **Nunca altera a agenda do Postiz, não produz conteúdo e não aprova publicações.**
 
 ### Medição
 
@@ -109,7 +118,7 @@ Combinar observações reais por **projeto Nexus**, sem cruzar públicos/brandin
 
 Guardar características criativas estruturadas: tema, categoria, hook e duração, modelo narrativo, ritmo, voz, estilo, legendas, CTA, formato, horário, variantes, custos e fornecedores. Uma experiência tem hipótese, variável principal, métricas, janelas comparáveis, resultados e grau de confiança.
 
-**Loop**: observação real → análise por projeto → recomendação justificada para Motor 1. Sem promover automaticamente uma conclusão baseada em poucos dados; experiências inconclusivas continuam visíveis. O modelo não pode publicar com base numa boa pontuação sem aprovação humana.
+**Loop**: observação real → análise por projeto → recomendação justificada para Motor 1. Sem promover automaticamente uma conclusão baseada em poucos dados; experiências inconclusivas continuam visíveis. O Motor 4 não pode publicar nem agendar com base numa boa pontuação; apenas propõe hipóteses e recomendações para o Motor 1.
 
 ## Ordenação de desenvolvimento e UI
 
@@ -120,6 +129,8 @@ A **funcionalidade vem antes do design visual detalhado**. F1 usa somente o sepa
 Cada etapa devolve estados como concluída, bloqueada, indisponível ou erro com motivo, evidência e recibos. Ações externas exigem verificações antes de repetir; outputs incompletos não são resultados válidos. A posse de execução e limites continuam no Nexus. Produtos futuros podem usar outros provedores com o mesmo contrato.
 
 ## Relações
+
+- Arquitetura de **quatro motores lógicos** aprovada: [DECISOES.md](DECISOES.md) SG-D042; não implica quatro agentes permanentes.
 
 - Contrato de ciclo de temas e prioridades: [CICLO_TEMAS.md](CICLO_TEMAS.md).
 - Contrato técnico histórico: auditoria-f0.md §3 e §6.
