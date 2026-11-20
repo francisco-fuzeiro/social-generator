@@ -40,6 +40,12 @@ Quando uma nova versão de branding for aprovada, auditar dependências dos cont
 
 **Agendamentos existentes no Postiz:** apenas sinalizar alerta e opção de abrir o post no Postiz para intervenção manual; **não** editar, cancelar ou reagendar via Nexus. Não publicar afirmações falsas de sincronização nem afetar projetos/contas de outras marcas. Contrato: [BRANDING.md](BRANDING.md) §4.2.
 
+## 1.4. Conteúdo contínuo e campanhas opcionais — P13-B (DECIDIDO)
+
+Cada perfil Social do projeto Nexus pode publicar **conteúdo contínuo mesmo que não existam campanhas**. O operador pode criar **campanhas opcionais**, por projeto, cada uma com objetivo, público, prazo/janela, mensagem principal, CTA e **KPIs próprios**. Uma campanha não cria um projeto Nexus novo nem concede novas contas/permissões. Os criativos e publicações gerais não são forçados a pertencer a campanhas.
+
+**Motor 1** continua a investigar oportunidades gerais do projeto, e também produz recomendações específicas para campanhas ativas, sob os mesmos gates de branding/ativação. **Motor 4** mede objetivos de campanhas e resultados gerais por separado sem duplicar conversões. A proporção e prioridade entre campanhas e conteúdo contínuo não estão fechadas (P14). Ver [CAMPANHAS.md](CAMPANHAS.md).
+
 ## 2. Perfil editorial (extensão da entidade Nexus)
 
 Campos: `nexusProjectId`, `socialEnabled`, `perfilVersao`, marca/nomes, descrição, projeto e repositórios de referência apenas de leitura, idioma/mercado, público, proposta de valor, objetivos e KPIs, canais e contas mapeados às integrações do Nexus, formatos permitidos, estilo visual, voz, restrições factuais, bibliotecas/assets e licenças, concorrentes fixos/descobertos, CTAs e eventos de conversão, limites de custo e autorização.
