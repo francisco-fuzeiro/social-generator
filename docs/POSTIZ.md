@@ -1,6 +1,6 @@
 # Postiz — contrato do Motor 3 e calendário no Nexus
 
-> Decisões da entrevista de 20/11/2026. **Motor 3 utiliza o Postiz** para agendar/publicar; **Nexus mostra o calendário e estados lidos do Postiz**, sem ser o scheduler. Integração ainda por implementar e testar. **Modo Postiz Cloud/self-hosted ainda por decidir.**
+> Decisões da entrevista de 20/11/2026. **Motor 3 utiliza o Postiz** para agendar/publicar; **Nexus mostra o calendário e estados lidos do Postiz**, sem ser o scheduler. Integração ainda por implementar e testar. **Entrevista P6-C: validar primeiro; Cloud/self-hosted será decidido após provas.**
 
 ## 1. Separação de responsabilidades (DECIDIDO)
 
@@ -76,7 +76,7 @@ Os estados `proposta`/`aguarda-aprovacao` são locais; `agendado` e `publicado` 
 
 **DECIDIDO — Entrevista P5, opção C:** **o calendário do Nexus é de consulta**, sem botões para editar, reagendar ou cancelar no Nexus. Para essas ações, o utilizador **abre a publicação no Postiz** por ligação contextual quando disponível e altera-a lá. Depois a sincronização atualiza o calendário Nexus, identificando alterações de data, hora, conta, copy, estado ou cancelamento, sem efetuar alterações ocultas. O fluxo de produção continua a permitir ajustes **antes** da aprovação e da submissão inicial ao Postiz.
 
-**Cloud vs self-hosted** também é decisão pendente: validar uptime, preço real, limites de contas, autenticação, formatos, condições e capacidade de listar/editar posts para cada canal, **antes de contratar/instalar**. Não colocar API keys e segredos no repositório nem nas respostas do dashboard.
+**DECIDIDO — Entrevista P6, opção C:** **não escolher já Postiz Cloud vs. self-hosted**. Primeiro validar a integração e as capacidades reais usando uma opção gratuita ou experimental **se estiver efetivamente disponível**, sem assumir duração, elegibilidade ou isenção de custos. Investigar autenticação e API, canais, formatos e limites, agendamento/publicação, calendário, estados, recibos, edição diretamente no Postiz, sincronização e funcionamento independente de sessões Nexus. Medir preço, infraestrutura, uptime, segurança, backups e manutenção de ambas as opções; só depois propor a escolha para produção, com aprovação do utilizador. **Não criar conta paga, consumir trial com cobrança, instalar serviço definitivo nem adquirir novas APIs por inferência.** Não colocar API keys e segredos no repositório nem nas respostas do dashboard.
 
 ## 5.1. Regra P5-C — editar só no Postiz
 
@@ -95,6 +95,20 @@ O dashboard Nexus apresenta o calendário do Postiz **em modo de leitura**. Pode
 9. Postiz indisponível não apaga calendário: mostrar **snapshot desatualizado** e falha de sincronização.
 10. O Nexus não executa o scheduler; uma publicação confirmada permanece agendada no Postiz independentemente de sessão LLM.
 11. Publicação manual não surge como `agendada` sem comprovativo; publicação já efetuada exige confirmação própria.
+
+## 6.1. Gate de validação P6-C — antes de escolher alojamento
+
+**Plano de prova (a executar apenas numa missão autorizada):**
+
+1. Confirmar na documentação atual que existe modo de teste utilizável e quais as suas restrições/possíveis custos; se não existir, avaliar demonstração ou prova local sem contratar.
+2. Testar ligação segura e listagem de contas e publicações do Postiz, identificando quais os canais reais de cada projeto.
+3. Testar sem efeitos públicos, sempre que possível, criação de rascunho/agenda, retorno de ID, estados e leitura pelo Nexus; **não publicar material real sem aprovação final**.
+4. Confirmar cobertura de formatos e permissões Instagram, YouTube, TikTok, LinkedIn e X, registando limitações por canal.
+5. Exercitar sincronização de alterações feitas no Postiz para calendário Nexus (modo leitura), casos de timeout/indisponibilidade, idempotência e recibos.
+6. Comparar Cloud vs. self-hosted quanto a preço total, disponibilidade 24/7, manutenção, backups, segurança, escalabilidade e independência do PC Nexus.
+7. Publicar relatório de evidências e **recomendação de alojamento para aprovação**, antes de ativar publicação em produção.
+
+Critérios: não declarar capacidades comprovadas sem evidência, não transformar teste em envio/publicação, não incorrer em novos custos sem autorização.
 
 ## 7. Fontes de referência técnica
 
