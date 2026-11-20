@@ -15,8 +15,9 @@
 - [ ] Definir primeiro projeto/tema do piloto técnico; lembrar que MVP transversal exige três projetos.
 - [ ] Inventariar **todo o catálogo de projetos Nexus** para «Adicionar projeto» (sem filtros por redes/branding); documentar rascunho de perfil Social, validação de branding, ativação e gate de pesquisa. Inventariar contas e permissões reais por plataforma para operações dependentes de canal.
 - [ ] Inventariar biblioteca `D:\AI\Biblioteca` e política de licenças/retencão sem alterar os ficheiros.
-- [ ] Definir KPIs numéricos, pesos exatos de scoring e horas da pesquisa diária/semanal. A opção **C adaptativa** está decidida. Falta escolher se a proposta de calendário deve incluir **datas/horas concretas**, além da ordem dos temas.
-- [ ] Rever no schema estados de validade/reavaliação de temas, lote incompleto, seleção múltipla e proposta editável sem publicação automática.
+- [x] **P3-B adaptada**: só selecionar temas no Motor 1; calendário com ordem/datas/horas/canais **depois da produção** e **antes de aprovação final**; Motor 3 agenda pacote aprovado.
+- [ ] Definir KPIs numéricos, pesos exatos de scoring e horas da pesquisa diária/semanal. A opção C adaptativa e a apresentação de datas/horas **após produção** estão decididas.
+- [ ] Rever no schema estados de validade/reavaliação de temas, lote incompleto e seleção múltipla **sem calendário inicial**; pacote de pré-publicação com calendário+hash e estados `pendente-agendamento-manual`/`agendado`/`publicado` separados.
 - [ ] Em 23/11/2026 alterar a visibilidade do repo para privado, confirmar e rever exposição de segredos.
 
 ## Próximas missões técnicas (não autorizadas por esta checklist)
