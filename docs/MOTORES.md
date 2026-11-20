@@ -1,6 +1,6 @@
 # Os três motores — especificação funcional
 
-> Estado: fronteiras e gates DECIDIDOS; pormenores de scoring, ferramentas e automatização PROPOSTOS / por provar. Este ficheiro não autoriza instalar dependências nem executar publicações.
+> Estado: fronteiras e gates DECIDIDOS; entrevista de 20/11/2026 incorporada. Pesos exatos, esquemas de adaptadores e cron técnico PROPOSTOS / por provar. Este ficheiro não autoriza instalar dependências nem executar publicações.
 
 ## Fronteiras
 
@@ -9,7 +9,7 @@
 - **Motor 2 — Production**: cria recursos e pacote a partir do tema aprovado.
 - **Motor 3 — Distribution, Analytics & Learning**: exporta/distribui sob autorização, recolhe métricas, avalia experiências e produz sinais para o Motor 1.
 - **Adaptadores**: traduzem chamadas para serviços externos e ferramentas locais; nenhum fornecedor deve definir o modelo de domínio.
-- **Dados**: projetoId editorial obrigatório em todas as etapas; nunca inferir projeto pelo cwd.
+- **Dados**: projeto selecionado tem de ser **projeto Nexus existente com socials configurados e ativação Social explícita**; identidade canónica Nexus em todas as etapas. Nunca inferir projeto pelo cwd nem criar projeto independente no Social.
 
 ## Motor 1 — Intelligence
 
@@ -17,9 +17,13 @@
 
 Perfil do projeto, público, objetivo, campanhas, orçamento/tempo disponível, histórico do projeto, resultados anteriores, regras de marca, temas recusados e fontes elegíveis. Memória global só de padrões gerais, sem copiar assets, conteúdo ou dados privados entre marcas.
 
-### Pesquisa
+### Pesquisa — cadência e fontes decididas
+
+**Operação diária leve:** varrer sinais novos e alterações relevantes com custo limitado, registar fontes e estado; sem guião/storyboard/geração. **Relatório semanal aprofundado:** sintetizar tendências, concorrentes e histórico, explicar alterações e recomendar temas prioritários por projeto. O scheduler é o Nexus quando suportar a periodicidade; execução manual até lá. Relatório semanal não equivale a uma lista sem análise dos resultados diários.
 
 Fontes candidatas acordadas: **YouTube, Instagram, Google/Google Trends, Reddit, TikTok, X e LinkedIn**, além de sites e documentação oficiais, quando acessíveis. Distinguir dados oficiais, observação pública, comentário comunitário e inferência. Uma tendência que aparece numa fonte não é automaticamente tendência global. Dados temporais têm período, mercado/região, plataforma e método de recolha.
+
+**Concorrência híbrida:** perfis de referência explicitamente escolhidos + descoberta de contas/conteúdos comparáveis pelo motor, sempre com motivo e evidência. Sem acesso, declarar limitação em vez de inventar métricas.
 
 Investigar:
 - temas e pesquisas com interesse crescente;
@@ -37,13 +41,15 @@ Ficha económica com: id/versão/projeto/campanha, tema/pergunta, público, prop
 
 Não produzir guião completo, imagens, música, voz, animação ou render antes de receber **aprovação humana do tema/versão**.
 
-### Classificação (proposta, não fórmula fechada)
+### Classificação adaptativa por projeto (princípio decidido; pesos propostos)
 
-Critérios candidatos: relevância para projeto, tendência/velocidade, procura real, saturação da concorrência, histórico comparável, impacto potencial na conversão, esforço/custo e confiança dos dados. Guardar rubrica, pesos e evidências usados. Na ausência de dados, a confiança cai; nunca inventar percentagens ou potencial de viralidade.
+O score é calibrado para o objetivo, público e histórico **do projeto Nexus selecionado**, nunca universal. Critérios candidatos: relevância para projeto, tendência/velocidade, procura real, saturação da concorrência, histórico comparável, impacto potencial na conversão, esforço/custo e confiança dos dados. Guardar rubrica, pesos e evidências usados. Na ausência de dados, a confiança cai; nunca inventar percentagens ou potencial de viralidade.
 
 ## Motor 2 — Production
 
-**Pré-condição:** oportunidade aprovada para a versão atual.
+**Pré-condição:** projeto Nexus elegível/ativado, conta/formatos permitidos e oportunidade aprovada para a versão atual.
+
+**Formatos por perfil da entrevista:** The Hidden Layer — vídeo vertical narrado em inglês, faceless, voz consistente; Vefi e UtopIA — vídeos e carrosséis. Canais desejados: Hidden Layer (Instagram/YouTube/X/TikTok), Vefi (Instagram/TikTok/X/LinkedIn/YouTube), UtopIA (Instagram/LinkedIn/TikTok/X/YouTube). Não confundir intenção editorial com ligação à API de cada conta.
 
 Pipeline parametrizável:
 1. Brief/objetivo/público e restrições do projeto.
@@ -57,11 +63,11 @@ Pipeline parametrizável:
 
 Ferramentas:
 - **Remotion-first** e FFmpeg quando a integração e as licenças estiverem provadas; HyperFrames mantém-se opção alternativa.
-- **Imagem**: sessão Codex/Nexus se capacidade real comprovada; caso contrário produção supervisionada no ChatGPT. **Higgsfield** apenas aprovado pontualmente e com benefício claro.
+- **Imagem/vídeo generativo**: sessão Codex/Nexus ou ferramentas das subscrições já existentes se a capacidade real for comprovada, **apenas quando acrescenta valor**; caso contrário produção supervisionada. **Higgsfield** apenas aprovado pontualmente, sem custo não autorizado.
 - **Voz/TTS**: adaptador (voz humana ou fornecedor legalmente autorizado), sem promessa de ElevenLabs ou custo recorrente. Timing/legendas carecem de prova.
 - **Marcas**: usar bibliotecas próprias e assets autorizados; nenhuma marca/voz deve passar para outro projeto por engano.
 
-Saídas: pacote e manifesto por versão, guião, storyboard, recursos editáveis, prévia e ficheiro final quando aplicável, checklist/gate, resumo de custos. Um pacote reprovado pode ser revisto numa nova versão; um pacote alterado tem de ser reaprovado.
+Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, guião, storyboard, recursos editáveis, prévia, MP4 em formato vídeo ou ficheiros de carrossel quando aplicável, checklist de **QA técnico, editorial, factual, visual e de direitos**, resumo de custos. Um pacote reprovado pode ser revisto numa nova versão; um pacote alterado tem de ser reaprovado.
 
 ## Motor 3 — Distribution + Analytics + Learning
 
@@ -75,13 +81,21 @@ Saídas: pacote e manifesto por versão, guião, storyboard, recursos editáveis
 
 ### Medição
 
+Conceitos decididos: retenção (tempo médio, conclusão e curva quando acessível), impressões/alcance, engagement, CTR, UTMs, tráfego, eventos do site/app e conversões (registo, ativação, lead, wishlist/venda conforme projeto). O KPI prioritário é configurado no perfil de cada projeto, não apenas views. 
+
 Guardar observações com origem, data de recolha, período e estado de disponibilidade. Ligar IDs de publicação e, quando houver, UTMs / analytics do site / eventos da app. Separar resultados observados, estimativas e atribuição indireta. Usar métricas específicas por projeto, não pressupor equivalência entre redes.
 
-### Aprendizagem
+### Aprendizagem e experiências controladas
+
+Combinar observações reais por **projeto Nexus**, sem cruzar públicos/branding. Cada hipótese de experiência é registada antes de publicar, compara uma variável principal e uma janela/medida compatível; amostra insuficiente produz resultado **inconclusivo**. Conclusões são recomendações explicáveis para a próxima pesquisa, não licença de autopublicação.
 
 Guardar características criativas estruturadas: tema, categoria, hook e duração, modelo narrativo, ritmo, voz, estilo, legendas, CTA, formato, horário, variantes, custos e fornecedores. Uma experiência tem hipótese, variável principal, métricas, janelas comparáveis, resultados e grau de confiança.
 
 **Loop**: observação real → análise por projeto → recomendação justificada para Motor 1. Sem promover automaticamente uma conclusão baseada em poucos dados; experiências inconclusivas continuam visíveis. O modelo não pode publicar com base numa boa pontuação sem aprovação humana.
+
+## Ordenação de desenvolvimento e UI
+
+A **funcionalidade vem antes do design visual detalhado**. F1 usa somente o separador Social existente do Nexus com interface mínima e acessível para dados, estado e aprovações; só depois dos motores, contas e métricas funcionarem deve ser desenhada a experiência visual avançada do dashboard. Não criar uma app à parte nem sete páginas decorativas para representar dados fictícios.
 
 ## Erros, interrupção e auditabilidade
 
