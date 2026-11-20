@@ -125,6 +125,14 @@ Cada pedido está associado a `creativeId` e **`creativeVersionId`**, com notas 
 
 **A decidir na P9:** política de rondas automáticas de QA/correção antes de apresentar uma revisão, com travões de custo/recursos.
 
+## 2.8. P9-B — QA/correções automáticas limitadas por ronda (DECIDIDO)
+
+Depois de receber comentários por timestamps e notas gerais (P8-B), o Motor 2 aplica revisões localizadas (P7-B) com **máximo de três tentativas no total por ronda**, contando a aplicação inicial como tentativa 1 e permitindo até **duas correções automáticas adicionais** em função das falhas detetadas no QA. Cada tentativa produz resultados de testes e atualiza o manifesto/estado. Parar cedo se sucesso, bloqueio, limite do Nexus ou necessidade de custo adicional não autorizado.
+
+Após três tentativas com falhas remanescentes, **apresentar o melhor rascunho e problemas concretos**, incluindo testes falhados/inconclusivos; nunca tratar o teto atingido como sucesso, declarar peça publicável por defeito ou enviar ao M3/Postiz. Qualidade editorial/factual e direitos continuam sujeitos a avaliação apropriada, não inferidos de testes técnicos. Uma nova ronda requer nova ação humana.
+
+**Schema proposto:** `RevisionRound` ligada à versão e ao pedido do operador; `QAResult` com tentativa numerada 1–3, testes/erros, estado de bloqueio e recursos consumidos. Os testes de aceitação exigem observar uma execução que pára ao primeiro sucesso, outra que pára em três falhas, outra que bloqueia antes de custo não aprovado, e que nenhuma delas publica sem o segundo gate. Contrato funcional em [REVISOES.md](REVISOES.md). Os limites numéricos de tempo/CPU por ronda continuam pendentes.
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
