@@ -27,7 +27,7 @@
 
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
-A auditoria docs/auditoria-f0.md (20/11/2026) propõe JSON local + JSONL, leitor validado, operações \`social.ler\` / \`social.aprovarTema\` / \`social.aprovarPublicacao\`, autorização imutável e fases F1–F3. São um bom ponto de partida, mas o schema de §3.3 tem IDs/canais fixos e métricas insuficientes para os requisitos confirmados. **Não implementar literalmente esse schema sem alinhar a adenda**.
+A auditoria docs/auditoria-f0.md (20/11/2026) propõe JSON local + JSONL, leitor validado, operações `social.ler` / `social.aprovarTema` / `social.aprovarPublicacao`, autorização imutável e fases F1–F3. São um bom ponto de partida, mas o schema de §3.3 tem IDs/canais fixos e métricas insuficientes para os requisitos confirmados. **Não implementar literalmente esse schema sem alinhar a adenda**.
 
 ## C. Recomendações ainda por aprovar
 
