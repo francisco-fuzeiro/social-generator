@@ -107,6 +107,14 @@ Fonte: [POSTIZ.md](POSTIZ.md). Verificar `GET /public/v1/posts` e semântica dos
 
 Cloud vs. self-hosted continua **PENDENTE**. Preparar recomendação sustentada em testes e custo operacional total para aprovação explícita. Contrato de prova em [POSTIZ.md](POSTIZ.md) §6.1.
 
+## 2.6. Revisões localizadas do Motor 2 — P7-B (DECIDIDO)
+
+O operador pode pedir alterações a trechos de narração, cenas, animações ou outros elementos da prévia. **Motor 2 preserva partes corretas e reutiliza recursos**; revisa e re-renderiza segmentos e dependências afetadas, não a peça toda por defeito. Quando mudança local exigir nova composição/alteração noutros trechos, a consequência deve ser explicada e as verificações de qualidade repetidas.
+
+**Histórico de versões obrigatório:** novas versões do criativo e respetivo manifesto/hash, referência à versão anterior, recursos reaproveitados/recriados, causa/âmbito e custo de revisão. O operador pode **comparar versões e regressar a uma anterior** sem apagar outras versões. Um pedido de revisão não aprova publicação, e uma aprovação antiga não autoriza uma versão materialmente diferente. A fila de produção P4-B continua com outras peças sem aguardar a aprovação desta, respeitando recursos do Nexus.
+
+**Proposta de contrato técnico a validar:** `CreativeVersion`, `RevisionRequest`, `AffectedSegments`, `AssetManifest`, `RenderArtifacts`, `QAResult` e links de proveniência. Estratégia de render parcial/caches depende de provas técnicas e não é garantida pelo produto. **Forma de feedback e limites de tentativas continuam abertos.** Detalhes e testes: [REVISOES.md](REVISOES.md).
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
