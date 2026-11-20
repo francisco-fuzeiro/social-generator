@@ -10,6 +10,7 @@ Construir um sistema de criação, distribuição e aprendizagem de conteúdo pa
 
 - O **dashboard Social existe dentro do Nexus**, em PC e móvel; este repositório contém o motor e contratos, não uma segunda aplicação ou um segundo orquestrador.
 - **Multi-projeto ligado exclusivamente ao Nexus**: **Adicionar projeto mostra todos os projetos Nexus**, incluindo sem redes sociais ou branding. Selecionar adiciona só um **rascunho de perfil Social**, sem criar novo projeto Nexus ou iniciar tarefas. **Pesquisa apenas para perfis Social configurados, ativos e com branding completo** (com conta social identificada para o canal, sem exigir OAuth). Nem todos os projetos Nexus precisam de Social. Candidatos ao MVP: The Hidden Layer, Vefi e UtopIA, se configurados/ativos.
+- **Branding P10-B**: perfil proposto por importação inteligente de fontes **autorizadas e em modo de leitura** do projeto Nexus (site, documentação, repositório, assets), com fontes/certezas/lacunas por campo e possibilidade de edição manual. **O utilizador valida a marca antes de a considerar completa**; a ativação Social continua explícita e separada. Ver [BRANDING.md](docs/BRANDING.md).
 - **Quatro motores lógicos partilhados (arquitetura aprovada)**:
   1. **Intelligence / Pesquisa**: estudar tendências, concorrência, formatos e publicações com bom desempenho; recomendar oportunidades por projeto.
   2. **Production / Produção**: transformar um tema aprovado em guião, recursos, composição, variantes, prévias e pacote exportável.
@@ -67,7 +68,7 @@ O fluxo de negócio segue **Workspace → Projeto → Campanha → Ideia/Oportun
 
 ## 6. Fluxo editorial
 
-1. **Adicionar** a partir do catálogo completo de projetos Nexus (incluindo projetos sem socials) e configurar um perfil Social em rascunho. Para **pesquisar**, selecionar apenas um perfil Social **ativo e com branding/configuração completos**, objetivo e conta/canal relevante; consultar marca e histórico.
+1. **Adicionar** a partir do catálogo completo de projetos Nexus (incluindo sem socials), criar rascunho Social e **propor importação inteligente de branding em modo de leitura** das fontes autorizadas. Operador revê/corrige/aprova a marca; depois configura canal/conta e **ativa explicitamente**. Só ativo+configurado+branding validado entra em pesquisa.
 2. Motor 1 investiga fontes e apresenta **lotes de pelo menos cinco fichas de oportunidade fundamentadas** (tema, fonte/data, potencial, público, hook, formato, duração sugerida, risco e esforço), **sem produzir guiões caros antes da aprovação**. Se faltarem temas credíveis, assinala lote incompleto. Recomendações com sete dias entram em reavaliação semanal antes de serem reutilizadas.
 3. Humano **seleciona apenas os temas** (um ou vários); cada seleção positiva é a primeira aprovação, por tema/versão, que autoriza a produção. **Ainda não escolhe nem aprova calendário**.
 4. Motor 2 pesquisa em profundidade, escreve guião/storyboard, compõe recursos, gera prévias, verifica qualidade e fornece ficheiros editáveis e MP4/carrossel. **Depois da produção**, apresenta prévia, legendas, CTA, qualidade, custos e proposta explicada de agendamento (ordem, datas, horas, contas/plataformas) para revisão.
@@ -106,6 +107,7 @@ Medir alcance, retenção (tempo médio, conclusão/curvas quando disponíveis),
 | docs/ALINHAMENTO_CONTRATO_V1.md | Adenda funcional a compatibilizar com F0 antes de alterar schema/código |
 | docs/ROADMAP.md | Fases e gates |
 | docs/POSTIZ.md | Motor 3, Postiz e calendário consultável (edições só no Postiz) |
+| docs/BRANDING.md | Importação de identidade, fontes autorizadas, evidências e validação humana |
 | docs/METRICAS.md | Motor 4, métricas, atribuição, experiências e aprendizagem |
 | docs/REVISOES.md | Motor 2, alterações localizadas, histórico e recuperação de versões |
 | docs/auditoria-f0.md | Evidência técnica do Nexus em 20/11/2026; **não apagar nem substituir** |
