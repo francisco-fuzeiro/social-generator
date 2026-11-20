@@ -51,6 +51,8 @@
 | SG-D038 | **Motor 3 usa o Postiz para agendamento e publicação, sem depender do scheduler de publicações do Nexus** | O Postiz recebe apenas pacotes aprovados, mantém a agenda e executa a publicação na hora prevista; Motor 3 integra API/eventos e sincroniza estados/recibos. Nexus continua com dashboard, aprovação e orquestração das fases de pesquisa/produção, mas não executa os disparos da publicação |
 | SG-D039 | **Postiz é a infraestrutura de distribuição; separação de Analytics & Learning como Motor 4 ainda NÃO aprovada** | Não criar quatro agentes permanentes nem infra de agendamento duplicada. Decidir Cloud vs. self-hosted antes de instalar/pagar e validar capacidades por rede, runtime contínuo e custo |
 
+| SG-D040 | **Dashboard Nexus consulta o calendário completo do Postiz**, incluindo **agendados, já publicados, falhados, pendentes e cancelados**, com filtros por projeto/rede/conta/período e detalhes dos posts | **Postiz é a fonte de verdade operacional** de agendamento e publicação; Nexus mantém uma vista/snapshot sincronizado e assinala última atualização/erros, sem executar um segundo scheduler nem atribuir posts a projetos por adivinhação. O design visual detalhado mantém-se para depois da funcionalidade |
+
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
 A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótese anterior de usar o agendamento do Nexus. **SG-D038 substitui essa hipótese para publicações: o agendamento e disparo ficam no Postiz.** O leitor de dados e gates do Nexus mantêm-se. A auditoria propõe JSON local + JSONL, leitor validado, operações `social.ler` / `social.aprovarTema` / `social.aprovarPublicacao`, autorização imutável e fases F1–F3. São um bom ponto de partida, mas o schema de §3.3 tem IDs/canais fixos e métricas insuficientes para os requisitos confirmados. **Não implementar literalmente esse schema sem alinhar a adenda**.
@@ -84,7 +86,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótes
 
 ## E. Ciclo de temas e agenda
 
-Contrato funcional integral: [docs/CICLO_TEMAS.md](CICLO_TEMAS.md). **SG-D035/036 prevalecem sobre qualquer menção anterior a propor calendário logo após a seleção dos temas.** Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
+Ciclo de temas: [CICLO_TEMAS.md](CICLO_TEMAS.md). Distribuição, Postiz e calendário Nexus: [POSTIZ.md](POSTIZ.md). **SG-D035/036 prevalecem sobre qualquer menção anterior a propor calendário logo após a seleção dos temas.** Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
 
 ## F. Regra de conflitos
 
