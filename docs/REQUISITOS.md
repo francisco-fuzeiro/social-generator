@@ -45,9 +45,9 @@
 | R24 | Lote mínimo de cinco temas | Cada lote visível de seleção oferece **≥5 temas distintos e fundamentados**, ou sinaliza explicitamente insuficiência de temas credíveis sem os inventar |
 | R25 | Validade e reutilização | Tema reutilizável por no máximo **7 dias** após última validação; depois estado de reavaliação, com decisão documentada na investigação semanal |
 | R26 | Seleção múltipla | Utilizador pode selecionar 2 ou mais temas, não apenas o primeiro ou de maior score |
-| R27 | Ordem de agendamento proposta | Motor propõe ordem por relevância, urgência, formato/canal, capacidade e evidências, com explicação e possibilidade de alterar; **sem agendamento/publicação autónomos** |
+| R27 | Calendário pós-produção (P3-B adaptada) | **Ao escolher temas não aparecem datas/horas.** Depois do vídeo/carrossel produzido, prévia e informação relevante incluem proposta justificada e editável com ordem/datas/horas/plataformas; operador aprova pacote+calendário no segundo gate; **só então Motor 3 agenda** (automático permitido ou manual assistido) |
 
-Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicação. A caducidade não apaga posts ou métricas. Contrato completo: [CICLO_TEMAS.md](CICLO_TEMAS.md).
+Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicação. A **seleção de temas** é o gate 1 e **não inclui calendário**; o gate 2 **após produção** inclui prévia, pacote e calendário, antes de entregar ao Motor 3. A caducidade não apaga posts ou métricas. Contrato completo: [CICLO_TEMAS.md](CICLO_TEMAS.md).
 
 ## Canais e formatos contratados
 
