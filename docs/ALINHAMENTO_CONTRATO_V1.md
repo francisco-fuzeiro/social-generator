@@ -161,6 +161,16 @@ Após a importação inteligente inicial P10-B, o Social Generator deve **verifi
 
 **Proposta técnica:** `BrandImpactAudit` com `sourceBrandProfileVersionId`, `newBrandProfileVersionId`, `affectedCreativeRefs`, `status`, `impactEvidence`, `proposedLocalChanges` e `operatorDecision`; ainda carece de validação de schema e integração de autorizações no Nexus. Falhas e desconhecidos são assinalados, não interpretados como peças conformes. Fonte: [BRANDING.md](BRANDING.md) §4.2.
 
+## 2.12. P13-B — conteúdo contínuo e campanhas opcionais (DECIDIDO)
+
+**Cada projeto Nexus configurado/ativo no Social mantém uma estratégia editorial contínua**, inclusive quando não há campanhas. O operador pode criar **campanhas opcionais** no mesmo projeto, cada uma com objetivo, público, prazo/janela, mensagem, CTA e KPIs próprios. Uma campanha nunca implica criação de novo projeto Nexus ou nova autorização de conta.
+
+**Motor 1:** continuar pesquisa e recomendações gerais para o projeto e **acrescentar recomendações dirigidas a campanhas ativas**, sem as campanhas suprimirem as oportunidades gerais. Distinguir origem e contexto; os temas continuam sujeitos à validade de sete dias, mínimo de cinco evidenciados e primeiro gate humano. A **divisão de prioridade/recursos entre campanhas e fluxo geral não está decidida (P14)**.
+
+**Motor 2:** preservar o vínculo opcional à campanha nos manifestos, cópia, CTA, versões e QA, com fila automática P4-B e segundo gate humano. **Motor 3/Postiz:** só agenda pacotes aprovados; a associação à campanha é mantida pela camada Social e não exige suporte de campanhas nativo no Postiz. **Motor 4:** medir KPIs por campanha/janela e evolução global do projeto com distinção de fontes e atribuição; evitar dupla contagem de conversões e manter conteúdos gerais sem campanha.
+
+**Contrato técnico PROPOSTO:** `Campaign` opcional associado a `nexusProjectId`; `campaignId?` em Opportunity, Creative/Variant, Publication e observações quando aplicável; `contentStream=ongoing|campaign` apenas se útil ao domínio. **A ausência de campanha não é erro de schema.** Identidade, isolamento, histórico e origem dos dados permanecem os do Nexus. Antes de alterar schema, validar estados e migração. Testes e detalhes em [CAMPANHAS.md](CAMPANHAS.md).
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
@@ -171,7 +181,7 @@ Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis
 | `BrandProfile` | idioma, público, proposta, tom, voz, visuais, recursos, claims restritos, CTAs, objetivos, formatos, canais e restrições | Kit e direitos por projeto; versionado |
 | `ResearchRun` | projeto, janela, tipo `daily/weekly/on-demand`, fontes/data/método, custos, estado | Relatório semanal não é soma cega da pesquisa diária |
 | `Opportunity` | tema, ângulo, hooks, formato, duração, concorrência, tendência, relevância, esforço, conversão provável, rubrica/pesos/confiança e fonte | Ficha económica antes do gate; não gerar guião |
-| `Campaign` | projeto, objetivo, janela, CTA, orçamento, referências UTM | Relacionar resultados com conteúdo |
+| `Campaign` (**opcional**) | projeto Nexus, objetivo, público, janela, mensagem, CTA, KPIs próprios, canais e referências UTM quando disponíveis | Conteúdo geral não exige Campaign; evitar criar campanha artificial |
 | `Creative/Variant` | ideia aprovada/versão, guião, storyboard, hook, ritmo, voz, style, assets/licenças, gates, versão/hash | Não misturar marcas; alterações relevantes invalidam autorização |
 | `Publication` | peça/variante, projeto, canal, conta Nexus, modo manual/API, pacote e hash, estado/recibo, URL/ID remoto, horário | Aprovação por canal+conta+versão |
 | `MetricSnapshot` | publicação, definição, origem, observadoEm, janela, valor, unidade, numerador/denominador, disponibilidade | `null` não é zero; não misturar rede |
