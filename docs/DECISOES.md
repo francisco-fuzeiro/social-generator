@@ -56,6 +56,8 @@
 | SG-D041 | **Entrevista P5 — opção C:** calendário e estados **consultáveis no Nexus**, mas **editar/reagendar/cancelar diretamente no Postiz** | Nexus disponibiliza vista de leitura e ligação para abrir post no Postiz; sincroniza de volta as alterações. Não criar operações mutáveis de calendário no Nexus nesta fase |
 | SG-D042 | **Arquitetura definitiva de quatro motores lógicos:** M1 Intelligence, M2 Production, M3 Distribution & Scheduling (Postiz), M4 Analytics & Learning | **SG-D042 substitui SG-D003 e a indecisão SG-D039.** M4 recolhe/normaliza métricas, atribuição, experiências e aprendizagem e devolve sinais ao M1; M3 fica restrito a distribuição/agendamento/estados operacionais. Sem quatro agentes permanentes, sem scheduler de publicação Nexus |
 
+| SG-D043 | **Entrevista P6 — opção C:** **validar primeiro a integração com o Postiz**, sem fechar desde já Postiz Cloud vs. self-hosted | Testar, com meios gratuitos/experimentais **apenas se realmente disponíveis**, API, contas, formatos, calendário, agendamento, estados, limites, custos e operação independente do Nexus. Comparar opções e escolher alojamento **antes de ir para produção**, sem contratar/pagar/instalar serviço definitivo por inferência |
+
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
 A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótese anterior de usar o agendamento do Nexus. **SG-D038 substitui essa hipótese para publicações: o agendamento e disparo ficam no Postiz.** O leitor de dados e gates do Nexus mantêm-se. A auditoria propõe JSON local + JSONL, leitor validado, operações `social.ler` / `social.aprovarTema` / `social.aprovarPublicacao`, autorização imutável e fases F1–F3. São um bom ponto de partida, mas o schema de §3.3 tem IDs/canais fixos e métricas insuficientes para os requisitos confirmados. **Não implementar literalmente esse schema sem alinhar a adenda**.
@@ -79,7 +81,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) é histórica e contém a hipótes
 
 - Primeiro piloto técnico: projeto, tema, plataformas e contas concretas. O MVP de três conteúdos reais está fechado, sujeito à elegibilidade dos respetivos projetos no Nexus.
 - Público e métricas-alvo exatos por projeto; **cadência C**, lotes de ≥5, validade de 7 dias e escolha múltipla decididas. **P3-B adaptada:** apresentar calendário (datas/horas/canais) **após produção e antes da aprovação final**, com execução do agendamento pelo Motor 3. Horários da pesquisa e pesos exatos do scoring continuam pendentes.
-- **Postiz Cloud ou self-hosted** e capacidades/contas/credenciais por plataforma (incluindo X/LinkedIn/TikTok/YouTube); estado conectado, custo e disponibilidade contínua ainda pendentes. Publicação usa Postiz, não o scheduler Nexus.
+- **P6-C fechada:** validar primeiro o Postiz, **Cloud vs. self-hosted permanece em aberto até haver provas** de capacidades/contas/credenciais por plataforma (incluindo X/LinkedIn/TikTok/YouTube), uptime, custo total e operação fora do Nexus. Nada de custos ou instalação definitiva sem autorização.
 - Qual ferramenta de voz inglesa/PT-PT e respetivos direitos, sincronização de legendas e custos reais.
 - Licença Remotion aplicável à entidade/uso comercial; benchmarks de render e imagem no Nexus.
 - Limite de armazenamento, retenção, backups e catálogo de direitos da biblioteca D:\AI\Biblioteca.
