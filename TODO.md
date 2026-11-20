@@ -4,6 +4,8 @@
 
 ## ▶️ Em curso / bloqueado por decisão
 
+- [x] **Entrevista P2-C — pesquisa adaptativa** apenas para perfis Social configurados, ativos e com branding; temas com teto de 7 dias/reavaliação semanal; lotes de ≥5 e escolha múltipla com sugestão de agendamento. Contrato em `docs/CICLO_TEMAS.md`.
+
 - [x] Criar repositório GitHub e confirmar ligação `main` / `origin/main` no clone local.
 - [x] Consolidar visão, requisitos, decisões, motores, métricas, perfis, biblioteca e roadmap no GitHub.
 - [x] Preparar **adenda documental** ao contrato v1 em docs/ALINHAMENTO_CONTRATO_V1.md (reconstrução, não cópia literal da adenda anterior).
@@ -13,7 +15,8 @@
 - [ ] Definir primeiro projeto/tema do piloto técnico; lembrar que MVP transversal exige três projetos.
 - [ ] Inventariar **todo o catálogo de projetos Nexus** para «Adicionar projeto» (sem filtros por redes/branding); documentar rascunho de perfil Social, validação de branding, ativação e gate de pesquisa. Inventariar contas e permissões reais por plataforma para operações dependentes de canal.
 - [ ] Inventariar biblioteca `D:\AI\Biblioteca` e política de licenças/retencão sem alterar os ficheiros.
-- [ ] Definir KPIs numéricos, pesos exatos de scoring e cadência horária (a pesquisa **diária + semanal** já está decidida), com disponibilidades reais das APIs.
+- [ ] Definir KPIs numéricos, pesos exatos de scoring e horas da pesquisa diária/semanal. A opção **C adaptativa** está decidida. Falta escolher se a proposta de calendário deve incluir **datas/horas concretas**, além da ordem dos temas.
+- [ ] Rever no schema estados de validade/reavaliação de temas, lote incompleto, seleção múltipla e proposta editável sem publicação automática.
 - [ ] Em 23/11/2026 alterar a visibilidade do repo para privado, confirmar e rever exposição de segredos.
 
 ## Próximas missões técnicas (não autorizadas por esta checklist)
