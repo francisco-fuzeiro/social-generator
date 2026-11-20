@@ -133,6 +133,16 @@ Após três tentativas com falhas remanescentes, **apresentar o melhor rascunho 
 
 **Schema proposto:** `RevisionRound` ligada à versão e ao pedido do operador; `QAResult` com tentativa numerada 1–3, testes/erros, estado de bloqueio e recursos consumidos. Os testes de aceitação exigem observar uma execução que pára ao primeiro sucesso, outra que pára em três falhas, outra que bloqueia antes de custo não aprovado, e que nenhuma delas publica sem o segundo gate. Contrato funcional em [REVISOES.md](REVISOES.md). Os limites numéricos de tempo/CPU por ronda continuam pendentes.
 
+## 2.9. P10-B — branding importado com validação humana (DECIDIDO)
+
+A configuração Social parte sempre de um **projeto Nexus existente**. Depois de «Adicionar projeto» criar um rascunho, o sistema **propõe um perfil de branding** a partir de **fontes autorizadas**: metadata Nexus, site oficial, brand book/documentação, design tokens/recursos aprovados e repositório em **somente leitura**, com capacidades limitadas às permissões demonstradas. Não obter acesso ao repo/ficheiros por inferência, não tocar em código alheio e não inserir segredos/assets privados no GitHub.
+
+**Distinguir factos observados, inferências e sugestões**, com fonte/datas/confiança por campo, identificando lacunas e conflitos. O operador pode editar, completar manualmente e **aprovar explicitamente a versão do brand kit**. Importação automática não significa aprovação, conta social conectada ou projeto ativo. O Motor 1 só entra em execução quando Social está **configurado, ativo e com branding completo validado**, mantendo os gates anteriores.
+
+**Dados propostos para alinhar:** `BrandProfileCandidate`, `BrandEvidenceRef`, `brandProfileVersionId`, `reviewStatus`, `validatedBy/At`, `sourcePermission` e `brandingComplete`, sempre ligados ao ID canónico Nexus. Dependem de validação do schema e permissões. Alterações posteriores criam proposta/versão em vez de mudar silenciosamente aprovações de conteúdos. A política de novas descobertas e atualização do brand kit é assunto da P11.
+
+Contrato detalhado e testes: [BRANDING.md](BRANDING.md).
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
