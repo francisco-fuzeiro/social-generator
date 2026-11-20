@@ -39,6 +39,11 @@
 
 | SG-D030 | **Correção da entrevista P2:** ao clicar em **Adicionar projeto**, aparecem **todos os projetos do Nexus**; só os que forem adicionados/configurados no Social, **ativos e com branding completo** entram na pesquisa | Fluxo: catálogo Nexus completo → adicionar perfil Social (rascunho) → configurar branding, objetivos e canais → ativar → pesquisa diária/semanal. Projetos sem preparação completa ficam visíveis para configurar, mas não consomem recursos | 
 
+| SG-D031 | **Entrevista P2 — opção C:** distribuir pesquisa **adaptativamente por prioridade** entre os projetos Social **configurados, ativos e com branding completo** | Todos estes projetos recebem pesquisa diária leve e relatório semanal; projetos com campanhas/tendências fortes/maior prioridade recebem aprofundamento. Projetos inativos, mesmo configurados, **não são pesquisados nem recebem novas recomendações** |
+| SG-D032 | **Reutilizar temas até ao máximo de 7 dias** da última validação; depois passam a **reavaliação** na pesquisa semanal aprofundada | Sem renovação tácita; reavaliação fundamentada decide se o tema continua relevante e pode renovar a validade por mais 7 dias ou arquivar; histórico não se perde |
+| SG-D033 | **Cada lote de recomendações deve apresentar no mínimo 5 temas distintos** e fundamentados por projeto | Não inventar temas para atingir cinco; se faltarem evidências, informar lote incompleto e continuar pesquisa. Pesquisa diária leve não obriga a gerar lote novo todos os dias |
+| SG-D034 | **Seleção múltipla de temas**, seguida de **sugestão de ordem de agendamento** | Utilizador pode escolher mais de um; motor prioriza por atualidade, impacto, capacidade e contexto do calendário, explica a ordem; proposta não publica nem substitui gates humanos |
+
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
 A auditoria docs/auditoria-f0.md (20/11/2026) propõe JSON local + JSONL, leitor validado, operações `social.ler` / `social.aprovarTema` / `social.aprovarPublicacao`, autorização imutável e fases F1–F3. São um bom ponto de partida, mas o schema de §3.3 tem IDs/canais fixos e métricas insuficientes para os requisitos confirmados. **Não implementar literalmente esse schema sem alinhar a adenda**.
@@ -61,7 +66,7 @@ A auditoria docs/auditoria-f0.md (20/11/2026) propõe JSON local + JSONL, leitor
 ## D. Questões pendentes de decisão ou prova
 
 - Primeiro piloto técnico: projeto, tema, plataformas e contas concretas. O MVP de três conteúdos reais está fechado, sujeito à elegibilidade dos respetivos projetos no Nexus.
-- Público e métricas-alvo exatos por projeto; **cadência de pesquisa já decidida** (diária + relatório semanal); hora de execução e rubrica numérica ainda pendentes.
+- Público e métricas-alvo exatos por projeto; **cadência e estratégia C decididas** (pesquisa diária leve para todos os Social configurados/ativos; relatório semanal com aprofundamento adaptativo), lotes de ≥5, validade de 7 dias e seleção múltipla. Hora de execução, pesos da rubrica e detalhes de agenda continuam pendentes.
 - Fluxo de contas/plataformas e permissões oficiais, sobretudo X/LinkedIn e restrições de publicação por API.
 - Qual ferramenta de voz inglesa/PT-PT e respetivos direitos, sincronização de legendas e custos reais.
 - Licença Remotion aplicável à entidade/uso comercial; benchmarks de render e imagem no Nexus.
@@ -70,7 +75,11 @@ A auditoria docs/auditoria-f0.md (20/11/2026) propõe JSON local + JSONL, leitor
 - Versão final do schema e da adenda após revisão conjunta com o Núcleo Nexus.
 - Preservar a cópia exata do SOCIAL_GENERATOR.md (489 linhas) e da adenda anterior (284 linhas) se forem recuperadas; **esta consolidação não finge ser transcrição desses dois ficheiros**.
 
-## E. Regra de conflitos
+## E. Ciclo de temas e agenda
+
+Contrato funcional integral: [docs/CICLO_TEMAS.md](CICLO_TEMAS.md). Distinguir **relevância do tema** (vigente / em reavaliação / desatualizado) de **aprovação humana e execução** (selecionado / aprovado / em produção / publicado). Reutilização dentro da semana não significa repost automático.
+
+## F. Regra de conflitos
 
 A decisão SG-D030 esclarece e substitui os filtros de listagem implícitos em SG-D001, SG-D019 e na leitura anterior de SG-D029. **Não excluir projetos sem socials do seletor «Adicionar projeto»**.
 
