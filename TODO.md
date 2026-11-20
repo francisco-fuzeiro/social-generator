@@ -16,6 +16,8 @@
 - [ ] Inventariar **todo o catálogo de projetos Nexus** para «Adicionar projeto» (sem filtros por redes/branding); documentar rascunho de perfil Social, validação de branding, ativação e gate de pesquisa. Inventariar contas e permissões reais por plataforma para operações dependentes de canal.
 - [ ] Inventariar biblioteca `D:\AI\Biblioteca` e política de licenças/retencão sem alterar os ficheiros.
 - [x] **P3-B adaptada**: só selecionar temas no Motor 1; calendário com ordem/datas/horas/canais **depois da produção** e **antes de aprovação final**; Motor 3 agenda pacote aprovado.
+- [ ] **Postiz Cloud vs self-hosted**: decidir implantação, limites, contas/plataformas, credenciais, uptime e custos antes de instalar/comprar.
+- [ ] **Próxima decisão de UX funcional:** apenas consultar o calendário no Nexus ou também editar/reagendar/cancelar posts via Postiz?
 - [ ] Definir KPIs numéricos, pesos exatos de scoring e horas da pesquisa diária/semanal. A opção C adaptativa e a apresentação de datas/horas **após produção** estão decididas.
 - [ ] Rever no schema estados de validade/reavaliação de temas, lote incompleto e seleção múltipla **sem calendário inicial**; pacote de pré-publicação com calendário+hash e estados `pendente-agendamento-manual`/`agendado`/`publicado` separados.
 - [ ] Em 23/11/2026 alterar a visibilidade do repo para privado, confirmar e rever exposição de segredos.
@@ -26,7 +28,7 @@
 - [ ] F1.2 — decisões editoriais persistentes e idempotentes.
 - [ ] F1.3 — prévias multimédia protegidas.
 - [ ] F2.1–F2.3 — pesquisa diária leve + relatório semanal aprofundado (execução inicialmente manual), provas de render e um piloto publicável; canais e formatos da entrevista.
-- [ ] F3.1–F3.2 — distribuição híbrida (manual inicialmente), métricas, UTMs/eventos/conversões, aprendizagem/experiências e gate para conectores oficiais.
+- [ ] F3.1–F3.2 — **Motor 3 Postiz**: enviar pacotes aprovados, receber ID/recibo, sincronizar **calendário consultável no Nexus** (agendados/publicados/falhados/pendentes), métricas e aprendizagem; sem scheduler de publicação Nexus.
 - [ ] MVP transversal — **3 peças reais**, The Hidden Layer + Vefi + UtopIA, 1 peça cada, com resultados verificáveis.
 - [ ] **Só depois da funcionalidade validada:** planeamento visual detalhado, UX e dashboard final no Nexus.
 
