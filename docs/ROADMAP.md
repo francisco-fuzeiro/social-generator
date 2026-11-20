@@ -10,7 +10,8 @@
 - [x] Incorporar decisões da entrevista: **Adicionar apresenta todo o catálogo Nexus; adicionar cria rascunho; pesquisa só para perfis Social configurados, ativos e com branding completo**; pesquisa diária/semanal, fontes, formatos, analytics e MVP.
 - [x] Adiar design visual detalhado do dashboard até haver fluxo funcional validado.
 - [x] Registar **P2-C**: pesquisa adaptativa só para perfis Social ativos/configurados com branding; reavaliação dos temas após 7 dias; lotes de ≥5 temas e seleção múltipla.
-- [x] Registar **P3-B adaptada**: Motor 1 recebe só escolha de temas; **calendário completo só aparece após produção, no gate final de aprovação**; Motor 3 agenda apenas pacote aprovado.
+- [x] Registar **P3-B adaptada**: Motor 1 recebe só escolha de temas; calendário completo só aparece após produção, no gate final de aprovação; Motor 3 agenda apenas pacote aprovado.
+- [x] **Postiz é o agendador/publicador e Nexus consulta o calendário sincronizado** (agendados, publicados, falhados, pendentes). Contrato em [POSTIZ.md](POSTIZ.md).
 - [ ] **Revisão técnica do contrato v1 no Nexus** (a adenda funcional já incorpora a entrevista). Alinhar catálogos, integrações e testes antes de F1.1.
 - [ ] Recuperar ficheiros originais SOCIAL_GENERATOR.md (489 linhas) e adenda (284 linhas), se disponíveis, e reconciliar diferenças sem os fazer passar por recuperados.
 - [ ] Verificar segredos antes de novos commits, especialmente enquanto repo público.
@@ -38,8 +39,8 @@ Adicionar validação de acesso à biblioteca externa e isolamento de marca onde
 
 ## F3 — Distribuição e medição rastreável
 
-- **F3.1:** **após aprovação final da peça e calendário**, Motor 3 recebe o pacote/hash para **agendar** (manual assistido inicialmente; API oficial só se elegível/autorizada). Confirmação de `agendado` distinta de `publicado`; depois métricas/UTM/eventos/conversões com data/origem, experiência e aprendizagem.
-- **F3.2:** gate documental para eventual integração oficial de uma rede específica, auditando contas, elegibilidade, quota, privacidade, direitos e efeitos incertos antes de programar upload.
+- **F3.1:** **após aprovação final da peça e calendário**, Motor 3 recebe pacote/hash e cria agendamento **no Postiz** quando elegível; fallback manual assistido sem falso agendamento. O Postiz mantém e executa agenda, não o Nexus. Confirmação de `agendado` distinta de `publicado`; depois métricas/UTM/eventos/conversões, experiência e aprendizagem.
+- **F3.2:** **leitura/sincronização de calendário Postiz no dashboard Social do Nexus** (agendados, publicados, falhados, pendentes e cancelados), com filtros por projeto/conta/rede/período, proveniência, última atualização e histórico. Validar modos Cloud/self-hosted, autorização, quotas, direitos e capacidades por rede antes de conectar.
 - Começar por métricas observadas e eventos de conversão disponíveis; enriquecer UTMs/atribuição quando os projetos forneçam instrumentação real.
 
 ## MVP de produto — depois de validar as fatias
@@ -47,6 +48,8 @@ Adicionar validação de acesso à biblioteca externa e isolamento de marca onde
 **Critério de produto confirmado:** **3 conteúdos reais**, um para cada **The Hidden Layer, Vefi e UtopIA** (desde que sejam projetos Nexus elegíveis/ativados), com identidade correta, briefing, fontes, aprovações, peça final, custos, resultado de distribuição e métricas rastreáveis. Não confundir 1 piloto técnico F2.3 com MVP multi-projeto concluído.
 
 Se alguma conta/rede não permitir publicação automatizada, um fluxo manual é aceitável, mas a falta de publicação/observação deve constar expressamente do estado. Não declarar métricas reais sem dados.
+
+O calendário funcional e os estados reais do Postiz pertencem à **F3**, mas a experiência visual detalhada continua reservada à F4. Editar/cancelar/agendar diretamente pelo Nexus precisa de decisão específica; por agora a consulta é requisito confirmado.
 
 ## F4 — Dashboard visual detalhado (só após funcionamento)
 
