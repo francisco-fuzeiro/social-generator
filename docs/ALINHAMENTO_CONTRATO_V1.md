@@ -81,9 +81,23 @@ A proposta de calendário pode utilizar histórico de audiência e urgência dos
 - **Postiz é a fonte de verdade operacional** para `agendado` e `publicado`. O Nexus apresenta uma **projeção de leitura/cache** associada ao ID do projeto Nexus e à conta autorizada; dados faltantes, estado de sincronização e erro são visíveis. Histórico de projetos inativos mantém-se consultável.
 - **Contrato proposto**: leitor de posts Postiz por janela/conta/canal, mapeamento de IDs de integração e posts, estados normalizados, `lastSyncedAt`, deduplicação e conciliação de alterações feitas diretamente no Postiz; sem publicar ou cancelar durante consulta.
 - **Integração por validar**: Postiz Cloud ou self-hosted, chaves/autorização, capacidade real por canal e disponibilidade da API na instalação. O design visual detalhado do calendário continua para depois da funcionalidade, mas **a consulta funcional é requisito do Motor 3**.
-- **Editar/reagendar/cancelar pelo Nexus** ainda é decisão separada; não implementar controlos mutáveis por inferência.
+- **P5-C (DECIDIDO): calendário Nexus de leitura; editar/reagendar/cancelar só no Postiz**, a partir de ligação contextual no dashboard quando houver URL. Sincronização posterior reflete as alterações. Não criar operações mutáveis no Nexus.
 
 Fonte: [POSTIZ.md](POSTIZ.md). Verificar `GET /public/v1/posts` e semântica dos estados na versão Postiz instalada. A auditoria F0 é documento histórico e não governa o disparo de posts.
+
+## 2.4. Quatro motores lógicos aprovados (SG-D042)
+
+**Motor 1 — Intelligence:** pesquisa diária leve, análise semanal aprofundada, oportunidades, scoring e reavaliação semanal de temas. Só perfis Social configurados, com branding completo e ativos.
+
+**Motor 2 — Production:** fila de produção automática dos temas selecionados (primeiro gate), cria vídeos/carrosséis e apresenta prévia+proposta de calendário para aprovação final (segundo gate). Não entrega ao M3 antes da aprovação.
+
+**Motor 3 — Distribution & Scheduling (Postiz):** recebe apenas pacote/calendário autorizado, envia ao Postiz e confirma estados/recibos. Postiz, não Nexus, executa agenda e publicação. M3 disponibiliza leitura/sincronização do calendário para Nexus, sem editar/reagendar/cancelar pelo dashboard (P5-C).
+
+**Motor 4 — Analytics & Learning:** área funcional separada que consome publicações comprovadas/eventos operacionais do M3, métricas observadas das redes e dados de conversão disponíveis em sites/apps; mantém snapshots datados, experimentos, custos, definições, incerteza e recomendações sustentadas para M1. **M4 não escreve nem altera a agenda no Postiz** e não é gate de execução de publicação.
+
+**Resiliência:** Postiz continua a publicar após confirmação mesmo que Nexus e M4 estejam inativos; M4 pode analisar dados já recolhidos mesmo quando M3/Postiz estejam temporariamente indisponíveis. A separação é **lógica**, sem novos processos permanentes obrigatórios ou agendador duplicado. Não inferir credenciais de plataformas a partir do cadastro Nexus.
+
+**Contratos propostos:** `ApprovedDistributionPackage -> Motor3/Postiz`; `PublicationStatusReceipt -> NexusCalendarReadModel, Motor4`; `MetricSnapshot/ConversionEvent -> Motor4`; `EvidenceBasedLearning -> Motor1`. Implementação, schema e integração são passos futuros e exigem validação técnica.
 
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
