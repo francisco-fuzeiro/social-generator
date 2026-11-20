@@ -94,6 +94,12 @@ Ver [BRANDING.md](BRANDING.md) §4.2 e decisão SG-D049.
 
 O calendário Nexus continua **só de leitura** para os posts entregues ao Postiz e mostra a identificação da variante quando disponível. Ver [VARIANTES.md](VARIANTES.md).
 
+## 5.4. Recomendações de agendamento P17-B
+
+A proposta de **datas/horas** por rede e conta surge **só depois do conteúdo produzido**, no gate 2 do Nexus. É sugerida com base em histórico datado do M4 quando existente, audiência/fuso, formato, prazo de campanha e **estado agendado real no Postiz**, com **origem/confiança**. Em caso de poucos dados, apresentar **estimativa inicial**; se a sincronização Postiz estiver desatualizada, não declarar conflitos verificados. O utilizador altera dias/horas/destinos antes de aprovar; **apenas os horários e variantes explicitamente aprovados** são enviados pelo Motor 3.
+
+**Conflitos:** alertar sobre sobreposição ou saturação de conta e sugerir alternativas, **sem modificar posts já agendados**. Uma vez aceite pelo Postiz, qualquer edição/reagendamento/cancelamento ocorre **no Postiz** (P5-C) e regressa ao Nexus via sincronização. Um calendário proposto não é «agendado» sem recibo; Postiz continua a ser scheduler independente. Ver [HORARIOS.md](HORARIOS.md) e decisão SG-D054.
+
 ## 6. Testes de aceitação
 
 1. Com posts confirmados no Postiz, o dashboard Nexus apresenta **agendados** no dia/hora/conta corretos e **publicados** com ligação e data real quando disponíveis.
