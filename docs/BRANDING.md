@@ -1,6 +1,6 @@
 # Branding por projeto — importação inteligente e validação humana
 
-> **DECIDIDO nas entrevistas P10-B e P11-B (20/11/2026):** o Social Generator importa e **verifica periodicamente mudanças de branding** de fontes autorizadas em modo de leitura, apresenta propostas com diferenças e **exige aprovação humana** tanto para a primeira versão como para qualquer alteração. Os esquemas, horários e meios técnicos são propostas, não implementação.
+> **DECIDIDO nas entrevistas P10-B, P11-B e P12-B (20/11/2026):** o Social Generator importa e **verifica periodicamente mudanças de branding** de fontes autorizadas em modo de leitura, apresenta propostas com diferenças e **exige aprovação humana** tanto para a primeira versão como para qualquer alteração. Os esquemas, horários e meios técnicos são propostas, não implementação.
 
 ## 1. Princípio funcional
 
@@ -56,7 +56,7 @@ O Social Generator deve **reler periodicamente as mesmas fontes de marca que est
 3. Guardar uma **proposta de alteração em revisão**, apresentando os campos antigos e novos, relevância e evidência. Agrupar diferenças relacionadas e evitar notificações repetidas pela mesma alteração.
 4. O utilizador escolhe **aceitar, rejeitar ou corrigir** as mudanças propostas. Até lá, **a versão oficial anterior mantém-se**, assinalando pendências relevantes para supervisão.
 5. **Só a aprovação humana** cria a nova versão oficial do perfil. Guardar histórico, decisões, evidências e identificadores dos conteúdos que dependiam das versões anteriores.
-6. **Nunca alterar silenciosamente criativos já aprovados, publicações no Postiz ou posts publicados.** Pode detetar que existem conteúdos potencialmente afetados e assinalá-los; **o tratamento concreto será decidido na P12**.
+6. **P12-B aprovado:** auditar as peças afetadas por mudança de marca; apresentar dependências/diferenças e propor correções localizadas, **mas sem alterar automaticamente conteúdos**. Postiz só é editado/reagendado/cancelado manualmente pelo operador.
 
 **Cadência e estados:** a verificação deve ser periódica, mas **horas, periodicidade numérica e modo de notificação não foram aprovados**. Usar infraestrutura Nexus para coordenação da verificação quando disponível, com limites de leitura/custo. Projetos Social inativos não podem ser incluídos nas pesquisas de tendências por causa desta funcionalidade; a política de scans de branding em perfis inativos será afinada tecnicamente sem impor custo automático.
 
@@ -70,6 +70,29 @@ O Social Generator deve **reler periodicamente as mesmas fontes de marca que est
 - Operador corrige uma proposta: a versão validada corresponde à correção manual, não à inferência original.
 - Post previamente agendado no Postiz permanece intacto, sem reagendar/cancelar/alterar automaticamente.
 - Projeto social configurado mas inativo continua sem pesquisa de temas; deteção de branding não implica ativação.
+
+## 4.2. Auditoria de impacto em conteúdos — P12-B (DECIDIDO)
+
+**Trigger:** depois de o operador aprovar uma **nova versão oficial de branding** (P11-B), comparar o novo perfil com as referências de marca usadas pelos conteúdos existentes do **mesmo projeto Nexus**. Fazer a auditoria sem modificar os conteúdos e sem chamar a API de escrita do Postiz.
+
+**Âmbito:** criativos em produção, prontos/à espera de revisão, aprovados mas ainda não enviados ao Postiz e **posts já agendados no Postiz**, quando a relação com as versões e os assets for identificável. Histórico de publicações anteriores fica intacto. **Não assumir que todos os conteúdos antigos estão desatualizados**: identificar dependências reais de cores, logos, fontes, tom, claims ou CTA antes de propor ação.
+
+**Saída para o operador:** lista de peças potencialmente afetadas com projeto, versão do perfil usada, elemento anterior/novo, fonte, evidência, impacto/urgência, estado editorial/agenda, dependências e **proposta de revisão localizada (P7-B)** com custo estimado e consequências para versão, QA e aprovações. Distinguir `afetado-confirmado`, `potencialmente-afetado`, `sem-impacto` e `não-avaliável` (proposta de estados técnicos).
+
+**Decisão por peça:** o operador escolhe **atualizar, manter como está, adiar ou pedir revisão**, com decisão registada. Ações de atualização só se iniciam após pedido explícito para aquela peça e seguem os limites P9-B e gates de custo. Se a mudança for material, a nova versão requer **novo gate de aprovação final** antes de ser enviada ao Motor 3/Postiz. Um pacote aprovado mas ainda não enviado não deve ser encaminhado automaticamente com autorização desatualizada: assinalar para avaliação do operador quando depender do branding alterado.
+
+**Posts já agendados no Postiz:** mostrar alerta no calendário de leitura do Nexus e, quando possível, ligação contextual **Abrir no Postiz** para a revisão manual. **Não editar, cancelar, reagendar ou travar automaticamente** um post existente no Postiz, nem fingir que o Nexus controla o scheduler. A decisão e ação no Postiz pertencem ao operador; sincronizar o estado remoto de volta ao Nexus. Um alerta **não** é prova de que o post foi alterado.
+
+**Robustez:** uma auditoria falhada mantém perfis, peças e agendamentos; mostrar resultados inconclusivos. Processar por projeto com limites do Nexus e sem duplicação de pedidos; nunca cruzar marcas, imprimir segredos nem reenviar posts. **A política de prioridades e intervenções futuras pode evoluir, mas não implica autorizar mutações silenciosas.**
+
+**Testes de aceitação:**
+1. Novo logótipo aprovado identifica vídeo A que usa a versão antiga e não marca vídeo B que já usa a nova.
+2. Vídeo em produção com mudança de cores gera proposta de revisão local, **sem render imediato**.
+3. Peça pendente de aprovação permite ao operador aplicar revisão e exige gate final sobre a nova versão.
+4. Peça aprovada mas não enviada, com dependência material afetada, é sinalizada para reavaliação; não segue automaticamente ao Postiz sem decisão válida.
+5. Post agendado apresenta alerta e link para o Postiz, **sem qualquer API de mutação nem cancelamento** no Nexus.
+6. Publicação anterior, rejeição de proposta e alterações de branding sem impacto não apagam histórico nem geram alterações retroativas.
+7. Projetos diferentes permanecem isolados; não regenerar conteúdos alheios.
 
 ## 5. Segurança e contratos técnicos (PROPOSTOS)
 
@@ -91,8 +114,8 @@ O Social Generator deve **reler periodicamente as mesmas fontes de marca que est
 7. Importação de Vefi não recebe assets internos da UtopIA; leitura de repositório não altera ficheiros nem publica segredos.
 8. Revisão do branding após aprovação preserva versão original e não modifica peças/publicações anteriores sem gates relevantes.
 
-## 7. Ponto a decidir a seguir (P12)
+## 7. Próxima decisão de produto (P13)
 
-**P11-B aprovado:** deteção periódica com proposta e aprovação humana. **P12 ainda por decidir:** quando há nova versão de branding aprovada, qual o tratamento de peças em rascunho/em produção/à espera de aprovação e de publicações já agendadas? Não modificar nem cancelar agendamentos Postiz por inferência.
+**P12-B aprovado:** auditar impacto, propor revisões localizadas e sinalizar posts Postiz para revisão manual. **P13:** definir se conteúdos de cada projeto são planeados apenas por objetivo geral, por campanhas obrigatórias ou por uma combinação de conteúdo contínuo e campanhas opcionais.
 
 Ver [PROJETOS.md](PROJETOS.md), [DECISOES.md](DECISOES.md), [ALINHAMENTO_CONTRATO_V1.md](ALINHAMENTO_CONTRATO_V1.md), [BIBLIOTECA.md](BIBLIOTECA.md).
