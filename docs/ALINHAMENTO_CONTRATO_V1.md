@@ -1,108 +1,132 @@
-# Alinhamento funcional do contrato Social v1 com as decisões de produto
+# Contrato de alinhamento F0 → Social Generator — decisões da entrevista
 
-> Data: 20/11/2026. **Adenda de requisitos, não alteração de código/schema implementada.** A auditoria histórica docs/auditoria-f0.md é a referência de implementação inicial, mas várias decisões de produto posteriores/mais completas exigem revisão do contrato antes da missão F1.1. A adenda originalmente produzida no ChatGPT (284 linhas) não estava recuperável integralmente: este ficheiro é uma síntese reconstruída, **não a sua transcrição literal**.
+> **Versão documental:** 20/11/2026, revisão pós-entrevista. **Decisões de produto deste documento são vinculativas**; escolhas técnicas de campos e schemas marcadas PROPOSTO dependem de revisão do Nexus. Não representa software já implementado. Preservar docs/auditoria-f0.md como prova histórica; esta revisão prevalece para requisitos novos e conflitos de produto.
 
-## 0. Compatibilidade e prioridade
+## 0. Autoridade e fronteiras
 
-- Conservar a fronteira **Nexus orquestra / Social produz dados** e as três operações propostas: \`social.ler\`, \`social.aprovarTema\` e \`social.aprovarPublicacao\`.
-- Manter escrita atómica, leitura validada, uma identidade editorial por projeto, dois gates humanos, versão/hash/recibos e recuperação conservadora.
-- **Não copiar sem revisão** as enumerações e campos fixos de F0: foram adequados a uma primeira fixture com três projetos, mas contradizem a extensibilidade e as métricas pretendidas.
-- Alterações incompatíveis são versionadas e testadas; F0 não é apagada. Nunca adulterar snapshots antigos para parecer que tinham campos novos.
-- Não criar um segundo servidor, scheduler, base de dados, dashboard ou sistema de aprovação em paralelo ao Nexus.
+- **Nexus** é fonte de verdade dos projetos e respetivas redes sociais, contas, permissões, sessões, limites, agendamento existente e dashboard Social.
+- **Social Generator** implementa motores/contratos de domínio para pesquisa, produção, distribuição, métricas e aprendizagem; não cria novos projetos Nexus nem outro painel ou scheduler.
+- **Decisão humana** aprova tema e aprova pacote/conta/canal antes da publicação; operações administrativas, custos e políticas seguem gates do Nexus.
+- **GitHub** documenta código/contratos; **D:\AI\Biblioteca** guarda recursos autorizados fora do Git. Projeto/clonagem local: **C:\Claude\Social Generator**.
 
-## 1. Dez correções de contrato a validar
+## 1. Alterações obrigatórias face à F0
 
-| # | Lacuna concreta de F0 | Alteração de contrato sugerida | Critério de aceitação |
-|---|---|---|---|
-| 1 | IDs editoriais fixos \`the-hidden-layer\`, \`vefi\`, \`utopia\` | Catálogo de projetos extensível com registo/validação e um perfil por ID | Um projeto novo surge sem alterar o código central |
-| 2 | Plataformas fixas \`instagram\`, \`tiktok\`, \`youtube\` | Registo/capability de plataformas com X e LinkedIn, sem prometer APIs implementadas | Nova rede pode ficar como exportação manual |
-| 3 | Oportunidade F0 não especifica contexto completo | Ficha económica com projeto, público, canal, tema, ângulo, hook, evidência, formato/duração, esforço, risco, confiança | Motor 1 não produz guião/asset antes do gate |
-| 4 | Perfil de marca subdefinido | Project Profile versionado separado do estado da sessão Nexus | Voz, marca, público, CTA e orçamento não migram entre projetos |
-| 5 | Peças/publicações sem campanha/variante suficientes | Encadear Campanha → Ideia → Criativo → Variante → Publicação | Rastrear qual publicação derivou de qual ideia e versão |
-| 6 | \`metricas.valores\` só 9 valores genéricos | Catálogo de métricas extensível por plataforma com numerador, denominador, unidade e definição | Nunca confundir alcance, impressões, plays, retenção e cliques |
-| 7 | Sem atribuição de resultados externos | Eventos/Conversões/UTMs e ligações a analítica autorizada (GA4/app/site) | Separar clique, visita e conversão, com limitação de atribuição |
-| 8 | Retrato limitado a 500 observações, história insuficiente | Manter \`painel.json\` limitado para UI; histórico de snapshots/eventos em JSONL ou estrutura equivalente, com janela e retenção aprovada | A UI não perde histórico nem lê ficheiros ilimitados |
-| 9 | Hash canónico genérico e decisões concorrentes | Especificar canonicalização consistente (RFC 8785 + SHA-256 é PROPOSTA), exclusividade/ idempotência e migração semântica | Mesmo pacote = mesmo hash; alteração exige nova aprovação |
-| 10 | Recursos sem catálogo de biblioteca e custo por etapa | Referências lógicas a D:\AI\Biblioteca, manifestos/licenças e despesas por fornecedor/peça/projeto | Nenhum path externo/segredo vai para browser/Git e custos são auditáveis |
+| # | F0 ou lacuna | Contrato que tem de vigorar |
+|---|---|---|
+| C01 | IDs editoriais fixos com três projetos | **Não existe criação de projeto Social independente**. O catálogo de elegíveis vem exclusivamente do Nexus: apenas projetos Nexus existentes com socials configurados; opt-in explícito para ativar Social |
+| C02 | `projetoId` livre/fixo sem relação | Todas as entidades usam identidade canónica Nexus (ou mapeamento legado explícito), com `nexusProjectId` obrigatório; catálogo e autorização consultados ao Nexus |
+| C03 | Plataformas limitadas a três enums | Modelo de dados extensível; Instagram, YouTube, X, TikTok e LinkedIn conforme os perfis; conectores podem estar indisponíveis e exportação manual ser o único modo |
+| C04 | Pouco detalhe de pesquisa | Pesquisa leve **diária** + **relatório semanal aprofundado**, sem novo scheduler; fontes YouTube, Instagram, Google/Trends, Reddit, TikTok, X, LinkedIn e fontes oficiais |
+| C05 | Score e concorrência genéricos | Pontuação **adaptativa por projeto** com evidências, pesos/versão e confiança; concorrência **híbrida**: referências introduzidas manualmente + descoberta justificada |
+| C06 | Formato `video/carrossel` sem política de projeto | Hidden Layer: **vídeo vertical narrado**; Vefi e UtopIA: **vídeo + carrossel**; adaptar formatos e entrega às capacidades de cada rede |
+| C07 | Produção em geral | **Remotion-first** e pacote editável; imagem/vídeo generativo só se acrescentar valor; Higgsfield apenas com aprovação; QA técnico, factual, editorial, visual e direitos |
+| C08 | Perfiles limitados a nome/idioma | **Perfil de marca versionado, derivado/ligado ao projeto Nexus**, com objetivos, tom, voz, kit, assets, restrições, canais/contas e conversões |
+| C09 | Média/socials só números base | Métricas avançadas e **atribuição**: tempos e curvas de retenção, conclusão, CTR, engagement, custos, UTMs, tráfego, eventos de app/site, conversões, definição da métrica e disponibilidade |
+| C10 | Experiência e aprendizagem genéricas | Registar características criativas, hipóteses/variantes controladas, amostras, comparações justas, confiança e recomendações citáveis para Motor 1 |
+| C11 | Recursos só em outputs Nexus | Biblioteca externa **D:\AI\Biblioteca** como fonte reutilizável por referência/manifesto/licença; outputs com hashes; nada externo servido diretamente pela UI |
+| C12 | F2 propõe um piloto e F1 UI simples | **MVP transversal de 3 conteúdos reais** (Hidden Layer, Vefi, UtopIA), depois de piloto técnico. **Design visual detalhado do dashboard adiado** até a funcionalidade e dados reais estarem validados |
+| C13 | API de publicação futura | Publicação **híbrida**: API oficial quando permitida e autorizada; fallback manual; pacote adaptado por conta/rede, dupla aprovação e estado incerto sem retry cego |
+| C14 | Metas não ligadas a operações | Pesquisa + síntese previstas, meta 5–10 conteúdos/semana, 1–3h supervisão, 3–6h desenvolvimento, alvo custo extra 0€ e teto de planeamento 25€/mês **sem autorizar compras** |
 
-## 2. Entidades sugeridas
+## 2. Elegibilidade e estados de projeto (DECIDIDO)
 
-**Projeto**: \`projetoId\`, perfil editorial versionado, objetivos, idiomas, canais/contas autorizadas, limites e estado. Não confundir com \`project_cwd\`.
+**Filtro de projetos disponíveis para ativar Social:**
 
-**Campanha**: \`campanhaId\`, \`projetoId\`, objetivo, janela, CTA, orçamento e hipótese.
+```text
+ProjetosNexus
+  → existem e são acessíveis no Nexus
+  → têm socials/canais sociais configurados no Nexus
+  → são elegíveis para opt-in Social
+  → operador ativa Social (opt-in)
+  → perfil Social e canais autorizados → pesquisa/produção/publicação
+```
 
-**Oportunidade**: id, versão, projeto/campanha, fontes verificáveis com consulta e confiança, tópico, proposta de hook, formato e duração sugeridos, custo/risco, pontuação rubricada, decisão de tema.
+Projetos do Nexus sem socials **não aparecem no seletor de ativação Social**. Projetos com socials mas não ativados não entram no seletor de produção/relatórios. Não há formulário ou endpoint `criarProjetoSocial`. O Social também não pode criar ligações de contas sociais em nome do Nexus para contornar esta regra.
 
-**Criativo/Peça**: id, versão, oportunidade aprovada, guião/brief/storyboard, assets e proveniência, previsualização, gates e manifestos.
+**PROPOSTO técnico:** representar no Nexus `nexusProjectId`, `hasSocials`, `socialEnabled`, `socialProfileVersion`, `eligibleChannels` e `eligibilityReason`; o leitor Social recebe referências validadas pelo Nexus, não caminhos arbitrários do browser. A fonte autoritativa de `hasSocials` é a configuração real de redes do Nexus, não um booleano editável no JSON do motor.
 
-**Variante**: id, peça/versão, atributo testado, recursos e identificador de experimento; não reutilizar o mesmo id para materiais diferentes.
+Se um projeto for removido/arquivado no Nexus ou perder o último social: desativar novas investigações que pressupõem conta e impedir envio; preservar histórico, decisões, media e métricas e mostrar motivo de indisponibilidade. Reativar requer nova validação. Um projeto pode ter dados históricos mesmo não estando atualmente ativo.
 
-**Publicação**: id, variante, plataforma+conta, legenda/CTA/UTM, timestamp, pacote/hash, versão aprovada, estado, ID remoto/URL/recibo. Distinguir manual vs API e orgânico vs pago.
+## 3. Modelo de dados — adenda proposta ao contrato v1
 
-**Observação de métrica**: publicação, definição, origem, período, idade do post, valor, denominador, estado (observado/estimado/indisponível/por-sincronizar), verificação e confiança.
+Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
 
-**Evento/conversão**: campanha/publicação/UTM quando atribuível, tipo (lead, registo, ativação, wishlist, compra), momento, valor agregado/unidade, origem e hipótese de atribuição; dados pessoais mínimos.
+| Entidade / extensão | Campos mínimos propostos | Regra |
+|---|---|---|
+| `NexusSocialProjectRef` | `nexusProjectId`, `socialEnabled`, `perfilVersao`, canais/contas autorizados, `eligibilityStatus` | Nexus define elegibilidade e autenticação |
+| `BrandProfile` | idioma, público, proposta, tom, voz, visuais, recursos, claims restritos, CTAs, objetivos, formatos, canais e restrições | Kit e direitos por projeto; versionado |
+| `ResearchRun` | projeto, janela, tipo `daily/weekly/on-demand`, fontes/data/método, custos, estado | Relatório semanal não é soma cega da pesquisa diária |
+| `Opportunity` | tema, ângulo, hooks, formato, duração, concorrência, tendência, relevância, esforço, conversão provável, rubrica/pesos/confiança e fonte | Ficha económica antes do gate; não gerar guião |
+| `Campaign` | projeto, objetivo, janela, CTA, orçamento, referências UTM | Relacionar resultados com conteúdo |
+| `Creative/Variant` | ideia aprovada/versão, guião, storyboard, hook, ritmo, voz, style, assets/licenças, gates, versão/hash | Não misturar marcas; alterações relevantes invalidam autorização |
+| `Publication` | peça/variante, projeto, canal, conta Nexus, modo manual/API, pacote e hash, estado/recibo, URL/ID remoto, horário | Aprovação por canal+conta+versão |
+| `MetricSnapshot` | publicação, definição, origem, observadoEm, janela, valor, unidade, numerador/denominador, disponibilidade | `null` não é zero; não misturar rede |
+| `ConversionEvent` | projeto, campanha, origem/UTM, tipo, agregado, momento, regra de atribuição e confiança | Minimização de dados pessoais |
+| `Experiment` | hipótese, variável, variantes, métricas, comparação/janelas, amostra, conclusão, evidência/confiança | Conclusão `inconclusiva` é válida |
+| `LibraryAssetRef` | ID, catálogo, digest, tipo, licença, projetos autorizados, localizador lógico | Nunca expor `D:\...` à UI |
 
-**Experiência**: hipótese, variável, variantes, métrica primária, janela, amostra, resultado, conclusões com confiança e evidências. "Inconclusiva" é um estado válido.
+**Versões:** ajustar v1 antes da primeira fixture definitiva, se possível. Se fixtures/dados v1 já existirem em produção, migrar explicitamente para v2 em vez de reinterpretar silenciosamente. Não aumentar sem controlo o tamanho de `painel.json`; analítica longa vai para histórico consultado/agregado.
 
-**Recurso**: ID, manifest hash/URI lógico, tipo, licença, permissões de projeto, checksum e derivados; não expor caminhos absolutos na UI.
+## 4. Contrato temporal do Motor 1 (DECIDIDO)
 
-## 3. Persistência e limites
+- **Diário leve**: detectar alterações relevantes e recolher evidências recentes, com orçamento de pesquisa limitado; não deve produzir media.
+- **Semanal aprofundado**: sintetizar dados da semana, medir variações, estudar concorrentes e fontes mais amplas, comparar com histórico e propor prioridades por projeto.
+- Fonte elegível: YouTube, Instagram, **Google e Google Trends**, Reddit, TikTok, X, LinkedIn, sites oficiais e pesquisas web documentadas. Só vias autorizadas; ausência de API significa ausência/limitação identificada, não scraping forçado.
+- Concorrência híbrida: perfis/concorrentes que o operador define + descoberta dinâmica com motivo. Nunca inferir desempenho de alcance total sem dados.
+- Scoring adaptado a objetivo/público/projeto; rubrica e confiança explícitas. **Pesos numéricos exatos não foram fechados**; são configuração versionada/experiência.
+- Saída: ficha de oportunidade de baixo custo, sem guião/storyboard/render ou assets caros. O gate de tema decide a passagem ao Motor 2.
+- Execução inicial pode ser manual. Agendamento recorrente, quando existir, é capacidade reutilizada do Nexus; não criar daemon paralelo.
 
-- Preservar o princípio da F0: retrato pequeno e autoconsistente \`painel.json\` para a leitura rápida do Nexus; \`eventos/*.jsonl\` auxiliares, decisões imutáveis sob responsabilidade do servidor, outputs com hashes.
-- Aumentar a expressividade **sem** aumentar indiscriminadamente os limites da UI. Históricos analíticos e versões antigas podem exigir leitura paginada/agregados, a aprovar na missão técnica.
-- Um único escritor por projeto; validar objeto completo e renomear ficheiro temporário no mesmo volume; \`rename\` não substitui exclusão mútua.
-- Retrato desatualizado/inválido deve mostrar estado próprio, não valores zeros ou ficções.
-- Registo de proveniência/receita/versão por ferramenta. Dados da biblioteca externos e recursos de projeto original são só de leitura.
+## 5. Canais, formatos e produção (DECIDIDO)
 
-## 4. Aprovações e efeitos externos (preservar)
+| Projeto elegível/ativado | Formatos aprovados | Plataformas pretendidas |
+|---|---|---|
+| The Hidden Layer | Vídeo vertical narrado em inglês, faceless, motion graphics | Instagram, YouTube, X, TikTok |
+| Vefi | Vídeo, carrossel | Instagram, TikTok, X, LinkedIn, YouTube |
+| UtopIA | Vídeo, carrossel | Instagram, LinkedIn, TikTok, X, YouTube |
 
-- Gate de tema e gate de publicação **separados e persistentes**, ambos por identidade humana, versão e alvo.
-- Idempotência por \`idPedido\`; conflito de corpos diferentes e versões obsoletas devem rejeitar.
-- Publicação exige hash do pacote aprovado; mudar conta, texto, plataforma, agendamento ou recurso invalida autorização anterior.
-- Aceitar a API de aprovação = **registar decisão**, nunca significa publicação efetuada.
-- Antes do envio externo guardar tentativa/recibo; timeout após envio = estado incerto, consulta ou validação humana; **nunca reenviar às cegas**.
-- O "Auto" das permissões de ferramentas não equivale a decisão editorial. Adaptadores de redes precisam de gate próprio por conta/canal.
+Esta tabela é intenção editorial; `capability` e estado de conta no Nexus decidem o que é **tecnicamente possível**. Para rede que não aceita um formato, o adaptador explica restrição e propõe exportação apropriada para aprovação; não publica outro formato automaticamente.
 
-## 5. Métricas: não escolher fórmula sem disponibilidade
+Produção **Remotion-first**, FFmpeg auxiliar quando validado; HyperFrames em avaliação. Ferramenta de imagem/vídeo IA só quando acrescenta valor e não traz custo/risco não aprovado; Higgsfield exige autorização. Entrega deve incluir MP4 quando vídeo, editáveis, guião/storyboard e referências, relatório QA factual/editorial/técnico/visual/direitos, hashes, versões e custos.
 
-Métricas avançadas, janela de recolha (ex.: 2h, 24h, 72h, 7d, 30d), KPI principal e scores por projeto são **propostas de desenho**, não regras finais; ver METRICAS.md. Antes de implementar, inventariar quais os indicadores realmente acessíveis pelas contas e APIs usadas. Importação manual com origem/data é válida no arranque.
+## 6. Biblioteca (DECIDIDO) e segurança (proposta de integração)
 
-## 6. Ciclo de desenvolvimento compatível com F0
+Raiz autorizada `D:\AI\Biblioteca`, acessível pelo projeto local `C:\Claude\Social Generator` **sem entrar em Git**. Configurar caminho via Nexus/variável de ambiente, inventariar antes de alterar. Catálogo identifica licenças, restrições e projetos permitidos. O contrato expõe somente IDs relativos e recursos permitidos; valida `realpath` e junctions para impedir escape. Render usa cópias/derivados em outputs do Nexus com recibos. Não depender de nomes/estrutura imaginados na biblioteca.
 
-A auditoria define F1.1/F1.2/F1.3, F2.1/F2.2/F2.3 e F3.1/F3.2, com listas fechadas e testes. Esta adenda **não as substitui automaticamente**. Cada correção tem de ser integrada na missão tecnicamente adequada, com provas e revisão.
+## 7. Analytics, atribuição e aprendizagem (DECIDIDO no conceito)
 
-Como agrupamento **proposto** para planeamento e sem fingir recuperar a nomenclatura integral da adenda anterior:
+Medir views/impressões/alcance/engagement, retenção (média, conclusão e curva se acessíveis), cliques, CTR, visitas, UTMs, registos/leads/ativação/wishlists/vendas quando aplicável, receitas e custos (quando observáveis). Guardar fonte, janela e definição por plataforma, e separar dados observados, estimados, pendentes e indisponíveis. Atribuição por UTM e eventos de produto **não prova causalidade**, e pode ser parcial.
 
-| Missão sugerida | Resultado |
-|---|---|
-| SG-M001 | Aprovar contrato: projetos, canais, schemas e migração |
-| SG-M002 | Leitura Nexus Social com dados sintéticos identificados e estado vazio |
-| SG-M003 | Gates persistentes e concorrência/idempotência |
-| SG-M004 | Catálogo de projetos/marca/biblioteca com isolamento |
-| SG-M005 | Pesquisa Motor 1, fontes e fichas de oportunidades |
-| SG-M006 | Prova de render/imagem e pacote de produção |
-| SG-M007 | Um piloto publicável com preview e checks/licenças |
-| SG-M008 | Publicação manual e snapshots/métricas/conversões |
-| SG-M009 | Testar 3 projetos, aprendizagem inicial, relatório de evidências e análise de custos |
+Aprendizagem por projeto com características criativas (hook, voz, duração, estrutura, CTA, estilo, canais), experiências controladas de uma variável, comparações por idade/plataforma/formato, amostra e confiança. Recomendação nova cita dados e hipótese, não altera autonomia de publicação. Implementação incremental: primeiro métricas manuais rastreáveis, depois APIs oficiais conforme autorização.
 
-As missões SG-M001–SG-M009 são **organização proposta deste resumo**, não autorização de execução, e precisam de ser reconciliadas com as listas fechadas F1–F3 do Nexus.
+Detalhe em docs/METRICAS.md.
 
-## 7. Testes de regressão indispensáveis
+## 8. MVP e ordem do dashboard (DECIDIDO)
 
-1. Novo ID de projeto válido; projeto desconhecido rejeitado onde não registado; sem leitura arbitrária de paths.
-2. Redes X/LinkedIn aparecem como suportadas pelo modelo de dados, mas publicação API desativada sem adaptador/gate.
-3. Ficha de tema não aprovado não inicia guião/recursos.
-4. 2 aprovações iguais por mesmo \`idPedido\` produzem 1 decisão; corpo divergente falha.
-5. Mudança de conta, texto, asset ou plataforma gera novo hash e invalida decisão antiga.
-6. Medição indisponível ≠ zero; mesma métrica de redes diferentes não é somada sem normalização.
-7. Publicações de janelas diferentes não são tratadas como diretamente comparáveis.
-8. Conversão sem UTM não recebe atribuição certa por adivinhação.
-9. Biblioteca com junction/travessia para fora da raiz é recusada; sem exposição de path/segredo.
-10. Queda depois de tentativa de envio não gera segundo post automático.
-11. Dados de exemplo explicitamente marcados no Nexus; painel normal sem fontes não fabrica resultados.
-12. Migração versão v1→nova versão mantém evidências/recibos e dá erro claro em schema desconhecido.
+- **Piloto técnico**: uma peça para provar um fluxo end-to-end, sem confundir com MVP completo.
+- **MVP transversal**: **3 conteúdos reais e publicáveis**, 1 The Hidden Layer, 1 Vefi, 1 UtopIA, cada um com identidade, fontes, gates, produção, pacote final, canal/conta e resultado registado. Não contar fixtures sintéticas. Distinguir `preparado` de `publicado`; nunca inventar métricas se a publicação ainda não ocorreu.
+- **Dashboard funcional primeiro**: UI mínima no separador Social do Nexus para selecionar projeto elegível, ler estados, aprovar temas/publicações, consultar outputs e métricas reais quando existirem. Não fazer protótipo visual detalhado, grande redesign, dashboards de sete abas ou gráficos decorativos durante F1.
+- **Design visual detalhado só após** prova de funcionamento dos motores/contratos e fluxos reais. O desenho final deve derivar de utilização e dados observados.
 
-## 8. Aprovação pendente
+## 9. Aprovações, recuperação e testes (preservar F0)
 
-**Aprovar formalmente a revisão técnica do contrato antes de F1.1**, em particular formato dos perfis/projetos, extensibilidade de redes, separação de histórico e snapshots, versão de schema, hash canónico e eventos/atribuição. Até essa validação, apenas esta documentação está atualizada; **o código Nexus não foi alterado por este ficheiro**.
+Duas aprovações persistentes e inequívocas: tema antes de guião; publicação por pacote/hash/conta/plataforma antes de efeito externo. Nexus guarda identidade/autorização. Em publicação API: conferir elegibilidade, consentimento, limites; `em-envio` + timeout sem recibo = `incerta`, não reenvio cego. Não comprar ferramentas, partilhar credenciais ou modificar repos externos por pressuposto.
+
+**Testes obrigatórios antes de F1.1 e no progresso F1–F3:**
+1. Nexus project sem socials não aparece; com socials elegível não fica ativado automaticamente; ID inventado pelo Social rejeitado.
+2. Remover último social torna projeto indisponível para novo trabalho sem apagar histórico; conta de outro projeto rejeitada.
+3. Uma nova marca com sociais no Nexus é ativável sem editar enum de IDs nem escrever no repo alheio.
+4. Pesquisa daily/weekly com fontes/datas e estados; sem fonte válida não produz scores arbitrários.
+5. Hidden Layer apenas formato narrado vertical; Vefi/UtopIA vídeo+carrossel; adaptação por rede com aprovação.
+6. Tema sem aprovação nunca gera guião/asset; mudança do tema exige versão nova.
+7. Pacote alterado depois de aprovação exige nova autorização por conta/rede/hash.
+8. UTM e conversões agregadas com origem; ausente ≠ zero; atribuição incerta não é declarada venda causada pelo post.
+9. Experiência sem amostra ou com janelas não comparáveis termina `inconclusiva`.
+10. Biblioteca fora do Git; paths fora da raiz/junction recusados; licenças verificadas.
+11. Publicação manual/API com comprovativo; timeout de envio não duplica post.
+12. Dados sintéticos visivelmente marcados; sem motor/dados, UI mostra vazio; visual avançado não bloqueia funcionalidade.
+13. Três peças reais por três projetos confirmados, com gates e evidência; fixtures não contam.
+
+## 10. Estado e próximos gates
+
+Esta revisão **resolve o conflito funcional** da entrevista mas **não aprova automaticamente** desenho pormenorizado de schema, novas APIs/canais, alteração do Nexus, nem publicação paga. As missões F1–F3 permanecem como sequência, com ajustes de contratos e listas fechadas antes de editar código. O utilizador mantém aprovação da execução. Obter assinatura/validação técnica do contrato consolidado no Nexus antes de SG-M001/F1.1.
