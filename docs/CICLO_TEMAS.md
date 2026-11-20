@@ -22,6 +22,10 @@ Ao desativar, preservar temas, versões, fontes, decisões, calendários e resul
 
 **Apenas para as execuções de pesquisa**, reutilizar orquestrador, agendador e guardas de custo/RAM/limites do Nexus. **Agendamento e publicação de posts pertencem ao Postiz (Motor 3)**. O dashboard Social do Nexus consulta o calendário Postiz por sincronização; não cria scheduler paralelo de publicações. Execução manual da pesquisa é fallback até existir suporte comprovado. Prioridade/calendário podem mudar sem autorizar gasto, produção ou publicação.
 
+## 2.1. P13-B — conteúdo contínuo e campanhas opcionais
+
+Cada projeto Social elegível mantém um **fluxo contínuo de pesquisa de temas gerais**. Campanhas **opcionais** definidas pelo operador acrescentam objetivos, público, prazos, mensagem e CTA; M1 pesquisa e recomenda ideias específicas para campanhas ativas **além das recomendações gerais**, sem obrigar cada tema a pertencer a uma campanha. A oportunidade identifica campanha quando aplicável, e a seleção humana de temas não exige escolher calendário. A distribuição exata de capacidade, prioridades e peso na lista entre campanhas e conteúdo contínuo **ainda será decidida na P14**. Ver [CAMPANHAS.md](CAMPANHAS.md).
+
 ## 3. Lotes de recomendações — mínimo cinco temas (DECIDIDO)
 
 Cada **ronda/lote de recomendações apresentado ao utilizador** para um projeto deve incluir **pelo menos 5 temas distintos, com contexto suficiente para escolher**, organizados por pontuação justificada. O relatório diário leve não tem de gerar um novo lote diariamente: pode atualizar sinais, recência e backlog; quando o sistema apresenta uma nova ronda de escolha, aplica-se o mínimo de cinco.
