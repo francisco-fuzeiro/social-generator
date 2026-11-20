@@ -12,7 +12,7 @@
 | **Motor 3 — Postiz Adapter** | Apenas após aprovação final: envia pacote ao Postiz, cria agendamento quando a conta/canal permite, acompanha estados e confirma recibos |
 | **Postiz** | **É o scheduler e executor da publicação** nas horas marcadas; guarda o estado operacional das publicações, independentemente de uma sessão LLM Nexus |
 | **Dashboard Social no Nexus** | Mostra o **calendário sincronizado com o Postiz** e detalhes dos posts. Permite consultar agendas e histórico mesmo sem entrar no Postiz. É **visualização de leitura e supervisão**, não um segundo scheduler. |
-| **Analytics & Learning** | Consome resultados confirmados do Postiz e métricas adicionais disponíveis da rede/site/app; permanece como módulo lógico do domínio Social, sem pressupor que foi aprovado um quarto motor autónomo |
+| **Motor 4 — Analytics & Learning** | Motor lógico **aprovado** e separado do M3: recolhe/normaliza métricas da rede, dados do Postiz e do site/app quando disponíveis, analisa resultados/experiências e retroalimenta o Motor 1. M3 só entrega eventos/recibos operacionais |
 
 **Fonte de verdade:** Postiz para agendamento/execução e estados operacionais das publicações geridas por ele; Social/Nexus para identidade de projeto, aprovações, conteúdo produzido, autoria e links à investigação. Espelho no Nexus é cache/snapshot de leitura, não fila alternativa de execução. A falta de disponibilidade do Nexus **não** deve impedir o disparo de uma publicação já confirmada no Postiz; a falta de disponibilidade do Postiz **deve** ser sinalizada como erro/estado desconhecido no dashboard.
 
@@ -74,7 +74,7 @@ Os estados `proposta`/`aguarda-aprovacao` são locais; `agendado` e `publicado` 
 
 **Consulta de calendário e detalhe é requisito decidido.** O dashboard apresenta prévias, datas e estados e pode oferecer um link para abrir a publicação no Postiz ou na rede quando disponível.
 
-**Editar, reagendar ou cancelar diretamente pelo dashboard Nexus** permanece **por decidir**. Até essa decisão, o contrato só garante consulta e aprovação do pacote *antes* do envio ao Postiz; alterações feitas no Postiz devem regressar ao Nexus pela sincronização. Não implementar controlos de edição inertes ou que alterem o Postiz sem autorização.
+**DECIDIDO — Entrevista P5, opção C:** **o calendário do Nexus é de consulta**, sem botões para editar, reagendar ou cancelar no Nexus. Para essas ações, o utilizador **abre a publicação no Postiz** por ligação contextual quando disponível e altera-a lá. Depois a sincronização atualiza o calendário Nexus, identificando alterações de data, hora, conta, copy, estado ou cancelamento, sem efetuar alterações ocultas. O fluxo de produção continua a permitir ajustes **antes** da aprovação e da submissão inicial ao Postiz.
 
 **Cloud vs self-hosted** também é decisão pendente: validar uptime, preço real, limites de contas, autenticação, formatos, condições e capacidade de listar/editar posts para cada canal, **antes de contratar/instalar**. Não colocar API keys e segredos no repositório nem nas respostas do dashboard.
 
@@ -86,10 +86,11 @@ Os estados `proposta`/`aguarda-aprovacao` são locais; `agendado` e `publicado` 
 4. Após gate final, Postiz confirma criação do agendamento e o Nexus atualiza estado/ID; se falhar, não apresenta falso sucesso.
 5. Alteração feita diretamente no Postiz fica refletida após sincronização; snapshots repetidos não duplicam posts.
 6. Erros, posts falhados e expiração de autenticação são visíveis, com causa e última atualização.
-7. Desativar projeto Social não apaga posts já agendados nem métricas; bloqueia novo trabalho. Cancelamento automático não pode ocorrer sem política aprovada.
-8. Postiz indisponível não apaga calendário: mostrar **snapshot desatualizado** e falha de sincronização.
-9. O Nexus não executa o scheduler; uma publicação confirmada permanece agendada no Postiz independentemente de sessão LLM.
-10. Publicação manual não surge como `agendada` sem comprovativo; publicação já efetuada exige confirmação própria.
+7. No Nexus, cada post com ligação disponível pode ser **aberto no Postiz para edição**, mas o dashboard não faz `PATCH/DELETE` ou reagendamento por si; alteração no Postiz volta por sincronização.
+8. Desativar projeto Social não apaga posts já agendados nem métricas; bloqueia novo trabalho. Cancelamento automático não pode ocorrer sem política aprovada.
+9. Postiz indisponível não apaga calendário: mostrar **snapshot desatualizado** e falha de sincronização.
+10. O Nexus não executa o scheduler; uma publicação confirmada permanece agendada no Postiz independentemente de sessão LLM.
+11. Publicação manual não surge como `agendada` sem comprovativo; publicação já efetuada exige confirmação própria.
 
 ## 7. Fontes de referência técnica
 
