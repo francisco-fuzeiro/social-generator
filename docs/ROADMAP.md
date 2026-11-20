@@ -16,6 +16,7 @@
 - [x] **Arquitetura de quatro motores lógicos**: M1 Intelligence, M2 Production, M3 Postiz Distribution & Scheduling, M4 Analytics & Learning.
 - [x] **P6-C:** Postiz será validado antes de escolher Cloud vs. self-hosted; nenhum gasto, contratação ou instalação definitiva implícita.
 - [x] **P7-B:** revisões inteligentes e localizadas no Motor 2, preservando partes já validadas, com histórico, comparação e recuperação de versões. Contrato [REVISOES.md](REVISOES.md).
+- [x] **P8-B:** dar feedback de revisão ao pausar vídeo em instantes específicos, permitir vários comentários e notas gerais associadas à versão; sem editor visual completo. Contrato em [REVISOES.md](REVISOES.md).
 - [ ] **Revisão técnica do contrato v1 no Nexus** (a adenda funcional já incorpora a entrevista). Alinhar catálogos, integrações e testes antes de F1.1.
 - [ ] Recuperar ficheiros originais SOCIAL_GENERATOR.md (489 linhas) e adenda (284 linhas), se disponíveis, e reconciliar diferenças sem os fazer passar por recuperados.
 - [ ] Verificar segredos antes de novos commits, especialmente enquanto repo público.
@@ -35,7 +36,7 @@ A execução técnica mantém como referência a lista fechada e os testes da au
 
 - **F2.1:** pesquisa supervisionada só de projetos Social ativos/configurados com branding; **C: pesquisa diária leve para todos os ativos, aprofundamento por prioridade/campanhas** e relatório semanal que reavalia temas caducados. Fontes YouTube/Instagram/Google-Trends/Reddit/TikTok/X/LinkedIn; lotes **≥5** fundamentados (estado insuficiente quando necessário), **validação máxima de 7 dias** e **seleção de vários temas sem calendário**; a proposta completa de datas/horas/ordem/canais só aparece depois da produção, no gate final.
 - **F2.2:** render Remotion/FFmpeg num laboratório isolado, benchmark de tempo/RAM, comprovação da geração de imagem numa sessão Nexus; nenhuma ferramenta paga implícita.
-- **F2.3:** template parametrizado para vídeo vertical narrado (Hidden Layer) e vídeo/carrossel (Vefi/UtopIA), storyboard/contact sheet, controlo de direitos, pacote editável e **prévia/MP4 do piloto com calendário proposto na revisão final**. **P7-B:** permitir corrigir só segmentos afetados (sempre que possível), preservar versões, comparar/recuperar e validar QA/hashes. Nenhum agendamento antes do gate final. IA generativa só com valor claro; Higgsfield requer aprovação.
+- **F2.3:** template parametrizado para vídeo vertical narrado (Hidden Layer) e vídeo/carrossel (Vefi/UtopIA), storyboard/contact sheet, controlo de direitos, pacote editável e **prévia/MP4 do piloto com calendário proposto na revisão final**. **P7-B/P8-B:** corrigir só segmentos afetados (quando possível), preservar versões, comparar/recuperar e validar QA/hashes; **recolher comentários por timestamp na prévia e notas gerais**, associados à versão exata. Nenhum agendamento antes do gate final. IA generativa só com valor claro; Higgsfield requer aprovação.
 
 Adicionar validação de acesso à biblioteca externa e isolamento de marca onde couberem nas missões aprovadas. Não transformar este roadmap numa autorização para alterar todos os ficheiros de uma vez.
 
