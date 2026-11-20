@@ -19,6 +19,7 @@
 - [x] **P8-B:** dar feedback de revisão ao pausar vídeo em instantes específicos, permitir vários comentários e notas gerais associadas à versão; sem editor visual completo. Contrato em [REVISOES.md](REVISOES.md).
 - [x] **P9-B:** no máximo três tentativas por ronda de revisão (uma aplicação + duas autocorreções), QA após cada tentativa e comunicação de falhas não resolvidas, sem custos pagos não aprovados.
 - [x] **P10-B:** branding proposto por importação inteligente em modo de leitura de fontes autorizadas do projeto Nexus; operador valida/edita antes de ativar o projeto Social. Contrato [BRANDING.md](BRANDING.md).
+- [x] **P11-B:** monitorizar periodicamente mudanças nas fontes autorizadas do branding, propor diferenças e **aprovar nova versão apenas após validação humana**, sem alterar automaticamente a agenda Postiz.
 - [ ] **Revisão técnica do contrato v1 no Nexus** (a adenda funcional já incorpora a entrevista). Alinhar catálogos, integrações e testes antes de F1.1.
 - [ ] Recuperar ficheiros originais SOCIAL_GENERATOR.md (489 linhas) e adenda (284 linhas), se disponíveis, e reconciliar diferenças sem os fazer passar por recuperados.
 - [ ] Verificar segredos antes de novos commits, especialmente enquanto repo público.
@@ -28,7 +29,7 @@
 
 A execução técnica mantém como referência a lista fechada e os testes da auditoria F0 §6:
 
-- **F1.1:** schema e leitor de retratos, operação `social.ler`, **Adicionar projeto com catálogo Nexus integral**, rascunho Social e importação de branding **apenas de fontes autorizadas em leitura**, apresentando proposta com lacunas e **aprovação humana antes de considerar branding válido**; ativação Social continua separada. UI PC/móvel mínima com exemplos e estados vazios.
+- **F1.1:** schema e leitor de retratos, operação `social.ler`, **Adicionar projeto com catálogo Nexus integral**, rascunho Social e importação de branding **apenas de fontes autorizadas em leitura**, apresentando proposta com lacunas e **aprovação humana antes de considerar branding válido**; ativação Social continua separada. Preparar **deteção periódica de alterações P11-B** (proposta + comparação + aprovação humana; frequências por definir), sem reescrever marca nem posts por deteção. UI PC/móvel mínima com exemplos e estados vazios.
 - **F1.2:** decisões humanas persistentes, tema e publicação separadas, versão/hash, idempotência, papéis, contas pertencentes ao projeto Nexus; nenhum envio externo.
 - **F1.3:** previews protegidas de MP4/recursos, Range e validação dos caminhos, sem novo servidor.
 
