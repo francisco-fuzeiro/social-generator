@@ -19,7 +19,9 @@
 - [x] **P6-C:** primeiro validar a integração Postiz, só depois decidir Cloud vs self-hosted.
 - [x] **P7-B:** revisões localizadas com preservação de trechos/recursos corretos, histórico e comparação/recuperação de versões; novo gate final obrigatório para pacote alterado. `docs/REVISOES.md`.
 - [x] **P8-B:** feedback por comentários associados a timestamps do vídeo e por instruções gerais, agrupados por versão; sem editor visual completo.
-- [ ] **P9:** definir rondas de QA/correções automáticas antes da próxima revisão humana e limite de custo/tentativas.
+- [x] **P9-B:** no máximo três tentativas por ronda (execução inicial + duas autocorreções de QA), paragem antecipada e reporte de falhas remanescentes; não consumir serviços pagos sem aprovação.
+- [ ] **P10:** definir se o branding Social é preenchido manualmente, extraído automaticamente de fontes autorizadas ou híbrido sujeito a revisão humana.
+- [ ] Limites técnicos concretos de tempo/CPU e testes de QA disponíveis por formato (o teto de 3 tentativas já está decidido).
 - [ ] **Prova técnica Postiz** (não iniciada): verificar se existe opção gratuita/experimental válida; testar API, contas/redes/formatos, agendamento, sincronização, recibos, erros e edição no Postiz com reflexo no calendário Nexus, sem publicar nem pagar sem aprovação.
 - [ ] **Escolher Postiz Cloud vs self-hosted após relatório de evidências:** limites, uptime 24/7, custos reais, manutenção, backups e capacidade por plataforma; decisão requer aprovação.
 - [x] **P5-C:** calendário e posts consultáveis no Nexus, **editar/reagendar/cancelar no Postiz**; sincronizar alterações.
