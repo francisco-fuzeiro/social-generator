@@ -1,5 +1,13 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P3-B adaptada: calendário após produção
+
+**TL;DR:** O utilizador escolheu B com condição: na pesquisa escolhe apenas temas, sem datas nem calendário. Após o Motor 2 produzir, vê prévia e informação relevante, incluindo proposta completa de ordem, dias, horas, contas/canais. Pode corrigir; só após aprovação final o Motor 3 recebe o pacote e agenda por API autorizada ou deixa preparação manual pendente. Documentação, sem código.
+
+- **Registo:** SG-D035/036 em `docs/DECISOES.md` e contrato `docs/CICLO_TEMAS.md`.
+- **Estado:** decisão funcional fechada; implementação e testes no Nexus ainda não iniciados.
+
+
 ## 2026-11-20 — Entrevista P2-C: pesquisa adaptativa, temas semanais e escolha múltipla
 
 **TL;DR:** Decidida pesquisa adaptativa (C) para projetos Social configurados, ativos e com branding completo. Projeto inativo não é pesquisado. Lotes de sugestões com mínimo cinco temas distintos; escolha múltipla e proposta de ordem de agendamento. Tema reutilizável até sete dias, depois reavaliação semanal fundamentada. Apenas documentação; sem motores implementados.
