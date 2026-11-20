@@ -7,7 +7,9 @@
 - [x] Criar GitHub e integrar clone local em C:\Claude\Social Generator; ligação remota confirmada pelo utilizador.
 - [x] Auditar Nexus e publicar docs/auditoria-f0.md.
 - [x] Consolidar requisitos funcionais, decisões, motores, métricas, perfis, biblioteca e alinhamento do contrato no repo.
-- [ ] Rever e aprovar **adenda ao contrato v1** com o responsável da integração Nexus.
+- [x] Incorporar decisões da entrevista: catálogo Nexus + socials + opt-in; pesquisa daily/weekly, fontes/concorrentes, formatos/canais, analytics, biblioteca e três conteúdos reais.
+- [x] Adiar design visual detalhado do dashboard até haver fluxo funcional validado.
+- [ ] **Revisão técnica do contrato v1 no Nexus** (a adenda funcional já incorpora a entrevista). Alinhar catálogos, integrações e testes antes de F1.1.
 - [ ] Recuperar ficheiros originais SOCIAL_GENERATOR.md (489 linhas) e adenda (284 linhas), se disponíveis, e reconciliar diferenças sem os fazer passar por recuperados.
 - [ ] Verificar segredos antes de novos commits, especialmente enquanto repo público.
 - [ ] Passar repo a privado em **23/11/2026** e confirmar a alteração (ação futura do utilizador).
@@ -16,36 +18,40 @@
 
 A execução técnica mantém como referência a lista fechada e os testes da auditoria F0 §6:
 
-- **F1.1:** schema e leitor de retratos, operação \`social.ler\`, navegação PC/móvel, exemplos explícitos e estados de dados ausentes.
-- **F1.2:** decisões humanas persistentes, tema e publicação separadas, versão/hash, idempotência, papéis; nenhum envio externo.
+- **F1.1:** schema e leitor de retratos, operação `social.ler`, navegação PC/móvel, exemplos explícitos e estados de dados ausentes.
+- **F1.2:** decisões humanas persistentes, tema e publicação separadas, versão/hash, idempotência, papéis, contas pertencentes ao projeto Nexus; nenhum envio externo.
 - **F1.3:** previews protegidas de MP4/recursos, Range e validação dos caminhos, sem novo servidor.
 
-**Bloqueio importante:** F1.1 precisa de incorporar o alinhamento de projetos extensíveis, canais e dados analíticos. A auditoria histórica propôs uma lista fixa de três IDs e três redes — não é o alcance funcional aprovado.
+**Contrato funcional fechado pela entrevista:** o Social **não cria** projetos; apenas mostra projetos do Nexus com socials e opt-in para os ativar. Os três IDs e três redes fixos da F0 eram fixtures e não são o contrato aprovado. **Design visual detalhado fica fora da F1**. Confirmar tecnicamente a origem das contas e os estados de elegibilidade antes de implementar.
 
 ## F2 — Inteligência, produção e prova técnica
 
-- **F2.1:** pesquisa supervisionada com fontes verificadas, fichas de oportunidades económicas, aplicação de gate de tema e retrato Social real.
+- **F2.1:** pesquisa supervisionada com fontes YouTube/Instagram/Google-Trends/Reddit/TikTok/X/LinkedIn acessíveis, concorrência híbrida e score por projeto, fichas económicas e gate de tema; **diária leve + relatório semanal aprofundado** quando integrados ao agendamento Nexus.
 - **F2.2:** render Remotion/FFmpeg num laboratório isolado, benchmark de tempo/RAM, comprovação da geração de imagem numa sessão Nexus; nenhuma ferramenta paga implícita.
-- **F2.3:** template parametrizado, storyboard/contact sheet, controlo de direitos e pacote editável, prévia/MP4 de **um piloto** antes da autorização de publicação.
+- **F2.3:** template parametrizado para vídeo vertical narrado (Hidden Layer) e capacidade de vídeo/carrossel (Vefi/UtopIA), storyboard/contact sheet, controlo de direitos e pacote editável, prévia/MP4 de **um piloto** antes da autorização de publicação. IA generativa só com valor claro; Higgsfield requer aprovação.
 
 Adicionar validação de acesso à biblioteca externa e isolamento de marca onde couberem nas missões aprovadas. Não transformar este roadmap numa autorização para alterar todos os ficheiros de uma vez.
 
 ## F3 — Distribuição e medição rastreável
 
-- **F3.1:** pacote aprovado com hash, exportação e publicação **manual**, importação de confirmação e métricas com data/origem, primeira experiência de aprendizagem.
+- **F3.1:** pacote aprovado com hash, exportação e publicação **manual inicialmente** (API oficial apenas após gate), importação de confirmação e métricas/UTM/eventos/conversões com data/origem, primeira experiência controlada e aprendizagem por projeto.
 - **F3.2:** gate documental para eventual integração oficial de uma rede específica, auditando contas, elegibilidade, quota, privacidade, direitos e efeitos incertos antes de programar upload.
 - Começar por métricas observadas e eventos de conversão disponíveis; enriquecer UTMs/atribuição quando os projetos forneçam instrumentação real.
 
 ## MVP de produto — depois de validar as fatias
 
-**Critério de produto confirmado:** pelo menos um conteúdo real/publicável para cada **The Hidden Layer, Vefi e UtopIA**, com identidade correta, briefing, fontes, aprovações, peça final, custos, resultado de distribuição e métricas rastreáveis. Não confundir 1 piloto técnico F2.3 com MVP multi-projeto concluído.
+**Critério de produto confirmado:** **3 conteúdos reais**, um para cada **The Hidden Layer, Vefi e UtopIA** (desde que sejam projetos Nexus elegíveis/ativados), com identidade correta, briefing, fontes, aprovações, peça final, custos, resultado de distribuição e métricas rastreáveis. Não confundir 1 piloto técnico F2.3 com MVP multi-projeto concluído.
 
 Se alguma conta/rede não permitir publicação automatizada, um fluxo manual é aceitável, mas a falta de publicação/observação deve constar expressamente do estado. Não declarar métricas reais sem dados.
+
+## F4 — Dashboard visual detalhado (só após funcionamento)
+
+**Decisão da entrevista:** não começar o design visual nem a estrutura de um dashboard rico antes da funcionalidade. Após F1–F3 e prova de fluxos reais, desenhar a experiência final do separador Social com base nas operações, utilizadores, KPIs e estados reais. A F4 de UI/UX visual não bloqueia investigação, produção ou medição.
 
 ## Evolução após o MVP (propostas)
 
 1. Investigação leve diária + relatório semanal com critérios de qualidade.
-2. Dashboard analítico por projetos e campanhas, curvas de retenção e funis atribuídos.
+2. Dashboard analítico visual por projetos e campanhas, curvas de retenção e funis atribuídos **só após** o motor e os dados estarem funcionais.
 3. Testes A/B comparáveis e aprendizagem justificada, com confiança/amostra.
 4. Automações progressivas via mecanismos existentes do Nexus, notificações e recuperação robusta.
 5. Novos adaptadores/canais/modelos à medida de necessidades e permissões — sem lock-in e sem custos não aprovados.
@@ -56,8 +62,8 @@ Separar claramente **especificado → implementado → testado → validado pelo
 
 ## Coordenação e fonte de verdade
 
-- \`TODO.md\`: estado de missões corrente; atualizá-lo quando execução for aprovada/iniciada.
-- \`SESSOES.md\`: sessões reais e evidências; não fabricar sessões.
-- \`CLAUDE.md\`: regras de trabalho.
-- \`docs/auditoria-f0.md\`: inventário/testes históricos, preservado.
-- \`docs/ALINHAMENTO_CONTRATO_V1.md\`: diferenças funcionais a resolver antes de codificar.
+- `TODO.md`: estado de missões corrente; atualizá-lo quando execução for aprovada/iniciada.
+- `SESSOES.md`: sessões reais e evidências; não fabricar sessões.
+- `CLAUDE.md`: regras de trabalho.
+- `docs/auditoria-f0.md`: inventário/testes históricos, preservado.
+- `docs/ALINHAMENTO_CONTRATO_V1.md`: diferenças funcionais a resolver antes de codificar.
