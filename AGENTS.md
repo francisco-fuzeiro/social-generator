@@ -12,4 +12,5 @@
 
 10. Cumprir pesquisa diária leve e relatório semanal aprofundado; fontes e scoring por projeto como documentado. Respeitar formatos/canais específicos, aprendizagem e MVP de três conteúdos reais.
 11. **Não desenhar dashboard visual detalhado antes de funcionamento real**; UI F1 apenas para validar estados e operações Nexus.
-12. **Postiz é responsável por agendar e publicar**; Motor 3 integra com Postiz e o dashboard Nexus consulta o calendário de agendados/publicados/falhados/pendentes. Não reutilizar scheduler Nexus para publicações nem criar quarto motor não aprovado. Ver `docs/POSTIZ.md`.
+12. **Quatro motores lógicos aprovados:** M1 Intelligence, M2 Production, M3 Distribution & Scheduling (Postiz), M4 Analytics & Learning. M4 analisa métricas/atribuição/experiências e devolve sinais ao M1; não altera publicações. Não criar quatro agentes permanentes.
+13. **Postiz agenda e publica**, não o scheduler Nexus. O calendário Nexus consulta agendados/publicados/erros; **P5-C manda editar/reagendar/cancelar no Postiz**, nunca no dashboard Nexus. Ler `docs/POSTIZ.md` e `docs/METRICAS.md`.
