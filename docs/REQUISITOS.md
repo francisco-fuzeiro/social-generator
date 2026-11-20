@@ -201,6 +201,20 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **P16-B fechado:** redes recomendadas por tema, com possibilidade de ajuste na revisão final. A escolha de **horários/dias por rede no calendário pós-produção** é uma decisão separada (P17). Ver [VARIANTES.md](VARIANTES.md).
 
+## Dias e horários recomendados por plataforma — P17-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R96 | Sugestão pós-produção por conta/plataforma | Depois da produção, mostrar **dias e horas propostos** por variante, rede e conta, com fuso horário e justificação; **nunca no primeiro gate de escolha de temas** |
+| R97 | Evidência e adaptação | Considerar histórico M4 real quando disponível, audiência/fuso, formato/tipo, janela/urgência de campanha e agenda existente no Postiz; não alegar causalidade ou garantia de alcance |
+| R98 | Estimativa honesta sem métricas | Sem dados suficientes, mostrar fallback **explicitamente rotulado como estimativa**, sem apresentar «melhor horário» como facto |
+| R99 | Conflitos e qualidade da agenda | Consultar posts agendados no Postiz quando possível, assinalar sobreposições, prazos inviáveis ou agenda desatualizada; **não alterar posts remotamente** |
+| R100 | Controlo total no segundo gate | Operador pode alterar **datas, horas, contas, plataformas e ordem** da proposta antes de aprovar cada pacote (variante/hash/copy/agendamento); só o aprovado passa ao M3 |
+| R101 | Fusos e calendário real | Guardar horário e fuso claros, incluindo horário de verão; «agendado» exige recibo Postiz; Nexus não cria scheduler nem edita agendamentos enviados |
+| R102 | Aprendizagem sem autonomia de distribuição | M4 fornece métricas datadas e confiança para melhorar sugestões futuras, sem mudar a agenda ou ultrapassar gates |
+
+**Política de frequência/volume por projeto permanece por decidir (P18).** Contrato [HORARIOS.md](HORARIOS.md).
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
