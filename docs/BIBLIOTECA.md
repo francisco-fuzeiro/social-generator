@@ -4,15 +4,17 @@
 
 ## Objetivo
 
+**Regra da entrevista:** o Social Generator nunca cria projetos próprios. Um asset só é associado a um **projeto existente no Nexus, com socials e Social ativado**, e os dados de identidade/autorização vêm do Nexus. A biblioteca é transversal mas não autoriza que projetos partilhem marcas ou materiais privados.
+
 Reutilizar legalmente componentes, imagens, áudio, fontes, templates, referências, marcas e recursos entre projetos **sem misturar identidades, direitos ou materiais confidenciais**. O Git guarda documentação/código/manifests não sensíveis; ficheiros de media privados/pesados permanecem na biblioteca ou em outputs locais autorizados.
 
 ## Configuração recomendada (proposta)
 
-- Resolver a raiz via variável local `AI_LIBRARY_PATH`, configurada fora do Git; usar D:\AI\Biblioteca como valor Windows de referência.
+- Resolver a raiz via variável local `AI_LIBRARY_PATH` **ou configuração de recurso autorizada pelo Nexus**, configurada fora do Git; usar D:\AI\Biblioteca como valor Windows de referência. A configuração Social não duplica a definição de projetos/contas do Nexus.
 - Não colocar caminhos absolutos da biblioteca em snapshots JSON destinados ao browser; usar referências lógicas ou IDs.
 - O código deve validar paths, `realpath`, junctions/reparse points e permissões antes de abrir/servir recursos, impedindo `..` ou saída da raiz autorizada.
 - **Não criar junction/symlink automaticamente** apontada do repo para a biblioteca: a ligação lógica por configuração é mais segura.
-- Diretórios, exemplos e assets reais só são criados/movidos após inventário, para evitar sobrescrever conteúdo existente.
+- Diretórios, exemplos e assets reais só são criados/movidos após inventário, para evitar sobrescrever conteúdo existente. O perfil de marca Social referencia os assets e as respetivas licenças/versões; a fonte de verdade do ID de projeto continua a ser o Nexus.
 
 ## Organização proposta (não executar renomes automaticamente)
 
@@ -38,7 +40,7 @@ Nomes são orientadores; o inventário existente é fonte de verdade. O mesmo re
 
 ## Manifesto de recurso (PROPOSTO)
 
-Campos mínimos por asset: `assetId`, tipo MIME, nome descritivo, checksum SHA-256, dimensões/duração quando aplicável, origem e URL, autor/fornecedor, licença e comprovativo, data de obtenção, termos de utilização comercial, atribuição obrigatória, restrições geográficas, permissão de derivação, projetos autorizados, conteúdo sensível, versão/derivados, localizador lógico, último check e estado de aprovação.
+Campos mínimos por asset: `assetId`, **`nexusProjectIdsAutorizados`** (ou política transversal explícita), tipo MIME, nome descritivo, checksum SHA-256, dimensões/duração quando aplicável, origem e URL, autor/fornecedor, licença e comprovativo, data de obtenção, termos de utilização comercial, atribuição obrigatória, restrições geográficas, permissão de derivação, projetos autorizados, conteúdo sensível, versão/derivados, localizador lógico, último check e estado de aprovação.
 
 - Uma referência URL de terceiro **não** é licença para reutilizar.
 - Voz humana/sintética requer autorização, direitos de utilização e políticas do fornecedor; não clonar pessoas sem consentimento.
@@ -59,7 +61,7 @@ Os outputs do motor/etapas pertencem ao runtime/outputs autorizados do Nexus, co
 
 ## Etapas de validação
 
-1. Inventariar biblioteca real sem a modificar.
+1. Inventariar biblioteca real sem a modificar e confirmar ligação ao catálogo Nexus de projetos elegíveis.
 2. Configurar o caminho numa variável segura local.
 3. Ler um asset fictício/autorizado e validar hash/manifesto.
 4. Testar caminhos inválidos, junctions, ficheiros enormes e permissões insuficientes.
