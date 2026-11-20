@@ -43,7 +43,7 @@ Ficha económica com: id/versão/projeto/campanha, tema/pergunta, público, prop
 
 **Validade temática:** tema pode ser reutilizado até **7 dias desde a última validação de relevância**. Ao atingir esse limite, passa a `em-reavaliacao` e deixa de ser recomendado para nova seleção/agendamento até à **pesquisa semanal aprofundada**, que decide, com fontes e data, se renova por nova janela máxima de 7 dias, arquiva ou mantém inconclusivo. Preservar histórico e não confundir expiração com retirada de publicações já feitas.
 
-**Seleção múltipla:** utilizador pode escolher vários temas do lote; o motor propõe **ordem de produção/agendamento justificada**, considerando urgência, relevância, formatos/canais, dependências, custos e calendário. A ordem é editável e **não executa publicações**. A aprovação de tema é individual/por versão e continua obrigatória.
+**Seleção múltipla:** o utilizador **escolhe apenas um ou vários temas**; cada seleção positiva da versão atual constitui a **aprovação humana do tema** e permite iniciar o Motor 2. **Não pedir calendário, datas ou horas nesta fase.** A proposta detalhada de agendamento só aparece **depois de a peça estar produzida**, no segundo gate humano de revisão pré-publicação.
 
 Não produzir guião completo, imagens, música, voz, animação ou render antes de receber **aprovação humana do tema/versão**. Contrato completo: [CICLO_TEMAS.md](CICLO_TEMAS.md).
 
@@ -73,16 +73,18 @@ Ferramentas:
 - **Voz/TTS**: adaptador (voz humana ou fornecedor legalmente autorizado), sem promessa de ElevenLabs ou custo recorrente. Timing/legendas carecem de prova.
 - **Marcas**: usar bibliotecas próprias e assets autorizados; nenhuma marca/voz deve passar para outro projeto por engano.
 
-Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, guião, storyboard, recursos editáveis, prévia, MP4 em formato vídeo ou ficheiros de carrossel quando aplicável, checklist de **QA técnico, editorial, factual, visual e de direitos**, resumo de custos. Um pacote reprovado pode ser revisto numa nova versão; um pacote alterado tem de ser reaprovado.
+Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, guião, storyboard, recursos editáveis, prévia, MP4 em formato vídeo ou ficheiros de carrossel quando aplicável, checklist de **QA técnico, editorial, factual, visual e de direitos**, resumo de custos. **Gate final ainda dentro da revisão pré-publicação:** apresentar ao operador a prévia e proposta completa e explicada de agendamento (ordem entre peças, datas/horas, canais e contas), assim como copy, CTA, legendas, alertas e verificações; permitir correções antes de aprovar. Um pacote reprovado pode ser revisto numa nova versão; um pacote alterado tem de ser reaprovado.
 
 ## Motor 3 — Distribution + Analytics + Learning
 
 ### Distribuição
 
+**Pré-condição de entrada no Motor 3:** o Motor 2 terminou a peça e o utilizador aprovou explicitamente **a versão/hash do pacote final, conta/plataforma, texto e calendário proposto** na revisão pré-publicação. Antes desse ponto, não executar agendamento nem publicação. Motor 3 é o executor do agendamento aprovado; não pede ao utilizador que decida datas na primeira seleção de temas. Em caso de mudança material no pacote ou calendário, o segundo gate tem de ser repetido.
+
 - Adaptar legenda, proporção, duração, thumbnail, CTA, hashtags e dados por rede sem desvirtuar a ideia.
 - Preparar pacote por **conta+plataforma+versão**; apresentar ao humano o que será enviado.
 - **Aprovação final explícita e persistente** antes de enviar/publicar.
-- Na fase inicial: exportação e publicação manual com confirmação registada pelo operador; ligação a APIs oficiais só após prova de elegibilidade.
+- Na fase inicial: preparar **agendamento manual** com instruções, ficheiros e estado pendente até prova de ação humana; integração automática apenas com API oficial autorizada e capacidade de scheduling validada. Não chamar `agendado` a um pacote somente exportado. Registar confirmação de agendamento e, separadamente, de publicação.
 - Estados separados: rascunho, por aprovar, autorizado, exportado, em envio, publicado, falhou, incerto. Uma falha após envio sem recibo não autoriza retry cego.
 
 ### Medição
