@@ -65,6 +65,10 @@ O operador pode **rever, corrigir, reordenar, ajustar contas/canais/datas/horas 
 
 **Não alterar a dupla aprovação humana:** escolha dos temas = gate 1; aprovação da prévia, pacote e calendário final = gate 2. Uma sugestão do motor nunca equivale a um clique de aprovação.
 
+## 5.1. P15-B — peça-base e variantes por rede após escolha de temas
+
+O Motor 1 pode **recomendar formatos, duração e redes com evidência**, mas o primeiro gate continua **apenas seleção de temas**, sem escolher datas, horas, calendário ou aceitar automaticamente contas. O Motor 2 cria uma **peça-base** e variantes inteligentes por plataformas configuradas **quando justificadas**, reutilizando assets/renders quando adequados. **Na revisão final após produção**, apresentar a proposta completa de calendários, prévias/QA e texto de cada variante por conta e plataforma. **Aprovação individual por pacote** antes de M3/Postiz. A quantidade de variantes produzidas por defeito permanece aberta (P16). Ver [VARIANTES.md](VARIANTES.md).
+
 ## 6. Testes de aceitação mínimos
 
 1. O seletor Adicionar mostra um projeto Nexus sem socials; adicioná-lo não inicia pesquisa.
