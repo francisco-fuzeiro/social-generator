@@ -189,7 +189,17 @@ A produção multi-rede segue o modelo **peça-base editável e versionada → v
 
 **Gates:** a escolha inicial continua **só de temas**; M1 sugere formato/redes, M2 prepara variantes com base nos canais configurados e evidências. **No segundo gate, após produção**, o operador inspeciona prévias e decide por **variante+versão/hash+conta+plataforma+copy/CTA+data/hora**. Apenas pacotes individualmente aprovados seguem ao M3/Postiz; acrescentar uma rede após produção pode exigir preparar outra variante e respetivo QA/segundo gate. Sem datas/horas no gate inicial.
 
-**Proposta técnica de schema:** `CreativeBase`, `PlatformVariant`, `ApprovedDistributionPackage` com IDs/versões e permissões por conta. Nomes e cardinalidades por validar em F1/F2; não criar outro scheduler ou transferir para M3 a geração de vídeos. A **quantidade de variantes criada por defeito ainda é uma decisão aberta P16**. Ver [VARIANTES.md](VARIANTES.md).
+**Proposta técnica de schema:** `CreativeBase`, `PlatformVariant`, `ApprovedDistributionPackage` com IDs/versões e permissões por conta. Nomes e cardinalidades por validar em F1/F2; não criar outro scheduler ou transferir para M3 a geração de vídeos. **P16-B definiu que variantes iniciais são feitas apenas para plataformas recomendadas por M1 e elegíveis; outras podem ser acrescentadas/retiradas na revisão final, com QA e gate próprio.** Ver [VARIANTES.md](VARIANTES.md).
+
+## 2.15. P16-B — produzir variantes só para plataformas recomendadas (DECIDIDO)
+
+**Motor 1** avalia por tema a adequação de cada **plataforma/conta configurada** do projeto Nexus com base em público, formato, tendências verificáveis, dados de desempenho histórico disponíveis no M4 e viabilidade/capacidades de publicação realmente comprovadas. Gera recomendação de **destinos preferidos com motivos e confiança**, não um número fixo nem a obrigação de cobrir todas as redes do projeto. Não inferir elegibilidade API a partir de um handle ou da vontade de publicar.
+
+**Motor 2:** após **seleção humana apenas dos temas no gate 1**, produz a peça-base e variantes **só para os destinos recomendados e elegíveis**, reutilizando cenas, assets e renders quando possível. **Não solicitar contas finais, datas, horas ou plano de publicação antes da produção**. Se os destinos recomendados não forem viáveis ou os dados forem insuficientes, assinalar limitação, não inventar variantes com potencial.
+
+**Revisão final pós-produção:** o operador pode **acrescentar/remover redes ou contas da proposta**, sem modificar posts já agendados no Postiz. Um destino novo pode exigir variante adicional e QA do M2 **antes de ser apresentado como aprová­vel**. Cada pacote de plataforma+conta+variante+hash+copy+data/hora exige **segundo gate explícito** e apenas esses pacotes seguem M3/Postiz. O Postiz é fonte operacional de agenda; Nexus consulta, não edita agendamentos enviados.
+
+**Proposta técnica a validar:** `PlatformRecommendation` ligada à versão da oportunidade (`projectId`, `targetPlatform`, `accountEligibility`, `reasons`, `evidenceRefs`, `confidence`) e lista de destinos finais aprovada por pacote. Não criar a seleção de redes como novo gate obrigatório. Os critérios/algoritmos exatos e limiares de recomendação não estão implementados nem aprovados. Contrato: [VARIANTES.md](VARIANTES.md) §1.1. **P17 permanece em aberto** para sugerir dias/horas de publicação na segunda revisão.
 
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
