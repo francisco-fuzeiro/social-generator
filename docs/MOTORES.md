@@ -54,11 +54,13 @@ O score é calibrado para o objetivo, público e histórico **do projeto Nexus s
 
 ### Campanhas opcionais e conteúdo contínuo — P13-B (DECIDIDO)
 
-O Motor 1 mantém **recomendações gerais e contínuas para cada projeto Social elegível** e, quando houver campanhas ativas criadas pelo utilizador, acrescenta **recomendações focadas nos objetivos, público, mensagem, CTA e prazos de cada campanha**. Cada oportunidade identifica se é geral ou a qual campanha pertence; **não obrigar `campaignId` para o conteúdo contínuo**. Campanhas não desativam pesquisa geral nem substituem gates, mínimos de temas e prazo de validade. **Peso/percentagem/ordem entre campanhas e conteúdo contínuo continuam por decidir em P14.** Ver [CAMPANHAS.md](CAMPANHAS.md).
+O Motor 1 mantém **recomendações gerais e contínuas para cada projeto Social elegível** e, quando houver campanhas ativas criadas pelo utilizador, acrescenta **recomendações focadas nos objetivos, público, mensagem, CTA e prazos de cada campanha**. Cada oportunidade identifica se é geral ou a qual campanha pertence; **não obrigar `campaignId` para o conteúdo contínuo**. Campanhas não desativam pesquisa geral nem substituem gates, mínimos de temas e prazo de validade. **P14-B decidiu prioridade adaptativa** entre conteúdo contínuo e campanhas, baseada em prazos/urgência, tendências comprovadas, objetivos, histórico (M4) e capacidade real de produção (M2). O Motor 1 **explica e propõe** prioridades sem percentagens fixas, mantém oportunidades gerais e **permite ajuste humano antes da escolha de temas**, sem pedir calendário nem datas/horas nesta etapa. Ver [CAMPANHAS.md](CAMPANHAS.md).
 
 ## Motor 2 — Production
 
 **Pré-condição:** projeto Nexus adicionado ao Social, ativo, configuração e branding completos, conta/formatos permitidos e oportunidade aprovada para a versão atual.
+
+**P14-B:** a fila automática de produção usa as prioridades aceites para ordenar o trabalho selecionado **quando possível** e sempre sob os limites reais de capacidade/quota do Nexus. Ajustar prioridades não inicia produção de temas não escolhidos, não interrompe renders aprovados, não altera a agenda do Postiz e não concede custos adicionais.
 
 **P13-B:** o Motor 2 recebe conteúdos **gerais** ou **ligados a uma campanha opcional**. Preserva o identificador de campanha, objetivo, mensagem e CTA nos manifests/variantes para verificação e métricas; mesma fila automática e mesmas aprovações. Uma campanha nunca concede publicação automática.
 
