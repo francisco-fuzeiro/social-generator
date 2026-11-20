@@ -1,5 +1,13 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P8-B: feedback temporizado no vídeo
+
+**TL;DR:** O utilizador escolheu P8-B: ao pausar a prévia, associa comentários a instantes específicos, podendo adicionar várias notas e instruções gerais. Os pedidos ficam ligados à versão do vídeo, evitando reaplicar timestamps incorretamente após revisão. O Motor 2 realiza alterações localizadas segundo P7-B; não criar editor visual completo. Documentação apenas.
+
+- **Decisão:** SG-D045 em `docs/DECISOES.md`; contratos em `docs/REVISOES.md`, `docs/REQUISITOS.md` e `docs/ALINHAMENTO_CONTRATO_V1.md`.
+- **Pendente:** pergunta 9, limites de rondas automáticas de QA/correção e custo, sem código implementado.
+
+
 ## 2026-11-20 — Entrevista P7-B: revisões localizadas de conteúdos
 
 **TL;DR:** Aprovada P7-B: Motor 2 aplica alterações localizadas, preserva as partes já corretas sempre que possível, explica dependências afetadas e cria novas versões com histórico, comparação e recuperação. A aprovação final é por versão/hash; nenhuma revisão é publicada automaticamente. Criado docs/REVISOES.md. Sem implementação de código ou teste de render.
