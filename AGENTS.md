@@ -12,3 +12,4 @@
 
 10. Cumprir pesquisa diária leve e relatório semanal aprofundado; fontes e scoring por projeto como documentado. Respeitar formatos/canais específicos, aprendizagem e MVP de três conteúdos reais.
 11. **Não desenhar dashboard visual detalhado antes de funcionamento real**; UI F1 apenas para validar estados e operações Nexus.
+12. **Postiz é responsável por agendar e publicar**; Motor 3 integra com Postiz e o dashboard Nexus consulta o calendário de agendados/publicados/falhados/pendentes. Não reutilizar scheduler Nexus para publicações nem criar quarto motor não aprovado. Ver `docs/POSTIZ.md`.
