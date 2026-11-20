@@ -1,1 +1,11 @@
 # Sessões — Social Generator
+
+## 2026-11-20 — Consolidação documental via ChatGPT/GitHub
+
+**TL;DR:** A partir das conversas recuperáveis e da auditoria F0, foram publicados documento geral, decisões, requisitos, motores, métricas, projetos, biblioteca, alinhamento do contrato, roadmap, README e regras dos agentes. Não houve implementação de código nem testes do motor. Os ficheiros originais do ChatGPT (489/284 linhas) não foram recuperados integralmente.
+
+- **Tipo:** documentação/normalização do repositório, não sessão de execução do Nexus.
+- **Origem:** decisões recuperáveis do ChatGPT + docs/auditoria-f0.md existente.
+- **Estado:** documentos novos publicados na branch \`main\`; adenda funcional **pendente de revisão/aprovação técnica**.
+- **Próxima ação:** reconciliar adenda F0/contrato antes da F1.1, confirmar métricas/KPIs e preservar separação entre decidido/proposto/implementado.
+- **Evidência:** histórico de commits do próprio repositório GitHub.
