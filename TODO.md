@@ -29,7 +29,8 @@
 - [x] **P13-B:** conteúdo contínuo por projeto com campanhas opcionais, cada uma com objetivo, público, prazo, mensagem, CTA e KPIs próprios; M1 não deixa de recomendar temas gerais e M4 mede separadamente.
 - [x] **P14-B:** Motor 1 propõe prioridades adaptativas e justificadas entre campanhas e conteúdo contínuo, ajustáveis pelo operador antes de escolher temas; respeita limites M2/Nexus, sem quota fixa e sem calendário inicial.
 - [x] **P15-B:** peça-base com variantes inteligentes por plataforma quando justificadas, reutilizando cenas/assets/renders, QA e versões por variante, prévia e aprovação final por conta/canal. Contrato `docs/VARIANTES.md`.
-- [ ] **P16:** decidir quantidade/seleção inicial de variantes a gerar por defeito (todas as redes elegíveis, só as recomendadas, ou peça-base e variantes a pedido).
+- [x] **P16-B:** M1 recomenda plataformas por tema com público/formato/tendências/histórico/elegibilidade; M2 cria só as variantes inicialmente recomendadas, e o operador pode acrescentar/remover destinos na revisão final com QA e segundo gate individual.
+- [ ] **P17:** definir política de proposta de datas/horas de publicação por conta/plataforma no calendário pós-produção (fixa, adaptativa baseada em dados/contexto ou manual).
 - [ ] Limites técnicos concretos de tempo/CPU e testes de QA disponíveis por formato (o teto de 3 tentativas já está decidido).
 - [ ] **Prova técnica Postiz** (não iniciada): verificar se existe opção gratuita/experimental válida; testar API, contas/redes/formatos, agendamento, sincronização, recibos, erros e edição no Postiz com reflexo no calendário Nexus, sem publicar nem pagar sem aprovação.
 - [ ] **Escolher Postiz Cloud vs self-hosted após relatório de evidências:** limites, uptime 24/7, custos reais, manutenção, backups e capacidade por plataforma; decisão requer aprovação.
@@ -45,6 +46,7 @@
 - [ ] F1.1 — contrato/leitor/vista Social Nexus mínimos; **Adicionar mostra todos os projetos Nexus**, configurar perfil Social em rascunho e pesquisar apenas projetos **ativos, configurados, com branding completo**; sem criação Nexus independente nem design visual detalhado.
 - [ ] F1.2 — decisões editoriais persistentes e idempotentes.
 - [ ] F1.3 — prévias multimédia protegidas.
+- [ ] **Provar seleção de plataformas P16-B:** recomendações M1 com evidência/confiança e limites por conta, render inicial apenas para destinos recomendados/elegíveis, reutilização de render, adição/remoção posterior com QA e segundo gate antes de Postiz.
 - [ ] F2.1–F2.3 — pesquisa diária leve + relatório semanal aprofundado (execução inicialmente manual), provas de render, um piloto publicável com peça-base e variantes seletivas P15-B (capacidade/QA por rede a provar) e revisão P7-B/P8-B por trechos e comentários temporizados, com histórico de versões e QA; canais e formatos da entrevista.
 - [ ] F3.1–F3.2 — **Motor 3 Postiz**: enviar pacotes aprovados, confirmar IDs/recibos e sincronizar **calendário Nexus só de leitura**; edições no Postiz; nunca usar scheduler de publicação Nexus.
 - [ ] F3.3 — **Motor 4 Analytics & Learning**: recolher métricas, UTMs/eventos/conversões/custos, experiências e aprendizagem, enviando sinais ao M1 sem intervir em publicação.
