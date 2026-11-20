@@ -1,5 +1,14 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P10-B: importação inteligente de branding
+
+**TL;DR:** Aprovada importação inteligente do branding por projeto Nexus a partir de fontes autorizadas em modo de leitura (Nexus, website, documentação, repositório e assets quando houver acesso). A proposta deve distinguir fontes, confiança, lacunas e conflitos; operador corrige e valida explicitamente a versão da marca. Importar/validar não ativa Social automaticamente; Motor 1 pesquisa só perfis configurados, ativos e com branding validado. Nenhuma fonte foi efetivamente inspecionada, e não houve implementação.
+
+- **Decisão:** SG-D047; contrato detalhado `docs/BRANDING.md`.
+- **Alterações:** `docs/DECISOES.md`, `docs/PROJETOS.md`, `docs/REQUISITOS.md`, `docs/ALINHAMENTO_CONTRATO_V1.md`, `docs/ROADMAP.md`, visão e TODO.
+- **P11:** decidir o tratamento de alterações de branding após aprovação do perfil inicial.
+
+
 ## 2026-11-20 — Entrevista P9-B: até três tentativas automáticas de QA
 
 **TL;DR:** O utilizador escolheu P9-B: uma execução inicial do pedido de revisão e no máximo duas correções automáticas adicionais, com QA após cada tentativa, paragem precoce quando resolvido/bloqueado e explicitação das falhas no fim. Não apresentar rascunho falhado como validado, não publicar nem gastar em serviços pagos sem autorização.
