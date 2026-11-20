@@ -10,6 +10,7 @@ Motor modular para investigar tendências, produzir conteúdo e aprender com res
 - [Decisões](docs/DECISOES.md) — confirmado, proposto e pendente.
 - [Requisitos](docs/REQUISITOS.md) — critérios de aceitação.
 - [Três motores](docs/MOTORES.md) — pesquisa, produção, distribuição/analytics/aprendizagem.
+- [Postiz e calendário Nexus](docs/POSTIZ.md) — agendamento, publicação e consulta de histórico no Social.
 - [Métricas](docs/METRICAS.md) — KPIs, retenção, atribuição, experiências e custo.
 - [Projetos](docs/PROJETOS.md) — The Hidden Layer, Vefi, UtopIA e futuros.
 - [Biblioteca](docs/BIBLIOTECA.md) — recursos e licenças fora do Git.
@@ -23,7 +24,7 @@ Motor modular para investigar tendências, produzir conteúdo e aprender com res
 - **Adicionar projeto** mostra **todos os projetos Nexus**, mesmo sem socials ou branding. Selecionar cria perfil Social em rascunho; **pesquisa só para os adicionados, configurados, ativos e com branding completo**. Conta configurada não exige OAuth e nem todos os projetos Nexus precisam de Social.
 - **Motor 1:** pesquisa leve diária e relatório semanal aprofundado, usando fontes YouTube, Instagram, Google/Trends, Reddit, TikTok, X e LinkedIn; concorrência híbrida e scoring por projeto.
 - **Motor 2:** The Hidden Layer — vídeo vertical narrado; Vefi/UtopIA — vídeos e carrosséis. Remotion-first e QA factual/editorial/técnico/visual/direitos, recurso à IA quando acrescenta valor.
-- **Motor 3:** publicação híbrida (APIs oficiais quando elegíveis e aprovadas; alternativa manual), UTMs/eventos/conversões, experiências e aprendizagem por projeto.
+- **Motor 3:** envia conteúdos aprovados ao **Postiz**, que agenda/publica independentemente do Nexus. O **dashboard Social do Nexus mostra o calendário Postiz**, agendados, publicados, falhas e pendentes; alternativa manual se a integração não estiver disponível. Analytics/experiências usam resultados observados.
 - **MVP:** três conteúdos reais, um por cada The Hidden Layer, Vefi e UtopIA, desde que elegíveis/ativados no Nexus.
 - **Dashboard:** funcionalidade e dados reais antes de qualquer design visual detalhado.
 
