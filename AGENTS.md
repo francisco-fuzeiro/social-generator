@@ -2,7 +2,8 @@
 
 1. Ler `CLAUDE.md`, `SOCIAL_GENERATOR.md`, `docs/DECISOES.md`, `docs/ALINHAMENTO_CONTRATO_V1.md`, `TODO.md` e a auditoria F0 antes de planear uma missão.
 2. **Nexus é dono da orquestração e do dashboard Social**. Não implementar UI autónoma, scheduler ou sistema de agentes duplicado.
-3. Diferenciar `DECIDIDO`, `PROPOSTO`, `PENDENTE` e `IMPLEMENTADO`; não executar automaticamente o roadmap.
+3. **Adicionar projeto** mostra todos os projetos Nexus; adicionar cria rascunho Social. **Pesquisa apenas nos perfis Social adicionados, ativos, configurados e com branding completo**. Nenhum projeto Nexus independente nem execução automática ao adicionar.
+4. Diferenciar `DECIDIDO`, `PROPOSTO`, `PENDENTE` e `IMPLEMENTADO`; não executar automaticamente o roadmap.
 5. Trabalhar com listas fechadas de ficheiros, testes e evidências, sob autorização do utilizador. Não editar outros repositórios sem autorização explícita; Vefi e UtopIA são só leitura por omissão.
 6. Dois gates humanos intransponíveis: **tema** antes do guião e **publicação** antes do envio. Nenhum recurso pago ou publicação automática implícita.
 7. Nunca publicar segredos, dados pessoais, imagens privadas, conteúdo licenciado sem direito, media ou o conteúdo da pasta `D:\AI\Biblioteca` neste repositório.
