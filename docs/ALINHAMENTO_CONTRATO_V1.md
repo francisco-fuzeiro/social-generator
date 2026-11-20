@@ -149,7 +149,17 @@ Após a importação inteligente inicial P10-B, o Social Generator deve **verifi
 
 **Operação:** o Nexus pode coordenar verificações periódicas e recursos, mas não deve criar projeto Social novo, pesquisar projetos inativos por acidente nem executar gasto. Credenciais só em armazenamento seguro e cada fonte tem scopes próprios. Uma verificação falhada nunca substitui branding confirmado. **Posts já agendados no Postiz não são automaticamente editados, cancelados nem reagendados** e o M3 continua responsável pela distribuição e leitura do calendário.
 
-**Ponto aberto para P12:** regras para conteúdos em produção, aguardando revisão, aprovados ainda não enviados e posts já agendados quando a nova versão de marca é aprovada. Não impor cancelamento ou re-render automático sem decisão explícita. Contrato em [BRANDING.md](BRANDING.md).
+**P12-B decidido:** após aprovação de nova marca, auditar conteúdos em produção/por aprovar/aprovados por enviar/agendados, propor revisões locais e deixar decisão por peça ao operador. Agendamentos Postiz apenas sinalizados para revisão manual; sem alteração automática. Ver §2.11 e [BRANDING.md](BRANDING.md). Contrato em [BRANDING.md](BRANDING.md).
+
+## 2.11. P12-B — auditoria de impacto nos criativos (DECIDIDO)
+
+**Nova versão de branding aprovada pelo utilizador** em P11-B desencadeia **auditoria de impacto, não uma nova produção automática**. Procurar peças do projeto que referenciem elementos alterados nos estados em produção, pendente de revisão, aprovada mas ainda não enviada e já agendada no Postiz. Apresentar no dashboard Nexus as diferenças de logótipo/cores/voz/claims/CTA, evidência, versão da marca e proposta de correção **localizada** (P7-B), com indicação de custo/esforço e dependências. Operador decide atualizar/manter/adiar por peça.
+
+**Sem aprovação tácita:** uma revisão altera a versão/hash e requer novo segundo gate para envio. Se um pacote aprovado ainda não enviado depender materialmente de branding revisto, assinalar para decisão e não enviar automaticamente usando autorização obsoleta. A auditoria não muda conteúdos que o operador não autorizou corrigir nem re-renderiza vários vídeos de uma vez.
+
+**Postiz:** posts já agendados só podem ser sinalizados no calendário Nexus e abertos no Postiz para revisão manual. Não editar/cancelar/reagendar nem tentar travar remotamente publicações via Nexus. O Postiz permanece fonte de verdade dos horários/estados. Uma alteração feita manualmente no Postiz é posteriormente sincronizada pelo M3. Posts publicados e histórico de versões não são alterados retroativamente.
+
+**Proposta técnica:** `BrandImpactAudit` com `sourceBrandProfileVersionId`, `newBrandProfileVersionId`, `affectedCreativeRefs`, `status`, `impactEvidence`, `proposedLocalChanges` e `operatorDecision`; ainda carece de validação de schema e integração de autorizações no Nexus. Falhas e desconhecidos são assinalados, não interpretados como peças conformes. Fonte: [BRANDING.md](BRANDING.md) §4.2.
 
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
