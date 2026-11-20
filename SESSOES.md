@@ -1,5 +1,14 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P17-B: horários adaptativos depois da produção
+
+**TL;DR:** O utilizador escolheu P17-B. Na revisão final **depois de M2 produzir**, propor dias/horas por conta/plataforma com histórico real M4 quando disponível, audiência/fuso, formato, prazo/urgência de campanha e publicações já agendadas no Postiz. Sem métricas suficientes, apresentar **estimativas claramente identificadas**, sem falsa certeza. Mostrar justificação/confiança e alertas de conflitos; operador pode editar tudo antes de aprovar versão/hash+copy+destino+calendário no segundo gate. Primeiro gate mantém-se só escolha de temas. Postiz mantém scheduler independente, Nexus calendário só leitura. Documentação, não implementação nem agendamento real.
+
+- **Decisão:** SG-D054 em `docs/DECISOES.md`; novo contrato `docs/HORARIOS.md`.
+- **Documentos alinhados:** `docs/CICLO_TEMAS.md`, `docs/MOTORES.md`, `docs/METRICAS.md`, `docs/REQUISITOS.md`, `docs/ALINHAMENTO_CONTRATO_V1.md`, `docs/POSTIZ.md`, `docs/VARIANTES.md`, `docs/ROADMAP.md`, `TODO.md`, visão geral.
+- **P18:** definir cadência/volume de publicações por projeto, sem converter um plano adaptativo em publicação automática.
+
+
 ## 2026-11-20 — Entrevista P16-B: variantes iniciais apenas das redes recomendadas
 
 **TL;DR:** O utilizador escolheu P16-B. Motor 1 recomenda as redes de maior adequação por tema usando público, formato, tendências, resultados anteriores M4 e capacidades/elegibilidade por conta, com evidência, limitações e confiança. Motor 2 produz a peça-base e variantes **apenas dos destinos recomendados e elegíveis**, reutilizando artefactos, sem número fixo. No segundo gate, **depois da produção**, o operador pode acrescentar/remover redes, pedindo variantes adicionais e QA antes da aprovação por versão/hash, conta, plataforma, copy e calendário. O primeiro gate mantém-se **só seleção de temas**, sem datas/horas nem escolha de contas definitiva. Postiz não recebe qualquer variante sem aprovação específica.
