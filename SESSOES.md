@@ -1,5 +1,14 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P11-B: branding atualizado só após aprovação
+
+**TL;DR:** O utilizador escolheu B: verificar periodicamente as fontes autorizadas do projeto (website, brand book, repo só leitura e assets), detetar diferenças e apresentar proposta comparativa. Operador pode aceitar/rejeitar/corrigir; somente após aprovação humana uma nova versão do branding é considerada oficial. Alterações não modificam automaticamente posts já agendados no Postiz. Sem alteração de código nem execução de scans.
+
+- **Decisão:** SG-D048 em `docs/DECISOES.md`; contrato detalhado em `docs/BRANDING.md`.
+- **Documentação alinhada:** `docs/PROJETOS.md`, `docs/REQUISITOS.md`, `docs/ALINHAMENTO_CONTRATO_V1.md`, `docs/ROADMAP.md`, `TODO.md`.
+- **P12:** decidir como tratar conteúdos em produção, pendentes de revisão, aprovados e agendados após mudança de branding aprovada.
+
+
 ## 2026-11-20 — Entrevista P10-B: importação inteligente de branding
 
 **TL;DR:** Aprovada importação inteligente do branding por projeto Nexus a partir de fontes autorizadas em modo de leitura (Nexus, website, documentação, repositório e assets quando houver acesso). A proposta deve distinguir fontes, confiança, lacunas e conflitos; operador corrige e valida explicitamente a versão da marca. Importar/validar não ativa Social automaticamente; Motor 1 pesquisa só perfis configurados, ativos e com branding validado. Nenhuma fonte foi efetivamente inspecionada, e não houve implementação.
