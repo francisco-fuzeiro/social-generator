@@ -75,17 +75,27 @@ Ferramentas:
 
 Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, guião, storyboard, recursos editáveis, prévia, MP4 em formato vídeo ou ficheiros de carrossel quando aplicável, checklist de **QA técnico, editorial, factual, visual e de direitos**, resumo de custos. **Gate final ainda dentro da revisão pré-publicação:** apresentar ao operador a prévia e proposta completa e explicada de agendamento (ordem entre peças, datas/horas, canais e contas), assim como copy, CTA, legendas, alertas e verificações; permitir correções antes de aprovar. Um pacote reprovado pode ser revisto numa nova versão; um pacote alterado tem de ser reaprovado.
 
-## Motor 3 — Distribution + Analytics + Learning
+## Motor 3 — Distribution & Scheduling (Postiz) + dados para Analytics & Learning
 
 ### Distribuição
+
+**O Motor 3 usa o Postiz** para **agendar e publicar**, sem depender do scheduler de publicações do Nexus. A UI Social do Nexus deve **consultar o calendário Postiz**: agendados, publicados, falhados, cancelados e pendentes, com filtros, previews, datas/horas e última sincronização. O Nexus não mantém uma segunda fila de disparo. Ver [POSTIZ.md](POSTIZ.md).
 
 **Pré-condição de entrada no Motor 3:** o Motor 2 terminou a peça e o utilizador aprovou explicitamente **a versão/hash do pacote final, conta/plataforma, texto e calendário proposto** na revisão pré-publicação. Antes desse ponto, não executar agendamento nem publicação. Motor 3 é o executor do agendamento aprovado; não pede ao utilizador que decida datas na primeira seleção de temas. Em caso de mudança material no pacote ou calendário, o segundo gate tem de ser repetido.
 
 - Adaptar legenda, proporção, duração, thumbnail, CTA, hashtags e dados por rede sem desvirtuar a ideia.
 - Preparar pacote por **conta+plataforma+versão**; apresentar ao humano o que será enviado.
 - **Aprovação final explícita e persistente** antes de enviar/publicar.
-- Na fase inicial: preparar **agendamento manual** com instruções, ficheiros e estado pendente até prova de ação humana; integração automática apenas com API oficial autorizada e capacidade de scheduling validada. Não chamar `agendado` a um pacote somente exportado. Registar confirmação de agendamento e, separadamente, de publicação.
+- Na fase inicial, validar o **Postiz** e capacidade real dos canais; se integração não for elegível, preparar agendamento manual com instruções, ficheiros e estado pendente até prova de ação humana. Nunca usar scheduler do Nexus como alternativa para publicação. Integração automática apenas via Postiz e permissões verificadas. Não chamar `agendado` a um pacote somente exportado. Registar confirmação de agendamento e, separadamente, de publicação.
 - Estados separados: rascunho, por aprovar, autorizado, exportado, em envio, publicado, falhou, incerto. Uma falha após envio sem recibo não autoriza retry cego.
+
+### Leitura do calendário Postiz pelo Nexus
+
+- O Postiz é a fonte de verdade para estados e horas de publicações **agendadas/publicadas** através dele.
+- O Motor 3 disponibiliza um leitor/sincronizador de posts e recibos para o dashboard Social do Nexus, incluindo histórico de publicados, posts previstos, falhas e cancelamentos.
+- O calendário Nexus é **somente uma projeção com filtros**, não mecanismo de execução. Mostrar `lastSyncedAt` e erros; na indisponibilidade do Postiz, mostrar último snapshot como desatualizado, não ocultar dados nem indicar êxito.
+- Cruzar IDs `nexusProjectId`, `postizIntegrationId`, `postizPostId` sem atribuição adivinhada; posts sem mapeamento podem ser apresentados sem projeto na vista global, quando autorizado.
+- Dados de publicação podem alimentar analytics/aprendizagem sem impor a criação de um quarto motor até decisão posterior.
 
 ### Medição
 
