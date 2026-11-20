@@ -35,6 +35,8 @@
 | SG-D027 | **Design visual detalhado do dashboard só depois da funcionalidade** | F1 tem UI mínima funcional e acessível, não um redesign prematuro |
 | SG-D028 | Biblioteca externa `D:\AI\Biblioteca`, usada com catálogo de licenças e isolamento por projeto | Não versionar os assets no Git; acesso através de configuração autorizada |
 
+| SG-D029 | **Entrevista P1 — opção B:** basta ter pelo menos uma conta social **configurada no Nexus** (plataforma e identificador/handle/URL); **não é exigida autenticação por API** para a elegibilidade Social | Projeto elegível pode fazer pesquisa, produção, exportação/publicação manual e introduzir métricas manuais após opt-in. Recolha/publicação automática por API só após ligação, permissões e gates aplicáveis; nunca tratar conta configurada como API autenticada |
+
 ## B. Tecnologia/contrato existente na F0 — **proposta técnica**, não decisão confirmada de produto
 
 A auditoria docs/auditoria-f0.md (20/11/2026) propõe JSON local + JSONL, leitor validado, operações `social.ler` / `social.aprovarTema` / `social.aprovarPublicacao`, autorização imutável e fases F1–F3. São um bom ponto de partida, mas o schema de §3.3 tem IDs/canais fixos e métricas insuficientes para os requisitos confirmados. **Não implementar literalmente esse schema sem alinhar a adenda**.
