@@ -1,5 +1,14 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P9-B: até três tentativas automáticas de QA
+
+**TL;DR:** O utilizador escolheu P9-B: uma execução inicial do pedido de revisão e no máximo duas correções automáticas adicionais, com QA após cada tentativa, paragem precoce quando resolvido/bloqueado e explicitação das falhas no fim. Não apresentar rascunho falhado como validado, não publicar nem gastar em serviços pagos sem autorização.
+
+- **Decisão:** SG-D046; contratos `docs/REVISOES.md`, `docs/REQUISITOS.md`, `docs/MOTORES.md` e adenda Nexus.
+- **Estado:** documentação atualizada, sem implementação nem provas de QA.
+- **Seguinte:** pergunta 10 sobre origem/configuração do branding por projeto.
+
+
 ## 2026-11-20 — Entrevista P8-B: feedback temporizado no vídeo
 
 **TL;DR:** O utilizador escolheu P8-B: ao pausar a prévia, associa comentários a instantes específicos, podendo adicionar várias notas e instruções gerais. Os pedidos ficam ligados à versão do vídeo, evitando reaplicar timestamps incorretamente após revisão. O Motor 2 realiza alterações localizadas segundo P7-B; não criar editor visual completo. Documentação apenas.
