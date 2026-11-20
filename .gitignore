@@ -1,3 +1,33 @@
+# Credenciais e ambiente local
 .env*
+!.env.example
+.npmrc
+*.pem
+*.p12
+*.pfx
+*.key
+credentials*.json
+secrets*.json
+.claude/settings.local.json
+
+# Dependências, caches, build e outputs
 node_modules/
+dist/
+build/
+coverage/
+.cache/
+.tmp/
+tmp/
 outputs/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# Recursos privados: a biblioteca D:\AI\Biblioteca é externa ao Git
+Biblioteca/
+library-local/
+assets-private/
+data-private/
+Thumbs.db
+.DS_Store
