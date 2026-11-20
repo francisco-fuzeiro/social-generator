@@ -52,9 +52,15 @@ Não produzir guião completo, imagens, música, voz, animação ou render antes
 
 O score é calibrado para o objetivo, público e histórico **do projeto Nexus selecionado**, nunca universal. Critérios candidatos: relevância para projeto, tendência/velocidade, procura real, saturação da concorrência, histórico comparável, impacto potencial na conversão, esforço/custo e confiança dos dados. Guardar rubrica, pesos e evidências usados. Na ausência de dados, a confiança cai; nunca inventar percentagens ou potencial de viralidade.
 
+### Campanhas opcionais e conteúdo contínuo — P13-B (DECIDIDO)
+
+O Motor 1 mantém **recomendações gerais e contínuas para cada projeto Social elegível** e, quando houver campanhas ativas criadas pelo utilizador, acrescenta **recomendações focadas nos objetivos, público, mensagem, CTA e prazos de cada campanha**. Cada oportunidade identifica se é geral ou a qual campanha pertence; **não obrigar `campaignId` para o conteúdo contínuo**. Campanhas não desativam pesquisa geral nem substituem gates, mínimos de temas e prazo de validade. **Peso/percentagem/ordem entre campanhas e conteúdo contínuo continuam por decidir em P14.** Ver [CAMPANHAS.md](CAMPANHAS.md).
+
 ## Motor 2 — Production
 
 **Pré-condição:** projeto Nexus adicionado ao Social, ativo, configuração e branding completos, conta/formatos permitidos e oportunidade aprovada para a versão atual.
+
+**P13-B:** o Motor 2 recebe conteúdos **gerais** ou **ligados a uma campanha opcional**. Preserva o identificador de campanha, objetivo, mensagem e CTA nos manifests/variantes para verificação e métricas; mesma fila automática e mesmas aprovações. Uma campanha nunca concede publicação automática.
 
 **Formatos por perfil da entrevista:** The Hidden Layer — vídeo vertical narrado em inglês, faceless, voz consistente; Vefi e UtopIA — vídeos e carrosséis. Canais desejados: Hidden Layer (Instagram/YouTube/X/TikTok), Vefi (Instagram/TikTok/X/LinkedIn/YouTube), UtopIA (Instagram/LinkedIn/TikTok/X/YouTube). Não confundir intenção editorial com ligação à API de cada conta.
 
@@ -90,6 +96,8 @@ Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, gu
 
 **O Motor 3 usa o Postiz** para **agendar e publicar**, sem depender do scheduler de publicações do Nexus. A UI Social do Nexus deve **consultar o calendário Postiz**: agendados, publicados, falhados, cancelados e pendentes, com filtros, previews, datas/horas e última sincronização. O Nexus não mantém uma segunda fila de disparo. Ver [POSTIZ.md](POSTIZ.md).
 
+**P13-B:** a publicação pode estar associada a campanha opcional ou ao fluxo editorial contínuo. Preservar o vínculo na camada Social/Nexus para medição; não pressupor entidade de campanha nativa no Postiz. O Postiz continua a publicar apenas pacotes aprovados, sem alterar o calendário por prioridade da campanha.
+
 **Pré-condição de entrada no Motor 3:** o Motor 2 terminou a peça e o utilizador aprovou explicitamente **a versão/hash do pacote final, conta/plataforma, texto e calendário proposto** na revisão pré-publicação. Antes desse ponto, não executar agendamento nem publicação. Motor 3 é o executor do agendamento aprovado; não pede ao utilizador que decida datas na primeira seleção de temas. Em caso de mudança material no pacote ou calendário, o segundo gate tem de ser repetido.
 
 - Adaptar legenda, proporção, duração, thumbnail, CTA, hashtags e dados por rede sem desvirtuar a ideia.
@@ -111,6 +119,8 @@ Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, gu
 **Motor lógico aprovado, independente do mecanismo de publicação:** consome eventos/recibos e IDs comprovados do Motor 3/Postiz, recolhas próprias ou autorizadas de APIs de redes, métricas manuais, UTMs e eventos agregados de sites/apps. Se Postiz estiver indisponível, manter histórico e analisar dados já existentes sem afetar a agenda.
 
 **Entradas:** `PublicationStatusReceipt` (M3), `MetricSnapshot` (fontes de rede/Postiz com data), `ConversionEvent`, `CreativeMetadata`, custos e objetivos do projeto Nexus.
+
+**P13-B:** medir **KPIs por campanha** (janela/objetivo) e **desempenho geral do projeto** (incluindo conteúdos sem campanha) em vistas diferenciadas, sem duplicar conversões ou inventar dados/causalidade. A aprendizagem devolve sinais de ambos ao Motor 1.
 
 **Saídas:** medições normalizadas/históricas, resultados comparativos, hipóteses e experiências com confiança, e `EvidenceBasedLearning` para M1. **Nunca altera a agenda do Postiz, não produz conteúdo e não aprova publicações.**
 
