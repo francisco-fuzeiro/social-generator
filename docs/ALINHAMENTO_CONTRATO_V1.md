@@ -165,11 +165,21 @@ Após a importação inteligente inicial P10-B, o Social Generator deve **verifi
 
 **Cada projeto Nexus configurado/ativo no Social mantém uma estratégia editorial contínua**, inclusive quando não há campanhas. O operador pode criar **campanhas opcionais** no mesmo projeto, cada uma com objetivo, público, prazo/janela, mensagem, CTA e KPIs próprios. Uma campanha nunca implica criação de novo projeto Nexus ou nova autorização de conta.
 
-**Motor 1:** continuar pesquisa e recomendações gerais para o projeto e **acrescentar recomendações dirigidas a campanhas ativas**, sem as campanhas suprimirem as oportunidades gerais. Distinguir origem e contexto; os temas continuam sujeitos à validade de sete dias, mínimo de cinco evidenciados e primeiro gate humano. A **divisão de prioridade/recursos entre campanhas e fluxo geral não está decidida (P14)**.
+**Motor 1:** continuar pesquisa e recomendações gerais para o projeto e **acrescentar recomendações dirigidas a campanhas ativas**, sem as campanhas suprimirem as oportunidades gerais. Distinguir origem e contexto; os temas continuam sujeitos à validade de sete dias, mínimo de cinco evidenciados e primeiro gate humano. **P14-B decidiu distribuição adaptativa e ajustável antes da seleção de temas**, sem percentagens fixas; pesos exatos e quotas são matéria técnica por validar.
 
 **Motor 2:** preservar o vínculo opcional à campanha nos manifestos, cópia, CTA, versões e QA, com fila automática P4-B e segundo gate humano. **Motor 3/Postiz:** só agenda pacotes aprovados; a associação à campanha é mantida pela camada Social e não exige suporte de campanhas nativo no Postiz. **Motor 4:** medir KPIs por campanha/janela e evolução global do projeto com distinção de fontes e atribuição; evitar dupla contagem de conversões e manter conteúdos gerais sem campanha.
 
 **Contrato técnico PROPOSTO:** `Campaign` opcional associado a `nexusProjectId`; `campaignId?` em Opportunity, Creative/Variant, Publication e observações quando aplicável; `contentStream=ongoing|campaign` apenas se útil ao domínio. **A ausência de campanha não é erro de schema.** Identidade, isolamento, histórico e origem dos dados permanecem os do Nexus. Antes de alterar schema, validar estados e migração. Testes e detalhes em [CAMPANHAS.md](CAMPANHAS.md).
+
+## 2.13. P14-B — prioridade editorial adaptativa com ajuste humano (DECIDIDO)
+
+Quando coexistem **campanhas opcionais ativas** e **conteúdo editorial contínuo**, o **Motor 1** produz uma **proposta explicada de prioridades** para pesquisa/recomendações e estimativa da capacidade de produção, em vez de aplicar percentagens rígidas ou suspender sugestões gerais. Considerar **prazos e urgência das campanhas, tendências e evidência, objetivos do projeto/campanha, desempenho observado do Motor 4** (com incerteza) e **capacidade/quota real do Motor 2/Nexus**. Na ausência de dados, sinalizar limites em vez de inventar ROI ou recursos.
+
+O **operador pode ajustar a proposta antes de escolher temas**, sem obrigação de distribuir percentagens numéricas. Isto **não cria um terceiro gate de aprovação obrigatório**: no ecrã inicial mantém-se a **seleção apenas de temas** (um ou vários, primeiro gate P3-B), sem datas/horas/calendário. Após o Motor 2 produzir, o operador continua a rever a **proposta completa de calendário no segundo gate**, com contas/canais e pacote exato. A prioridade editorial não é agendamento.
+
+A fila automática P4-B do Motor 2 pode ordenar trabalho selecionado pela prioridade aceite **sujeita a reservas, custo e recursos**, sem gerar tema não escolhido, interromper renders indevidamente, alterar aprovações existentes ou agir sobre agendamentos Postiz. Motor 4 fornece evidência, não define alocação de recursos; Motor 3/Postiz continua restrito a pacotes aprovados.
+
+**Contrato técnico PROPOSTO:** `PriorityProposal` ligado a `nexusProjectId`, campanhas e conteúdos gerais, com razões, evidências, estimativa de produção, incerteza, ajustes humanos e versão da proposta. Pesos, quotas exatas, desempates e limites numéricos continuam por validar. Ver [CAMPANHAS.md](CAMPANHAS.md) §3.1.
 
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
