@@ -8,15 +8,15 @@ Reutilizar legalmente componentes, imagens, áudio, fontes, templates, referênc
 
 ## Configuração recomendada (proposta)
 
-- Resolver a raiz via variável local \`AI_LIBRARY_PATH\`, configurada fora do Git; usar D:\AI\Biblioteca como valor Windows de referência.
+- Resolver a raiz via variável local `AI_LIBRARY_PATH`, configurada fora do Git; usar D:\AI\Biblioteca como valor Windows de referência.
 - Não colocar caminhos absolutos da biblioteca em snapshots JSON destinados ao browser; usar referências lógicas ou IDs.
-- O código deve validar paths, \`realpath\`, junctions/reparse points e permissões antes de abrir/servir recursos, impedindo \`..\` ou saída da raiz autorizada.
+- O código deve validar paths, `realpath`, junctions/reparse points e permissões antes de abrir/servir recursos, impedindo `..` ou saída da raiz autorizada.
 - **Não criar junction/symlink automaticamente** apontada do repo para a biblioteca: a ligação lógica por configuração é mais segura.
 - Diretórios, exemplos e assets reais só são criados/movidos após inventário, para evitar sobrescrever conteúdo existente.
 
 ## Organização proposta (não executar renomes automaticamente)
 
-\`\`\`text
+```text
 D:\AI\Biblioteca\
   Marcas\
     the-hidden-layer\
@@ -32,13 +32,13 @@ D:\AI\Biblioteca\
   Templates\
   Projetos\
   Catalogos\
-\`\`\`
+```
 
 Nomes são orientadores; o inventário existente é fonte de verdade. O mesmo recurso pode ser referenciado por vários projetos **apenas** se licença, marca e consentimento permitirem.
 
 ## Manifesto de recurso (PROPOSTO)
 
-Campos mínimos por asset: \`assetId\`, tipo MIME, nome descritivo, checksum SHA-256, dimensões/duração quando aplicável, origem e URL, autor/fornecedor, licença e comprovativo, data de obtenção, termos de utilização comercial, atribuição obrigatória, restrições geográficas, permissão de derivação, projetos autorizados, conteúdo sensível, versão/derivados, localizador lógico, último check e estado de aprovação.
+Campos mínimos por asset: `assetId`, tipo MIME, nome descritivo, checksum SHA-256, dimensões/duração quando aplicável, origem e URL, autor/fornecedor, licença e comprovativo, data de obtenção, termos de utilização comercial, atribuição obrigatória, restrições geográficas, permissão de derivação, projetos autorizados, conteúdo sensível, versão/derivados, localizador lógico, último check e estado de aprovação.
 
 - Uma referência URL de terceiro **não** é licença para reutilizar.
 - Voz humana/sintética requer autorização, direitos de utilização e políticas do fornecedor; não clonar pessoas sem consentimento.
@@ -52,9 +52,9 @@ Os outputs do motor/etapas pertencem ao runtime/outputs autorizados do Nexus, co
 
 ## Segurança GitHub
 
-- Excluir \`.env\`, credenciais, tokens, cookies, chaves e qualquer material privado.
+- Excluir `.env`, credenciais, tokens, cookies, chaves e qualquer material privado.
 - Não adicionar D:\AI\Biblioteca ao repositório nem subir toda a pasta como backup.
-- Verificar alterações com \`git status\`, \`git diff --cached\` e revisão de segredos antes de cada push.
+- Verificar alterações com `git status`, `git diff --cached` e revisão de segredos antes de cada push.
 - O repositório esteve público no início; torná-lo privado não revoga clones já realizados.
 
 ## Etapas de validação
