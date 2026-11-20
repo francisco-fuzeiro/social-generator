@@ -20,7 +20,7 @@ Motor modular para investigar tendências, produzir conteúdo e aprender com res
 
 ## Regras aprovadas na entrevista (20/11/2026)
 
-- **O Social não cria projetos:** só mostra para ativação projetos existentes no Nexus **com redes sociais configuradas**; opt-in facultativo. Nem todos os projetos Nexus têm Social.
+- **Adicionar projeto** mostra **todos os projetos Nexus**, mesmo sem socials ou branding. Selecionar cria perfil Social em rascunho; **pesquisa só para os adicionados, configurados, ativos e com branding completo**. Conta configurada não exige OAuth e nem todos os projetos Nexus precisam de Social.
 - **Motor 1:** pesquisa leve diária e relatório semanal aprofundado, usando fontes YouTube, Instagram, Google/Trends, Reddit, TikTok, X e LinkedIn; concorrência híbrida e scoring por projeto.
 - **Motor 2:** The Hidden Layer — vídeo vertical narrado; Vefi/UtopIA — vídeos e carrosséis. Remotion-first e QA factual/editorial/técnico/visual/direitos, recurso à IA quando acrescenta valor.
 - **Motor 3:** publicação híbrida (APIs oficiais quando elegíveis e aprovadas; alternativa manual), UTMs/eventos/conversões, experiências e aprendizagem por projeto.
