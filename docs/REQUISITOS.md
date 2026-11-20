@@ -185,7 +185,21 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 | R87 | Primeiro gate permanece sem calendário | Seleção inicial apenas de temas; formatos/redes podem ser recomendações fundamentadas, mas **datas e horas só são propostas após produção** |
 | R88 | Sem regeneração/duplicação por obrigação | Se a base é adequada para várias redes, reutilizar componentes ou ficheiro; não gerar variantes artificiais nem consumir fornecedor pago sem aprovação |
 
-**P16 por decidir:** quantidade de variantes por defeito no Motor 2. Contrato funcional [VARIANTES.md](VARIANTES.md).
+**P16-B decidido:** o Motor 2 produz inicialmente só para destinos recomendados pelo M1; o operador acrescenta/remove destinos na revisão final. Contrato [VARIANTES.md](VARIANTES.md).
+
+## Seleção inicial de variantes recomendadas — P16-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R89 | Recomendação de plataformas por tema | M1 indica os destinos mais adequados por **público, formato, tendências, histórico M4 e contexto do projeto**, com evidência/confiança, sem assumir OAuth/capacidades de API |
+| R90 | Produção seletiva inicial | M2 cria peça-base e prepara **apenas variantes dos destinos recomendados e elegíveis**, sem gerar uma para todas as contas configuradas por omissão ou estabelecer número fixo |
+| R91 | Reutilização de render | Se duas plataformas recomendadas podem usar a mesma peça-base, reutilizar artefacto e adaptar só o necessário, sem custo/renders redundantes |
+| R92 | Acrescentar/remover redes na revisão final | **Depois da produção**, operador pode adicionar ou retirar redes da proposta; novos destinos são preparados e sujeitos a QA por M2 antes de serem elegíveis para aprovação |
+| R93 | Primeiro gate sem redes/calendário finais | Na seleção inicial operador **escolhe apenas temas**; redes sugeridas por M1 são informativas, datas/horas e contas definitivas apenas na proposta de revisão após produção |
+| R94 | Controlo de aprovação por destino | Apenas variantes+versões/hashes+plataforma+conta+copy+calendário **explicitamente aprovadas no gate 2** podem seguir a M3/Postiz; remover proposta não afeta post já agendado |
+| R95 | Incerteza e restrições explícitas | Sem evidência plausível/viabilidade de destinos, mostrar ausência/limitação em vez de inventar recomendações, publicar automaticamente ou consumir serviços pagos |
+
+**P16-B fechado:** redes recomendadas por tema, com possibilidade de ajuste na revisão final. A escolha de **horários/dias por rede no calendário pós-produção** é uma decisão separada (P17). Ver [VARIANTES.md](VARIANTES.md).
 
 ## Canais e formatos contratados
 
