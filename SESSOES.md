@@ -1,5 +1,14 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P2-C: pesquisa adaptativa, temas semanais e escolha múltipla
+
+**TL;DR:** Decidida pesquisa adaptativa (C) para projetos Social configurados, ativos e com branding completo. Projeto inativo não é pesquisado. Lotes de sugestões com mínimo cinco temas distintos; escolha múltipla e proposta de ordem de agendamento. Tema reutilizável até sete dias, depois reavaliação semanal fundamentada. Apenas documentação; sem motores implementados.
+
+- **Fonte:** entrevista no ChatGPT em 20/11/2026.
+- **Contrato principal:** `docs/CICLO_TEMAS.md`; decisões SG-D031 a SG-D034.
+- **Pendente:** horários do ciclo e se proposta de agendamento inclui datas/horas, mais validação técnica do contrato Nexus.
+
+
 ## 2026-11-20 — Correção da entrevista: catálogo Nexus e pesquisa Social
 
 **TL;DR:** Corrigida a interpretação de elegibilidade: o botão «Adicionar projeto» deve listar todos os projetos Nexus, incluindo sem sociais/branding. Adicionar cria perfil Social em rascunho; só perfis configurados, ativos e com branding completo entram na pesquisa. Mantém-se conta identificada sem OAuth para capacidades manuais. Alterados contratos/documentação; sem implementação executável.
