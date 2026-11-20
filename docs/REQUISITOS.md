@@ -4,7 +4,7 @@
 
 ## Regras essenciais
 
-1. O Social **não cria projetos**. Apresenta para ativação exclusivamente projetos **já existentes no Nexus e com redes sociais configuradas**. Mesmo esses só entram no Social após opt-in. Nem todos os projetos do Nexus têm de estar ativos no Social.
+1. O Social **não cria projetos Nexus**. Em **Adicionar projeto** apresenta **todos os projetos existentes no catálogo Nexus**, mesmo sem redes ou branding. Selecionar cria um perfil Social em rascunho. **Apenas projetos configurados, ativos e com branding completo** entram na pesquisa. Nem todos os projetos Nexus precisam de ser adicionados.
 2. Cada etapa funciona no contexto **do projeto Nexus elegível/ativado e do seu perfil editorial**. Não permitir projetos inventados, contas de outros projetos, identidades de marca cruzadas ou publicação sem permissão.
 3. Os três motores são **Pesquisa diária/semanal**, **Produção** e **Distribuição/Métricas/Aprendizagem**. O Nexus continua responsável pela execução, scheduler, limites e aprovações.
 4. **Aprovação humana do tema** antes de iniciar guião/recursos; **aprovação humana do pacote/conta/canal** antes de qualquer publicação.
@@ -15,8 +15,8 @@
 | ID | Obrigação | Critério de aceitação |
 |---|---|---|
 | R01 | Fonte única de projetos: Nexus | Apenas IDs canónicos de projetos existentes no Nexus |
-| R02 | Gate de elegibilidade Social | Projeto Nexus sem conta social identificada não aparece; conta configurada sem API é elegível, mas só entra na produção depois de opt-in |
-| R03 | Opt-in/opt-out Social por projeto elegível | Ativar não cria novo projeto Nexus; desativar mantém histórico e interrompe trabalho novo |
+| R02 | Seletor Adicionar projeto | **Todos os projetos Nexus disponíveis** aparecem independentemente de branding, canais, configuração Social ou OAuth; não há criação de projeto Nexus |
+| R03 | Rascunho, configuração, ativação | Adicionar = rascunho; pesquisa só se **Social configurado + ativo + branding completo**; desativar mantém histórico e interrompe trabalho novo |
 | R04 | Perfis editoriais e canais | Marca, públicos, objetivos, voz, licenças, formatos e contas por Nexus project; canais associados/permitidos |
 | R05 | Pesquisa **diária leve** | Observações com fontes, data, mudança relevante e custo; sem guião antes de gate |
 | R06 | Relatório **semanal aprofundado** | Síntese de tendências, concorrência híbrida, oportunidades, evidências e priorização por projeto |
@@ -31,7 +31,7 @@
 | R15 | Distribuição híbrida | Conta configurada não significa API autenticada. API oficial só se possível, autenticada, autorizada e com termos cumpridos; caso contrário exportação/publicação manual com comprovativo |
 | R16 | Métricas avançadas e atribuição | Retenção, alcance, interação, CTR, UTM, visitas, eventos, conversões e custos, com proveniência, unidade, janela, denominador |
 | R17 | Aprendizagem e experiências | Testes controlados com hipótese/variável, amostra, confiança; sinaliza `inconclusiva` e alimenta Motor 1 com dados citáveis |
-| R18 | Interface Social mínima no Nexus | Seleção de projetos elegíveis, estados de pesquisa/produção, aprovação, resultados, métricas reais/indisponibilidade, sem redesign visual prematuro |
+| R18 | Interface Social mínima no Nexus | **Adicionar mostra todos os projetos Nexus**; configuração e ativação separadas; lista de investigação só ativos+completos; estados de pesquisa/produção e aprovações, sem redesign prematuro |
 | R19 | MVP de 3 peças reais | 1 conteúdo real/publicável para cada Hidden Layer, Vefi e UtopIA; fixtures e protótipos não contam |
 | R20 | Metas e controlo de custo | Pretender 5–10 peças/semana, 1–3h supervisão, 3–6h desenvolvimento; alvo extra 0€ e teto 25€/mês **não autorizam gastos** |
 | R21 | Adaptadores de fornecedores | Trocar render, pesquisa, TTS, imagem e rede sem reescrever núcleo nem duplicar ferramentas Nexus |
@@ -60,7 +60,7 @@ Canais de intenção **não são contas ligadas**. Conectores só operam após v
 
 ## Definição de MVP e sequência
 
-**F1 — funcionalidade do Nexus antes do visual:** leitura real do contrato e UI mínima, gates persistentes, prévias protegidas e projetos elegíveis do Nexus. **F2 — conteúdo:** pesquisa e produção com prova de Remotion/imagem e um piloto técnico publicável. **F3 — publicação/métricas:** pacote aprovado, publicação manual/automática permitida, resultados datados, primeira aprendizagem e comparação honesta.
+**F1 — funcionalidade do Nexus antes do visual:** seletor de todos os projetos Nexus, adição como rascunho Social, validação de branding e ativação, leitura real do contrato e UI mínima, gates persistentes, prévias protegidas. **F2 — conteúdo:** pesquisa e produção com prova de Remotion/imagem e um piloto técnico publicável. **F3 — publicação/métricas:** pacote aprovado, publicação manual/automática permitida, resultados datados, primeira aprendizagem e comparação honesta.
 
 **MVP de produto:** três conteúdos reais/publicáveis, um por cada projeto inicial elegível e ativado no Nexus, com marca, fontes, gates, pacote, custos e estado de publicação/medição. Conteúdo preparado e conteúdo publicado têm estados diferentes; se faltar publicação não inventar métricas.
 
