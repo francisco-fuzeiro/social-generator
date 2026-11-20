@@ -11,7 +11,7 @@ A seleção adiciona um **perfil Social em rascunho** associado ao ID canónico 
 Fluxo decidido:
 
 1. **Adicionar projeto:** lista integral dos projetos Nexus disponíveis ao utilizador, independentemente de socials, branding ou ativação Social.
-2. **Configurar Social:** estabelecer perfil editorial/branding adequado (marca, identidade visual, tom, idioma, público e objetivos), plataformas e pelo menos uma conta social identificável/configurada para as operações associadas ao canal. Não é obrigatório OAuth/API autenticada.
+2. **Configurar Social:** importar **proposta de branding de fontes autorizadas em modo leitura** (quando existirem), permitir edição manual e exigir **validação humana do brand kit**, além de público/objetivos, formatos, plataformas e pelo menos uma conta social identificável/configurada para operações do canal. Não exigir OAuth/API.
 3. **Ativar:** opção explícita do utilizador após validar os requisitos mínimos, sem ativação implícita ao adicionar. Um rascunho incompleto permanece editável, assinalando os campos em falta.
 4. **Pesquisar:** **só projetos adicionados ao Social, ativos e com perfil de branding completo/configurado**. Verificar o estado do perfil e dos canais relevantes antes da execução diária, semanal ou pontual. Em caso de falha, indicar motivo e não consumir recursos.
 5. **Produzir/publicar:** continuar a exigir projeto ativo, marca válida, formatos e contas apropriados, mais os dois gates humanos. API autenticada apenas para capacidades automáticas permitidas.
@@ -21,6 +21,14 @@ Fluxo decidido:
 **Conta configurada vs API:** a decisão P1-B mantém-se: handle/URL/identificador de uma conta configurada é suficiente para operações manuais; OAuth não é requisito para pesquisa ou ativação. É distinto do seletor **Adicionar projeto**, que mostra todos os projetos Nexus mesmo sem qualquer conta social.
 
 **Perda de configuração:** se o branding obrigatório ficar incompleto, um projeto ativo deve ser bloqueado para novas pesquisas até corrigir. Se a conta/plataforma deixar de estar configurada, suspender trabalhos que dependem dela e novas publicações. Preservar histórico, provas, métricas e decisões. A desativação intencional pára novas execuções, sem apagar o projeto do Social.
+
+## 1.1. Importação inteligente de branding — entrevista P10-B (DECIDIDO)
+
+**Adicionar projeto** continua a mostrar **todos os projetos Nexus**; escolher um cria apenas um **rascunho Social inativo**. Na configuração, o Social Generator pode **ler fontes autorizadas** ligadas ao projeto (informações Nexus, website oficial, documentação/brand book, repositório em modo de leitura e assets/licenças autorizados), propor um perfil de marca e apresentar a evidência, data, confiança e lacunas de cada campo. Não assumir acesso ao repo ou aos assets pela mera existência no Nexus; não escrever no projeto de origem.
+
+**O utilizador corrige e aprova explicitamente a versão do branding** antes de este ser considerado validado/completo. O operador pode preencher manualmente campos indisponíveis ou recusar importação. A validação de marca **não ativa automaticamente o Social**: um perfil aprovado mas inativo continua sem pesquisa. Para entrar no Motor 1 exigem-se **branding validado + configuração de canais/conta + ativação Social explícita**. Mudanças de marca ficam versionadas e a política de atualização posterior será decidida separadamente.
+
+Contrato de fontes, lacunas, confiança, isolamento, permissões e testes: [BRANDING.md](BRANDING.md).
 
 ## 2. Perfil editorial (extensão da entidade Nexus)
 
@@ -67,6 +75,8 @@ Exemplo de extensão futura, não membro automático do Social. Se existir no Ne
 - Projeto Nexus adicionado ao Social mas `socialEnabled=false`: continua configurável, mas não é pesquisado nem entra na produção.
 - Projeto Nexus adicionado, com branding incompleto, mesmo ativo por erro: pesquisa bloqueada e motivo explicitado.
 - Projeto Nexus configurado, com branding completo e ativo: perfil e canais recuperados sem alteração ao código dos motores.
+- Projeto com website e documentação autorizados: propor branding **com fonte e confiança**, mas não ativar nem pesquisar antes da **aprovação humana e ativação explícita**.
+- Importação indisponível ou fontes contraditórias: mostrar lacunas/conflitos e permitir completar manualmente, sem inventar identidade ou claims.
 - Remoção de conta/arquivamento: suspender operações, guardar histórico.
 - Tentativa de publicar em conta não associada ao mesmo projeto Nexus: rejeitar.
 - Introduzir um quarto projeto no Nexus, mesmo **sem socials**: aparece no seletor «Adicionar» sem alterar enums; pesquisa só começa após completar branding, configuração e ativação.
