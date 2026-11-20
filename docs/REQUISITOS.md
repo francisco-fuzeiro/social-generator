@@ -85,6 +85,18 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **P7-B é a decisão funcional; detalhes de UI, orçamento de revisões e técnica de render parcial são posteriores.** Contrato: [REVISOES.md](REVISOES.md).
 
+## Feedback associado ao vídeo — P8-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R43 | Feedback no instante do vídeo | Ao pausar a prévia, operador pode criar nota ligada ao instante e à versão visualizada, com texto do pedido |
+| R44 | Múltiplas notas e comentários gerais | Uma revisão pode incluir várias notas temporizadas e instruções globais, sem render automático por cada comentário |
+| R45 | Rastreabilidade entre versões | Feedback guarda a versão de origem; se timings mudarem, não reaplicar timestamps antigos à nova versão sem validação |
+| R46 | UI mínima de revisão (sem editor completo) | Reprodutor, pausa, comentário temporizado, lista de notas e instruções gerais, com envio explícito; sem exigência de timeline completa ou desenho de anotações |
+| R47 | Aprovação preservada | Enviar notas para revisão não aprova a versão nem entrega a peça ao Postiz; após alterações exige revisão final da nova versão |
+
+**P8-B é funcionalidade a implementar no dashboard Social do Nexus na fase de revisão, mas não autoriza antecipar o design visual avançado.** Ver [REVISOES.md](REVISOES.md).
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
