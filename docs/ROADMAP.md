@@ -7,7 +7,7 @@
 - [x] Criar GitHub e integrar clone local em C:\Claude\Social Generator; ligação remota confirmada pelo utilizador.
 - [x] Auditar Nexus e publicar docs/auditoria-f0.md.
 - [x] Consolidar requisitos funcionais, decisões, motores, métricas, perfis, biblioteca e alinhamento do contrato no repo.
-- [x] Incorporar decisões da entrevista: catálogo Nexus + socials + opt-in; pesquisa daily/weekly, fontes/concorrentes, formatos/canais, analytics, biblioteca e três conteúdos reais.
+- [x] Incorporar decisões da entrevista: **Adicionar apresenta todo o catálogo Nexus; adicionar cria rascunho; pesquisa só para perfis Social configurados, ativos e com branding completo**; pesquisa diária/semanal, fontes, formatos, analytics e MVP.
 - [x] Adiar design visual detalhado do dashboard até haver fluxo funcional validado.
 - [ ] **Revisão técnica do contrato v1 no Nexus** (a adenda funcional já incorpora a entrevista). Alinhar catálogos, integrações e testes antes de F1.1.
 - [ ] Recuperar ficheiros originais SOCIAL_GENERATOR.md (489 linhas) e adenda (284 linhas), se disponíveis, e reconciliar diferenças sem os fazer passar por recuperados.
@@ -18,11 +18,11 @@
 
 A execução técnica mantém como referência a lista fechada e os testes da auditoria F0 §6:
 
-- **F1.1:** schema e leitor de retratos, operação `social.ler`, navegação PC/móvel, exemplos explícitos e estados de dados ausentes.
+- **F1.1:** schema e leitor de retratos, operação `social.ler`, **Adicionar projeto com catálogo Nexus integral**, rascunho Social e validação dos pré-requisitos da pesquisa (configurado+ativo+branding), navegação PC/móvel mínima, exemplos e estados vazios.
 - **F1.2:** decisões humanas persistentes, tema e publicação separadas, versão/hash, idempotência, papéis, contas pertencentes ao projeto Nexus; nenhum envio externo.
 - **F1.3:** previews protegidas de MP4/recursos, Range e validação dos caminhos, sem novo servidor.
 
-**Contrato funcional fechado pela entrevista:** o Social **não cria** projetos; apenas mostra projetos do Nexus com socials e opt-in para os ativar. Os três IDs e três redes fixos da F0 eram fixtures e não são o contrato aprovado. **Design visual detalhado fica fora da F1**. Confirmar tecnicamente a origem das contas e os estados de elegibilidade antes de implementar.
+**Contrato funcional fechado pela entrevista:** o Social **não cria** projetos Nexus; em **Adicionar projeto** apresenta todos os projetos Nexus, mesmo sem socials. Adicionar cria apenas rascunho Social; **pesquisa só nos adicionados, ativos e com branding/configuração completos**. Os três IDs e três redes fixos da F0 eram fixtures e não são o contrato aprovado. **Design visual detalhado fica fora da F1**. Confirmar tecnicamente a origem das contas e os estados de elegibilidade antes de implementar.
 
 ## F2 — Inteligência, produção e prova técnica
 
