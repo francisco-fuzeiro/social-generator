@@ -15,7 +15,7 @@
 | ID | Obrigação | Critério de aceitação |
 |---|---|---|
 | R01 | Fonte única de projetos: Nexus | Apenas IDs canónicos de projetos existentes no Nexus |
-| R02 | Gate de elegibilidade Social | Projeto Nexus sem socials não aparece para ativação; com socials mas desativado não aparece na produção |
+| R02 | Gate de elegibilidade Social | Projeto Nexus sem conta social identificada não aparece; conta configurada sem API é elegível, mas só entra na produção depois de opt-in |
 | R03 | Opt-in/opt-out Social por projeto elegível | Ativar não cria novo projeto Nexus; desativar mantém histórico e interrompe trabalho novo |
 | R04 | Perfis editoriais e canais | Marca, públicos, objetivos, voz, licenças, formatos e contas por Nexus project; canais associados/permitidos |
 | R05 | Pesquisa **diária leve** | Observações com fontes, data, mudança relevante e custo; sem guião antes de gate |
@@ -28,7 +28,7 @@
 | R12 | Pacote editável e QA | Guião, storyboard, recursos, prévia, render quando aplicável, relatório técnico/editorial/factual/visual/direitos e licenças |
 | R13 | Biblioteca externa reutilizável | `D:\AI\Biblioteca` referenciada por IDs e direitos; media e paths privados fora do Git e do browser |
 | R14 | Gate de publicação | Aprovação por versão+hash+plataforma+conta Nexus; alteração relevante invalida autorização |
-| R15 | Distribuição híbrida | API oficial só se possível, autorizada e com termos cumpridos; caso contrário exportação/publicação manual com comprovativo |
+| R15 | Distribuição híbrida | Conta configurada não significa API autenticada. API oficial só se possível, autenticada, autorizada e com termos cumpridos; caso contrário exportação/publicação manual com comprovativo |
 | R16 | Métricas avançadas e atribuição | Retenção, alcance, interação, CTR, UTM, visitas, eventos, conversões e custos, com proveniência, unidade, janela, denominador |
 | R17 | Aprendizagem e experiências | Testes controlados com hipótese/variável, amostra, confiança; sinaliza `inconclusiva` e alimenta Motor 1 com dados citáveis |
 | R18 | Interface Social mínima no Nexus | Seleção de projetos elegíveis, estados de pesquisa/produção, aprovação, resultados, métricas reais/indisponibilidade, sem redesign visual prematuro |
