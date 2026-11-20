@@ -42,19 +42,24 @@ Cada tema inclui: título/pergunta, ângulo, hook provisório, público/objetivo
 
 **Modelo técnico sugerido:** `temaId`, `projetoId`, `versao`, `primeiraDetecaoEm`, `ultimaValidacaoEm`, `validoAte`, `estadoRelevancia`, `fontes`, `historicoReutilizacao`, `reavaliacaoId`, `resultadoReavaliacao`. Estados sugeridos `vigente`, `em-reavaliacao`, `renovado`, `desatualizado`, `inconclusivo`. Os estados de relevância são **ortogonais** a selecionado/aprovado/rejeitado e produção/publicação.
 
-## 5. Seleção múltipla e sugestão de agendamento (DECIDIDO)
+## 5. Seleção múltipla e momento do calendário — P3, opção B adaptada (DECIDIDO)
 
-O utilizador pode **selecionar um ou vários temas** de um lote (incluindo todos), rejeitar outros e pedir a proposta de planeamento. Não há obrigação de escolher apenas o primeiro ou o de score mais elevado.
+**No Motor 1 o utilizador escolhe apenas os temas.** Pode selecionar um, dois ou mais temas do mesmo lote. A seleção positiva dos IDs e versões atuais é a **aprovação humana do tema** (primeiro gate), por tema, que autoriza o Motor 2 a iniciar produção. Não exigir escolha de datas, horas, plataformas de publicação finais, ordem de agendamento nem CTA final no momento da escolha. A ficha pode conter sugestões genéricas de formato/canal e urgência, mas **não apresentar calendário detalhado como etapa de aprovação antes da produção**.
 
-Depois da seleção, o Motor 1/planeador recomenda **a ordem de produção e de agendamento por projeto/canal**, com razão explícita:
-- urgência/frescura e expiração (temas sensíveis ao tempo primeiro quando fizer sentido);
-- relevância para objetivos/público e prioridade indicada pelo utilizador;
-- capacidade de produção, dependências e esforço/custo;
-- sequência narrativa, diversidade editorial e evitar canibalização/repetição;
-- horários/cadência e padrões observados por plataforma, **apenas se houver evidência**, sem inventar «melhor hora»;
-- compromissos/campanhas existentes e eventual tema já aprovado/publicado.
+**O Motor 2 produz a peça** segundo o branding e formato do projeto, preservando tema/versão. Quando a peça fica pronta, a interface de **revisão pré-publicação** mostra:
 
-**Propor ordem não é executar agendamento nem publicar.** O utilizador pode reordenar, remover e aprovar os temas individualmente; o gate de tema mantém-se obrigatório antes de produzir qualquer peça e o gate final de publicação mantém-se por pacote/conta/plataforma. O plano deve ter estados proposto/aceite/em-curso e versões; alterar agenda/plano não deve criar trabalho pago nem republicação sem autorização.
+- prévia reproduzível do vídeo ou visualização integral do carrossel e seus recursos;
+- título, guião/legendas, CTA, descrição/copy e hashtags por rede;
+- formatos, proporções, duração, thumbnail, contas e plataformas pretendidas;
+- verificações de QA factual/editorial/técnico/visual, fontes, direitos e alertas;
+- **proposta completa de agendamento**, incluindo ordem entre peças escolhidas, **datas e horas**, contas e plataformas, com justificações e confiança. Usar dados reais de audiência quando existem; sem evidência, identificar horários como estimativas e não alegar «melhor horário» factual;
+- impacto em campanhas existentes, adequação do tema à data prevista, custo e estado de limitações do canal.
+
+O operador pode **rever, corrigir, reordenar, ajustar contas/canais/datas/horas e aprovar** o pacote final específico. Este é o **segundo gate humano** e ocorre **depois da produção, antes de qualquer agendamento/publicação**. Alterar vídeo, legenda, recurso, conta, plataforma ou agendamento altera o pacote/versão e exige autorização válida para a versão final.
+
+**Somente após essa aprovação**, o **Motor 3** recebe pacote/versão/hash + conta/canal + plano aprovado e **executa o agendamento** quando houver integração oficial elegível e validada. Caso contrário, entrega **pacote e instruções de agendamento manual** e deixa estado `pendente-agendamento-manual`; não afirmar que agendou. Confirmação remota ou manual é necessária para estado `agendado`. O estado `publicado` requer prova própria, distinta de agendamento.
+
+**Não alterar a dupla aprovação humana:** escolha dos temas = gate 1; aprovação da prévia, pacote e calendário final = gate 2. Uma sugestão do motor nunca equivale a um clique de aprovação.
 
 ## 6. Testes de aceitação mínimos
 
@@ -63,17 +68,17 @@ Depois da seleção, o Motor 1/planeador recomenda **a ordem de produção e de 
 3. Projeto ativo mas com branding incompleto: bloqueio explícito; nenhuma pesquisa.
 4. Dois projetos ativos e dois inativos: só os ativos recebem investigação diária/semanal; os ativos com campanhas/tendências recebem profundidade adicional (opção C).
 5. Cada novo lote de recomendações visível para escolha contém **≥5 temas distintos e fundamentados** ou estado explícito de lote incompleto, sem conteúdo inventado.
-6. Selecionar 2, 3 ou todos os temas produz uma proposta de ordem, mantendo os restantes intactos.
+6. Selecionar 2, 3 ou todos os temas **aprova apenas os temas para produção**; não solicita nem apresenta calendário detalhado nesta fase.
 7. Tema com 6 dias de validação pode ser reutilizado; ao completar 7 dias passa a `em-reavaliacao` e é retirado das novas sugestões/autorizações até à revisão semanal.
 8. Reavaliação semanal documenta fontes e decisão: renovação cria nova validade máxima 7 dias, rejeição arquiva; falta de evidência não renova.
 9. A reavaliação não apaga decisões, conteúdos, publicações, métricas nem simula aprovação humana.
-10. Ordem sugerida é explicável e editável; não envia publicações, não cobra API, não cria guião antes do gate.
+10. **Depois de a peça estar produzida**, rever prévia e calendário com ordem/datas/horas/plataformas editáveis; somente após aprovação final o Motor 3 tenta agendar. Sem API/conta elegível, mostrar pendente-agendamento-manual; agendado/publicado exigem confirmação.
 
 ## 7. Pontos técnicos por fechar
 
 - Dia/hora do relatório semanal e pesquisa diária (timezone Portugal) e comportamento quando o computador Nexus estiver desligado.
 - Frequência mínima de lotes de cinco vs. pedidos do utilizador; critérios de qualidade/score de entrada.
 - Representação final dos estados de relevância e filas no schema v1/v2 e idempotência do calendário.
-- Se o algoritmo propõe **datas e horas concretas**, além da ordem — depende de canais conectados, calendário editorial e aprovação.
+- **Decidido:** mostrar datas e horas concretas **após a produção** na revisão pré-publicação, com propostas estimadas quando faltam dados. Falta definir política de conflitos, timezone e viabilidade técnica por rede.
 
 Consultar: `docs/DECISOES.md`, `docs/PROJETOS.md`, `docs/MOTORES.md`, `docs/ALINHAMENTO_CONTRATO_V1.md` e `docs/ROADMAP.md`.
