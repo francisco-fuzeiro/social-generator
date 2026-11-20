@@ -36,6 +36,10 @@ Investigar:
 
 **Ritmo de referência:** pesquisa leve diária, síntese semanal com oportunidades recomendadas. Implementação de agendamento só quando demonstrada no Nexus; pesquisa manual na fase inicial.
 
+### Plataformas recomendadas por tema — P16-B (DECIDIDO)
+
+Motor 1 deve recomendar **as redes mais adequadas ao tema e projeto Social**, não todas as redes configuradas por defeito. Usar público e contexto editorial, formatos e duração, tendências verificáveis, histórico comparável do Motor 4, capacidade de produção e elegibilidade de conta/canal. Registar **origem, razão e confiança**; não inventar métricas ou afirmar capacidade de API não testada. A ficha pode apresentar redes **recomendadas** e outras **não selecionadas** com limitações quando relevante. A escolha do tema no primeiro gate **não exige selecionar redes definitivas nem calendário**; M2 apenas inicia variantes dos destinos recomendados e elegíveis. Na revisão pós-produção o utilizador pode acrescentar ou remover destinos, pedindo QA/produção adicionais antes do segundo gate. Contrato [VARIANTES.md](VARIANTES.md).
+
 ### Saída antes do gate
 
 Ficha económica com: id/versão/projeto/campanha, tema/pergunta, público, proposta de hook, ângulo e diferenciação, fontes+consultadoEm, sinais mensuráveis, formato e duração sugeridos, canal, CTA previsto, estimativa de esforço/custo, riscos editoriais/licenças, pontuação e confiança.
@@ -88,7 +92,7 @@ O Motor 2 cria **uma peça-base editável, versionada e reutilizável**, associa
 
 Cada variante conserva referência à base, manifesto de alterações/recursos reaproveitados, versão/hash, custo, restrições de canal e QA por plataforma. Mudanças de base não alteram silenciosamente variantes já aprovadas; assinalar descendentes afetadas. **Não assumir compatibilidade nem capacidades API sem prova**, mesmo que exista conta configurada.
 
-**Primeiro gate mantém-se apenas escolha de temas.** O Motor 1 pode recomendar formatos e redes com evidência, e o Motor 2 considera canais configurados para preparar variantes. **Depois da produção**, o dashboard apresenta prévias e pacote/calendário por plataforma+conta para aprovação humana **individual** de versão/hash, copy/CTA e horário; destinos acrescentados posteriormente devem ser preparados/validados antes do gate. A decisão sobre **quantas variantes criar por defeito** ficará para P16. Ver [VARIANTES.md](VARIANTES.md).
+**P16-B decidiu o conjunto inicial:** M1 **recomenda plataformas com maior adequação por tema**, tendo em conta audiência, formato, tendências e histórico real (M4), com motivos/confiança; M2 **prepara somente destinos recomendados e elegíveis** inicialmente, sem um número fixo de versões. **Primeiro gate mantém-se apenas escolha de temas** e a recomendação de redes não é aprovação ou pedido de datas. **Depois da produção**, o dashboard apresenta prévias e pacote/calendário por plataforma+conta para aprovação humana **individual** de versão/hash, copy/CTA e horário. O operador pode **acrescentar/remover destinos** na revisão final; novos destinos requerem compatibilidade, preparação e QA pela M2 antes da aprovação. Ver [VARIANTES.md](VARIANTES.md).
 
 ### Revisões inteligentes e localizadas (DECIDIDO, P7-B)
 
