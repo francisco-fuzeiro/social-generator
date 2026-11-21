@@ -1,6 +1,6 @@
 # Recomendações de dias e horários de publicação — contrato funcional
 
-> **Entrevista P17-B, 20/11/2026, DECIDIDO:** após o Motor 2 produzir cada peça/variante, o Social Generator apresenta na **revisão final** uma **proposta adaptativa de datas e horários por conta/plataforma**, justificada por dados quando disponíveis e marcada como **estimativa** quando não existirem. O operador pode alterar tudo antes de aprovar. Apenas depois do segundo gate o Motor 3 entrega pacotes aprovados ao Postiz, que mantém o scheduler e a execução. Esta é uma especificação, não uma implementação.
+> **Entrevistas P17-B e P18-B, 20/11/2026, DECIDIDO:** após o Motor 2 produzir cada peça/variante, o Social Generator apresenta na **revisão final** uma **proposta adaptativa de datas e horários por conta/plataforma**, justificada por dados quando disponíveis e marcada como **estimativa** quando não existirem. O operador pode alterar tudo antes de aprovar. Apenas depois do segundo gate o Motor 3 entrega pacotes aprovados ao Postiz, que mantém o scheduler e a execução. Esta é uma especificação, não uma implementação.
 
 ## 1. Princípios e fronteiras
 
@@ -13,6 +13,32 @@
 - **Aprovação final individual:** o operador pode **editar data/hora, conta, rede e ordem** na proposta antes de aprovar cada pacote de `variantVersion/hash+conta+plataforma+copy+scheduledAt`. Alterações materiais ao pacote/agenda exigem novo gate conforme contrato. Sem aprovação não enviar ao Motor 3.
 - **Postiz:** M3 transmite **apenas pacotes/calendários aprovados**, confirma agendamento com IDs/recibos, sincroniza calendário para leitura no Nexus e não apresenta uma proposta como se fosse agendamento. **Depois de enviado ao Postiz**, reagendar/editar/cancelar faz-se **no Postiz**, não no Nexus (P5-C).
 - **M4 e aprendizagem:** recolher horários **efetivos** de publicação e métricas disponíveis com janelas/comparações prudentes; melhorar recomendações futuras. O M4 não modifica agendamentos nem determina publicar. Não inferir causalidade de um horário isolado.
+
+## 1.1. Cadência semanal por projeto/plataforma — P18-B (DECIDIDO)
+
+Para cada **projeto Nexus com Social ativo/configurado** e cada plataforma/conta relevante, o sistema recomenda uma **meta de quantidade de publicações por semana**, adaptando-a a:
+- objetivos do projeto e, quando aplicável, campanhas e prazos;
+- tendências e oportunidades atuais, apenas com evidência suficiente;
+- desempenho anterior **real e comparável** (M4), explicitando incerteza e falta de histórico;
+- variedade de temas, formato, saturação da audiência e agendamentos já existentes;
+- capacidade/tempo de produção e quotas **efetivamente disponíveis no Motor 2 e Nexus** e limites de custo, sem assumir recursos fictícios.
+
+**O operador define limites mínimo/máximo por projeto/plataforma, podendo ajustá-los** e rever a cadência recomendada. Esses limites **não foram numericamente fixados na entrevista**. Podem ser diferentes entre redes e marcas; evitar aplicar a todos os projetos a meta transversal histórica de 5–10 conteúdos/semana, que permanece uma **aspiração**, não uma quota obrigatória ou capacidade demonstrada. Exigir configuração consistente (mínimo não superior ao máximo) e assinalar limites inviáveis em vez de os cumprir artificialmente.
+
+**A cadência serve exclusivamente o planeamento e a explicação de prioridades**, não é um agente/publicador automático. Se a meta não puder ser atingida por falta de temas aprovados, qualidade, orçamento, tempo de produção ou destino elegível, **mostrar défice e motivo** em vez de inventar temas/engagement, gerar conteúdos sem gate 1 ou publicar sem gate 2. A recomendação de quantidade **não desencadeia por si só produção, agendamento, repost ou contratação de ferramentas**. Uma meta semanal pode ser revista com novas métricas, mas um post já agendado no Postiz não pode ser modificado por isso.
+
+**Distinguir decisões P17 e P18:** P18-B recomenda **quantos posts por semana** para cada projeto/rede dentro de limites humanos; P17-B recomenda **em que dias/horas** para cada variante **após a produção**, mediante o calendário real, e exige validação no segundo gate. Em ambos os casos o **Postiz agenda/publica somente pacotes já aprovados**, mantendo Nexus um calendário de leitura após a entrega.
+
+**Contrato técnico PROPOSTO:** `CadencePolicy` (`nexusProjectId`, `platform`, `accountId?`, `minPostsPerWeek`, `maxPostsPerWeek`, `approvedBy`, `updatedAt`) e `CadenceProposal` (`suggestedPostsPerWeek`, `reasons`, `evidenceRefs`, `confidence`, `capacityAssessment`, `operatorAdjustment`, `shortfall`). IDs/estados/frequência de recálculo por validar; não inserir percentagens rígidas ou dias/horas predefinidos.
+
+**Testes de aceitação:**
+1. The Hidden Layer e Vefi com limites humanos diferentes recebem propostas semanais diferentes, sem um valor global fixo.
+2. Uma recomendação acima do máximo/abaixo do mínimo é **sinalizada/corrigida** segundo política do operador; quando mínimo for inviável, mostrar **défice/limitação** sem temas falsos.
+3. Com histórico M4 inexistente, usar heurísticas declaradas e demonstrar origem/incerteza, sem atribuir causalidade.
+4. Campanha ativa pode alterar a cadência sugerida na sua janela, dentro de limites e recursos; continuar a recomendar conteúdo contínuo.
+5. Meta semanal de 5 publicações com só 2 temas escolhidos **não inicia 3 renders adicionais**; Motor 2 produz apenas os 2 aprovados.
+6. Nova proposta de cadência não envia posts, não altera agendamentos anteriores nem modifica o calendário real do Postiz.
+7. O operador pode corrigir a cadência sugerida independentemente de escolher temas, e datas/horas só aparecem após produção e gate final.
 
 ## 2. Fluxo funcional
 
@@ -43,8 +69,8 @@
 9. Sugestões identificam o fuso e são seguras quanto a mudanças de horário de verão; sem converter um horário ambíguo silenciosamente.
 10. Uma alteração posterior da agenda de post **já entregue** faz-se diretamente no Postiz e sincroniza depois no Nexus.
 
-## 5. Próxima decisão da entrevista — P18
+## 5. Próxima decisão da entrevista — P19
 
-**Cadência e volume de publicações por projeto:** definir se frequência semanal é fixa, adaptativa dentro de limites revistos pelo operador, ou totalmente manual. Esta é distinta de escolher horários para peças já prontas e não dá permissão de gerar/publicar sem os dois gates.
+**P18-B fechado:** cadência semanal adaptativa com limites mínimos e máximos definidos pelo operador, sem criação ou publicação automáticas. **P19 em aberto:** quando faltam temas aprovados e capacidade para cumprir a cadência prevista, deve o sistema apresentar apenas o défice, sugerir alternativas de qualidade para aprovação ou preencher a meta autonomamente? A política não pode contrariar os dois gates.
 
 Referências: [DECISOES.md](DECISOES.md), [CICLO_TEMAS.md](CICLO_TEMAS.md), [POSTIZ.md](POSTIZ.md), [METRICAS.md](METRICAS.md), [ALINHAMENTO_CONTRATO_V1.md](ALINHAMENTO_CONTRATO_V1.md).
