@@ -46,6 +46,12 @@ Quando as metas semanais de P18-B não puderem ser cumpridas por falta de temas 
 
 Se a investigação não trouxer opções suficientemente fortes, qualidade/recursos impedirem a produção ou o utilizador não aprovar alternativas, **assinalar défice e aceitar semana com menos posts**, mostrando causa e eventual sugestão de ajustar a cadência, sem alterar limites do operador. Nunca usar fornecedores pagos não autorizados nem alterar o Postiz. Ver [HORARIOS.md](HORARIOS.md) §1.2 e [CICLO_TEMAS.md](CICLO_TEMAS.md) §5.5.
 
+### Deteção de repetição semântica e revisitas úteis — P20-B (DECIDIDO)
+
+Motor 1 compara **novos temas com o histórico editorial do mesmo projeto**: pergunta, ângulo, argumentos/factos, publicações anteriores, propostas em produção/aprovadas e, quando acessíveis, agendamentos. **Mostrar conteúdos parecidos e respetivos links/IDs**, explicar grau/razão da semelhança, e **recomendar revisita apenas quando houver valor novo concreto** (factos/evidências novas, atualização, ponto de vista substantivamente diferente ou aprofundamento). **Não confundir assunto geral com ideia duplicada** nem apresentações em várias redes de uma mesma peça-base com temas repetidos.
+
+A regra aplica-se também a oportunidades evergreen, ângulos e revalidações P19-B: **não inflacionar os cinco temas distintos do lote nem preencher cadência com variações triviais**. Marcar evidência/confiança, reconhecer falta de histórico, e conservar o primeiro gate humano **só para escolha de temas**. Memória e licenças **isoladas por projeto Nexus**, sem cópias cruzadas de marcas. **Não definir algoritmos, limiares numéricos nem fornecedores antes de provas técnicas.** Contrato [MEMORIA_EDITORIAL.md](MEMORIA_EDITORIAL.md).
+
 ### Plataformas recomendadas por tema — P16-B (DECIDIDO)
 
 Motor 1 deve recomendar **as redes mais adequadas ao tema e projeto Social**, não todas as redes configuradas por defeito. Usar público e contexto editorial, formatos e duração, tendências verificáveis, histórico comparável do Motor 4, capacidade de produção e elegibilidade de conta/canal. Registar **origem, razão e confiança**; não inventar métricas ou afirmar capacidade de API não testada. A ficha pode apresentar redes **recomendadas** e outras **não selecionadas** com limitações quando relevante. A escolha do tema no primeiro gate **não exige selecionar redes definitivas nem calendário**; M2 apenas inicia variantes dos destinos recomendados e elegíveis. Na revisão pós-produção o utilizador pode acrescentar ou remover destinos, pedindo QA/produção adicionais antes do segundo gate. Contrato [VARIANTES.md](VARIANTES.md).
@@ -169,6 +175,8 @@ Guardar observações com origem, data de recolha, período e estado de disponib
 ### Aprendizagem e experiências controladas
 
 Combinar observações reais por **projeto Nexus**, sem cruzar públicos/branding. Cada hipótese de experiência é registada antes de publicar, compara uma variável principal e uma janela/medida compatível; amostra insuficiente produz resultado **inconclusivo**. Conclusões são recomendações explicáveis para a próxima pesquisa, não licença de autopublicação.
+
+**P20-B:** o Motor 4 mantém metadados observáveis e histórico de peças/publicações do **mesmo projeto Nexus** para fundamentar memória editorial; não é prova automática de novidade, não define bloqueio absoluto de temas e não permite cruzar dados privados entre marcas. Aprendizagens passadas servem como evidência, sem autorizar novos renders/posts.
 
 Guardar características criativas estruturadas: tema, categoria, hook e duração, modelo narrativo, ritmo, voz, estilo, legendas, CTA, formato, horário, variantes, custos e fornecedores. Uma experiência tem hipótese, variável principal, métricas, janelas comparáveis, resultados e grau de confiança.
 
