@@ -1,6 +1,6 @@
 # Recomendações de dias e horários de publicação — contrato funcional
 
-> **Entrevistas P17-B e P18-B, 20/11/2026, DECIDIDO:** após o Motor 2 produzir cada peça/variante, o Social Generator apresenta na **revisão final** uma **proposta adaptativa de datas e horários por conta/plataforma**, justificada por dados quando disponíveis e marcada como **estimativa** quando não existirem. O operador pode alterar tudo antes de aprovar. Apenas depois do segundo gate o Motor 3 entrega pacotes aprovados ao Postiz, que mantém o scheduler e a execução. Esta é uma especificação, não uma implementação.
+> **Entrevistas P17-B e P18-B, 20/11/2026, DECIDIDO:** após o Motor 2 produzir cada peça/variante, o Social Generator apresenta na **revisão final** uma **proposta adaptativa de datas e horários por conta/plataforma**, justificada por dados quando disponíveis e marcada como **estimativa** quando não existirem. O operador pode alterar tudo antes de aprovar. Apenas depois do segundo gate o Motor 3 entrega pacotes aprovados ao Postiz, que mantém o scheduler e a execução. **P18-B adiciona recomendações de quantidade semanal por projeto/plataforma sob mínimos/máximos definidos pelo operador.** Esta é uma especificação, não uma implementação.
 
 ## 1. Princípios e fronteiras
 
@@ -54,7 +54,7 @@ Para cada **projeto Nexus com Social ativo/configurado** e cada plataforma/conta
 
 `ScheduleSuggestion`: `nexusProjectId`, `campaignId?`, `variantId`, `variantVersionId`, `platform`, `accountId`, `proposedLocalDateTime`, `timezoneId`, `proposedUtcInstant`, `reasons[]`, `evidenceRefs[]`, `confidence`, `basis=observed|heuristic`, `postizSnapshotAt?`, `calendarConflictStatus`, `constraints`, `operatorOverrides?`.
 
-**Prudência técnica:** lógica adaptativa pode usar algoritmo determinístico simples e estatística antes de modelos complexos; não atribuir a M4 métricas que não consegue obter. Limites e pesos exatos, frequência de recálculo, horizonte de pesquisa de slots, cadência ideal por projeto e regras de desempate **ainda por decidir/provar**.
+**Prudência técnica:** lógica adaptativa pode usar algoritmo determinístico simples e estatística antes de modelos complexos; não atribuir a M4 métricas que não consegue obter. Pesos exatos, frequência de recálculo, horizonte de pesquisa de slots e regras de desempate **ainda por decidir/provar**. A **política de cadência semanal adaptativa já foi decidida em P18-B**, mas o operador ainda não forneceu limites numéricos por projeto/plataforma.
 
 ## 4. Testes de aceitação
 
