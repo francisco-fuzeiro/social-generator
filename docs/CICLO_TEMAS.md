@@ -89,6 +89,14 @@ Se a cadência P18-B for inalcançável por falta de temas credíveis/aprovados 
 
 **Quando faltar qualidade/capacidade mesmo depois da pesquisa**, reportar `cadencia-inferior` com número de temas disponíveis, motivo, incerteza e sugestão de ajustar a meta, sem alterar limites humanos, produzir automaticamente ou mexer no Postiz. Ver [HORARIOS.md](HORARIOS.md) §1.2. **P20 ainda por decidir:** regras de repetição semântica vs. revisita de temas publicados.
 
+## 5.6. Memória editorial e anti-repetição — P20-B (DECIDIDO)
+
+**Antes de recomendar novas oportunidades**, M1 compara semanticamente significado, pergunta, ângulo, factos centrais e objetivos com **conteúdos anteriores do mesmo projeto Nexus** (publicados, agendados, aprovados e em produção quando conhecidos). Mostra referências reais e diferenças ao operador; **não basta trocar palavras do título para gerar novo tema**. **Recomendar revisita só com valor editorial demonstrável**: novas evidências, uma perspetiva distinta, atualização importante ou aprofundamento, com fontes/datas/confiança.
+
+Não bloquear **assunto amplo** só porque já apareceu no histórico: um mini-documentário pode explorar outra pergunta substantiva. Não apresentar reformulações triviais como temas diferentes para atingir **lote mínimo de cinco** ou cadência P18; no P19-B a pesquisa de evergreen/novos ângulos/históricos revalidados também passa por esta avaliação. Validade de **sete dias da recomendação** não é uma licença para repetir um post; revalidar fonte e novidade quando apropriado.
+
+**Memória por projeto e sem confundir variantes:** mesma peça-base distribuída em várias redes não constitui várias ideias repetidas. O **operador decide aceitar/rejeitar o novo tema no primeiro gate**; não criar renders, datas/horas ou envio ao Postiz por detetar novo ângulo. Sem histórico acessível, indicar incerteza, não certeza artificial. Contrato [MEMORIA_EDITORIAL.md](MEMORIA_EDITORIAL.md).
+
 ## 6. Testes de aceitação mínimos
 
 1. O seletor Adicionar mostra um projeto Nexus sem socials; adicioná-lo não inicia pesquisa.
