@@ -30,6 +30,10 @@ A saída é uma **recomendação de destinos para aquele tema com razões e conf
 
 **Não confundir as fases:** escolher temas (gate 1) não significa confirmar canais finais ou calendário. A proposta com contas/datas/horas só aparece **após produção**. Nada nas recomendações de M1 substitui a decisão final.
 
+## 1.2. Fontes públicas por variante — P22-B (DECIDIDO)
+
+Além do fact-check interno P21-B, cada **variante por plataforma** recebe uma **seleção de referências acessíveis ao público**, adequada às afirmações que realmente aparecem no vídeo, título, legendas e copy. A apresentação pode ser em **descrição/caption, comentário fixado ou página pública** quando as capacidades da conta/integração o permitirem, e **seletivamente em ecrã** para afirmações importantes. Não presumir URLs clicáveis ou comentário fixado via Postiz; assinalar fallback manual e não divulgar fontes privadas. A lista exata e o vídeo/copy são revistos no **gate final por variante/conta/plataforma/versão/hash**. Ver [CITACOES_PUBLICAS.md](CITACOES_PUBLICAS.md).
+
 ## 2. Contrato de dados técnico proposto
 
 - `CreativeBase`: `nexusProjectId`, `campaignId?`, `topicApprovalId`, `brandProfileVersionId`, `baseCreativeId`, `baseVersionId`, `baseContentHash`, `assetManifest`, `rightsManifest`, `sourceEvidence`.
