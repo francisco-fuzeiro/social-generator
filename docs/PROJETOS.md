@@ -44,7 +44,11 @@ Quando uma nova versão de branding for aprovada, auditar dependências dos cont
 
 Cada perfil Social do projeto Nexus pode publicar **conteúdo contínuo mesmo que não existam campanhas**. O operador pode criar **campanhas opcionais**, por projeto, cada uma com objetivo, público, prazo/janela, mensagem principal, CTA e **KPIs próprios**. Uma campanha não cria um projeto Nexus novo nem concede novas contas/permissões. Os criativos e publicações gerais não são forçados a pertencer a campanhas.
 
-**Motor 1** continua a investigar oportunidades gerais do projeto, e também produz recomendações específicas para campanhas ativas, sob os mesmos gates de branding/ativação. **Motor 4** mede objetivos de campanhas e resultados gerais por separado sem duplicar conversões. A proporção e prioridade entre campanhas e conteúdo contínuo não estão fechadas (P14). Ver [CAMPANHAS.md](CAMPANHAS.md).
+**Motor 1** continua a investigar oportunidades gerais do projeto, e também produz recomendações específicas para campanhas ativas, sob os mesmos gates de branding/ativação. **Motor 4** mede objetivos de campanhas e resultados gerais por separado sem duplicar conversões. A prioridade entre campanhas e conteúdo contínuo ficou **adaptativa e ajustável em P14-B**. Ver [CAMPANHAS.md](CAMPANHAS.md).
+
+## 1.5. Motor 1 partilhado, perfis isolados — SG-D060 (DECIDIDO)
+
+**Não criar um Motor 1 com código e infraestrutura próprios por marca.** O núcleo técnico de Intelligence é único e partilhado; cada **projeto Nexus Social ativo e elegível** recebe a sua **instância lógica por execução**, com estratégia, regras, concorrentes, fontes, histórico, campanhas, scoring, limites e memória isolados por `nexusProjectId`. O Motor 1 carrega contexto do projeto, executa dentro da capacidade do Nexus, guarda resultados atribuídos corretamente e liberta recursos. Sem processos/LLMs residentes por projeto, sem mistura de credenciais ou dados, e sem impedir novas ferramentas globais. Contrato [ARQUITETURA_MOTOR1.md](ARQUITETURA_MOTOR1.md).
 
 ## 2. Perfil editorial (extensão da entidade Nexus)
 
