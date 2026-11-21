@@ -35,8 +35,12 @@
 - [x] **P19-B:** quando a cadência não for exequível, M1 procura alternativas de qualidade (evergreen, novos ângulos, anteriores revalidados) e apresenta para seleção humana; aceita semana abaixo da meta se faltarem opções, sem renders/publicações automáticas.
 - [x] **P20-B:** M1 compara semanticamente oportunidades com histórico editorial por projeto, mostra conteúdos semelhantes e só recomenda revisitas com valor adicional claro (novas evidências, perspetivas, atualizações, aprofundamento); escolha humana no gate 1.
 - [x] **P21-B:** verificação factual por afirmação/risco, fontes e confiança; reforçar prova para finanças, lei, medicina e história controversa; escalar incertezas para revisão humana; bloquear «pronto» para factos centrais sem prova.
-- [ ] **P22:** decidir como apresentar fontes e citações aos espectadores (apenas relatório interno, fontes acessíveis na descrição/caption com on-screen seletivo, ou referências em ecrã para cada alegação).
+- [x] **P22-B:** referências públicas acessíveis por plataforma (descrição/caption, comentário fixado/página quando suportado), com fontes em ecrã seletivas e aprovação humana por variante; não divulgar fontes privadas.
+- [x] **SG-D060:** Motor 1 partilhado com instâncias lógicas por projeto Nexus, contexto/memória/fontes/scoring/limites isolados e sem agentes residentes por marca.
+- [x] **SG-D061:** entrevista encerrada; contratos suficientes para consolidar MVP/roadmap, sem autorização para implementar por omissão.
 - [ ] Limites técnicos concretos de tempo/CPU e testes de QA disponíveis por formato (o teto de 3 tentativas já está decidido).
+- [ ] **Provar isolamento do M1 partilhado SG-D060:** três perfis com públicos/fontes/memória/scoring/quotas diferentes sobre o mesmo núcleo, sem fuga de dados nem agentes residentes; adaptador novo aproveitado por todos.
+- [ ] **Provar fontes públicas P22-B:** listas de referências por variante e claim, URLs/licenças privadas filtradas, capacidades efetivas de legendas/comentários/página confirmadas, gate humano do pacote final.
 - [ ] **Provar QA factual P21-B:** extrair claims por versão/variante, ligar fontes específicas/datadas/contextualizadas, classificar risco e confiança, sinalizar contradições, bloquear factos essenciais não verificados, e integrar revisões locais/segundo gate sem falsos passes.
 - [ ] **Provar memória editorial P20-B:** identificar semelhança de pergunta/ângulo/afirmações vs. histórico do próprio projeto, mostrar IDs/links/diferenças/novas evidências, distinguir variantes da mesma peça e temas distintos, preservar isolamento entre projetos e não inflacionar lotes.
 - [ ] **Provar recuperação de défices P19-B:** detetar insuficiência real, pesquisar evergreen/novos ângulos/históricos revalidados com evidência e validade de sete dias, distinguir temas genuinamente distintos, preservar gate humano e aceitar cadência inferior com motivo; limitar recursos.
@@ -51,6 +55,8 @@
 - [ ] Em 23/11/2026 alterar a visibilidade do repo para privado, confirmar e rever exposição de segredos.
 
 ## Próximas missões técnicas (não autorizadas por esta checklist)
+
+- [ ] **Preparar MVP após entrevista:** consolidar o contrato Nexus e a arquitetura SG-D060, priorizar fatias F1–F3 com testes e critérios de aceite, só implementar depois de instrução explícita.
 
 - [ ] **Campanhas opcionais P13-B no contrato Nexus:** verificar que os projetos funcionam sem campanha, associar campaignId quando existir, preservar objetivos e KPIs por campanha, sem campanha obrigatória e com prioridade adaptativa P14-B explicada/editável, **sem percentagens fixas inventadas**.
 - [ ] F1.1 — contrato/leitor/vista Social Nexus mínimos; **Adicionar mostra todos os projetos Nexus**, configurar perfil Social em rascunho e pesquisar apenas projetos **ativos, configurados, com branding completo**; sem criação Nexus independente nem design visual detalhado.
