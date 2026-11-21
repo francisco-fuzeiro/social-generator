@@ -1,5 +1,15 @@
 # Sessões — Social Generator
 
+## 2026-11-21 — P22-B, SG-D060 e SG-D061: fontes públicas, Motor 1 multi-projeto, entrevista encerrada
+
+**Decisões do utilizador:** P22-B — mostrar fontes relevantes ao público de modo **adaptado à rede** (descrição/caption, comentário fixado/página quando suportados, referências discretas em ecrã para factos essenciais/sensíveis); manter relatório factual interno e aprovação final de fontes/versão/copy/conta; não divulgar fontes privadas. **SG-D060 — Motor 1 partilhado**: um único núcleo técnico de Intelligence e ferramentas/conectores comuns; **instância lógica por projeto Nexus** com branding, estratégia, fontes, concorrentes, público, scoring, memória, resultados, quotas e contexto isolados. **Sem forks de código, servidores separados ou LLMs residentes por projeto**. **SG-D061 — entrevista encerrada**, por pedido do utilizador «já chega», com foco seguinte em consolidar e planear o MVP por fases. Isso não autoriza código, gastos, instalação ou publicação.
+
+- **Registo:** `docs/DECISOES.md` SG-D059/SG-D060/SG-D061.
+- **Contratos novos:** `docs/CITACOES_PUBLICAS.md` e `docs/ARQUITETURA_MOTOR1.md`.
+- **Documentos alinhados:** `docs/PROJETOS.md`, `docs/MOTORES.md`, `docs/FACT_CHECK.md`, `docs/REQUISITOS.md`, `docs/ALINHAMENTO_CONTRATO_V1.md`, `docs/ROADMAP.md`, `TODO.md`, `SOCIAL_GENERATOR.md` e adaptadores de distribuição/variantes.
+- **Estado:** decisões documentadas no GitHub; **nenhuma implementação/teste/render/publicação/custo** executado.
+
+
 ## 2026-11-21 — Entrevista P21-B: verificação factual proporcional ao risco
 
 **TL;DR:** O utilizador escolheu **P21-B**: Motor 2 identifica afirmações verificáveis em guião/narração, cenas/gráficos, legendas, títulos/copy/CTA e variantes; associa **fontes concretas, data/contexto, confiança e risco**. Finanças, legal, medicina/segurança, temas históricos controversos e promessas comerciais sensíveis exigem provas mais fortes e **revisão humana quando haja contradição ou insuficiência**. **Afirmações essenciais não verificadas bloqueiam a marcação de peça pronta e envio ao Motor 3/Postiz**, mesmo com aprovação editorial genérica. Revisões locais e variantes exigem novo QA nas dependências alteradas, guardando versões/hashes. Manteve dois gates e limites Nexus.
