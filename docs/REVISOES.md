@@ -66,6 +66,12 @@ Se ainda houver defeitos ao terminar, mostrar ao utilizador a **melhor versão d
 
 Ver [VARIANTES.md](VARIANTES.md).
 
+## QA factual e revisões — P21-B (DECIDIDO)
+
+No Motor 2, o QA factual **extrai afirmações verificáveis** do guião, narração, legendas, cenas, gráficos e copy/título das variantes e guarda **risco, confiança, fontes e evidência por afirmação**. A criticidade de finanças, fiscalidade, lei, medicina e temas históricos controversos exige verificação reforçada e **escalamento humano** perante conflito/informação inconclusiva. **Afirmações centrais não verificadas deixam a peça bloqueada para publicação**, com problema/trecho/fonte visíveis; aprovação editorial genérica não elimina bloqueio factual.
+
+Uma correção de data/número/facto, texto em cena, legenda, voz, título ou CTA pede **nova versão/hash e QA das dependências afetadas**, sem regeneração total quando bastar alteração localizada P7-B. Os comentários por timestamp P8-B referem a versão que contém a afirmação; QA por variante P15-B aplica-se à copy e aos hooks específicos. O máximo de três tentativas P9-B permanece **por ronda de revisão**, sem contabilizar «mais tentativas» por existirem vários factos; caso persistam incertezas, parar e mostrar relatório factual sem marcar publicável. Ver [FACT_CHECK.md](FACT_CHECK.md).
+
 ## Segurança, custos e idempotência
 
 - Revisões não podem implicar uso de fornecedor pago/novas APIs sem aprovação. Se a mudança exigir gastar ou regravar o vídeo todo, sinalizar impacto/custo antes de executar despesas relevantes.
