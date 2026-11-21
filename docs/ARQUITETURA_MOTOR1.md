@@ -1,6 +1,6 @@
 # Motor 1 partilhado com especialização e memória por projeto — decisão arquitetural
 
-> **DECIDIDO a 21/11/2026:** existe **um único núcleo técnico de Motor 1 — Intelligence**, reutilizado por todos os projetos Social elegíveis do Nexus. Cada projeto recebe a sua **instância lógica de execução**, com identidade, contexto, estratégia, fontes, memória, scoring, limites e resultados **isolados**. Não há um código ou infraestrutura independente por marca nem um agente LLM residente por projeto. **Registo arquitetural, não implementação.**
+> **SG-D060 — DECIDIDO a 21/11/2026:** existe **um único núcleo técnico de Motor 1 — Intelligence**, reutilizado por todos os projetos Social elegíveis do Nexus. Cada projeto recebe a sua **instância lógica de execução**, com identidade, contexto, estratégia, fontes, memória, scoring, limites e resultados **isolados**. Não há um código ou infraestrutura independente por marca nem um agente LLM residente por projeto. **Registo arquitetural, não implementação.**
 
 ## 1. Estrutura
 
@@ -63,6 +63,6 @@ Exemplo: **The Hidden Layer** procura histórias com boas fontes, narrativa e au
 
 ## 6. Estado e próximo passo
 
-**Entrevista de produto encerrada em 21/11/2026** a pedido do utilizador: decisões suficientes para **consolidar e transformar em MVP por fases**. Isso **não autoriza implicitamente implementar código, contratar fornecedores, executar pesquisa real ou publicar**. Antes de F1: rever alinhamento Nexus e prioridades do MVP; depois implementar e testar incrementos pequenos. Não continuar a inventar perguntas de arquitetura como bloqueio ao desenvolvimento.
+**SG-D061 — entrevista de produto encerrada em 21/11/2026** a pedido do utilizador: decisões suficientes para **consolidar e transformar em MVP por fases**. Isso **não autoriza implicitamente implementar código, contratar fornecedores, executar pesquisa real ou publicar**. Antes de F1: rever alinhamento Nexus e prioridades do MVP; depois implementar e testar incrementos pequenos. Não continuar a inventar perguntas de arquitetura como bloqueio ao desenvolvimento.
 
 Ver [DECISOES.md](DECISOES.md), [PROJETOS.md](PROJETOS.md), [MOTORES.md](MOTORES.md), [CICLO_TEMAS.md](CICLO_TEMAS.md), [ALINHAMENTO_CONTRATO_V1.md](ALINHAMENTO_CONTRATO_V1.md), [ROADMAP.md](ROADMAP.md).
