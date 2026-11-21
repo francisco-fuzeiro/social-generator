@@ -75,11 +75,19 @@ M1 indica **plataformas de maior potencial para cada tema** com base em audiênc
 
 ## 5.3. P17-B — recomendações adaptativas de horário, só após produção
 
-**No primeiro gate escolhem-se só temas**, sem horários ou calendários. **Depois de M2 produzir**, a proposta de calendário mostra **dia/hora por conta e plataforma**, considerando **histórico real do M4 quando disponível, público/fuso, formato, prazo de campanha e posts confirmados existentes no Postiz**. Quando não existem métricas suficientes, mostrar **heurística/estimativa claramente identificada**, nunca inventar o «melhor horário». Explicar a recomendação, indicar fonte/certeza e **sinalizar conflitos**, sem alterar posts já agendados no Postiz. O operador pode **alterar tudo** no segundo gate; só horário/conta/plataforma/versão aprovados seguem ao Motor 3. A cadência semanal e limites de volume ficam para P18. Contrato [HORARIOS.md](HORARIOS.md).
+**No primeiro gate escolhem-se só temas**, sem horários ou calendários. **Depois de M2 produzir**, a proposta de calendário mostra **dia/hora por conta e plataforma**, considerando **histórico real do M4 quando disponível, público/fuso, formato, prazo de campanha e posts confirmados existentes no Postiz**. Quando não existem métricas suficientes, mostrar **heurística/estimativa claramente identificada**, nunca inventar o «melhor horário». Explicar a recomendação, indicar fonte/certeza e **sinalizar conflitos**, sem alterar posts já agendados no Postiz. O operador pode **alterar tudo** no segundo gate; só horário/conta/plataforma/versão aprovados seguem ao Motor 3. **P18-B define a cadência adaptativa; P19-B orienta a recuperação de défices sem impor mais publicações.** Contrato [HORARIOS.md](HORARIOS.md).
 
 ## 5.4. Cadência semanal P18-B — recomendação, nunca obrigação de produzir
 
 M1 **propõe frequência de conteúdos/publicações semanal por projeto e plataforma** com base em objetivos, campanhas, tendências, desempenho anterior e capacidade real M2/Nexus. O operador **define mínimos/máximos e pode ajustar as metas**. A proposta não produz conteúdos, não converte sugestões em temas selecionados, não permite usar temas sem evidência para preencher quotas e não altera posts Postiz. Se houver défice de temas selecionados ou capacidade, mostrar razão/limitações sem inventar aprovação. **No gate inicial continuam a selecionar-se apenas temas**, sem datas/horas; a distribuição e os horários detalhados só entram no segundo gate pós-produção (P17-B). Ver [HORARIOS.md](HORARIOS.md) §1.1.
+
+## 5.5. Recuperação de défice — P19-B (DECIDIDO)
+
+Se a cadência P18-B for inalcançável por falta de temas credíveis/aprovados ou capacidade M2, o Motor 1 deve **procurar alternativas editoriais de qualidade**, incluindo evergreen fundamentados, **novos ângulos substantivamente distintos** e oportunidades anteriores **revalidadas** com fontes/data. Pode aprofundar investigação dentro de quotas do Nexus, sem custo pago não autorizado. A descoberta adicional mantém **validação máxima de 7 dias** desde a última validação, as regras de lotes **≥5 quando houver temas verdadeiramente distintos** (caso contrário declarar insuficiência) e o primeiro gate **exclusivo de escolha humana de temas**, sem calendário.
+
+**Não fabricar variedade:** um tema histórico não pode ser oferecido como atual sem nova verificação; duas versões sem diferença editorial real não contam como temas novos só para atingir a meta. Distinguir na ficha `novo / evergreen / revalidado` com proveniência. Os resultados são propostas, não aprovações ou ordens de render.
+
+**Quando faltar qualidade/capacidade mesmo depois da pesquisa**, reportar `cadencia-inferior` com número de temas disponíveis, motivo, incerteza e sugestão de ajustar a meta, sem alterar limites humanos, produzir automaticamente ou mexer no Postiz. Ver [HORARIOS.md](HORARIOS.md) §1.2. **P20 ainda por decidir:** regras de repetição semântica vs. revisita de temas publicados.
 
 ## 6. Testes de aceitação mínimos
 
