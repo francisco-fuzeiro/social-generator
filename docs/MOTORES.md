@@ -40,6 +40,12 @@ Investigar:
 
 M1 recomenda **metas de conteúdos/publicações por semana, separadas por projeto Nexus Social e plataforma**, dentro de **mínimos/máximos definidos e ajustáveis pelo operador**. Considera objetivos, tendências e oportunidades, métricas reais M4, campanhas, agenda e **capacidade/quota provada do Motor 2/Nexus**, com justificação e incerteza. A falta de dados não justifica precisão falsa. Uma meta não constitui tema aprovado e **não inicia renders nem publicação**. Quando o mínimo não for alcançável por temas de qualidade ou capacidade, apresentar défice/limitação em vez de inventar conteúdos. Mantém-se o gate 1 **apenas para escolher temas**; a meta semanal não antecipa a proposta de datas/horas do gate 2, após produção. Contrato [HORARIOS.md](HORARIOS.md) §1.1.
 
+### Alternativas de qualidade perante défice — P19-B (DECIDIDO)
+
+Quando as metas semanais de P18-B não puderem ser cumpridas por falta de temas aprovados/viáveis, o Motor 1 realiza **investigação complementar seletiva e limitada em recursos** para propor **temas evergreen, novos ângulos editoriais com diferenças substantivas e oportunidades históricas revalidadas com fontes e datas**. Não reclassificar automaticamente tema caducado como vigente: manter a validade **até sete dias a contar da última validação** e as regras de lotes com cinco temas distintos/insuficiência declarada. Evidência e confiança obrigatórias, incluindo histórico e risco de duplicação. **O utilizador decide temas no gate 1; a investigação não autoriza produção nem publicação.**
+
+Se a investigação não trouxer opções suficientemente fortes, qualidade/recursos impedirem a produção ou o utilizador não aprovar alternativas, **assinalar défice e aceitar semana com menos posts**, mostrando causa e eventual sugestão de ajustar a cadência, sem alterar limites do operador. Nunca usar fornecedores pagos não autorizados nem alterar o Postiz. Ver [HORARIOS.md](HORARIOS.md) §1.2 e [CICLO_TEMAS.md](CICLO_TEMAS.md) §5.5.
+
 ### Plataformas recomendadas por tema — P16-B (DECIDIDO)
 
 Motor 1 deve recomendar **as redes mais adequadas ao tema e projeto Social**, não todas as redes configuradas por defeito. Usar público e contexto editorial, formatos e duração, tendências verificáveis, histórico comparável do Motor 4, capacidade de produção e elegibilidade de conta/canal. Registar **origem, razão e confiança**; não inventar métricas ou afirmar capacidade de API não testada. A ficha pode apresentar redes **recomendadas** e outras **não selecionadas** com limitações quando relevante. A escolha do tema no primeiro gate **não exige selecionar redes definitivas nem calendário**; M2 apenas inicia variantes dos destinos recomendados e elegíveis. Na revisão pós-produção o utilizador pode acrescentar ou remover destinos, pedindo QA/produção adicionais antes do segundo gate. Contrato [VARIANTES.md](VARIANTES.md).
@@ -67,6 +73,8 @@ O Motor 1 mantém **recomendações gerais e contínuas para cada projeto Social
 ## Motor 2 — Production
 
 **Pré-condição:** projeto Nexus adicionado ao Social, ativo, configuração e branding completos, conta/formatos permitidos e oportunidade aprovada para a versão atual.
+
+**P19-B:** a investigação adicional do Motor 1 **não acrescenta trabalho à fila de M2** até o operador selecionar explicitamente temas novos. Um défice de cadência **não** suspende QA, não reduz critérios editoriais e não provoca renders repetidos para preencher a meta.
 
 **P18-B:** metas semanais por projeto/plataforma são **objetivos indicativos**, não ordens para renderizar. A fila automática recebe apenas temas efetivamente selecionados no primeiro gate; capacidade insuficiente ou limites/QA não cumpridos devem gerar estado de défice e decisão humana, nunca criação automática para preencher quota.
 
