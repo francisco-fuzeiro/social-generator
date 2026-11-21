@@ -241,6 +241,20 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **P19-B fecha a política de défice; P20 deverá decidir a deteção de redundância e revisita de temas já publicados.** Ver [HORARIOS.md](HORARIOS.md) §1.2 e [CICLO_TEMAS.md](CICLO_TEMAS.md) §5.5.
 
+## Deteção de repetição e revisitas com valor — P20-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R115 | Memória editorial por projeto Nexus | M1 compara semanticamente cada oportunidade com peças **publicadas, agendadas e aprovadas/em produção quando disponíveis** do mesmo projeto, com isolamento de marcas e referências reais |
+| R116 | Comparação por significado e ângulo | Detetar sobreposição de pergunta, mensagem, factos e ângulo, não apenas título/palavras-chave; distinguir assunto amplo de duplicação efetiva |
+| R117 | Explicar semelhanças ao operador | A proposta mostra ID/link, data/estado e resumo dos conteúdos relacionados, motivos de similitude e incerteza do diagnóstico |
+| R118 | Revisita só com valor acrescentado fundamentado | Tema conhecido só regressa às recomendações quando há **nova evidência, perspetiva substantivamente diferente, atualização ou aprofundamento**, identificando fontes e diferenças |
+| R119 | Qualidade de lotes e recuperação P19 | Reformulações triviais não contam como temas independentes para atingir cinco recomendações nem preencher cadência; revisitas respeitam validade/revalidação temática de 7 dias |
+| R120 | Variantes e revisões não são novos temas | Publicações multirrede da mesma peça-base ou correções de versão conservam identidade editorial; não bloquear criação de variante por falsa duplicação |
+| R121 | Seleção humana preservada | M1 nunca converte avaliação de novidade em tema aprovado ou publicação; operador seleciona no primeiro gate e os pacotes seguem gate final/Postiz; falta de histórico é assinalada sem falsa certeza |
+
+**P20-B não define um limiar numérico de similaridade nem obriga a bloquear para sempre um assunto já abordado.** Ver [MEMORIA_EDITORIAL.md](MEMORIA_EDITORIAL.md). **P21:** política específica de evidências e validação factual por risco editorial.
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
