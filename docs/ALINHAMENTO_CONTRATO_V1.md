@@ -211,6 +211,16 @@ O operador pode **modificar livremente dias/horas/contas/canais/ordem antes do s
 
 **Modelo técnico PROPOSTO:** `ScheduleSuggestion` ligada a `variantVersionId`, `accountId`, `platform`, data/hora/fuso, instante UTC, evidência, `confidence`, `basis=observed|heuristic`, data do snapshot Postiz, `conflicts` e edição humana. Adaptadores e pesos dependem de provas API/analytics; **sem autorização para nova ferramenta paga, publicar ou executar scheduler Nexus**. A cadência semanal de publicações é tema da P18. Ver [HORARIOS.md](HORARIOS.md).
 
+## 2.17. P18-B — cadência semanal adaptativa sob limites do operador (DECIDIDO)
+
+**Recomendação de volume, não ação:** o Motor 1 sugere uma **meta semanal de conteúdos/publicações por projeto Nexus Social e por plataforma**, com base nos **objetivos, campanhas, tendências, observações reais do Motor 4 e capacidade comprovada do Motor 2/Nexus**. O operador define **mínimos e máximos por projeto/plataforma** e pode alterar os limites ou a proposta. Não aplicar a mesma cadência rígida a todas as marcas; não inventar quantidades numéricas ainda não fornecidas. Distinguir **conteúdos únicos** das variantes/distribuições por rede para não contar duas vezes a produção.
+
+**Gates preservados:** uma meta semanal **não autoriza selecionar temas, produzir sem aprovação do gate 1, ultrapassar QA/custos, publicar sem gate 2 nem modificar posts já agendados no Postiz**. Se os temas aprovados, recursos ou requisitos de qualidade não chegarem para o mínimo, mostrar **défice e causa**, não preencher automaticamente com temas de qualidade inferior. A política de apresentar novas alternativas em caso de défice será decidida na P19.
+
+**Separar frequência de horários:** P18-B propõe **quantos** posts em cada semana/rede; P17-B propõe **quando** publicar cada pacote, **apenas após produção**, com validação humana de versão/hash, plataforma, conta, copy e data/hora. Motor 3 usa exclusivamente o Postiz para agendamento/execução. Métricas de publicação têm de separar planeadas, selecionadas, produzidas, agendadas confirmadas e publicadas confirmadas.
+
+**Contrato técnico PROPOSTO:** `CadencePolicy` por `nexusProjectId+platform(+accountId?)` (`min/max` semanais configurados e versão), `CadenceProposal` com razões, dados M4, orçamento/capacidade, `confidence`, ajuste humano e défice. Esquema, tipos de semana/timezones, números e algoritmo ficam para validação, não são implementação. Ver [HORARIOS.md](HORARIOS.md) §1.1.
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
