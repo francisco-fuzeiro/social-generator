@@ -47,6 +47,12 @@ Para sugerir **dias e horas por conta/plataforma depois da produção**, o M4 di
 
 Recomendações devem ainda considerar **audiência/fuso, tipo de conteúdo, campanha e agenda Postiz existente**. O M4 **não** seleciona automaticamente dias/horas finais, não modifica agenda, não publica e não inventa métricas. A sugestão editável entra apenas no segundo gate humano. Ver [HORARIOS.md](HORARIOS.md).
 
+## 1.5. Cadência semanal adaptativa P18-B (DECIDIDO)
+
+Para sugerir **quantidade de publicações por semana por projeto/plataforma**, M4 fornece métricas reais com proveniência, denominadores, janelas comparáveis, resultados por formatos e tendências de campanha, além de capacidade/custo quando observados. A recomendação M1 respeita **limites mínimos e máximos definidos pelo operador**, e a capacidade comprovada do Motor 2/Nexus. Não interpretar correlação entre cadência e desempenho como causalidade demonstrada; ausência de dados implica sinalização de incerteza, não alvo «ótimo» inventado.
+
+**Cadência é meta, não autorização:** um número semanal não inicia produção de temas não aprovados, não dispensa gate final e não modifica agenda Postiz. Distinguir desempenho do **plano** (sugerido, selecionado, produzido, agendado confirmado e publicado comprovado), relatando défices sem duplicar publicações nem confundir redes. Ver [HORARIOS.md](HORARIOS.md) §1.1.
+
 ## 2. Catálogo mínimo
 
 | Grupo | Métricas / eventos candidatos | Observações |
