@@ -53,6 +53,12 @@ Para sugerir **quantidade de publicações por semana por projeto/plataforma**, 
 
 **Cadência é meta, não autorização:** um número semanal não inicia produção de temas não aprovados, não dispensa gate final e não modifica agenda Postiz. Distinguir desempenho do **plano** (sugerido, selecionado, produzido, agendado confirmado e publicado comprovado), relatando défices sem duplicar publicações nem confundir redes. Ver [HORARIOS.md](HORARIOS.md) §1.1.
 
+## 1.6. Memória editorial semântica P20-B (DECIDIDO)
+
+O Motor 4 fornece ao Motor 1 **histórico e metadados comprováveis** das peças/publicações do mesmo projeto Nexus: tema, ângulo, afirmações centrais quando disponíveis, tipo/versão da peça-base, canais, data, estado real e resultados observados, com proveniência. **P20-B** requer comparar essas informações **semanticamente** antes de recomendar novas oportunidades, mostrando conteúdos semelhantes e justificando **novas evidências, perspetivas diferentes, atualizações relevantes ou aprofundamento**.
+
+**Não confundir distribuição com repetição editorial:** uma peça-base com variantes em redes diferentes é uma ideia, mesmo que as publicações e métricas sejam separadas. Resultados/engagement da peça antiga são sinais históricos, mas não provam que uma repetição vá funcionar ou que haja novidade. Nenhuma memória de outra marca se torna base factual privada para este projeto; agregações permitidas preservam isolamento. **M4 não aprova temas nem bloqueia publicações.** Ver [MEMORIA_EDITORIAL.md](MEMORIA_EDITORIAL.md).
+
 ## 2. Catálogo mínimo
 
 | Grupo | Métricas / eventos candidatos | Observações |
