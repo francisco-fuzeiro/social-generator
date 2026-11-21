@@ -1,0 +1,741 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:social-generator:wiki:project-knowledge:1.0.0",
+  "title": "Social Generator — WikiProjectManifest v1.0.0",
+  "description": "Especificação de documentação, não autorização ou implementação Nexus.",
+  "$ref": "#/$defs/WikiProjectManifest",
+  "$defs": {
+    "LogicalRef": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$",
+      "maxLength": 160
+    },
+    "Rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "allowedUses"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "cleared",
+            "restricted",
+            "unknown"
+          ]
+        },
+        "allowedUses": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "licenseRef": {
+          "$ref": "#/$defs/LogicalRef"
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "KnowledgeSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "kind",
+        "locatorRef",
+        "capturedAt",
+        "confidence",
+        "rights"
+      ],
+      "properties": {
+        "sourceId": {
+          "$ref": "#/$defs/LogicalRef"
+        },
+        "kind": {
+          "enum": [
+            "nexus",
+            "repository",
+            "website",
+            "asset",
+            "manual",
+            "research",
+            "analytics",
+            "other"
+          ]
+        },
+        "locatorRef": {
+          "$ref": "#/$defs/LogicalRef"
+        },
+        "publicUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "sourceVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capturedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "unknown"
+          ]
+        },
+        "rights": {
+          "$ref": "#/$defs/Rights"
+        }
+      }
+    },
+    "AssetReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resourceId",
+        "kind",
+        "sourceIds",
+        "rights"
+      ],
+      "properties": {
+        "resourceId": {
+          "$ref": "#/$defs/LogicalRef"
+        },
+        "kind": {
+          "enum": [
+            "logo",
+            "font",
+            "graphic",
+            "image",
+            "audio",
+            "video",
+            "template",
+            "other"
+          ]
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogicalRef"
+          },
+          "uniqueItems": true
+        },
+        "rights": {
+          "$ref": "#/$defs/Rights"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "usage": {
+          "type": "string"
+        }
+      }
+    },
+    "Audience": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "sourceIds"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "markets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "needs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogicalRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "Feature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "status",
+        "sourceIds"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "implemented_verified",
+            "planned",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogicalRef"
+          },
+          "uniqueItems": true
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "ProjectKnowledgeProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "revision",
+        "vision",
+        "mission",
+        "positioning",
+        "audiences",
+        "productSummary",
+        "features",
+        "technicalSummary",
+        "sourceIds"
+      ],
+      "properties": {
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mission": {
+          "type": "string",
+          "minLength": 1
+        },
+        "positioning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "audiences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Audience"
+          },
+          "minItems": 1
+        },
+        "productSummary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Feature"
+          }
+        },
+        "technicalSummary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonicalTechnicalRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogicalRef"
+          },
+          "uniqueItems": true
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogicalRef"
+          },
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "DesignSystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "revision",
+        "identity",
+        "tokens",
+        "assetRefs",
+        "visualRules"
+      ],
+      "properties": {
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "kind",
+              "value",
+              "sourceIds"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "color",
+                  "typography",
+                  "grid",
+                  "spacing",
+                  "component",
+                  "other"
+                ]
+              },
+              "value": {
+                "type": [
+                  "string",
+                  "number"
+                ]
+              },
+              "usage": {
+                "type": "string"
+              },
+              "sourceIds": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/LogicalRef"
+                },
+                "uniqueItems": true
+              }
+            }
+          }
+        },
+        "assetRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AssetReference"
+          }
+        },
+        "visualRules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "accessibilityRules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "notApplicable": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogicalRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "ContentMotionSystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "revision",
+        "formats",
+        "storytelling",
+        "motionRules",
+        "captions",
+        "audio",
+        "templates"
+      ],
+      "properties": {
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "formatId",
+              "kind",
+              "hook",
+              "structure"
+            ],
+            "properties": {
+              "formatId": {
+                "$ref": "#/$defs/LogicalRef"
+              },
+              "kind": {
+                "enum": [
+                  "video",
+                  "carousel",
+                  "static",
+                  "text",
+                  "other"
+                ]
+              },
+              "hook": {
+                "type": "string",
+                "minLength": 1
+              },
+              "structure": {
+                "type": "string",
+                "minLength": 1
+              },
+              "tempo": {
+                "type": "string"
+              },
+              "durationSeconds": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "intendedPlatforms": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "sourceIds": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/LogicalRef"
+                },
+                "uniqueItems": true
+              }
+            }
+          },
+          "minItems": 1
+        },
+        "storytelling": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "motionRules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "captions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "thumbnails": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "audio": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode",
+            "rightsRule"
+          ],
+          "properties": {
+            "mode": {
+              "enum": [
+                "narration",
+                "music",
+                "silent",
+                "mixed",
+                "not_applicable"
+              ]
+            },
+            "rightsRule": {
+              "type": "string",
+              "minLength": 1
+            },
+            "voiceResourceRef": {
+              "$ref": "#/$defs/LogicalRef"
+            },
+            "languages": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "templates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AssetReference"
+          }
+        },
+        "qaRules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "notApplicable": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogicalRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "EditorialStrategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "revision",
+        "positioning",
+        "audiences",
+        "goals",
+        "pillars",
+        "voiceAndTone",
+        "intendedPlatforms",
+        "sourceIds"
+      ],
+      "properties": {
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "positioning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "audiences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Audience"
+          },
+          "minItems": 1
+        },
+        "goals": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "pillars": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "voiceAndTone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "storytellingRules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "intendedPlatforms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "formatPreferences": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "ctaPolicy": {
+          "type": "string"
+        },
+        "claimRestrictions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "campaignRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogicalRef"
+          },
+          "uniqueItems": true
+        },
+        "metricRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogicalRef"
+          },
+          "uniqueItems": true
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LogicalRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "WikiProjectManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "socialProjectId",
+        "nexusProjectRef",
+        "approvedRevision",
+        "approvalRecordRef",
+        "approvedAt",
+        "documentaryValidation",
+        "generatedAt",
+        "sources",
+        "profile",
+        "designSystem",
+        "contentMotionSystem",
+        "editorialStrategy",
+        "wikiPages"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "1.0.0"
+        },
+        "socialProjectId": {
+          "$ref": "#/$defs/LogicalRef"
+        },
+        "nexusProjectRef": {
+          "$ref": "#/$defs/LogicalRef"
+        },
+        "approvedRevision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approvalRecordRef": {
+          "$ref": "#/$defs/LogicalRef"
+        },
+        "approvedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "documentaryValidation": {
+          "const": "passed"
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/KnowledgeSource"
+          },
+          "minItems": 1
+        },
+        "profile": {
+          "$ref": "#/$defs/ProjectKnowledgeProfile"
+        },
+        "designSystem": {
+          "$ref": "#/$defs/DesignSystem"
+        },
+        "contentMotionSystem": {
+          "$ref": "#/$defs/ContentMotionSystem"
+        },
+        "editorialStrategy": {
+          "$ref": "#/$defs/EditorialStrategy"
+        },
+        "wikiPages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^wiki/projetos/[A-Za-z0-9._-]+/[A-Za-z0-9._/-]+\\.md$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

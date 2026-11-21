@@ -1,5 +1,12 @@
 # Sessões — Social Generator
 
+## 2026-11-21 — SG-W001: contrato Wiki v1
+
+**TL;DR:** Complementada a Wiki existente com JSON Schema v1 para seis tipos independentes de Nexus, modelo de arquitetura e lint sem dependências. Decisões SG-D062–SG-D069 preservadas. Zero dossiers reais. Onboarding, operações Ingest/Query/Lint e motores permanecem por implementar.
+
+- Âmbito: Social Generator, somente documentação e contratos.
+- Dependências: identidade/aprovação/permissões Nexus, revisão e publicação recuperável.
+
 ## 2026-11-21 — Wiki central: SG-D062 a SG-D069
 
 **TL;DR:** Documentada a Wiki única do Social Generator, exclusivamente para projetos Nexus Social com configuração inicial aprovada. Design System, Content/Motion System, estratégia, produto e arquitetura relevante passam a ser preparados durante o onboarding. Páginas e manifestos partilham revisão; ativação separada. Criados modelos; sem onboarding funcional ou dossiers reais.

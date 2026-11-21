@@ -1,6 +1,10 @@
 # Contrato documental da Wiki — v1
 
-**Decisões aprovadas:** SG-D062 a SG-D069. **Por implementar:** integração Nexus, geração de dossiers, Ingest, Query e Lint. Os campos exatos dos schemas técnicos ainda dependem da revisão dos contratos Nexus.
+**Decisões aprovadas:** SG-D062 a SG-D069. **Por implementar:** integração Nexus, geração de dossiers, Ingest, Query e Lint. Interfaces reais Nexus ainda não verificadas.
+
+## Especificação estruturada independente v1
+
+Ver [contratos e dependências](contratos/README.md) e [JSON Schema](contratos/v1/project-knowledge.schema.json). Seis tipos versionados descrevem perfil, Design System, Content/Motion System, estratégia editorial, fontes e manifesto do dossier. **O schema valida forma, nunca aprovação humana.** Antes de publicar, o futuro publicador deve comprovar junto do Nexus identidade, permissões, aprovação/revisão, proveniência/direitos, coerência entre secções e manifesto operacional, isolamento e ausência de dados privados. Essas operações não estão implementadas.
 
 ## Fontes de verdade
 

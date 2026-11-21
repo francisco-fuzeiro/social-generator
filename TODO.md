@@ -10,6 +10,8 @@
 - [x] Consolidar visão, requisitos, decisões, motores, métricas, perfis, biblioteca e roadmap no GitHub.
 - [x] Preparar **adenda documental** ao contrato v1 em docs/ALINHAMENTO_CONTRATO_V1.md (reconstrução, não cópia literal da adenda anterior).
 - [x] **SG-D062–SG-D069:** Wiki central, modelos de Design/Motion System e decisões registadas (documentação; onboarding funcional pendente).
+- [x] **SG-W001:** esquema v1 seis tipos, modelo técnico e lint local documental.
+- [ ] **Integração Nexus Wiki:** confirmar APIs, catálogo/IDs, permissão de fontes, aprovações e revisão; geração recuperável, Ingest/Query/Lint e testes reais.
 - [ ] **Rever adenda com Codex/Nexus** e reconciliar com secção 8 de `C:/Claude/nexus/plans/social-generator-f0.md`; sem implementar enquanto contrato não for validado.
 - [ ] **Validação do Francisco antes da SG-M001** ou da primeira missão F1.1.
 - [ ] Recuperar e confrontar os dois documentos originais completos do ChatGPT, caso sejam disponibilizados (SOCIAL_GENERATOR.md 489 linhas; adenda 284 linhas).

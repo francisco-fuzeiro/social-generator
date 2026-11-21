@@ -9,6 +9,7 @@ Esta é **a única Wiki do Social Generator**: conhecimento do sistema e dos pro
 - [Projetos configurados](projetos/index.md)
 - [Documentação do sistema](sistema/index.md)
 - [Regras e contrato documental](SCHEMA.md)
+- [Contratos versionados](contratos/README.md)
 - [Modelos para onboarding](modelos/index.md)
 - [Histórico](log.md)
 

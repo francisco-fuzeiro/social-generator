@@ -34,6 +34,8 @@
 - [x] **SG-D060:** um único núcleo M1 para todos os projetos, com **instâncias lógicas e contexto/memória/scoring isolados por projeto Nexus**, sem agentes LLM residentes/forks. [ARQUITETURA_MOTOR1.md](ARQUITETURA_MOTOR1.md).
 - [x] **SG-D061:** entrevista encerrada a pedido do utilizador; seguir consolidação e MVP incremental, sem autorizar implementação por inferência.
 - [x] **SG-D062 a SG-D069:** decisões da Wiki central e modelos documentais criados; integração de onboarding e Ingest/Query/Lint ainda por implementar.
+- [x] **SG-W001:** contratos Wiki v1 e verificador estrutural; sem onboarding funcional.
+- [ ] **Integração Nexus Wiki:** verificar API de identidade/aprovação, criar dossier transacional com revisão comum e implementar Ingest/Query/Lint e testes de isolamento.
 - [ ] **Revisão técnica do contrato v1 no Nexus** (a adenda funcional já incorpora a entrevista). Alinhar catálogos, integrações e testes antes de F1.1.
 - [ ] Recuperar ficheiros originais SOCIAL_GENERATOR.md (489 linhas) e adenda (284 linhas), se disponíveis, e reconciliar diferenças sem os fazer passar por recuperados.
 - [ ] Verificar segredos antes de novos commits, especialmente enquanto repo público.
