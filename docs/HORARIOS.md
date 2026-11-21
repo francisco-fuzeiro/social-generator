@@ -92,8 +92,8 @@ Quando a cadência semanal sugerida/definida em P18-B não for exequível por **
 9. Sugestões identificam o fuso e são seguras quanto a mudanças de horário de verão; sem converter um horário ambíguo silenciosamente.
 10. Uma alteração posterior da agenda de post **já entregue** faz-se diretamente no Postiz e sincroniza depois no Nexus.
 
-## 5. Próxima decisão da entrevista — P20
+## 5. Decisão de memória editorial — P20-B
 
-**P19-B fechado:** procurar alternativas evergreen, novos ângulos e históricos revalidados para aprovação humana; aceitar cadência inferior se a qualidade/capacidade não chegar. **P20 pendente:** como evitar propostas repetidas ou conteúdos demasiado semelhantes aos já publicados, sem impedir revisitar assuntos úteis com novos ângulos?
+**P19-B fechado:** procurar alternativas evergreen, novos ângulos e históricos revalidados para aprovação humana; aceitar cadência inferior se a qualidade/capacidade não chegar. **P20-B decidido:** M1 deve comparar semanticamente novos temas com o histórico e só recomendar revisitas com valor editorial adicional verificável, mantendo aprovação humana e os limites da cadência. Ver [MEMORIA_EDITORIAL.md](MEMORIA_EDITORIAL.md).
 
 Referências: [DECISOES.md](DECISOES.md), [CICLO_TEMAS.md](CICLO_TEMAS.md), [POSTIZ.md](POSTIZ.md), [METRICAS.md](METRICAS.md), [ALINHAMENTO_CONTRATO_V1.md](ALINHAMENTO_CONTRATO_V1.md).
