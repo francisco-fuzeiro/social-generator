@@ -36,6 +36,10 @@ Investigar:
 
 **Ritmo de referência:** pesquisa leve diária, síntese semanal com oportunidades recomendadas. Implementação de agendamento só quando demonstrada no Nexus; pesquisa manual na fase inicial.
 
+### Cadência semanal adaptativa — P18-B (DECIDIDO)
+
+M1 recomenda **metas de conteúdos/publicações por semana, separadas por projeto Nexus Social e plataforma**, dentro de **mínimos/máximos definidos e ajustáveis pelo operador**. Considera objetivos, tendências e oportunidades, métricas reais M4, campanhas, agenda e **capacidade/quota provada do Motor 2/Nexus**, com justificação e incerteza. A falta de dados não justifica precisão falsa. Uma meta não constitui tema aprovado e **não inicia renders nem publicação**. Quando o mínimo não for alcançável por temas de qualidade ou capacidade, apresentar défice/limitação em vez de inventar conteúdos. Mantém-se o gate 1 **apenas para escolher temas**; a meta semanal não antecipa a proposta de datas/horas do gate 2, após produção. Contrato [HORARIOS.md](HORARIOS.md) §1.1.
+
 ### Plataformas recomendadas por tema — P16-B (DECIDIDO)
 
 Motor 1 deve recomendar **as redes mais adequadas ao tema e projeto Social**, não todas as redes configuradas por defeito. Usar público e contexto editorial, formatos e duração, tendências verificáveis, histórico comparável do Motor 4, capacidade de produção e elegibilidade de conta/canal. Registar **origem, razão e confiança**; não inventar métricas ou afirmar capacidade de API não testada. A ficha pode apresentar redes **recomendadas** e outras **não selecionadas** com limitações quando relevante. A escolha do tema no primeiro gate **não exige selecionar redes definitivas nem calendário**; M2 apenas inicia variantes dos destinos recomendados e elegíveis. Na revisão pós-produção o utilizador pode acrescentar ou remover destinos, pedindo QA/produção adicionais antes do segundo gate. Contrato [VARIANTES.md](VARIANTES.md).
@@ -63,6 +67,8 @@ O Motor 1 mantém **recomendações gerais e contínuas para cada projeto Social
 ## Motor 2 — Production
 
 **Pré-condição:** projeto Nexus adicionado ao Social, ativo, configuração e branding completos, conta/formatos permitidos e oportunidade aprovada para a versão atual.
+
+**P18-B:** metas semanais por projeto/plataforma são **objetivos indicativos**, não ordens para renderizar. A fila automática recebe apenas temas efetivamente selecionados no primeiro gate; capacidade insuficiente ou limites/QA não cumpridos devem gerar estado de défice e decisão humana, nunca criação automática para preencher quota.
 
 **P14-B:** a fila automática de produção usa as prioridades aceites para ordenar o trabalho selecionado **quando possível** e sempre sob os limites reais de capacidade/quota do Nexus. Ajustar prioridades não inicia produção de temas não escolhidos, não interrompe renders aprovados, não altera a agenda do Postiz e não concede custos adicionais.
 
@@ -137,6 +143,8 @@ Saídas: pacote e manifesto por versão, **ficheiros de projeto editáveis**, gu
 **Motor lógico aprovado, independente do mecanismo de publicação:** consome eventos/recibos e IDs comprovados do Motor 3/Postiz, recolhas próprias ou autorizadas de APIs de redes, métricas manuais, UTMs e eventos agregados de sites/apps. Se Postiz estiver indisponível, manter histórico e analisar dados já existentes sem afetar a agenda.
 
 **Entradas:** `PublicationStatusReceipt` (M3), `MetricSnapshot` (fontes de rede/Postiz com data), `ConversionEvent`, `CreativeMetadata`, custos e objetivos do projeto Nexus.
+
+**P18-B:** M4 fornece resultados reais/atribuição por projeto, plataforma e campanha para que M1 **proponha cadência semanal adaptativa sob limites humanos**. Não determina quotas sozinho, não produz temas e não força publicações quando a proposta não é viável.
 
 **P17-B:** o Motor 4 fornece **observações reais datadas de desempenho por conta/plataforma/horário**, com janelas, amostras e incerteza, para apoiar sugestões pós-produção; sem dados, sinaliza ausência e não inventa picos de audiência. Não escolhe horários de publicação autonomamente nem altera o calendário Postiz.
 
