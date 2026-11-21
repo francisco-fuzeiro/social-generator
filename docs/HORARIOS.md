@@ -1,6 +1,6 @@
 # Recomendações de dias e horários de publicação — contrato funcional
 
-> **Entrevistas P17-B e P18-B, 20/11/2026, DECIDIDO:** após o Motor 2 produzir cada peça/variante, o Social Generator apresenta na **revisão final** uma **proposta adaptativa de datas e horários por conta/plataforma**, justificada por dados quando disponíveis e marcada como **estimativa** quando não existirem. O operador pode alterar tudo antes de aprovar. Apenas depois do segundo gate o Motor 3 entrega pacotes aprovados ao Postiz, que mantém o scheduler e a execução. **P18-B adiciona recomendações de quantidade semanal por projeto/plataforma sob mínimos/máximos definidos pelo operador.** Esta é uma especificação, não uma implementação.
+> **Entrevistas P17-B, P18-B e P19-B (DECIDIDO):** após o Motor 2 produzir cada peça/variante, o Social Generator apresenta na **revisão final** uma **proposta adaptativa de datas e horários por conta/plataforma**, justificada por dados quando disponíveis e marcada como **estimativa** quando não existirem. O operador pode alterar tudo antes de aprovar. Apenas depois do segundo gate o Motor 3 entrega pacotes aprovados ao Postiz, que mantém o scheduler e a execução. **P18-B adiciona recomendações de quantidade semanal por projeto/plataforma sob mínimos/máximos definidos pelo operador.** Esta é uma especificação, não uma implementação.
 
 ## 1. Princípios e fronteiras
 
@@ -40,6 +40,29 @@ Para cada **projeto Nexus com Social ativo/configurado** e cada plataforma/conta
 6. Nova proposta de cadência não envia posts, não altera agendamentos anteriores nem modifica o calendário real do Postiz.
 7. O operador pode corrigir a cadência sugerida independentemente de escolher temas, e datas/horas só aparecem após produção e gate final.
 
+## 1.2. Recuperação de cadência com alternativas de qualidade — P19-B (DECIDIDO)
+
+Quando a cadência semanal sugerida/definida em P18-B não for exequível por **falta de temas selecionados, falta de temas de qualidade ou limites de produção**, o **Motor 1 pode aprofundar seletivamente a investigação** e **apresentar alternativas para escolha humana**:
+
+1. **Verificar o défice real** por projeto/plataforma, distinguindo metas de publicações, temas ainda não selecionados, peças em produção, capacidades de canais e posts já agendados/confirmados no Postiz. **Uma peça distribuída em várias redes não é automaticamente vários conteúdos criativos únicos**; não contar agendamentos não confirmados como publicados.
+2. Pesquisar **evergreen** relevantes para a marca/público, **novos ângulos** para assuntos fundamentados e ideias previamente investigadas que mereçam **revalidação**.
+3. Para uma ideia histórica, validar novamente fontes e contexto (e a marca/campanha atual), com **nova data e evidência**; a validade temática continua **até 7 dias após a última validação**. Uma ideia arquivada/desatualizada não volta a estar vigente só por existir défice.
+4. Mostrar **oportunidades adicionais fundamentadas** com proveniência, formato/CTA quando útil, confiança, esforço, prioridade e indicação de que são novas, evergreen ou revisitadas. Sinalizar repetição e **não apresentar várias reformulações triviais como temas distintos** apenas para satisfazer o mínimo de cinco por lote.
+5. **Apenas o operador escolhe temas** (gate 1). Produção M2, QA, revisão final e calendário seguem os gates existentes. A pesquisa não implica uma escolha automática, não gera render e não solicita datas/horas no gate 1.
+6. Se não houver suficientes alternativas fortes, o utilizador não aprovar temas, o orçamento/recursos forem insuficientes ou uma campanha tiver terminado, **aceitar uma cadência inferior**, com **défice factual, motivo e sugestão de ajustar temporariamente a meta**. O operador mantém o controlo sobre os limites; não alterar silenciosamente as suas preferências.
+
+**Limites:** o Motor 1 usa fontes permitidas e limites de CPU/tempo/quotas do Nexus, sem pesquisas de custo ilimitado, assinaturas ou APIs pagas não autorizadas. A recuperação não reduz requisitos de evidência, revisão factual e direitos, nem agenda posts por si só. **Postiz não é alterado** por um défice ou revalidação de tema.
+
+**Critérios de aceitação:**
+- Plano de quatro vídeos semanais com dois temas selecionados → M1 encontra e apresenta até onde houver alternativas reais; sem nova seleção humana, M2 continua só com os dois aprovados.
+- Tema evergreen com evidência recente pode ser sugerido, com fonte/data e ligação ao histórico; tema de 10 dias não é oferecido como vigente sem revalidação.
+- Três reformulações do mesmo assunto sem diferença editorial comprovável não contam como três temas distintos.
+- Se investigação não encontrar opções fiáveis, registar `insuficiente` e cadência inferior justificada em vez de inventar novos vídeos.
+- Custos/limites atingidos encerram a pesquisa adicional sem faturação nem novos renders; mostrar bloqueio/limitação.
+- Agenda Postiz existente continua intacta; estados agendado/publicado exigem confirmação independente.
+
+**Proposta técnica (não implementada):** `CadenceShortfall` (projeto, plataforma, meta, aprovados, capacidade, motivos, timestamp); `RecoveryResearchRun` (oportunidades, evidência, tipo evergreen/novo-ângulo/revalidado, custo, estado, decisão do operador). Política de gatilhos e orçamento de investigação por incidente ainda por provar.
+
 ## 2. Fluxo funcional
 
 1. M1 investiga e recomenda temas e plataformas por projeto ativo. Operador **escolhe temas apenas** (gate 1).
@@ -69,8 +92,8 @@ Para cada **projeto Nexus com Social ativo/configurado** e cada plataforma/conta
 9. Sugestões identificam o fuso e são seguras quanto a mudanças de horário de verão; sem converter um horário ambíguo silenciosamente.
 10. Uma alteração posterior da agenda de post **já entregue** faz-se diretamente no Postiz e sincroniza depois no Nexus.
 
-## 5. Próxima decisão da entrevista — P19
+## 5. Próxima decisão da entrevista — P20
 
-**P18-B fechado:** cadência semanal adaptativa com limites mínimos e máximos definidos pelo operador, sem criação ou publicação automáticas. **P19 em aberto:** quando faltam temas aprovados e capacidade para cumprir a cadência prevista, deve o sistema apresentar apenas o défice, sugerir alternativas de qualidade para aprovação ou preencher a meta autonomamente? A política não pode contrariar os dois gates.
+**P19-B fechado:** procurar alternativas evergreen, novos ângulos e históricos revalidados para aprovação humana; aceitar cadência inferior se a qualidade/capacidade não chegar. **P20 pendente:** como evitar propostas repetidas ou conteúdos demasiado semelhantes aos já publicados, sem impedir revisitar assuntos úteis com novos ângulos?
 
 Referências: [DECISOES.md](DECISOES.md), [CICLO_TEMAS.md](CICLO_TEMAS.md), [POSTIZ.md](POSTIZ.md), [METRICAS.md](METRICAS.md), [ALINHAMENTO_CONTRATO_V1.md](ALINHAMENTO_CONTRATO_V1.md).
