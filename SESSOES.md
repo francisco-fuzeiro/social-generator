@@ -1,5 +1,15 @@
 # Sessões — Social Generator
 
+## 2026-11-21 — Entrevista P20-B: memória semântica e revisitas de assuntos com novidade
+
+**TL;DR:** O utilizador escolheu P20-B. Motor 1 compara semanticamente propostas com o histórico de conteúdos do **mesmo projeto Nexus**, mostra publicações relacionadas e só recomenda revisitar o assunto com **valor editorial concreto** (evidência nova, ponto de vista diferente, atualização relevante ou aprofundamento). Não bloquear permanentemente um tema amplo, nem contar reformulações triviais como novos temas para lotes ≥5/cadência P19. Variantes multirrede da mesma peça-base não são repetição editorial. Sem histórico suficiente, assinalar incerteza. Primeiro gate continua a ser seleção humana de temas.
+
+- **Decisão:** SG-D057 em `docs/DECISOES.md`; novo contrato `docs/MEMORIA_EDITORIAL.md`.
+- **Documentação:** `docs/CICLO_TEMAS.md`, `docs/MOTORES.md`, `docs/METRICAS.md`, `docs/REQUISITOS.md`, `docs/ALINHAMENTO_CONTRATO_V1.md`, `docs/HORARIOS.md`, roadmap, TODO, visão.
+- **Estado:** documentação apenas; sem implementação de pesquisa semântica, embeddings, gastos, render ou publicação.
+- **P21:** política de QA factual e verificação de afirmações com escalamento por risco.
+
+
 ## 2026-11-21 — Entrevista P19-B: alternativas de qualidade perante défice
 
 **TL;DR:** O utilizador escolheu P19-B. Quando a cadência P18-B não for viável, Motor 1 pesquisa mais oportunidades **evergreen, novos ângulos substantivos e temas históricos revalidados** com evidência atual e validade de até 7 dias desde a última validação. Apresenta propostas **para o operador selecionar no gate 1**, sem render/pagamento/publicação automáticos. Se não existirem temas suficientemente bons ou recursos disponíveis, aceita a cadência inferior com défice/motivo transparente, sem alterar os limites definidos pelo operador nem agenda Postiz.
