@@ -245,9 +245,25 @@ Uma revisita pode ser **recomendada quando há valor editorial comprovável**: n
 
 **Alegações de maior risco** — finanças/fiscalidade, direito, medicina/segurança, história controversa, afirmações comerciais sensíveis — exigem melhor sustentação e **escalamento humano** de conflitos, dados insuficientes e ambiguidade. Distinguir factos de opinião/projeção. **Se uma afirmação essencial não estiver suficientemente verificada, a peça fica bloqueada no QA e não pode ser declarada pronta nem entregue ao Motor 3/Postiz**; apresentar ao operador a afirmação, problema, fontes e opção de revisão/correção/remoção ou reformulação honesta.
 
-O segundo gate mantém-se **após produção**, com prévias e relatório factual; não inserir obrigação de confirmar manualmente cada palavra. Revisões localizadas P7-B/P8-B geram novas versões/hashes e QA das dependências; **copy/título/hook de cada variante também precisam de verificação**, mesmo que a base tenha passado no QA. Respeitar limite P9-B e orçamento/quotas Nexus; ausência de fonte/acesso não conta como verificação realizada. **Ainda é decisão aberta P22** como expor as fontes ao público, sem prejudicar a rastreabilidade interna.
+O segundo gate mantém-se **após produção**, com prévias e relatório factual; não inserir obrigação de confirmar manualmente cada palavra. Revisões localizadas P7-B/P8-B geram novas versões/hashes e QA das dependências; **copy/título/hook de cada variante também precisam de verificação**, mesmo que a base tenha passado no QA. Respeitar limite P9-B e orçamento/quotas Nexus; ausência de fonte/acesso não conta como verificação realizada. **P22-B definiu fontes públicas adaptadas ao formato/canal, seletivas no ecrã e revistas no segundo gate**, sem prejudicar a rastreabilidade interna.
 
 **Schema técnico PROPOSTO:** `FactClaim`, `ClaimEvidence`, `FactCheckResult` com IDs de projeto, peça/variante/versão/hash, trecho, domínio, risco, confiança, origem/data/contexto, estados (confirmada/parcial/contestada/não-verificada) e bloqueio/decisão humana. Limiares e fornecedores não definidos nem implementados. Ver [FACT_CHECK.md](FACT_CHECK.md).
+
+## 2.21. P22-B — referências públicas adequadas a cada rede (DECIDIDO)
+
+O M2 preserva o **relatório factual interno por afirmação** (P21-B) e produz uma **seleção de fontes relevantes e publicáveis** para o espectador, preferencialmente em **descrição/caption, comentário fixado se suportado ou página de fontes se autorizada**, com referências **on-screen discretas e seletivas** para dados/afirmações sensíveis. Não citar obrigatoriamente cada frase em vídeo. Todos os links/fontes públicos, direitos e visibilidade são verificados para não revelar documentação interna/segredos/licenças incompatíveis; não assumir que Postiz fixa comentários ou que todas as redes tornam URLs clicáveis.
+
+A lista de referências e a apresentação visual fazem parte **do pacote por variante, conta e plataforma aprovado no gate 2**, com copy, versão/hash e horário. Alterações materiais exigem nova verificação/aprovação, e nenhuma bibliografia substitui o bloqueio de QA factual. Contrato [CITACOES_PUBLICAS.md](CITACOES_PUBLICAS.md).
+
+## 2.22. SG-D060 — um Motor 1 partilhado, instâncias lógicas por projeto (DECIDIDO)
+
+Nexus fornece a entidade canónica `nexusProjectId` e os limites/permissões. **Um único Motor 1 técnico**, com conectores, pesquisa, normalização e scoring configurável, atende múltiplos projetos Social, **sem instanciar um serviço/processo/agente residente por marca**. Cada tarefa carrega **contexto isolado** de branding, público/idioma, objetivos/KPIs, concorrentes/fontes autorizadas, campanhas, memória editorial, oportunidades, regras de scoring, custos e histórico. Guardar resultados/estado por ID do projeto e libertar os recursos no fim da execução.
+
+Não usar cwd, último projeto ativo ou cache partilhada sem escopo para selecionar marca. Agregação de padrões gerais só sem dados confidenciais. Novas ferramentas/adaptadores integram-se uma vez no núcleo e podem ser habilitadas por capacidade/autorizações de cada projeto; limites Nexus continuam a controlar carga. Testar isolamento, paragens e regressão de perfis. [ARQUITETURA_MOTOR1.md](ARQUITETURA_MOTOR1.md).
+
+## 2.23. SG-D061 — entrevista encerrada; preparar MVP (DECIDIDO)
+
+O utilizador encerrou a entrevista de produto após P22-B e aprovou a arquitetura M1 partilhada/especializada. O próximo trabalho é **consolidar contratos e definir um MVP executável por fases e critérios de prova**, e não continuar a fazer perguntas como pré-condição. **Esta decisão não aprova implementação, chamadas pagas, contas ou publicação**; respeitar autorizações explícitas do utilizador antes de ações.
 
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
