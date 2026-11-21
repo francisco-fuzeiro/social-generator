@@ -100,6 +100,10 @@ A proposta de **datas/horas** por rede e conta surge **só depois do conteúdo p
 
 **Conflitos:** alertar sobre sobreposição ou saturação de conta e sugerir alternativas, **sem modificar posts já agendados**. Uma vez aceite pelo Postiz, qualquer edição/reagendamento/cancelamento ocorre **no Postiz** (P5-C) e regressa ao Nexus via sincronização. Um calendário proposto não é «agendado» sem recibo; Postiz continua a ser scheduler independente. Ver [HORARIOS.md](HORARIOS.md) e decisão SG-D054.
 
+## 5.5. Referências públicas aprovadas P22-B
+
+O Motor 3 recebe **apenas referências públicas, descrições/copy e ficheiros aprovados no segundo gate**. A apresentação (descrição/caption, comentário fixado, página de fontes ou on-screen seletivo) é preparada pelo Motor 2 e revista pelo operador **por variante, conta e plataforma**. **Não presumir** que o Postiz ou a rede suportem comentários fixados, URLs clicáveis ou alojamento de referências; capacidades carecem de prova P6-C. Em caso de funcionalidade indisponível, mostrar pendência/ação manual em vez de alegar que a publicação contém um comentário/página inexistente. Nunca enviar fontes privadas ou alterar automaticamente posts já agendados. Ver [CITACOES_PUBLICAS.md](CITACOES_PUBLICAS.md).
+
 ## 6. Testes de aceitação
 
 1. Com posts confirmados no Postiz, o dashboard Nexus apresenta **agendados** no dia/hora/conta corretos e **publicados** com ligação e data real quando disponíveis.
