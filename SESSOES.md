@@ -1,5 +1,15 @@
 # Sessões — Social Generator
 
+## 2026-11-21 — Entrevista P21-B: verificação factual proporcional ao risco
+
+**TL;DR:** O utilizador escolheu **P21-B**: Motor 2 identifica afirmações verificáveis em guião/narração, cenas/gráficos, legendas, títulos/copy/CTA e variantes; associa **fontes concretas, data/contexto, confiança e risco**. Finanças, legal, medicina/segurança, temas históricos controversos e promessas comerciais sensíveis exigem provas mais fortes e **revisão humana quando haja contradição ou insuficiência**. **Afirmações essenciais não verificadas bloqueiam a marcação de peça pronta e envio ao Motor 3/Postiz**, mesmo com aprovação editorial genérica. Revisões locais e variantes exigem novo QA nas dependências alteradas, guardando versões/hashes. Manteve dois gates e limites Nexus.
+
+- **Decisão:** SG-D058 em `docs/DECISOES.md`; novo contrato `docs/FACT_CHECK.md`.
+- **Documentos alinhados:** `docs/MOTORES.md`, `docs/REVISOES.md`, `docs/REQUISITOS.md`, `docs/ALINHAMENTO_CONTRATO_V1.md`, `docs/MEMORIA_EDITORIAL.md`, `docs/ROADMAP.md`, `TODO.md` e `SOCIAL_GENERATOR.md`.
+- **Estado:** documentação apenas; nenhuma validação factual, integração, revisão efetiva, render, pagamento ou publicação executados.
+- **P22 pendente:** forma de mostrar fontes ao público, distinta da rastreabilidade do relatório interno.
+
+
 ## 2026-11-21 — Entrevista P20-B: memória semântica e revisitas de assuntos com novidade
 
 **TL;DR:** O utilizador escolheu P20-B. Motor 1 compara semanticamente propostas com o histórico de conteúdos do **mesmo projeto Nexus**, mostra publicações relacionadas e só recomenda revisitar o assunto com **valor editorial concreto** (evidência nova, ponto de vista diferente, atualização relevante ou aprofundamento). Não bloquear permanentemente um tema amplo, nem contar reformulações triviais como novos temas para lotes ≥5/cadência P19. Variantes multirrede da mesma peça-base não são repetição editorial. Sem histórico suficiente, assinalar incerteza. Primeiro gate continua a ser seleção humana de temas.
