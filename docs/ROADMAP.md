@@ -33,6 +33,7 @@
 - [x] **P22-B:** fontes públicas adaptadas por rede (descrição/caption, comentário fixado/página quando suportado), com referências visuais seletivas e revisão no gate final. [CITACOES_PUBLICAS.md](CITACOES_PUBLICAS.md).
 - [x] **SG-D060:** um único núcleo M1 para todos os projetos, com **instâncias lógicas e contexto/memória/scoring isolados por projeto Nexus**, sem agentes LLM residentes/forks. [ARQUITETURA_MOTOR1.md](ARQUITETURA_MOTOR1.md).
 - [x] **SG-D061:** entrevista encerrada a pedido do utilizador; seguir consolidação e MVP incremental, sem autorizar implementação por inferência.
+- [x] **SG-D062 a SG-D069:** decisões da Wiki central e modelos documentais criados; integração de onboarding e Ingest/Query/Lint ainda por implementar.
 - [ ] **Revisão técnica do contrato v1 no Nexus** (a adenda funcional já incorpora a entrevista). Alinhar catálogos, integrações e testes antes de F1.1.
 - [ ] Recuperar ficheiros originais SOCIAL_GENERATOR.md (489 linhas) e adenda (284 linhas), se disponíveis, e reconciliar diferenças sem os fazer passar por recuperados.
 - [ ] Verificar segredos antes de novos commits, especialmente enquanto repo público.
@@ -47,6 +48,10 @@ A execução técnica mantém como referência a lista fechada e os testes da au
 - **F1.3:** previews protegidas de MP4/recursos, Range e validação dos caminhos, sem novo servidor.
 
 **Contrato funcional fechado pela entrevista:** o Social **não cria** projetos Nexus; em **Adicionar projeto** apresenta todos os projetos Nexus, mesmo sem socials. Adicionar cria apenas rascunho Social; **pesquisa só nos adicionados, ativos e com branding/configuração completos**. Os três IDs e três redes fixos da F0 eram fixtures e não são o contrato aprovado. **Design visual detalhado fica fora da F1**. Confirmar tecnicamente a origem das contas e os estados de elegibilidade antes de implementar.
+
+### Wiki integrada no onboarding — obrigação da F1
+
+Um projeto só é publicado na Wiki depois de **configuração inicial completa e aprovada** de Design System, Motion System e estratégia editorial, com proveniência e revisão comum aos manifestos estruturados. Rascunhos ficam fora; aprovados inativos ficam documentados sem pesquisa. Criar missão própria para geração idempotente, recuperação de falha, autorização e Ingest/Query/Lint. **Não ampliar silenciosamente a lista fechada da SG-M002.**
 
 ## F2 — Inteligência, produção e prova técnica
 

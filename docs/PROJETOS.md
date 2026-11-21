@@ -50,6 +50,14 @@ Cada perfil Social do projeto Nexus pode publicar **conteúdo contínuo mesmo qu
 
 **Não criar um Motor 1 com código e infraestrutura próprios por marca.** O núcleo técnico de Intelligence é único e partilhado; cada **projeto Nexus Social ativo e elegível** recebe a sua **instância lógica por execução**, com estratégia, regras, concorrentes, fontes, histórico, campanhas, scoring, limites e memória isolados por `nexusProjectId`. O Motor 1 carrega contexto do projeto, executa dentro da capacidade do Nexus, guarda resultados atribuídos corretamente e liberta recursos. Sem processos/LLMs residentes por projeto, sem mistura de credenciais ou dados, e sem impedir novas ferramentas globais. Contrato [ARQUITETURA_MOTOR1.md](ARQUITETURA_MOTOR1.md).
 
+## 1.6. Wiki única do Social Generator — SG-D062 a SG-D069
+
+A Wiki central em [wiki/](../wiki/index.md) contém o conhecimento do sistema e **apenas dossiers de projetos Nexus que tenham configuração Social completa e aprovação humana**. «Adicionar projeto» continua a apresentar todos os projetos Nexus visíveis; adicionar cria rascunho fora da Wiki.
+
+Na configuração, o operador aprova (1) informação sobre o produto, funcionalidades e arquitetura relevantes para conteúdos, (2) **Design System** com cores/tokens, tipografia, logótipos, composição e componentes, (3) **Content/Motion System** com estilos de posts e vídeos, storytelling, hooks, ritmo, animações, transições, legendas, capas, voz e templates, e (4) público, estratégia editorial, objetivos, formatos, canais e direitos. Importações são propostas com fontes autorizadas e modo de leitura; preenchimento manual permitido.
+
+**Só após validação humana** publicar o dossier a partir da mesma versão dos manifestos operacionais aprovados. Falha documental não conclui onboarding. A ativação é decisão separada: configurado mas inativo aparece na Wiki e não recebe pesquisa. Projetos arquivados/desassociados saem do índice corrente, preservando histórico. Nunca duplicar o catálogo Nexus nem copiar repositórios privados. A Wiki não substitui os perfis/manifestos consumidos pelos motores. Ver [SCHEMA](../wiki/SCHEMA.md).
+
 ## 2. Perfil editorial (extensão da entidade Nexus)
 
 Campos: `nexusProjectId`, `socialEnabled`, `perfilVersao`, marca/nomes, descrição, projeto e repositórios de referência apenas de leitura, idioma/mercado, público, proposta de valor, objetivos e KPIs, canais e contas mapeados às integrações do Nexus, formatos permitidos, estilo visual, voz, restrições factuais, bibliotecas/assets e licenças, concorrentes fixos/descobertos, CTAs e eventos de conversão, limites de custo e autorização.

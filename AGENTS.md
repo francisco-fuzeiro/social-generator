@@ -14,3 +14,4 @@
 11. **Não desenhar dashboard visual detalhado antes de funcionamento real**; UI F1 apenas para validar estados e operações Nexus.
 12. **Quatro motores lógicos aprovados:** M1 Intelligence, M2 Production, M3 Distribution & Scheduling (Postiz), M4 Analytics & Learning. M4 analisa métricas/atribuição/experiências e devolve sinais ao M1; não altera publicações. Não criar quatro agentes permanentes.
 13. **Postiz agenda e publica**, não o scheduler Nexus. O calendário Nexus consulta agendados/publicados/erros; **P5-C manda editar/reagendar/cancelar no Postiz**, nunca no dashboard Nexus. Ler `docs/POSTIZ.md` e `docs/METRICAS.md`.
+14. **Wiki única SG-D062–SG-D069:** apenas projetos Nexus Social com onboarding completo e aprovado têm dossier em wiki/. Rascunhos excluídos; Design System, Content/Motion System e estratégia validados; manifestos estruturados e Wiki na mesma revisão. Não criar Wikis por projeto nem substituir dados de execução com Markdown.

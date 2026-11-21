@@ -9,6 +9,7 @@
 - [x] Criar repositório GitHub e confirmar ligação `main` / `origin/main` no clone local.
 - [x] Consolidar visão, requisitos, decisões, motores, métricas, perfis, biblioteca e roadmap no GitHub.
 - [x] Preparar **adenda documental** ao contrato v1 em docs/ALINHAMENTO_CONTRATO_V1.md (reconstrução, não cópia literal da adenda anterior).
+- [x] **SG-D062–SG-D069:** Wiki central, modelos de Design/Motion System e decisões registadas (documentação; onboarding funcional pendente).
 - [ ] **Rever adenda com Codex/Nexus** e reconciliar com secção 8 de `C:/Claude/nexus/plans/social-generator-f0.md`; sem implementar enquanto contrato não for validado.
 - [ ] **Validação do Francisco antes da SG-M001** ou da primeira missão F1.1.
 - [ ] Recuperar e confrontar os dois documentos originais completos do ChatGPT, caso sejam disponibilizados (SOCIAL_GENERATOR.md 489 linhas; adenda 284 linhas).
@@ -59,6 +60,7 @@
 - [ ] **Preparar MVP após entrevista:** consolidar o contrato Nexus e a arquitetura SG-D060, priorizar fatias F1–F3 com testes e critérios de aceite, só implementar depois de instrução explícita.
 
 - [ ] **Campanhas opcionais P13-B no contrato Nexus:** verificar que os projetos funcionam sem campanha, associar campaignId quando existir, preservar objetivos e KPIs por campanha, sem campanha obrigatória e com prioridade adaptativa P14-B explicada/editável, **sem percentagens fixas inventadas**.
+- [ ] **Wiki onboarding:** missão pequena para gerar dossier só após configuração aprovada, manter revisão comum, testar falhas parciais, isolamento e Ingest/Query/Lint. Não alargar SG-M002 sem aprovação.
 - [ ] F1.1 — contrato/leitor/vista Social Nexus mínimos; **Adicionar mostra todos os projetos Nexus**, configurar perfil Social em rascunho e pesquisar apenas projetos **ativos, configurados, com branding completo**; sem criação Nexus independente nem design visual detalhado.
 - [ ] F1.2 — decisões editoriais persistentes e idempotentes.
 - [ ] F1.3 — prévias multimédia protegidas.

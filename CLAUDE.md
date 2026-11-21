@@ -9,6 +9,7 @@
 - **Decisões e propostas:** `docs/DECISOES.md`
 - **Alinhamento obrigatório antes de F1.1:** `docs/ALINHAMENTO_CONTRATO_V1.md`
 - **Motores, projetos, métricas, biblioteca e roadmap:** `docs/MOTORES.md`, `docs/PROJETOS.md`, `docs/METRICAS.md`, `docs/BIBLIOTECA.md`, `docs/ROADMAP.md`
+- **Wiki Social:** wiki/index.md e wiki/SCHEMA.md. Só dossiers de projetos com configuração aprovada; Design System, Motion System e estratégia definidos no onboarding; ativação separada.
 - **To-do:** `TODO.md`
 - **Log de sessões:** `SESSOES.md` (entrada nova no topo, com `**TL;DR:**` de 600 caracteres no máximo)
 

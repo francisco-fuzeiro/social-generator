@@ -48,6 +48,10 @@ Projeto incompleto ou inativo: não pesquisar e não consumir recursos, mas cont
 
 **PROPOSTO técnico:** estados Social `rascunho`, `pronto`, `ativo`, `suspenso`/ `arquivado`, com `nexusProjectId` canónico, `socialEnabled`, `brandProfileVersion`, `brandingComplete`, canais configurados e razões de bloqueio. A UI deve separar `nexusProjetosListar` (operação Nexus existente/adaptada) de leitura dos perfis Social ativos. Não duplicar identidade nem inventar endpoints sem auditoria.
 
+## 2.0.1. Wiki central e onboarding — SG-D062 a SG-D069
+
+Uma única Wiki do Social Generator em wiki/; Adicionar mostra todos os projetos Nexus mas associa apenas rascunho, sem dossier. Configuração importa fontes autorizadas e define Design System, Content/Motion System, público, estratégia, arquitetura e funcionalidades relevantes, formatos, contas e direitos. Só após aprovação humana da configuração completa gerar a Wiki e os manifestos da **mesma revisão**. A ativação Social é posterior e independente; configurado inativo permanece na Wiki sem pesquisa. A Wiki é documental, não fonte de aprovações, contas, métricas ou agenda. Ver [contrato](../wiki/SCHEMA.md). Nenhuma missão técnica cresce implicitamente com esta decisão.
+
 ## 2.1. Novas decisões de pesquisa e temas (P2 — opção C)
 
 Estas regras complementam o contrato anterior e estão detalhadas em [CICLO_TEMAS.md](CICLO_TEMAS.md):

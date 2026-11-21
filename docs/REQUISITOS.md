@@ -36,6 +36,17 @@
 | R20 | Metas e controlo de custo | Pretender 5–10 peças/semana, 1–3h supervisão, 3–6h desenvolvimento; alvo extra 0€ e teto 25€/mês **não autorizam gastos** |
 | R21 | Adaptadores de fornecedores | Trocar render, pesquisa, TTS, imagem e rede sem reescrever núcleo nem duplicar ferramentas Nexus |
 
+## Wiki central e onboarding — SG-D062 a SG-D069
+
+| ID | Requisito | Critério verificável |
+|---|---|---|
+| R22 | Uma Wiki do Social Generator | wiki/ documenta sistema e só projetos com configuração inicial aprovada; rascunhos excluídos |
+| R23 | Onboarding com documentação | Configurar/importar → validar Design/Motion System e estratégia → aprovar → gerar Wiki da mesma revisão → ativação opcional independente |
+| R24 | Design System e Content/Motion System | Tokens, identidade, estilos de posts, narração, templates, referências, licenças e versões por marca |
+| R25 | Dossier completo e rastreável | Produto, arquitetura relevante, funcionalidades, branding, público, estratégia, plataformas e aprendizagem com fontes |
+| R26 | Ingest, Query e Lint | Operações futuras reutilizam Nexus, citam fontes e não substituem decisões sem aprovação |
+| R27 | Separação de responsabilidade | Manifestos alimentam os motores; Wiki não substitui Nexus, gates, métricas, Postiz ou biblioteca |
+
 ## Pesquisa adaptativa, recomendações e calendário — decisões vinculativas
 
 | ID | Requisito | Critério de aceitação |

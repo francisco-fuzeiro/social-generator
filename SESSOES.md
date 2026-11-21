@@ -1,5 +1,15 @@
 # Sessões — Social Generator
 
+## 2026-11-21 — Wiki central: SG-D062 a SG-D069
+
+**TL;DR:** Documentada a Wiki única do Social Generator, exclusivamente para projetos Nexus Social com configuração inicial aprovada. Design System, Content/Motion System, estratégia, produto e arquitetura relevante passam a ser preparados durante o onboarding. Páginas e manifestos partilham revisão; ativação separada. Criados modelos; sem onboarding funcional ou dossiers reais.
+
+- Fonte: decisões expressas pelo utilizador nesta conversa.
+- Âmbito: documentação e modelos, sem motores, contas ou publicação.
+
+
+# Sessões — Social Generator
+
 ## 2026-11-21 — P22-B, SG-D060 e SG-D061: fontes públicas, Motor 1 multi-projeto, entrevista encerrada
 
 **Decisões do utilizador:** P22-B — mostrar fontes relevantes ao público de modo **adaptado à rede** (descrição/caption, comentário fixado/página quando suportados, referências discretas em ecrã para factos essenciais/sensíveis); manter relatório factual interno e aprovação final de fontes/versão/copy/conta; não divulgar fontes privadas. **SG-D060 — Motor 1 partilhado**: um único núcleo técnico de Intelligence e ferramentas/conectores comuns; **instância lógica por projeto Nexus** com branding, estratégia, fontes, concorrentes, público, scoring, memória, resultados, quotas e contexto isolados. **Sem forks de código, servidores separados ou LLMs residentes por projeto**. **SG-D061 — entrevista encerrada**, por pedido do utilizador «já chega», com foco seguinte em consolidar e planear o MVP por fases. Isso não autoriza código, gastos, instalação ou publicação.

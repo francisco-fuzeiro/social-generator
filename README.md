@@ -7,6 +7,7 @@ Motor modular para investigar tendências, produzir conteúdo e aprender com res
 ## Começar pela documentação
 
 - [SOCIAL_GENERATOR.md](SOCIAL_GENERATOR.md) — visão e limites de produto.
+- [Wiki central](wiki/index.md) — sistema e dossiers apenas de projetos configurados/aprovados, com modelos e regras documentais.
 - [Decisões](docs/DECISOES.md) — confirmado, proposto e pendente.
 - [Requisitos](docs/REQUISITOS.md) — critérios de aceitação.
 - [Quatro motores](docs/MOTORES.md) — Intelligence, Production, Distribution & Scheduling (Postiz) e Analytics & Learning.

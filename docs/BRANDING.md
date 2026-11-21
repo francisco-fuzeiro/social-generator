@@ -46,6 +46,12 @@ O **conjunto mínimo exato de campos obrigatórios** por tipo de projeto ainda r
 6. **Ativação Social separada**: o operador decide se fica ativo. Só ativo+configurado+branding válido participa no Motor 1.
 7. **P11-B:** após validar o perfil, monitorizar periodicamente **alterações nas fontes autorizadas**; registar diferenças contra a versão aprovada e **propor atualização**, mas só publicar nova versão oficial após aprovação humana. Rejeitar ou corrigir é possível. A deteção não modifica posts agendados no Postiz nem versões anteriores.
 
+### Wiki e sistemas visuais no onboarding — SG-D062 a SG-D069
+
+A configuração inicial deve incluir **Design System** e **Content/Motion System** com versões, recursos licenciados, fontes, campos não aplicáveis justificados e validação humana. A Wiki central só contém um projeto após a configuração inicial completa e aprovada; rascunhos não aparecem. O manifesto estruturado aprovado e o dossier Markdown devem refletir **a mesma revisão**. Falha na criação documental deixa onboarding pendente. A ativação Social continua separada; aprovado inativo não pesquisa.
+
+Novas versões de branding são propostas com diferenças e exigem validação. Alterações aprovadas obrigam a avaliar impacto nos conteúdos, sem modificar automaticamente agenda Postiz. Ver [contrato da Wiki](../wiki/SCHEMA.md).
+
 ## 4.1. Deteção periódica e aprovação de mudanças — P11-B (DECIDIDO)
 
 O Social Generator deve **reler periodicamente as mesmas fontes de marca que estejam autorizadas** (website, documentação/brand book, design tokens e repositório em leitura, assets aprovados) e **comparar evidências atuais com a última versão validada**. Uma diferença observada não é automaticamente uma nova regra de marca: pode ser uma experiência de UI, campanha temporária, ficheiro desatualizado ou falso positivo.
