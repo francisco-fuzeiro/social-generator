@@ -1,5 +1,15 @@
 # Sessões — Social Generator
 
+## 2026-11-20 — Entrevista P18-B: cadência semanal adaptativa com limites humanos
+
+**TL;DR:** O utilizador escolheu P18-B. M1 deve recomendar metas de **número de publicações por semana por projeto/plataforma**, usando objetivos, tendências, resultados observados M4, campanhas e capacidade/quota real M2/Nexus. **O operador define mínimos/máximos e pode ajustar a recomendação**. Nenhum valor numérico foi fixado. Meta semanal não equivale a tema selecionado, render autorizado, aprovação final ou agendamento Postiz. Caso não seja viável atingir uma meta, apresentar défice e motivo sem inventar temas/recursos/publicações. Horários por peça permanecem só na revisão final após produção (P17-B).
+
+- **Decisão:** SG-D055 em `docs/DECISOES.md`; contrato `docs/HORARIOS.md` §1.1.
+- **Documentos alinhados:** `docs/MOTORES.md`, `docs/METRICAS.md`, `docs/CICLO_TEMAS.md`, `docs/REQUISITOS.md`, `docs/ALINHAMENTO_CONTRATO_V1.md`, `docs/ROADMAP.md`, `TODO.md` e `SOCIAL_GENERATOR.md`.
+- **Estado:** documentação apenas; sem produção, alterações ao Postiz, testes ou custos.
+- **P19:** definir se, perante défice de cadência, o sistema apenas avisa ou propõe ideias adicionais de qualidade para seleção humana.
+
+
 ## 2026-11-20 — Entrevista P17-B: horários adaptativos depois da produção
 
 **TL;DR:** O utilizador escolheu P17-B. Na revisão final **depois de M2 produzir**, propor dias/horas por conta/plataforma com histórico real M4 quando disponível, audiência/fuso, formato, prazo/urgência de campanha e publicações já agendadas no Postiz. Sem métricas suficientes, apresentar **estimativas claramente identificadas**, sem falsa certeza. Mostrar justificação/confiança e alertas de conflitos; operador pode editar tudo antes de aprovar versão/hash+copy+destino+calendário no segundo gate. Primeiro gate mantém-se só escolha de temas. Postiz mantém scheduler independente, Nexus calendário só leitura. Documentação, não implementação nem agendamento real.
