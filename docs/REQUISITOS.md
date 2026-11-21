@@ -226,7 +226,20 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 | R107 | Diferenciar frequência e horário | Quantidade semanal planeada é separada dos dias/horas P17-B, propostos **apenas após produção** e aprovados por pacote na revisão final |
 | R108 | Estados rastreáveis | Distinguir metas recomendadas/ajustadas de temas selecionados, produção concluída, agendamento Postiz confirmado e publicação verificada; sem falsa contagem |
 
-**Números mínimos/máximos ainda não foram fornecidos**, e a política de reação a défices da cadência será objeto da P19. Contrato [HORARIOS.md](HORARIOS.md) §1.1.
+**Números mínimos/máximos ainda não foram fornecidos. P19-B decide procurar alternativas de qualidade para seleção humana e aceitar cadência inferior se houver insuficiência**. Contrato [HORARIOS.md](HORARIOS.md) §1.1.
+
+## Resposta a défices de cadência com alternativas de qualidade — P19-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R109 | Detetar défice com dados fiáveis | Meta semanal por projeto/rede superior ao volume viável/selecionado → mostrar défice e distinguir temas por aprovar, em produção, posts agendados comprovados e publicações reais |
+| R110 | Pesquisar alternativas editoriais fundamentadas | M1 procura **evergreen, novos ângulos e oportunidades históricas revalidadas** do mesmo projeto, com fontes, datas, qualidade e grau de confiança |
+| R111 | Preservar 7 dias e diversidade real | Tema histórico caducado só volta a estar vigente com **revalidação fundamentada**, sem contar reformulações triviais como temas distintos nem inventar lote de cinco |
+| R112 | Seleção humana e gates intactos | Alternativas surgem como **recomendações para seleção no gate 1**; não converter em temas aprovados, renders ou calendário; gate 2 continua obrigatório por pacote/conta/canal |
+| R113 | Cadência inferior é resultado legítimo | Se as alternativas não forem boas/viáveis ou o operador não as selecionar, **aceitar menos publicações** e mostrar causas, sem alterar silenciosamente os limites mínimos/máximos |
+| R114 | Recuperação limitada e sem gastos surpresa | Investigar apenas em fontes e quotas permitidas pelo Nexus; sem serviços pagos não aprovados, sem baixar QA/direitos e **sem cancelar/reagendar/agendar posts Postiz** |
+
+**P19-B fecha a política de défice; P20 deverá decidir a deteção de redundância e revisita de temas já publicados.** Ver [HORARIOS.md](HORARIOS.md) §1.2 e [CICLO_TEMAS.md](CICLO_TEMAS.md) §5.5.
 
 ## Canais e formatos contratados
 
