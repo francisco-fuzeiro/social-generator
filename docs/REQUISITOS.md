@@ -215,6 +215,19 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **Política de frequência/volume por projeto permanece por decidir (P18).** Contrato [HORARIOS.md](HORARIOS.md).
 
+## Cadência semanal adaptativa por projeto e plataforma — P18-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R103 | Meta semanal adaptativa por projeto/rede | Motor 1 propõe **quantidade de posts por semana** por projeto Social e plataforma, baseada em objetivos, campanhas, tendências, resultados reais M4 e capacidade M2/Nexus, com razões/incertezas |
+| R104 | Limites humanos | Operador define **mínimos e máximos** por projeto/plataforma e pode rever a recomendação; não inventar valores globais nem exigir a mesma cadência de todas as marcas |
+| R105 | Viabilidade e qualidade | Propostas consideram quotas, tempo, custos e disponibilidade de temas aprovados; **mínimo inviável gera indicação de défice e causa**, não conteúdo fictício/baixo critério |
+| R106 | Cadência não é aprovação | Definir/alterar frequência **não** gera conteúdos sem gate 1, não dispensa QA/segundo gate, não agenda/publica e não autoriza APIs pagas |
+| R107 | Diferenciar frequência e horário | Quantidade semanal planeada é separada dos dias/horas P17-B, propostos **apenas após produção** e aprovados por pacote na revisão final |
+| R108 | Estados rastreáveis | Distinguir metas recomendadas/ajustadas de temas selecionados, produção concluída, agendamento Postiz confirmado e publicação verificada; sem falsa contagem |
+
+**Números mínimos/máximos ainda não foram fornecidos**, e a política de reação a défices da cadência será objeto da P19. Contrato [HORARIOS.md](HORARIOS.md) §1.1.
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
