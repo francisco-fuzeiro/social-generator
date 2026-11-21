@@ -229,6 +229,16 @@ Quando a meta semanal P18-B não seja cumprível por falta de **temas aprovados,
 
 **Contrato técnico PROPOSTO:** `CadenceShortfall` por projeto/plataforma, com metas, estado real comprovado, temas selecionados, impedimentos, origem e data; `RecoveryResearchRun` com `opportunityIds`, `noveltyType`, `revalidationEvidence`, `timeAndCostUsed` e decisão humana. A política exata de disparo/quotas de investigação adicional ainda carece de definição técnica, sem autorizar serviços pagos. **P20** decidirá como evitar redundância de temas publicados sem impedir revisitas com novo valor. Detalhe: [HORARIOS.md](HORARIOS.md) §1.2 e [CICLO_TEMAS.md](CICLO_TEMAS.md) §5.5.
 
+## 2.19. P20-B — memória editorial semântica e revisitas úteis (DECIDIDO)
+
+**Antes de recomendar temas**, o Motor 1 deve comparar a oportunidade com o **histórico editorial do mesmo projeto Nexus/Social**: publicações anteriores e, quando disponíveis, conteúdos agendados, aprovados e em produção. Não basta comparar títulos: avaliar **pergunta editorial, ângulo, afirmações centrais, conteúdo e contexto**. Mostrar ao operador as peças relacionadas (IDs/links/estado/data e evidência) e se o tema é **novo**, **relacionado com valor adicional** ou **provável duplicação**. Não confundir redes/variantes da mesma peça-base com ideias editoriais diferentes nem misturar os históricos das marcas.
+
+Uma revisita pode ser **recomendada quando há valor editorial comprovável**: nova evidência, perspetiva genuinamente distinta, atualização relevante ou aprofundamento. O próprio assunto amplo **não fica interdito permanentemente**. Evitar reformulações triviais para preencher lote mínimo de cinco temas ou cadência P19-B; uma recomendação caducada continua a necessitar revalidação factual após sete dias. Sem acesso ao histórico, registar **incerteza** em vez de declarar novidade verificada.
+
+**Gates e operação:** o operador continua a selecionar **somente temas no primeiro gate**. A análise de repetição não dispara M2, não escolhe contas/datas/horas, não envia ao Postiz e não modifica agendamentos. M4 pode fornecer histórico/resultado e IDs observados para pesquisa, sem ser juiz autónomo do conteúdo. Respeitar isolamento e permissões de leitura; nenhum processamento externo de transcrições privadas sem autorização.
+
+**Schema PROPOSTO, não aprovado:** `EditorialMemoryEntry` ligado a `nexusProjectId` e às entidades `Topic`/`Creative`/`Publication`; `NoveltyAssessment` com `relatedIds`, `angleOverlap`, `noveltyReason`, `evidenceRefs`, `confidence` e decisão humana. Algoritmo de similaridade, thresholds, retensão e indexação **por validar tecnicamente**. Ver [MEMORIA_EDITORIAL.md](MEMORIA_EDITORIAL.md). **P21** tratará QA factual de afirmações, não este filtro de repetição.
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
