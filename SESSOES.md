@@ -1,5 +1,15 @@
 # Sessões — Social Generator
 
+## 2026-11-21 — Entrevista P19-B: alternativas de qualidade perante défice
+
+**TL;DR:** O utilizador escolheu P19-B. Quando a cadência P18-B não for viável, Motor 1 pesquisa mais oportunidades **evergreen, novos ângulos substantivos e temas históricos revalidados** com evidência atual e validade de até 7 dias desde a última validação. Apresenta propostas **para o operador selecionar no gate 1**, sem render/pagamento/publicação automáticos. Se não existirem temas suficientemente bons ou recursos disponíveis, aceita a cadência inferior com défice/motivo transparente, sem alterar os limites definidos pelo operador nem agenda Postiz.
+
+- **Decisão:** SG-D056 em `docs/DECISOES.md`; contrato `docs/HORARIOS.md` §1.2 e `docs/CICLO_TEMAS.md` §5.5.
+- **Outros documentos:** `docs/MOTORES.md`, `docs/REQUISITOS.md`, `docs/ALINHAMENTO_CONTRATO_V1.md`, `docs/ROADMAP.md`, `TODO.md`, `SOCIAL_GENERATOR.md`.
+- **Estado:** apenas documentação; sem novos renders, pesquisa real ou publicação.
+- **P20:** decidir prevenção de repetição de assuntos publicados e condições para revisitas com valor.
+
+
 ## 2026-11-20 — Entrevista P18-B: cadência semanal adaptativa com limites humanos
 
 **TL;DR:** O utilizador escolheu P18-B. M1 deve recomendar metas de **número de publicações por semana por projeto/plataforma**, usando objetivos, tendências, resultados observados M4, campanhas e capacidade/quota real M2/Nexus. **O operador define mínimos/máximos e pode ajustar a recomendação**. Nenhum valor numérico foi fixado. Meta semanal não equivale a tema selecionado, render autorizado, aprovação final ou agendamento Postiz. Caso não seja viável atingir uma meta, apresentar défice e motivo sem inventar temas/recursos/publicações. Horários por peça permanecem só na revisão final após produção (P17-B).
