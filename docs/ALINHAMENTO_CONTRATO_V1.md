@@ -239,6 +239,16 @@ Uma revisita pode ser **recomendada quando há valor editorial comprovável**: n
 
 **Schema PROPOSTO, não aprovado:** `EditorialMemoryEntry` ligado a `nexusProjectId` e às entidades `Topic`/`Creative`/`Publication`; `NoveltyAssessment` com `relatedIds`, `angleOverlap`, `noveltyReason`, `evidenceRefs`, `confidence` e decisão humana. Algoritmo de similaridade, thresholds, retensão e indexação **por validar tecnicamente**. Ver [MEMORIA_EDITORIAL.md](MEMORIA_EDITORIAL.md). **P21** tratará QA factual de afirmações, não este filtro de repetição.
 
+## 2.20. P21-B — QA factual por afirmação, proporcional ao risco (DECIDIDO)
+
+**Após o operador selecionar temas no gate 1**, o **Motor 2** escreve/compõe conteúdo e extrai **afirmações verificáveis** do guião, locução, textos/cenas/gráficos, legendas, títulos/copy e CTA das variantes por plataforma. Cada alegação recebe **risco e confiança** proporcionais às consequências, centralidade, evidência e atualidade. Verificar fontes com proveniência e data, pertinência do excerto, país, período e independência da origem quando possível. A ficha de oportunidade do Motor 1 **não é confirmação automática dos factos finais**.
+
+**Alegações de maior risco** — finanças/fiscalidade, direito, medicina/segurança, história controversa, afirmações comerciais sensíveis — exigem melhor sustentação e **escalamento humano** de conflitos, dados insuficientes e ambiguidade. Distinguir factos de opinião/projeção. **Se uma afirmação essencial não estiver suficientemente verificada, a peça fica bloqueada no QA e não pode ser declarada pronta nem entregue ao Motor 3/Postiz**; apresentar ao operador a afirmação, problema, fontes e opção de revisão/correção/remoção ou reformulação honesta.
+
+O segundo gate mantém-se **após produção**, com prévias e relatório factual; não inserir obrigação de confirmar manualmente cada palavra. Revisões localizadas P7-B/P8-B geram novas versões/hashes e QA das dependências; **copy/título/hook de cada variante também precisam de verificação**, mesmo que a base tenha passado no QA. Respeitar limite P9-B e orçamento/quotas Nexus; ausência de fonte/acesso não conta como verificação realizada. **Ainda é decisão aberta P22** como expor as fontes ao público, sem prejudicar a rastreabilidade interna.
+
+**Schema técnico PROPOSTO:** `FactClaim`, `ClaimEvidence`, `FactCheckResult` com IDs de projeto, peça/variante/versão/hash, trecho, domínio, risco, confiança, origem/data/contexto, estados (confirmada/parcial/contestada/não-verificada) e bloqueio/decisão humana. Limiares e fornecedores não definidos nem implementados. Ver [FACT_CHECK.md](FACT_CHECK.md).
+
 ## 3. Modelo de dados — adenda proposta ao contrato v1
 
 Preservar retrato `painel.json` pequeno e validado, decisões humanas imutáveis, eventos de domínio/históricos datados e outputs com hashes da F0; **não implementar novos campos sem revisão técnica**.
