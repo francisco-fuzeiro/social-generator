@@ -268,7 +268,28 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 | R128 | Novas variantes e correções | Alterações factuais, números, títulos/copy ou CTA materialmente diferentes exigem QA das partes afetadas, nova versão/hash e segundo gate para pacote corrigido |
 | R129 | Sem confirmação inventada | Fonte inacessível/dado antigo/não aplicável fica **não verificado ou inconclusivo** conforme risco; sem APIs pagas não autorizadas e sem alegar que uma pesquisa ou teste foi feito sem prova |
 
-**P21-B não decide como mostrar citações ao público; esse é o tema da P22.** Contrato [FACT_CHECK.md](FACT_CHECK.md).
+**P22-B decidiu divulgar referências relevantes conforme as possibilidades verificadas da plataforma, com on-screen seletivo e gate humano.** Contrato [FACT_CHECK.md](FACT_CHECK.md).
+
+## Referências públicas adaptadas às plataformas — P22-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R130 | Bibliografia pública relevante | Derivar do QA interno P21-B referências **públicas e verificáveis** relacionadas com os factos importantes; identificar fonte, data e ligação/referência adequada |
+| R131 | Formato apropriado ao destino | Usar **descrição/caption, comentário fixado ou página de fontes** quando o suporte efetivo existir; não prometer funcionalidades não testadas na rede/Postiz |
+| R132 | Referência no ecrã seletiva | Mostrar discretamente fontes junto de afirmações sensíveis/controversas quando acrescentem valor e forem legíveis; **sem obrigação de citação visual frase a frase** |
+| R133 | Revisão por variante e destino | Apresentar fontes/URLs/copy e eventuais referências no vídeo na **revisão final** por variante/conta/plataforma/versão/hash, para edição e aprovação explícita |
+| R134 | Privacidade, direitos e QA preservados | Não expor documentos privados, dados pessoais, credenciais ou materiais sem licença; bibliografia não desbloqueia afirmações essenciais sem verificação factual |
+
+## Motor 1 comum com instâncias lógicas por projeto — SG-D060
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R135 | Núcleo M1 único e partilhado | Conectores, execução, pipeline de pesquisa/scoring configurável e novas integrações residem num núcleo **reutilizado por todos os projetos Social**; sem forks por marca |
+| R136 | Especialização/isolamento por `nexusProjectId` | Cada execução recebe branding, público, fontes, objetivos, concorrentes, campanhas, memória, scoring e quotas **isolados por projeto**; nenhum dado/credencial/resultado privado migra para outra marca |
+| R137 | Ciclo de execução sem LLM residente | Instâncias são **lógicas, não processos/LLMs permanentes**; contexto carregado por execução, quotas e reservas geridas pelo Nexus e estado persistido corretamente |
+| R138 | Elegibilidade e modularidade | Só projetos Social elegíveis e ativos são pesquisados, embora o catálogo Adicionar mostre todos; um novo adaptador pode ser partilhado sem exigir múltiplas implementações |
+
+**Entrevista encerrada em SG-D061.** Casos técnicos ainda abertos ficam em prova/roadmap, não numa sequência adicional de perguntas. Contratos [CITACOES_PUBLICAS.md](CITACOES_PUBLICAS.md), [ARQUITETURA_MOTOR1.md](ARQUITETURA_MOTOR1.md).
 
 ## Canais e formatos contratados
 
