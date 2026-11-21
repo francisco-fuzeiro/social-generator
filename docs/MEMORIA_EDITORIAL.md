@@ -52,8 +52,8 @@ Capacidades/arquitetura de comparação (regras, embeddings locais, busca híbri
 8. Sem histórico acessível, o Motor 1 indica **«histórico insuficiente»**, não «novidade confirmada».
 9. Alerta de duplicação não produz, publica, cancela nem reagenda conteúdos por si; preserva gates humanos.
 
-## 6. Próxima pergunta — P21
+## 6. Decisão factual — P21-B e próxima pergunta P22
 
-**Como controlar a verificação factual e a confiança das afirmações nos conteúdos, especialmente quando um projeto trata de finanças ou mini-documentários?** Possibilidades: QA uniforme, QA por nível de risco com provas por afirmação e escalamento humano, ou confirmação manual de todos os factos. Não confundir esta escolha com o filtro editorial de repetição.
+**P21-B aprovado:** M2 verifica afirmações por risco/centralidade com fontes, contexto e confiança; questões sensíveis e contraditórias passam por revisão humana e **factos essenciais não verificados bloqueiam «pronto para publicar»**. [FACT_CHECK.md](FACT_CHECK.md). **P22 ainda aberto:** como mostrar as fontes ao público, para além do relatório interno.
 
 Referências: [DECISOES.md](DECISOES.md), [CICLO_TEMAS.md](CICLO_TEMAS.md), [MOTORES.md](MOTORES.md), [METRICAS.md](METRICAS.md), [REQUISITOS.md](REQUISITOS.md).
