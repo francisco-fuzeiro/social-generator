@@ -255,6 +255,21 @@ Distinguir `estadoRelevancia` da aprovação editorial e do estado de publicaç�
 
 **P20-B não define um limiar numérico de similaridade nem obriga a bloquear para sempre um assunto já abordado.** Ver [MEMORIA_EDITORIAL.md](MEMORIA_EDITORIAL.md). **P21:** política específica de evidências e validação factual por risco editorial.
 
+## Verificação factual adaptada ao risco — P21-B
+
+| ID | Requisito | Critério de aceitação |
+|---|---|---|
+| R122 | Extrair afirmações do pacote final | M2 associa IDs a factos de **guião, locução, legendas, cenas, gráficos, títulos, CTA e copy por variante**, com trecho ou posição e versão/hash |
+| R123 | Risco e confiança por alegação | Registar tipo de alegação, risco/consequência, centralidade, confiança e estado; distinguir factos, inferências, opinião, projeções e dados atualizáveis sem falso score |
+| R124 | Evidência rastreável | Para afirmações verificáveis, indicar **fontes concretas que sustentem a alegação específica**, origem, data, país/período e limitações; não contar fontes derivadas como confirmação independente |
+| R125 | Escalamento nos domínios sensíveis | Finanças, fiscalidade, direito, medicina, segurança, histórico controverso e promessas comerciais sensíveis exigem **prova mais forte** e análise humana de conflitos ou informação insuficiente |
+| R126 | Bloqueio de alegações centrais não verificadas | **QA factual bloqueado impede «pronto para publicar» e encaminhamento a Postiz**, mesmo com aprovação editorial genérica; dar possibilidade de corrigir/retirar/reformular e repetir QA |
+| R127 | Relatório legível na revisão final | Mostrar afirmações incertas/contraditórias, evidências/fontes, impacto e confiança para supervisão humana, sem obrigar confirmação manual de todas as frases de baixo risco |
+| R128 | Novas variantes e correções | Alterações factuais, números, títulos/copy ou CTA materialmente diferentes exigem QA das partes afetadas, nova versão/hash e segundo gate para pacote corrigido |
+| R129 | Sem confirmação inventada | Fonte inacessível/dado antigo/não aplicável fica **não verificado ou inconclusivo** conforme risco; sem APIs pagas não autorizadas e sem alegar que uma pesquisa ou teste foi feito sem prova |
+
+**P21-B não decide como mostrar citações ao público; esse é o tema da P22.** Contrato [FACT_CHECK.md](FACT_CHECK.md).
+
 ## Canais e formatos contratados
 
 | Projeto (apenas se existir no Nexus com socials e Social ativado) | Formato | Canais de intenção |
