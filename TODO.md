@@ -31,8 +31,10 @@
 - [x] **P15-B:** peça-base com variantes inteligentes por plataforma quando justificadas, reutilizando cenas/assets/renders, QA e versões por variante, prévia e aprovação final por conta/canal. Contrato `docs/VARIANTES.md`.
 - [x] **P16-B:** M1 recomenda plataformas por tema com público/formato/tendências/histórico/elegibilidade; M2 cria só as variantes inicialmente recomendadas, e o operador pode acrescentar/remover destinos na revisão final com QA e segundo gate individual.
 - [x] **P17-B:** recomendações adaptativas de dias/horas por rede+conta **só após produção** com histórico M4, público/fuso, formato, campanha e calendário Postiz; sem dados suficientes estimativas explícitas; operador ajusta no segundo gate.
-- [ ] **P18:** decidir **cadência e volume** de conteúdos por projeto/semana (fixa, adaptativa com limites humanos, ou manual), distinta do horário por post.
+- [x] **P18-B:** cadência semanal **adaptativa por projeto/plataforma**, com limites mínimo/máximo configuráveis e ajustáveis pelo operador; considerar objetivos, M4, tendências, campanhas e recursos M2; sem gerar/publicar por meta.
+- [ ] **P19:** decidir resposta quando não houver temas aprovados/recursos suficientes para cumprir a cadência: reduzir com aviso, propor alternativas para aprovação ou preencher automaticamente.
 - [ ] Limites técnicos concretos de tempo/CPU e testes de QA disponíveis por formato (o teto de 3 tentativas já está decidido).
+- [ ] **Provar cadência P18-B:** configurações mín./máx. por projeto/rede, proposta adaptativa e evidenciada, capacidade real M2, contagem distinta de variantes vs peças, défice honesto, sem criar novos renders/posts só por meta.
 - [ ] **Provar horários P17-B:** sugestões por conta/fuso, evidências vs heurísticas, conflito e snapshot desatualizado Postiz, override humano no gate final e envio exclusivo do horário aprovado; testar horário de verão sem novos custos.
 - [ ] **Prova técnica Postiz** (não iniciada): verificar se existe opção gratuita/experimental válida; testar API, contas/redes/formatos, agendamento, sincronização, recibos, erros e edição no Postiz com reflexo no calendário Nexus, sem publicar nem pagar sem aprovação.
 - [ ] **Escolher Postiz Cloud vs self-hosted após relatório de evidências:** limites, uptime 24/7, custos reais, manutenção, backups e capacidade por plataforma; decisão requer aprovação.
