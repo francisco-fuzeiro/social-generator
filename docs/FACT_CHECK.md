@@ -34,7 +34,7 @@
 
 `FactCheckResult`: `claimId`, `verificationStatus`, `confidenceRationale`, `blocking`, `issues`, `reviewerDecision?`, `reviewedAt?`, `affectedVariantHashes[]`.
 
-**Não foram definidos limiares numéricos universais, número obrigatório de fontes por risco, fornecedores de fact-check, ou regras específicas para uso público das citações**. São propostas a validar por domínio e recursos, com independência dos provedores e sem API paga não autorizada.
+**Não foram definidos limiares numéricos universais, número obrigatório de fontes por risco ou fornecedores de fact-check. P22-B define a orientação para referências públicas adaptadas ao canal, mas os detalhes técnicos/capacidades de API continuam por provar**. São propostas a validar por domínio e recursos, com independência dos provedores e sem API paga não autorizada.
 
 ## 4. Testes de aceitação
 
@@ -49,8 +49,10 @@
 9. Fonte inacessível, permissões insuficientes ou custo não autorizado levam a estado **indeterminado/bloqueado conforme risco**, sem afirmar pesquisa realizada.
 10. Não incluir segredos, dados de clientes ou documentos de fontes privadas em repositório público ou serviços externos não autorizados.
 
-## 5. Próxima pergunta — P22
+## 5. Fontes públicas — P22-B aprovado
 
-**Como apresentar as fontes e referências ao público depois da verificação interna?** Opções: manter referências só no relatório interno; disponibilizar fontes relevantes de forma acessível na descrição/caption/link e só as mais úteis visualmente; ou colocar citações na tela junto de cada afirmação. O formato de exposição das fontes **ainda não está aprovado**.
+**P22-B aprovado:** a lista pública de referências deve ser **acessível e adaptada ao canal** (descrição/caption, comentário fixado quando tecnicamente possível ou página pública de fontes autorizada), com **referências em ecrã seletivas** para afirmações importantes e aprovação humana da divulgação no segundo gate. Esta política **não dispensa QA interno por afirmação nem permite divulgar fontes privadas**. Detalhe em [CITACOES_PUBLICAS.md](CITACOES_PUBLICAS.md).
+
+**A entrevista de requisitos foi encerrada** a pedido do utilizador; detalhes restantes passam a backlog técnico, sem autorização implícita para implementar.
 
 Ver [DECISOES.md](DECISOES.md), [MOTORES.md](MOTORES.md), [REVISOES.md](REVISOES.md), [REQUISITOS.md](REQUISITOS.md), [ALINHAMENTO_CONTRATO_V1.md](ALINHAMENTO_CONTRATO_V1.md).
