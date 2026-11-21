@@ -77,6 +77,10 @@ M1 indica **plataformas de maior potencial para cada tema** com base em audiênc
 
 **No primeiro gate escolhem-se só temas**, sem horários ou calendários. **Depois de M2 produzir**, a proposta de calendário mostra **dia/hora por conta e plataforma**, considerando **histórico real do M4 quando disponível, público/fuso, formato, prazo de campanha e posts confirmados existentes no Postiz**. Quando não existem métricas suficientes, mostrar **heurística/estimativa claramente identificada**, nunca inventar o «melhor horário». Explicar a recomendação, indicar fonte/certeza e **sinalizar conflitos**, sem alterar posts já agendados no Postiz. O operador pode **alterar tudo** no segundo gate; só horário/conta/plataforma/versão aprovados seguem ao Motor 3. A cadência semanal e limites de volume ficam para P18. Contrato [HORARIOS.md](HORARIOS.md).
 
+## 5.4. Cadência semanal P18-B — recomendação, nunca obrigação de produzir
+
+M1 **propõe frequência de conteúdos/publicações semanal por projeto e plataforma** com base em objetivos, campanhas, tendências, desempenho anterior e capacidade real M2/Nexus. O operador **define mínimos/máximos e pode ajustar as metas**. A proposta não produz conteúdos, não converte sugestões em temas selecionados, não permite usar temas sem evidência para preencher quotas e não altera posts Postiz. Se houver défice de temas selecionados ou capacidade, mostrar razão/limitações sem inventar aprovação. **No gate inicial continuam a selecionar-se apenas temas**, sem datas/horas; a distribuição e os horários detalhados só entram no segundo gate pós-produção (P17-B). Ver [HORARIOS.md](HORARIOS.md) §1.1.
+
 ## 6. Testes de aceitação mínimos
 
 1. O seletor Adicionar mostra um projeto Nexus sem socials; adicioná-lo não inicia pesquisa.
