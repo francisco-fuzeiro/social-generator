@@ -12,6 +12,14 @@
 - **Adaptadores**: traduzem chamadas para serviços externos e ferramentas locais; nenhum fornecedor deve definir o modelo de domínio.
 - **Dados**: o seletor **Adicionar** mostra todos os projetos Nexus. Para o **Motor 1** executar, o projeto tem de ter sido adicionado ao Social, estar **ativo e com perfil/branding completo** e conta/canal configurado, mesmo sem OAuth; identidade canónica Nexus em todas as etapas. Nunca inferir projeto pelo cwd nem criar projeto independente no Social.
 
+## Arquitetura de execução do Motor 1 — SG-D060 (DECIDIDO)
+
+**Um único núcleo de M1**, com conectores, ferramentas, pesquisa, normalização, scoring configurável e integração no Nexus **partilhados** por todos os projetos. **Uma instância lógica por projeto Nexus Social elegível** recebe `nexusProjectId` canónico e contexto/memória **isolados**: marca, público, objetivos, fontes/concorrência, tom, idioma, campanhas, oportunidades, histórico editorial, KPIs e quotas.
+
+**Não duplicar código/serviço nem manter agentes LLM residentes por projeto.** Carregar contexto por execução, operar nos recursos/limites do Nexus, guardar resultados apenas no projeto correto e libertar recursos. Isolar credenciais, permissões e dados; permitir melhorias do núcleo e novos adaptadores sem refazer cada projeto. Evitar misturar scoring ou resultados da Vefi, The Hidden Layer e UtopIA; aprendizagem transversal só em padrões agregados e autorizados, sem informação confidencial.
+
+Apenas projetos **adicionados, ativos, com branding completo e canais configurados** são pesquisados. O catálogo Adicionar mantém **todos** os projetos Nexus. Ver [ARQUITETURA_MOTOR1.md](ARQUITETURA_MOTOR1.md).
+
 ## Motor 1 — Intelligence
 
 ### Entradas
@@ -120,7 +128,13 @@ O **Motor 2** deve identificar afirmações verificáveis no **guião, narraçã
 
 **As afirmações centrais não verificadas bloqueiam a marcação da peça como «pronta» e a entrega a M3/Postiz.** Casos sensíveis, contraditórios ou insuficientes devem ser apresentados com fontes/trechos e escalados para **revisão humana na etapa final**, sem substituir o segundo gate por confirmação manual de todas as frases. O operador pode pedir **correção localizada (P7-B) e feedback por timestamp (P8-B)**; alterações materiais ou em títulos/CTA de variantes exigem reexecutar QA na parte afetada, guardar versão/hash e obter aprovação final do pacote corrigido. **QA de peça-base não valida automaticamente todas as variantes.**
 
-**M1 recolhe fontes para a oportunidade, mas a aprovação de tema não verifica automaticamente o guião final.** M4/engagement não constituem prova factual. Não inventar pesquisas, métricas, fontes nem provas quando inacessíveis; sem gastos pagos não aprovados. O modo de apresentar fontes **ao público** é decisão pendente P22; o relatório interno por afirmação é obrigatório. Contrato [FACT_CHECK.md](FACT_CHECK.md).
+**M1 recolhe fontes para a oportunidade, mas a aprovação de tema não verifica automaticamente o guião final.** M4/engagement não constituem prova factual. Não inventar pesquisas, métricas, fontes nem provas quando inacessíveis; sem gastos pagos não aprovados. **P22-B definiu as fontes acessíveis ao público conforme canal (descrição/caption/comentário fixado/página de fontes e on-screen seletivo), revistas no segundo gate**; o relatório interno por afirmação continua obrigatório. Ver [CITACOES_PUBLICAS.md](CITACOES_PUBLICAS.md). Contrato [FACT_CHECK.md](FACT_CHECK.md).
+
+### Fontes públicas adaptadas às plataformas — P22-B (DECIDIDO)
+
+O Motor 2 deriva do **relatório interno de fact-check P21-B** uma lista concisa de referências **públicas e adequadas** às alegações centrais, incluindo identificadores/URLs, fonte e data. Adapta a divulgação aos canais realmente suportados: **descrição/caption**, comentário fixado **se capacidade comprovada**, página de fontes **se autorizada/disponível**. Fontes importantes podem surgir **discretamente na peça**, sobretudo em alegações sensíveis, sem citação visual obrigatória frase a frase. Verificar permissões/licenças e nunca divulgar fontes privadas.
+
+**Cada variante** apresenta o pacote público de referências para revisão **no segundo gate pós-produção**, em conjunto com versão/hash, copy, conta, plataforma e calendário. M3/Postiz só recebe pacote aprovado; não inventar que suporta comentários fixados/links clicáveis e não criar página externa ou editar posts existentes sem aprovação. Ver [CITACOES_PUBLICAS.md](CITACOES_PUBLICAS.md).
 
 ### Revisões inteligentes e localizadas (DECIDIDO, P7-B)
 
